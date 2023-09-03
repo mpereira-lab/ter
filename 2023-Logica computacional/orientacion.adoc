@@ -1,0 +1,66 @@
+:toc: left
+
+
+== Semana 1
+
+=== Los contenidos de la semana son:
+
+* Compuertas lógicas
+* Tipos de operaciones digitales
+* Tipos de compuertas: AND, NOT, NAND, OR, NOR, XOR Y NXOR
+
+=== ¿Qué esperamos que aprendas?
+	
+* Reconocer el concepto de compuerta.
+* Identificar los tipos de operaciones que pueden realizarse.
+* Diferenciar los tipos de compuerta.
+
+=== ¿Qué actividades te proponemos realizar esta semana?
+	
+* Leer el material de lectura:
+** El uso de compuertas lógica en una computadora.
+** Tipos de compuertas.
+* Realizar las prácticas formativas:
+** Construir 2 definiciones del listado de palabras.
+** Participar con por lo menos una intervención en el foro: “ 3, 2, 1:  Intercambiamos ideas. ¡Stop!..”
+** Resolver el cuestionario.
+== Semana 2
+
+=== Los contenidos de la semana son:
+
+. Circuitos lógicos
+. Tabla de verdad
+. Funciones lógicas
+. Diagrama de compuertas a tabla de verdad
+. Dual a partir de una tabla
+. Diagrama de compuertas a álgebra de Boole
+. Álgebra de Boole a tabla de verdad
+. Expresiones algebraicas
+. Producto de sumas
+. Suma de productos
+. Expresiones canónicas: suma de productos y producto de sumas
+. Tabla de verdad a diagrama de compuertas buscando '1'
+. Tabla de verdad a diagrama de compuertas buscando '0'
+
+=== ¿Qué esperamos que aprendas?
+	
+
+. Conocer los fundamentos de los circuitos lógicos digitales.
+. Identificar distintas formas de representación de las funciones lógicas.
+. Relacionar los diagramas de compuertas con las tablas de verdad y el álgebra de Boole.
+
+=== ¿Qué actividades te proponemos realizar esta semana?
+	
+* Leer el material de lectura:
+
+** Fundamentos de circuitos lógicos digitales.
+** Tablas de verdad, expresiones del álgebra de Boole y diagramas de compuertas.
+
+* Realizar las prácticas formativas: 
+** Avanzar y finalizar  los ejercicios pendientes del Trabajo práctico 1 y realizar Trabajo práctico 3.
+** Participar con por lo menos una intervención en el foro.
+
+
+
+
+

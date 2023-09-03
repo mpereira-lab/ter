@@ -1,0 +1,97 @@
+:toc: left
+
+== Semana 1
+
+=== Los contenidos de la semana son:
+
+=== Algoritmos y programas:
+
+. Algoritmos. Punto de partida
+.. ¿Qué es un algoritmo?
+.. Características de los algoritmos
+. ¿Qué entendemos como programa?
+.. Dos paso para la construcción de un programa y su ciclo de vida
+.. Codificar un algoritmo
+
+==== Datos y variables
+
+. Datos y más datos
+.. ¿Qué tipos de datos hay?
+. Las variables
+.. ¿Cómo declarar una variable?
+.. ¿Cómo elegir el nombre de una variable?
+.. ¿Características y restricciones de las variables?
+.. ¿Qué es una constante?
+. Resolución de problemas mediante la formulación de algoritmos
+. Metodologías Top Down y Bottom Up
+.. Metodología Top Down
+.. Metodología Bottom Up
+.. Pseudocódigo
+. Enunciado del código
+.. Paso de la solución
+
+=== ¿Qué esperamos que aprendas?
+
+* Definir el concepto de algoritmo.
+* Describir las características de la programación en el marco de la computación.
+* Identificar las variables y sus tipos.
+* Resolver un problema a partir de la utilización de un algoritmo.
+* Distinguir las metodologías Top Down y Botton Up de resolución de problemas.
+* Describir las operaciones básicas con datos y variables.
+* Clasificar los tipos de expresiones.
+* Diferenciar expresiones aritméticas y lógicas.
+* Identificar los elementos de las tablas de verdad.
+* Interpretar una cadena de caracteres.
+* Comprender el concepto de instrucción y dato.
+* Comprender la diferencia entre dato y variable.
+
+=== ¿Qué actividades te proponemos realizar esta semana?
+	
+
+*Leer el material de lectura:*
+
+* [x] Algoritmos y programas
+* [x] Datos y variables
+
+*Realizar las prácticas formativas:*
+
+* [ ] Completar un glosario conceptual.
+* [x] Resolver el cuestionario sobre conceptos.
+* [x] Realizar una tarea donde se exprese el desarrollo de un algoritmo en pseudocódigo.
+
+¡Adelante! ¡Volvé a las orientaciones cuantas veces lo necesites!
+
+== Semana 2
+
+=== Los contenidos de la semana son:
+
+. Operaciones básicas con datos y variables.
+.. Expresiones aritméticas y lógicas.
+.. Tablas de verdad para las expresiones lógicas.
+. Cadena de caracteres
+
+=== ¿Qué esperamos que aprendas?
+
+* Conocer los distintos operadores existentes.
+* Aprender a crear y usar variables.
+* Realizar operaciones aritméticas.
+* Realizar operaciones lógicas.
+* Comprender el concepto de diagrama de flujo y su uso.
+
+=== ¿Qué actividades te proponemos realizar esta semana?
+
+. Leer el material de lectura:
+
+* Diagramas de flujos.
+* Operaciones básicas con datos y variables.
+* Cadenas de caracteres.
+
+=== Realizar las prácticas formativas:
+
+* Completar un glosario conceptual.
+* Resolver el cuestionario sobre conceptos.
+* Realizar un trabajo práctico que te permite aplicar el concepto de algoritmo y pseudocódigo.
+
+
+
+

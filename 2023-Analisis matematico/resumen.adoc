@@ -1,0 +1,325 @@
+:toc-title: Índice
+:toc: left
+:toclevels: 4
+:imagesdir: ./images
+
+== Semana 1
+
+=== El concepto de conjunto
+
+* Conjunto: lista, colección o clase de objetos bien definidos, que poseen alguna propiedad en común
+* Elemento: objetos que conforman un conjunto
+* Un requisito clave para que una agrupación de objetos pueda ser llamada conjunto , es que se pueda determinar si cierto objeto pertenece o no a é
+* Conjunto vacío: Existe un conjunto muy particular llamado conjunto vacío, que como su nombre lo indica, es el que no contiene elementos. Este conjunto se denota como ∅.
+
+=== Pertenencia
+
+* Si x es un elemento de un conjunto A dado, se dice que x pertenece a A y se denota x∈A.
+* En caso contrario, si  x no es un elemento de A, se denota x∉A.
+
+=== Formas de representación
+
+*un conjunto se denota encerrando entre llaves a sus elementos (separando los mismo con comas si se define por extensión), o a su propiedad característica (si se define por comprensión).*
+
+* por extensión:  enumerando todos y cada uno de sus elementos: 
+** Ej: Vocales -> V={a,e,i,o,u}
+** Ej: Nros pares -> P={2,4,6,8,10,12,14,…}
+* por comprensión: diciendo cuál es la propiedad que los caracteriza
+** Ej: Vocales -> V={x:x es vocal}
+** Ej: Nros pares -> P={x:x es par}
+
+=== Diagramas de Venn
+
+Una forma de comprender mejor las relaciones entre conjuntos, y en especial las operaciones entre ellos que veremos en la parte 2, es realizar una representación gráfica de los mismos. Para ello se utiliza lo que se conoce como  diagrama de Venn , en homenaje a su creador, que consiste en líneas circulares u ovaladas cerradas, donde se disponen los elementos señalados mediante puntos. El conjunto V
+de las letras vocales quedaría representado así: 
+
+image::2023-08-26T18-03-55-315Z.png[] 
+
+=== Cardinal de un conjunto
+
+Sea A un conjunto, se llama cardinal de A a la cantidad de elementos *distintos* que tiene A  y se denota #A.
+
+Por ejemplo: 
+
+* V=5 (recordá que V es el conjunto de todas las vocales).
+* Z=27 (recordá que Z es el conjunto de todas las letras del abecedario).
+* P=∞ (recordá que P es el conjunto de todos los números pares).
+
+El cardinal de union de 2 conjuntos es #A + #B - #(AnB)
+
+
+=== Relaciones entre conjuntos
+
+==== Igualdad
+
+Se dice que dos conjuntos A y B son iguales, si ambos tienen exactamente los mismos elementos, y en tal caso escribimos A=B
+
+Ejemplo 1: Notar que los siguientes conjuntos son iguales: C={1,2,3,4,5},     D={3,5,2,1,4},     E={1,4,3,1,5,2} ya que al definir un conjunto no importa en qué orden se listen los elementos ni cuántas veces se repita cada uno. 
+
+ Luego, C=D=E
+
+Ejemplo 2: Notar que los siguientes conjuntos no son iguales:
+
+ P={pares},     I={impares}
+ 
+ Luego, P≠I.
+
+==== Inclusión
+
+Un conjunto A esta incluido en otro conjunto B si todo elemento de A es también elemento de B. Si esto ocurre, se denota por A⊆B .También suele decirse que A es subconjunto de B
+
+¡Importante!
+
+No se deben confundir los símbolos ∈ y ⊆, ya que el primero relaciona un elemento con un conjunto, mientras que el segundo se usa para relacionar dos conjuntos. 
+
+Luego, para el caso del conjunto V de las vocales, es correcto  escribir: e∈V, y también {e}⊆V
+
+pero es incorrecto escribir: e⊆V y también {e}∈V
+
+El último caso sería correcto si los elementos del conjunto V fueran a su vez otros conjuntos. Por ejemplo, si V={{a,i},{e},{e,u}} , entonces V es un conjunto cuyos elementos son los conjuntos {a,i},{e},{e,u}. En este caso sí es verdad que {e}∈V, ya que ahora el conjunto compuesto por la letra “e” es un elemento de V. Sin embargo, no es verdad ahora que e∈V
+
+==== Subconjunto propio
+
+Se dice que B es subconjunto propio de A, si B es subconjunto de A pero "es más chico" que A (es decir, no es el mismo A). Esto significa que existen elementos de A que no están en B, lo que en símbolos se expresa como: B⊆A y B≠A
+
+Para indicar que B es subconjunto propio de A se utiliza la notación B⊊A. Por ejemplo, el conjunto de las vocales es un subconjunto propio de las letras del abecedario.
+
+=== Conjunto universal
+
+Muchas veces trabajamos con uno o más conjuntos cuyos elementos pertenecen a un conjunto más grande llamado universal, el cual es denotado en general con la letra U y representado gráficamente en un diagrama de Venn mediante un rectángulo que contiene a los demás conjuntos con los que estamos trabajando:
+
+image::2023-08-26T18-22-37-410Z.png[] 
+
+Este conjunto universal dependerá del caso particular que estemos desarrollando. Por ejemplo, si hablamos de las letras de una palabra, podemos tomar como conjunto universal a todas las letras del abecedario; si trabajamos con el conjunto {1,4,7} podemos tomar como conjunto universal al conjunto de los números naturales, pero también al de los enteros o al conjunto {0,1,2,3,4,5,6,7,8,9} de todos los dígitos. Para evitar estas ambigüedades, siempre que sea necesario indicaremos cuál es el conjunto universal.
+
+Ejemplo:
+
+Sea A={1,4,7} y el conjunto universal U={0,1,2,3,4,5,6,7,8,9}, el diagrama de Venn nos queda:
+
+image::2023-08-26T18-24-17-679Z.png[] 
+
+=== Operaciones entre conjuntos
+
+==== Unión entre conjuntos: 
+
+La unión de los conjuntos A y B es el conjunto de todos los elementos que pertenecen a A o a B o a ambos. Se denota la unión de A y B por: A∪B que se lee "A unión B ". En símbolos, esto se escribe: A∪B={x:x∈A o x∈B}
+
+*Algunas uniones particulares:*
+
+* Uniendo el conjunto vacío: Notar que A∪∅=A para cualquier conjunto A. Esto ocurre ya que, al unir con el conjunto vacío, no se agrega ningún elemento.
+* Uniendo un subconjunto: Si B⊆A entonces A∪B=A, ya que los elementos de B no agregan nada nuevo al conjunto “mas grande”, que es A. Por ejemplo, si A={1,2,3,4,5} y B={2,4}, entonces A∪B={1,2,3,4,5}=A.
+
+==== Intersección entre conjuntos
+
+La intersección de los conjuntos A y B es el conjunto de los elementos que son comunes a A y a B, esto es, de aquellos elementos que pertenecen a A y que también pertenecen a B. Se denota la intersección de A y B por: A∩B
+
+Que se lee "A intersección B ". En símbolos se indica de la siguiente manera: A∩B={x:x∈A y x∈B}
+
+*Si A∩B=∅, se dice que A y B son conjuntos disjuntos*
+
+Ejemplo 2:  Sean los conjuntos P={1,2,3,4,5,6}, Q={5,6,7,9} y R={4,5,6,9,10} , entonces: P∩Q∩R={5,6}
+
+image::2023-08-26T19-29-55-141Z.png[] 
+
+*Algunas intersecciones particulares*
+
+* Intersecando con el conjunto vacío: Notar que A∩∅=∅ para cualquier conjunto A, pues ningún elemento está en el conjunto vacío.
+
+* Intersecando con un subconjunto: Si B⊆A entonces A∩B=B, ya que todos los elementos de B pertenecen también al conjunto “más grande” A. Por ejemplo, si A={1,2,3,4,5} y B={2,4}, entonces se tiene que A∩B={2,4}=B.
+
+==== Diferencia entre conjuntos
+
+Llamamos diferencia entre dos conjuntos A y B al conjunto formado por todos los elementos de A que no están en B . Denotamos a este conjunto con A−B. En símbolos, esto se escribe como: A−B={x∶x∈A y x∉B}
+
+En palabras, el conjunto A−B se forma con todos los elementos de A, a los cuales les “quitamos” los que a su vez pertenecen a B. De esta definición se observa que A−B es un subconjunto de A: A−B⊆A.
+
+==== Complemento de un conjunto
+
+Dados dos conjuntos A y U tales que A⊆U, el conjunto U−A es llamado el complemento del conjunto A con respecto a U. En otras palabras, es el conjunto formado por todos los elementos del conjunto universal que no pertenecen a A. El complemento de A se denota como Ac.
+
+
+== Semana 2
+
+=== Conjuntos numéricos
+
+==== Números naturales
+
+En matemática, denotamos este conjunto con el símbolo N y podemos describirlo así: N={1,2,3,4,5,6,…}
+
+El conjunto de los naturales, además, es infinito y tiene primer elemento, el 1, pero no último: siempre es posible obtener otro natural a partir de uno dado buscando el sucesor, no importa cuán grande pueda ser ese número. También se trata de un conjunto discreto: entre dos naturales dados, siempre existe una cantidad finita de naturales entre ellos.
+
+Es conjunto ordenado, infinito y discreto, con primer número (1)
+
+==== Números enteros
+
+Números naturales incluyendo al 0 y a los opuestos de los naturales es que definimos el conjunto de los números enteros
+
+Z={…,−6,−5,−4,−3,−2,0,1,2,3,4,5,6,…}
+
+Es conjunto ordenado, infinito y discreto, sin primer número
+
+==== Números racionales
+
+Permite representar el resultado de dividir dos naturales cualesquiera
+
+ Q={n/m:n,m∈Z,m≠0}
+
+*Propiedad orden denso*: entre dos números racionales, siempre es posible encontrar otro número racional.
+
+==== Números irracionales
+
+No son racionales y su expresión decimal tiene infinitas cifras no periódicas. Algunos números irracionales famosos son:
+
+√2 = 1.41421356237…
+√3 = 1.73205080757…
+π = 3.14159265359…
+e = 2.71828182846…
+
+Q∩I=∅
+
+==== Números reales
+
+El conjunto de los números reales se obtiene de la unión del conjunto de los racionales e irracionales. Se denotan con la letra  R.  Es decir R=Q∪I
+
+image::2023-08-26T23-42-25-058Z.png[] 
+
+*Propiedad orden denso*: entre dos números reales, siempre es posible encontrar otro número real.
+
+==== Intervalos
+
+Existe una forma simple de expresar el conjunto de los números reales que satisfacen una desigualdad doble o simple, y es mediante intervalos. Por ejemplo, si a y b son dos números reales con a<b, el conjunto: I={x∈R:a<x<b}
+
+Puede escribirse de manera más simple mediante el intervalo abierto (a,b)
+
+== Semana 3
+
+===  Pares ordenados
+
+los conjuntos {a,b} y {b,a} son iguales, pero en muchas situaciones, es significativo el orden en que aparecen los elementos a y b, y en este caso estamos en presencia de lo que se llama  par ordenado que indicaremos por (a,b)
+
+ Si a≠b tenemos que {a,b}={b,a}, pero (a,b)≠(b,a).
+
+
+=== Producto cartesiano
+
+de dos conjuntos A y B (se simboliza AxB) es el conjunto de todos los pares ordenados (x,y), tales que "x" pertenece al primer conjunto A e "y" pertenece al segundo conjunto B, es decir: 
+ 
+ AxB={(x,y):x∈A, y∈B}
+
+  Ej: siendo 
+    P = {1, 2, 3}
+    L = {a, b, c, d}
+  PxL={(1,a),(1,b),(1,c),(1,d),(2,a),(2,b),(2,c),(2,d),(3,a),(3,b),(3,c),(3,d)}
+  LxP={(a,1),(b,1),(c,1),(d,1),(a,2),(b,2),(c,2),(d,2),(a,3),(b,3),(c,3),(d,3)}
+
+  PxL≠LxP, esto es, el producto cartesiano no es conmutativo
+
+El nro de elementos se obtiene de multiplicar los cardinales de cada conjunto. El cardinal es la cantidad de numeros que tiene cada conjunto
+
+El producto cartesiano no es conmutativo
+
+==== Representación sagital
+
+Consiste en  graficar dos diagramas de Venn, uno a la izquierda que representa al primer conjunto y otro a la derecha  que representa el segundo. Luego, desde cada elemento del primer conjunto sale una flecha hacia cada elemento del segundo conjunto.
+
+Entonces, cada flecha representa un par ordenado y, el elemento de partida de la flecha es el primer elemento del par ordenado, mientras que el elemento destino de la flecha es el segundo elemento del par.
+
+
+image:2023-08-28T21-44-26-653Z.png[] 
+
+==== Diagrama cartesiano
+
+Como los elementos de PxL son pares ordenados, podemos graficar dicho conjunto en un sistema de coordenadas rectangulares denominado coordenadas cartesianas. Por ejemplo, para representar los elementos de PxL en coordenadas cartesianas, se colocan dos rectas perpendiculares, una horizontal y otra vertical que llamaremos ejes. La intersección de estos ejes se llama  origen de coordenadas.
+
+image::2023-08-28T21-45-54-959Z.png[] 
+
+=== Relación
+
+* R es una relación de A en B si y solo si se cumple que R está incluida en el producto cartesiano AxB, es decir, R⊆AxB.
+* Así, notemos que los elementos de una relación son pares ordenados. 
+* Al conjunto A se lo llama conjunto de partida y al B, conjunto de llegada.
+
+==== Notaciones
+
+. R es una relación de  A en B también se puede indicar por R:A→B
+. Si el par (x,y) pertenece a la relación R, se acostumbra a denotar por  (x,y)∈R
+. La escritura xRy sirve para indicar que x e y están relacionados según la relación R. También se podría emplear y=R(x).
+
+=== Dominio e imagen
+
+Se denomina dominio de una relación  al conjunto de los elementos de A que intervienen en la relación y se llama imagen, rango o recorrido,  al conjunto de los elementos de B que intervienen en los pares  ordenados de la relación.
+
+Simbólicamente:
+
+ Para el dominio: Dom R⊆A
+ Para la imagen: Im R⊆B
+
+
+=== Función
+
+Una función es una relación entre dos conjuntos, en donde a todos y cada uno de los elementos del conjunto de partida A, se le hace corresponder un único elemento del conjunto de llegada B.
+
+Esto significa que, dado un elemento x∈A, le corresponde un único elemento que pertenece al conjunto B, al cual denotaremos por y o f(x)
+
+Escribimos:
+
+ f:A→B
+ x→f(x)
+
+Para construir una función se necesita:
+
+. Un conjunto de elementos de partida.
+. Un conjunto de elementos de llegada.
+. Una ley de correspondencia que relaciona el conjunto de partida con el de llegada.
+
+La relación entre las personas y las habitaciones es una función, ya que para cada persona existe una única habitación. Por eso se dice que se cumplen las 
+
+* condiciones de:
+** existencia 
+** y de unicidad
+
+=== Ejemplos de cuando es funcion y cuando no
+
+image::2023-08-30T22-01-25-924Z.png[] 
+
+=== Dominio, codominio e imagen
+
+* Dominio: es el conjunto de partida. Se escribe: Dom f
+* Codominio: es el conjunto de llegada.
+* Imagen o rango: es el conjunto formado por todos los elementos del codominio que fueron relacionados con algún elemento del dominio. Se escribe: Im f
+
+image:2023-08-30T23-20-29-981Z.png[] 
+
+
+=== Diferentes representaciones de funciones
+
+==== Diagrama sagital
+
+image::2023-08-30T23-24-50-390Z.png[] 
+
+==== Tabla de valores
+
+|===
+| x   | f(x)
+| -2  | 4
+| -1  | 1
+| 1   | 1
+| 2   | 4
+| 3   | 9
+|===
+
+
+===== Verbalmente
+
+Función f que relaciona cada elemento de A con alguno de B y de tal manera que el cuadrado del primero de como resultado el segundo.
+
+==== Simbólicamente
+ 
+  f:A→B tal que y=x2       
+  o bien f:A→B tal que f(x)=x2
+
+==== Gráficamente
+
+image:2023-08-30T23-28-20-226Z.png[] 
+
+image:2023-08-30T23-52-11-303Z.png[]    

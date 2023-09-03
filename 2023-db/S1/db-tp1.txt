@@ -1,0 +1,8 @@
+año a cursar
+apellido
+nombre
+documento
+nombre-materia-otra-escuela
+calificacion-materia-otra-escuela
+
+

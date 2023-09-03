@@ -1,0 +1,279 @@
+:imagesdir: ./images
+:table-caption: Tabla
+
+
+= Practica Formativa 1: Normalización 
+
+*Aplicar reglas de normalización*
+
+== Tabla 1: ORDENES
+
+image:2023-09-02T23-43-19-333Z.png[]
+
+clave primaria = id_orden + num_art
+
+
+=== 1FN
+
+Elimino grupo de datos repetidos (registros con ordenes repetidas)
+
+*ordenes*
+|===
+| id_orden  | fecha         | id_cliente    | nom_cliente   | estado
+
+| 2301      | 23/02/11      | 101           | Martin        | Caracas
+| 2302      | 25/02/11      | 107           | Hernan        | Caracas
+| 2303      | 27/02/11      | 110           | Pedro         | Maracay
+|===
+
+*ordenes_articulos*
+|===
+| id_orden  | num_art   | nom_art   | cant  | precio
+
+| 2301      | 3786      | Red       | 3     | 35.00
+| 2301      | 4011      | Raqueta   | 6     | 65.00
+| 2301      | 9132      | Paq-3     | 8     | 4.75
+| 2302      | 5794      | Paq-6     | 4     | 5.00
+| 2303      | 4011      | Raqueta   | 2     | 65.00
+| 2303      | 3141      | Funda     | 2     | 10.00
+|===
+
+=== 2FN
+
+Elimino dependencias funcionales parciales de tabla ordenes_articulos. Los artículos en la tabla *ordenes_articulos* no dependen de la clave primaria totalmente, solo dependen de una parte de la misma. La clave primaria está formada por id_orden + num_art
+
+*ordenes*
+|===
+| id_orden  | fecha         | id_cliente    | nom_cliente   | estado
+
+| 2301      | 23/02/11      | 101           | Martin        | Caracas
+| 2302      | 25/02/11      | 107           | Hernan        | Caracas
+| 2303      | 27/02/11      | 110           | Pedro         | Maracay
+|===
+
+*ordenes_articulos*
+|===
+| id_orden  | num_art   | cant 
+
+| 2301      | 3786      | 3    
+| 2301      | 4011      | 6    
+| 2301      | 9132      | 8    
+| 2302      | 5794      | 4    
+| 2303      | 4011      | 2    
+| 2303      | 3141      | 2    
+|===
+
+*articulos*
+|===
+|  num_art   | nom_art   | precio
+
+|  3786      | Red       |  35.00
+|  4011      | Raqueta   |  65.00
+|  9132      | Paq-3     |   4.75
+|  5794      | Paq-6     |   5.00
+|  4011      | Raqueta   |  65.00
+|  3141      | Funda     |  10.00
+|===
+
+=== 3FN
+
+Elimino dependencias transitivas entre las columnas de una tabla. La tabla ordenes_articulos posee dependencias transitivas, como el nombre del cliente y el estado al que pertenece el cliente, y dependen del id_cliente. Este atributo (id_cliente) no es parte de la clave primaria
+
+*ordenes*
+|===
+| id_orden  | fecha         | id_cliente
+
+| 2301      | 23/02/11      | 101       
+| 2302      | 25/02/11      | 107       
+| 2303      | 27/02/11      | 110       
+|===
+
+*clientes*
+|===
+| id_cliente    | nom_cliente   |  Estado
+
+| 101           | Martin        | Caracas
+| 107           | Hernan        | Caracas
+| 110           | Pedro         | Maracay
+|===
+
+*ordenes_articulos*
+|===
+| id_orden  | num_art   | cant 
+
+| 2301      | 3786      | 3    
+| 2301      | 4011      | 6    
+| 2301      | 9132      | 8    
+| 2302      | 5794      | 4    
+| 2303      | 4011      | 2    
+| 2303      | 3141      | 2    
+|===
+
+*articulos*
+|===
+|  num_art   | nom_art   | precio
+
+|  3786      | Red       |  35.00
+|  4011      | Raqueta   |  65.00
+|  9132      | Paq-3     |   4.75
+|  5794      | Paq-6     |   5.00
+|  4011      | Raqueta   |  65.00
+|  3141      | Funda     |  10.00
+|===
+
+== Tabla 2: LIBROS
+
+image:2023-09-02T23-44-03-173Z.png[] 
+
+=== 1FN
+
+Valores de atributos deben ser atómicos. Separar campo nombreLector en ApellidoPaterno, ApellidoMaterno y Nombre. Ademas se separa el autor del libro, ya que en algunos casos hay 2 autores para el libro.
+
+*Libros*
+|===
+| CodLibro  | Titulo            | Autor             | Editorial         |ApellidoPaterno | ApellidoMaterno  | Nombres   | FechaDev
+
+| 1001      | Variable compleja |Murray Spiegel     | McGraw Hill       | Pérez          | Gómez            | Juan      | 15/04/2005
+| 1004      | Visual Basic 5    |E. Petroustsos     | Anaya             | Ríos           | Terán            | Ana       | 17/04/2005
+| 1005      | Estadística       |Murray Spiegel     | McGraw Hill       | Roca           |                  | René      | 16/04/2005
+| 1006      | Oracle University |Nancy Greenberg    | Oracle Corp.      | García         | Roque            | Luis      | 20/04/2005
+| 1006      | Oracle University |Priya Nathan       | Oracle Corp.      | García         | Roque            | Luis      | 20/04/2005
+| 1007      | Clipper 5.01      |Ramalho            | McGraw Hill       | Pérez          | Gómez            | Juan      | 18/04/2005
+|===
+
+La separación del autor, genera duplicidad de registros de los libros. Con lo cual, para cumplir con la 1fn donde no deben existir grupos de valores repetidos, se conviene en tener una segunda tabla con los autores
+De esta forma nos queda
+
+*Libros*
+|===
+| CodLibro  | Titulo            | Editorial         |ApellidoPaterno | ApellidoMaterno  | Nombres   | FechaDev
+| 1001      | Variable compleja | McGraw Hill       | Pérez          | Gómez            | Juan      | 15/04/2005
+| 1004      | Visual Basic 5    | Anaya             | Ríos           | Terán            | Ana       | 17/04/2005
+| 1005      | Estadística       | McGraw Hill       | Roca           |                  | René      | 16/04/2005
+| 1006      | Oracle University | Oracle Corp.      | García         | Roque            | Luis      | 20/04/2005
+| 1007      | Clipper 5.01      | McGraw Hill       | Pérez          | Gómez            | Juan      | 18/04/2005
+|===
+
+*Autores*
+|===
+|id_autor   | Autor             
+|1          | Murray Spiegel     
+|2          | E. Petroustsos     
+|3          | Nancy Greenberg    
+|4          | Priya Nathan
+|5          | Ramalho
+|===
+
+*libros_Autores*
+|===
+| CodLibro  | id_autor
+| 1001      | 1
+| 1004      | 2
+| 1005      | 1
+| 1006      | 3
+| 1006      | 4
+| 1007      | 5
+|===
+
+=== 2FN
+
+Ya que ninguna clave es compuesta, se asume que está en segunda forma normal porque ya está en 1fn y no hay claves compuestas. Para que no estuviese en 2fn se debería dar el caso que existan claves compuestas y que algunos datos no claves dependieran de "una sola parte" de la clave. Como este no es el caso, se asume que ya está en 2fn
+
+=== 3FN
+
+No deben existir dependencias transitivas entre las columnas de una tabla, lo cual significa que las columnas que no forman parte de la clave primaria deben depender sólo de la clave.
+
+En este caso, el ni lector, ni la fecha de devolución dependen de la clave codLibro. Extraigo de la tabla libros las entidades Lector, y aparece una relación entre lector y libros donde ademas de relacionar los libros con los lectores ubico allí la fecha de devolución
+
+También existe la editorial, la cual no depende del codigo de libro. También aparece la tabla editorial. Asumiendo que el mismo libro puede ser editada por mas de una editorial, aparece la tabla libros_editoriales
+
+*Libros*
+|===
+| CodLibro  | Titulo            
+
+| 1001      | Variable compleja              
+| 1004      | Visual Basic 5                 
+| 1005      | Estadística                    
+| 1006      | Oracle University              
+| 1007      | Clipper 5.01                   
+|===
+
+*Editoriales*
+|===
+|id_editorial   | nombre
+
+|   ED1         | McGraw Hill       
+|   ED2         | Anaya             
+|   ED3         | Oracle Corp.
+|===
+
+*libros_Editoriales*
+|===
+| CodLibro  | id_editorial
+
+| 1001      | ED1             
+| 1004      | ED2             
+| 1005      | ED1             
+| 1006      | ED3             
+| 1007      | ED1             
+|===
+
+*Lector*
+|===
+| id_lector |ApellidoPaterno | ApellidoMaterno  | Nombres   
+
+|   L1      | Pérez          | Gómez            | Juan      
+|   L2      | Ríos           | Terán            | Ana       
+|   L3      | Roca           |                  | René      
+|   L4      | García         | Roque            | Luis      
+|===
+
+*Libros_Lector*
+|===
+| CodLibro  | id_lector | FechaDev
+
+| 1001      | L1        | 15/04/2005
+| 1004      | L2        | 17/04/2005
+| 1005      | L3        | 16/04/2005
+| 1006      | L4        | 20/04/2005
+| 1007      | L1        | 18/04/2005
+|===
+
+
+== Tabla 3
+
+image:2023-09-02T23-44-16-806Z.png[] 
+
+*Empleados*
+|===
+| COD_EMPLE | NOMBRE
+
+|   1       | Juan
+|   2       | Pedro
+|   3       | Sonia
+|   4       | Veronica
+|===
+
+*Departamentos*
+|===
+| COD_DEP   | NOMBRE_DEP
+
+|   6       | Contabilidad
+|   3       | Sistemas
+|   2       | I+D
+|===
+
+*Empleados_departamentos*
+|===
+| COD_EMP   | COD_DEP   | AÑOS_DEP
+|   1       |   6       |   6
+|   2       |   3       |   3
+|   2       |   6       |   5
+|   3       |   2       |   1
+|   4       |   3       |   10
+|   4       |   6       |   2
+|===
+
+
+
+

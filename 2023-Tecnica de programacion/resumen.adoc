@@ -1,0 +1,288 @@
+:toc: left
+:toclevels: 4
+:imagesdir: ./images
+:toc-title: Programación
+
+= Resumen
+
+== Semana 1
+
+=== ALgoritmo: 
+** Definición: secuencia de instrucciones ordenadas, definidas y finitas para realizar una tarea
+** Definicion: conjunto finito de reglas que suministra una secuencia ordenada de acciones basicas con el proposito de resolver un tipo especifico de problemas
+
+** Característica 1: nos permiten obtener resultados sin saber lo que estamos haciendo
+** Caracteristica 2: Nos permiten comunicar tareas complejas sin explicar el porque
+** Caracteristica 3: solucion para automatizar tareas
+
+* Programacion
+** Definicion : arte de convertir las cosas que hacemos en secuencia de instrucciones que el computador puede realizar (en un algoritmo de computador)
+
+=== Reglas de un algoritmo
+
+. Debe finalizar luego de una cantidad finita de pasos
+. Cada paso debe estar perfectamente definido
+. Puede tener datos o no de entrada
+. Debe tener uno o mas datos de salida
+. Debe ser efectivo: cada uno de los pasos debe ser ejecutado con precision en un tiempo finito
+
+=== Características de algoritmos:
+
+. Eficacia: las oepraciones deben ser sencillas para poder ser realizadas en *forma exacta* y en *tiempo finito* por el procesador
+. Caracter finito: debe tener inicio, cantidad de pasos finitos y un fin
+. Precision: operaciones claras en cada paso
+. Entrada: puede tener cero o mas entradas: (datos)
+. Salida: una o mas salidas, que tienen relacion con los datos de entrada
+
+=== Represenentacion de algoritmos
+
+. Diagramas de flujo: Representación gráfica de algoritmos con símbolos y flechas regidos por ISO
+. Pseudocódigo: forma escrita de un algoritmo de forma que cualquier persona lo entienda
+. Sistemas formales: 
+. Variables
+. Estructuras secuenciales
+
+Informatica: acronimo de information y automatique: procesamiento automatica de la informacion
+
+=== Importanacia de algoritomos:
+
+. Permite crear soluciones (programas) a problemas planteados inicialmente
+. Sin algoritmo no hay programa. Si no hay programa, no hay nada que ejecutar
+. El algoritmo se puede implementar en diferentes lenguajes de programacion y en ejecutarse en diferentes computadoras, pero el algoritmo siempre es el mismo
+. Base para desarrollo de aplicaciones
+. Columna vertebral para llevar a cabo la programacion por medio de perifericos que ayuden a su ejecucion
+
+=== Programa
+
+* Definicion: conjunto de instrucciones capaces de ser ejecutadas (obedecidas) por un computador de forma tal que realice una determinada tarea en un tiempo finito
+
+* Definicion: resultado de una acción compuesta que fue desmenuzada en acciones elementales para que pueda ser ejecutada por el computador
+
+=== Programacion
+
+* Definicion: disciplina que tiene como objetivo la resolucion de problemas mediante la codigicacion de pasos para llegar a la solucion. La codificacion debe ser interpretada por la pc
+
+=== Metodologia de 4 etapas para resolución de problemas
+
+. Formulacion o enunciacion
+. Eleccion de algoritmo
+. Codificación
+. Ejecución
+
+=== Pasos dentro de ciclo de vida de cosntruccion de programa
+
+* Paso1 diagramacion: construccion de diagrama que muestre secuencia logica de pasoso a seguir
+
+==== 4 Fases de diagramacion
+. Enunciacion del problema y necesidades
+. Analisis del problema
+. Obtencion del algoritmo que resuelva el problema y representarlo en diagrama
+. diseño
+
+* Paso 2. codificacion: traducir el diagrama en un lenguaje de programacion, de forma que pueda ser traducido por el compilador y ejecutado por el procesador
+
+=== Definiciones:
+
+* Programa fuente: codificacion del programa en un determinado lenguaje
+* Compilador : 
+** Verifica la sintaxis
+** Traduce a lenguaje binario (lenguaje maquina)
+* Proceso: tarea que realiza la computadora al ejecutar el programa
+
+Flujo de control: acciones de programas que determinan que camino a seguir
+
+Sentencia: cada instruccion que se le da al programa
+
+=== Estructuras basicas de programacion estructurada
+
+. Secuencia de sentencias
+. Bifurcacion condicional simple y multiple
+. Ciclo o iteracion
+
+=== Datos y variables
+
+Tipos de datos:
+
+* Simples: atómicos
+** Enteros: numeros + y - 
+** Real: numeros + y - con decimales
+** Cadena: cadena de caracteres
+** Lógicos: booleano
+* Compuestos: compuesto por conjunto de datos simples o de otros datos compuestos
+
+==== Dato
+
+Definicion: representacion simbolica de cosas, pero que no tiene conexto
+
+Informacion: grupo de datos supervisados, procesados y ordenados
+
+==== Variable
+
+Es un contenedor de datos, pero puede ir variando su contenido
+
+Cada variable tie un tipo de dato
+
+Las variables se declaran para que el programa sepa a partir de donde existe, se le da un nombre y un tipo de dato
+
+ Definir cantidadDeAmigos como Entero
+
+* Nombre de variable: debe ser descriptivo
+* convencion Camelcase: primera letra minuscula, cada palabra empuieza con mayuscula "estoEsUnaVariable"
+* convenciones de codificación: objetivos son coherencia y la legibilidad del codigo
+** dan apariencia coherente al codigo
+** Permiten comprender codigo rapidamente basados en las convenciones
+** Facilitan copia, cambio y mantenimiento del codigo
+
+*Restricciones y caracteristicas de los nombres*
+
+* no comienzan con nro
+* pueden contener nros
+* comienza con minuscucla
+* no utilizar verbos
+* solo caracteres a-z A-Z 0-9 y _
+* singular
+
+*Asignacion*: se utuliza la sentencia de asignacion
+
+ cantidadDeAmigos =  2
+
+==== Constante
+
+ Definicion: valor que se define antes de ejecucion y su valor nunca cambia
+
+==== Resolucion de problemas mediante formulación de algoritmo
+
+* Para revolver un problema, su enunciado debe ser claro y preciso
+* La reingenieria de un algoritmo es el proceso de replantearlo ya sea porque es ineficiente o ineficaz
+
+==== Que es necesario tener en cuenta para resolver un problema usando un algoritmo
+
+[ditaa]
+....
+
++------------------+
+| Datos de entrada | (Datos conocidos)
++------------------+
+        |
+        |              +------------------------------+
+        |------------->| Vinculacion datos de entrada | (Conjunto de condiciones que vinculan a los conjuntos de datos anteriores)
+                       +------------------------------+
+                                        |
+                                        |                +------------------+
+                                        |--------------->| Datos de salida  | (Datos desconocidos)
+                                                         +------------------+
+....
+
+==== Top Down
+
+Consiste en dividir un problema en subproblemas, y estos otra vez en otros sub problemas para que estos se conviertan en problemas sencillos y fáciles de manejar.
+
+Ventajas: 
+
+. Legibilidad: es mas facil de entender lo que quiso hacer la persona que diseño el problema
+. Productividad: los sub problemas se pueden divividir entre varias personas y asi resolver en forma mas rápida
+
+==== Metodología Top Down: programación modular
+
+Todas estas consideraciones se acercan a la idea de programación modular.
+
+[square]
+* Cada problema debe descomponerse en una serie de problemas más pequeños hasta llegar a un nivel en que cada uno de ellos no pueda reducirse más. 
+* En ese momento se ha llegado al nivel más bajo del análisis.
+* Es entonces cuando realmente se puede resolver el problema planteado al principio. 
+* Cada uno de estos problemas de orden superior puede usar, para su resolución, problemas mínimos, comunes a varios niveles.
+* Una vez demostrada la necesidad de descomponer un problema general en problemas mínimos, resulta obvio que estos no son sino los módulos de que consta el problema. 
+
+De esa forma se realiza una programación modular y programación estructurada: el software obtenido es modular.
+
+==== Metodología bottom up
+
+* La metodología Bottom-up hace énfasis en la programación y pruebas tempranas, que pueden comenzar tan pronto se ha especificado el primer módulo. Este enfoque tiene el riesgo de programar cosas sin saber, cómo se van a conectar al resto del sistema, y esta conexión puede no ser tan fácil como se creyó al comienzo. La reutilización del código es uno de los mayores beneficios del enfoque bottom-up.
+
+
+==== Pseudocódigo
+
+Permite:
+
+* Utilizar un lenguaje común a todos los programadores.
+* Lograr un nivel de abstracción cuando se realizan programas.
+* Facilitar la traducción de las instrucciones a un lenguaje de programación.
+
+==== Enunciado del problema
+
+Lo primero que me debo preguntar es si “alcanza con el enunciado para vislumbrar la solución”.
+
+Para plantear la solución de un problema primero debo analizar el enunciado del problema, y en caso de hacer falta, puedo mencionar ciertos puntos que aclaren los datos que creo pueden faltar. De esta manera “completo” el enunciado para poder encarar la propuesta de una solución.
+
+Entonces, se definen hipótesis cuando los datos del enunciado no son suficientes para la resolución del problema.
+
+También me debo preguntar ¿Qué datos tengo?
+
+==== Pasos de la solución
+
+Se trata de una enumeración detallada y ordenada de los pasos a seguir para resolver un problema.
+
+Es importante también que la información proporcionada en el enunciado del problema cumpla con la regla de las “Tres Ce” (Claro, Conciso y Completo).
+
+
+== Semana 2
+
+=== Diagramas de flujo
+
+Es la representación gráfica de un algoritmo o proceso. Utilizan símbolos con significados definidos que representan los pasos del algoritmo, y representan el flujo de ejecución mediante flechas que conectan los puntos de inicio y de fin del proceso.
+
+* Siempre el diagrama comienza con un símbolo de caja de bordes redondeados que contiene el nombre de nuestro algoritmo
+* Caja con forma rectangular: se escribe un paso (nunca más de uno) del proceso del algoritmo que implica una acción
+* Se escribe un paso (nunca más de uno) del proceso del algoritmo que implica una acción
+* Cuando llegamos al último paso y termina el proceso del algoritmo, se indica con el símbolo de caja de bordes redondeados con las palabras Fin del algoritmo.
+
+=== Variables
+
+Son porciones de memoria a las que definimos con un determinado tipo de dato según el valor que necesitemos que almacene y poder  guardar en ellas datos o información.
+
+Las operaciones se clasifican en
+
+. Aritmética: Se componen de operandos y operadores de tipo aritmético, siendo los más habituales suma (+), resta (-), multiplicación (*), división (/) y resto de la división (%).
+. Lógicas: Son aquellas que tienen como resultado verdadero o falso. Los operadores que permiten construirlas son los relacionales y los booleanos
+. Cadena de caracteres: 
+
+== Semana 3
+
+=== Estructura secuencial
+
+
+Un programa informático es una estructura que comprende una secuencia de acciones (instrucciones o comandos) y que manipula un conjunto de objetos (datos e información). 
+
+Existen dos partes o bloques de la estructura que compone un programa:
+
+. Bloque de declaraciones: en este se detallan todos los objetos que utiliza el programa (constantes, variables, archivos, etc.).
+. Bloque de instrucciones: conjunto de acciones u operaciones que se han de llevar a cabo para conseguir los resultados esperados.
+
+El bloque de instrucciones 
+
+Está compuesto a su vez por tres partes, aunque en ocasiones no están perfectamente delimitadas, y aparecen entremezcladas en la secuencia del programa, podemos localizarlas según su función. Estas son:
+
+. Entrada de datos: instrucciones que almacenan en la memoria interna datos procedentes de un dispositivo externo.
+. Proceso o algoritmo: instrucciones que modifican los objetos de entrada y, en ocasiones, creando otros nuevos.
+. Salida de resultados: conjunto de instrucciones que toman los datos finales de la memoria interna y los envían a los dispositivos externos.
+
+
+=== Estructura de decision
+
+a mayor parte de la potencia del procesador proviene de la capacidad de cálculo, o sea de la capacidad de tomar decisiones y determinar qué acción tomar en el momento de la ejecución del algoritmo. La estructura de decisión consta de realizar una o una serie de acciones entre un conjunto de alternativas. 
+
+image:2023-08-31T00-30-27-225Z.png[] 
+
+Ejemplo
+
+image::2023-08-31T00-39-00-376Z.png[] 
+
+=== Estructura de decisión multiple
+
+image::2023-08-31T00-40-35-983Z.png[] 
+
+image::2023-08-31T00-41-03-418Z.png[] 
+
+
+
+

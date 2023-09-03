@@ -1,0 +1,270 @@
+
+:toc: left
+:toclevels: 4
+:toc-title: Lógica computacional
+:imagesdir: ./images
+
+== Semana 1
+
+=== Argumento 
+
+Un argumento es una secuencia de enunciados destinados a demostrar la verdad de una frase. 
+
+=== Partes de argumento
+
+La frase al final de la secuencia se llama la conclusión y los enunciados anteriores se llaman premisas
+Para tener confianza en la conclusión que obtiene de un argumento, debe asegurarse de que las premisas sean aceptables por sus propios méritos o que son consecuencia de otros enunciados que se sabe que son verdaderos.
+
+En lógica, la forma de un argumento se distingue de su contenido. El análisis lógico no le ayudará a determinar el valor intrínseco del contenido de un argumento, pero le ayudará a analizar la forma de un argumento para determinar si la verdad de la conclusión se desprende necesariamente de la verdad de las premisas. Por esta razón, la lógica a veces se define como la ciencia de la inferencia necesaria o la ciencia del razonamiento.
+
+En lógica, la forma de un argumento se distingue de su contenido. El análisis lógico no le ayudará a determinar el valor intrínseco del contenido de un argumento, pero le ayudará a analizar la forma de un argumento para determinar si la verdad de la conclusión se desprende necesariamente de la verdad de las premisas. Por esta razón, la lógica a veces se define como la ciencia de la inferencia necesaria o la ciencia del razonamiento.
+
+=== Lógica formas vs informal
+
+La mayoría de las definiciones de la lógica formal se han desarrollado de acuerdo con la lógica natural o intuitiva utilizada por personas que han sido educadas para pensar con claridad y utilizar el lenguaje con cuidado. Las diferencias que existen entre la lógica formal e intuitiva son necesarias para evitar la ambigüedad y obtener consistencia. En cualquier teoría matemática, se definen nuevos términos usando los que se han definido previamente. Sin embargo, este proceso tiene que comenzar en alguna parte. Unos pocos términos iniciales permanecen necesariamente indefinidos. En lógica, las palabras, enunciado, verdadero y falso son términos iniciales indefinidos.
+
+=== Enunciado
+
+Es una frase que es verdadera o falsa, pero no ambas
+
+* 2 + 2 = 4, o 2 + 2 = 3: ambos son enunciados. La 1 es verdadera, la 2 es falsa. Pero ambas son frases que puede tienen como resultado v o f
+* x + y > 0 no es un enunciado porque para algunos valores de x e y es verdadero, para otros es falso, pero por si solo no se lo puede tomar como un enunciado
+
+
+=== Enunciados compuestos
+
+|===
+| ~ | no | negación
+| ^ |  y | conjunción
+| v |  o | disyunción
+|===
+
+* ~ tiene precedencia
+* ^ y v son iguales => p ^ q v r no es un enunciado válido por ser ambiguo. Para dejar de serlo tiene que tener ()
+
+* pero = y: se utiliza la palabra *pero* cuando el resto de la frase es inesperada. Juan mide 1.90 pero no es pesado
+* ni ni  = no p y no q
+
+* p pero q = p y q
+* ni p ni q = ~p y ~q
+
+=== Y, O y desigualdades
+
+====
+ x <= a es x<a o x=a
+ a <= x <= b es a<=x y x<=b
+====
+
+
+=== Valores de Verdad
+
+* Negación: si p es un enunciado variable, la negación de p es "no p"
+|===
+|p|~p
+|v|f
+|f|v
+|===
+
+* Conjunción: "p y q"  es V solo cuando p=v y q=v
+|===
+|p|q|p^q
+|v|v|v
+|v|f|f
+|f|v|f
+|f|f|f
+|===
+
+* Disyunción: "p y q" es verdadero cuando p es V o q es V o ambas son V. Es falsa cuando ambas son F
+
+|===
+|p|q|p v q
+|v|v| v
+|v|f| v
+|f|v| v
+|f|f| f
+|===
+
+
+=== Equivalencias logicas
+
+Dos formas de enunciado son logicamente equivalentes si y solo si tienen los mismos valores de verdad para cada posible situacion 
+
+
+== Semana 2
+
+=== Negaciones de Y y O: Leyes de De Morgan
+
+La negación de un enunciado "y" es lógicamente equivalente al enunciado "o" en el que cada componente es negado. 
+ ~ (p ^ q) es ~p v ~q
+La negación de un enunciado o es lógicamente equivalente al enunciado y en el que cada componente es negado. 
+ ~ (p v q) es ~p ^ ~q
+
+Nota: "ni p ni q" significa to mismo que "~p y ~q"
+
+===  Desigualdades y Leyes de De Morgan
+
+-1 < x <=4
+
+se puede descomponer en -1<x Y x<=4
+
+Su negacion es -1</x (-1 no es menor que x) Y x<=/4 x no es menor o igual que 4
+Se puede interpretar como -1>x O x>=4
+
+=== Tautologías y contradicciones
+
+* Tautologia: es una forma de enunciado que siempre es verdadera, independientemente de los valores de verdad de los enunciados individuales sustituidos por sus enunciados variables. 
+* Una contradicción es una forma de enunciado que siempre es falso, independientemente de los valores de verdad de los enunciados individuales de los enunciados variables sustituidos. 
+
+=== Resumen Equivalencias lógicas
+
+p, q y r son variables
+t es una tautología
+c es una contradicción
+
+
+
+|===
+|  | Descripción                    |                                   |
+| 1| Leyes conmutativas             | p ∧ q ≡ q ∧ p                     | p V q ≡ q V p
+| 2| Ley asociativa                 | (p ∧ q) ∧ r ≡ p ∧ (q ∧ r)         | (p V q) V r ≡ p V (q V r)
+| 3| Ley distributiva               | p ∧ (q V r) ≡ (p ∧ q) V (p ∧ r)   | p V (q ∧ r) ≡ (p V q) ∧ (p V r)
+| 4| Ley de identidad               | p ∧ t ≡ p                         | p V c ≡ p
+| 5| Ley de negación                | p V ~p ≡ t                        | p ∧ ~p ≡ c
+| 6| Ley doble negación             | ~ (~p) ≡ p                         |
+| 7| Leyes de idempotencia          | p ∧ p ≡ p                         | p V p ≡ p
+| 8| Ley universal acotada          | p V t ≡ t                         | p V c ≡ c
+| 9| Ley de morgan                  | ~(p ∧ q) ≡ ~p V ~q                | ~(p V q) ≡ ~p ∧ ~q
+|10| Ley de absorción               | p V (p ∧ q) ≡ p                   | p ∧ (p V q) ≡ p
+|11| Negaciones de t y c            | ~t ≡ c                            | ~c ≡ t
+|12| NAND (SHEFFER)                 | P \| Q ≡ ~ (P ∧ Q)                 |
+|13| NOR (PEIRCE)                   | P ↓ Q ≡ ~ (P V Q)                 |
+
+|===
+
+|===
+|  | Descripción                    |                                           |
+| 1| Leyes conmutativas             | p AND q ≡ q AND p                         | p OR q ≡ q OR p
+| 2| Ley asociativa                 | (p AND q) AND r ≡ p AND (q AND r)         | (p OR q) OR r ≡ p OR (q OR r)
+| 3| Ley distributiva               | p AND (q OR r) ≡ (p AND q) OR (p AND r)   | p OR (q AND r) ≡ (p OR q) AND (p OR r)
+| 4| Ley de identidad               | p AND t ≡ p                               | p OR c ≡ p
+| 5| Ley de negación                | p OR NOT p ≡ t                            | p AND NOT p ≡ c
+| 6| Ley doble negación             | NOT (NOT p) ≡ p                           |
+| 7| Leyes de idempotencia          | p AND p ≡ p                               | p OR p ≡ p
+| 8| Ley universal acotada          | p OR t ≡ t                                | p OR c ≡ c
+| 9| Ley de morgan                  | NOT (p AND q) ≡ NOT p OR NOT q            | NOT (p OR q) ≡ NOT p AND NOT q
+|10| Ley de absorción               | p OR (p AND q) ≡ p                        | p AND (p OR q) ≡ p
+|11| Negaciones de t y c            | NOT t ≡ c                                 | NOT c ≡ t
+|12| NAND (SHEFFER)                 | P NAND Q ≡ ~ (P ∧ Q)                 |
+|13| NOR (PEIRCE)                   | P NOR Q ≡ ~ (P V Q)                 |
+|===
+
+
+=== Semana 3
+
+==== Circuitos lógicos
+
+* Interruptores en serie
+
+image::2023-08-29T12-03-42-284Z.png[] 
+
+|===
+| INTER     | RUPTORES  | FOCO
+|  P        | Q         | ESTADO
+|cerrado    |cerrado    | encendido
+|cerrado    |abierto    | apagado
+|abierto    |cerrado    | apagado
+|abierto    |abierto    | apagado
+|===
+
+* Interruptores en paralelo
+
+image::2023-08-29T12-05-19-336Z.png[] 
+
+|===
+| INTER     | RUPTORES  | FOCO
+|  P        | Q         | ESTADO
+|cerrado    |cerrado    | encendido
+|cerrado    |abierto    | encendido
+|abierto    |cerrado    | encendido
+|abierto    |abierto    | apagado
+|===
+
+Cambiando abierto y encendido por V y cerrado y apagado por F se obtienen las tablas de verdad 
+
+En serie es tabla de verdad Y
+En paralelo es tabla de verdad O
+
+
+==== Cajas Negras y Puertas
+
+Las cajas negras son implementaciones de circuitos lógicos, donde su implementación no importa. La atención se centra entre las entradas y sus salidas
+
+image:2023-08-29T21-08-00-483Z.png[] 
+
+
+==== Expresión booleana correspondiente a un circuito
+
+En lógica, variables tales como p, q y r representan enunciados y un enunciado puede toner uno de los dos valores de verdad: V (verdadero) o F (falso)
+
+Cualquier variable, tal como un enunciado variable o una señal de entrada que puede tomar uno de los dos valores, se llama una variable booleana.
+
+Una expresión compuesta de variables booleanas y conectores ~ ∧ v se denomina una expresión booleana
+
+==== Reconocedor 
+
+es un circuito que genera un I pars exactamente una combinación particular de señales de entrada y salidas 0 pars las demás combinaciones. 
+
+image::2023-08-29T21-45-19-131Z.png[] 
+
+
+==== Puerta and de entrada multiple
+
+ ((p ∧ q) ∧ (R ∧ S)) ∧ T se grafica 
+
+image::2023-08-29T22-53-13-138Z.png[] 
+
+Luego por propiedad asociativa 
+
+ ((p ∧ q) ∧ (R ∧ S)) ∧ T = (p ∧ (q ∧ R)) ∧ (S ∧ T)
+
+ (p ∧ (q ∧ R)) ∧ (S ∧ T)
+
+image::2023-08-29T22-55-12-342Z.png[] 
+
+Cada uno de los circuitos en las figures 2.4.4 y 2.4.5 es, por tanto. una implementation de la expresien P ∧ Q ∧ R ∧ S ∧ T. Este circuito recibe el nombre de *puerta AND de entrada multiple* y se representa por el diagrama que se muestra en la figura 2 4 6 Las puertas OR de entrada multiple se construyen de manera similar. 
+
+image::2023-08-29T22-57-21-670Z.png[] 
+
+==== Diseño de un circuito para una tabla dada de entrada/salida
+
+Diseñar un circuito lógico para la siguiente tabla de entrada
+
+image:2023-08-29T23-05-46-350Z.png[] 
+
+. Identificar cada renglón para el que la salida es 1, en este caso el primero, tercero y cuarto renglón
+. Para cada uno de estos renglones construir una expresión y que produzca un 1  para la combinación exacta de valores de entrada para ese renglón y un 0 para todas las otras combinaciones de los valores de entrada.
+.. La expresión para el primer renglón es P ∧ Q ∧ R porque  P ∧ Q ∧ R es 1 si P = 1 y Q = 1 y R = 1 y es 0 pars todos los demás valores de P, Q y R.
+.. La expresión para el tercer renglón es P ∧ ~Q ∧ R porque  P ∧ ~Q ∧ R es 1 si P = 1 y Q = 0 y R = 1 y es 0 pars todos los demás valores de P, Q y R.
+.. La expresión para el cuarto renglón es P ∧ ~Q ∧ ~R porque  P ∧ ~Q ∧ ~R es 1 si P = 1 y Q = 0 y R = 0 y es 0 pars todos los demás valores de P, Q y R.
+. Ahora, cualquier expresión booleana con la tabla dada como su tabla de verdad tiene el valor 1 en el caso P ∧ Q ∧ R = 1, o en caso de P ∧ ~Q ∧ R, o en caso de P ∧ ~Q ∧ ~R  en ningún otro caso. De lo que se deduce que una expresión booleana con la labia de verdad dada es 
+
+ (P ∧ Q ∧ R) V (P ∧ ~Q ∧ R) V (P ∧ ~Q ∧ ~R)       expresión 2.4.5
+
+image::2023-08-29T23-16-55-882Z.png[] 
+
+Observar que la expresión (2.4.5) es una disyunción de términos en los que ellos mismos son conjunciones en los que una de P o ~P, una de Q o ~Q y de una de R o ~R todas aparecen. Se dice que tales expresiones están en *forma normal disyuntiva* o en *forma de suma de productos*. 
+
+==== Equivalencias de circuitos logicos
+
+Dos circuitos lógicos son equivalentes entre si si sus tablas de verdades son idénticas
+
+==== Puertas NAND y NOR
+
+Una puerta NAND es una sola puerta que actila como una puerta AND seguida de una puerta NOT.  Así, la señal de salida de la puerta NAND es 0 cuando y solo cuando, ambas senates de entrada son 1
+
+image::2023-08-30T00-39-04-089Z.png[] 
+
+Una puerta NOR actúa como una puerta OR seguida de una puerta NOT. La señal de salida pars una puerta NOR es 1 cuando y solo cuando, ambas entradas son 0.
+
+image::2023-08-30T00-40-32-868Z.png[] 
+

@@ -1,0 +1,33 @@
+:imagesdir: ./images
+:table-caption: Tabla
+
+
+= Practica Formativa 2: Modelo entidad relación
+
+== Diseñar el modelo entidad-relación de un Instituto.
+
+En la base de datos se desea guardar los datos de los profesores del Instituto (DNI, nombre, dirección y teléfono). Los profesores imparten módulos, y cada módulo tiene un código y un nombre. Cada alumno está matriculado en uno o varios módulos. De cada alumno se desea guardar el Nº de legajo, nombre, apellido y fecha de nacimiento. Los profesores pueden impartir varios módulos, pero un módulo sólo puede ser impartido por un profesor. Cada curso tiene un grupo de alumnos, uno de los cuales es el delegado del grupo.
+
+
+image::2023-09-03T03-25-13-927Z.png[] 
+
+
+== Diseñar el modelo entidad-relación de una empresa
+
+Una empresa vende productos a varios clientes. Se necesita conocer los datos personales de los clientes (nombre, apellidos, dni, dirección y fecha de nacimiento). Cada producto tiene un nombre y un código, así como un precio unitario. Un cliente puede comprar varios productos a la empresa, y un mismo producto puede ser comprado por varios clientes. Los productos son suministrados por diferentes proveedores. Se debe tener en cuenta que un producto sólo puede ser suministrado por un proveedor, y que un proveedor puede suministrar diferentes productos. De cada proveedor se desea conocer el NIF, nombre y dirección
+
+
+
+image::2023-09-03T03-40-28-464Z.png[] 
+
+
+== A partir del siguiente supuesto diseñar el modelo entidad-relación. 
+
+
+Construí un diagrama E/R para una compañía de seguros automovilísticos que cuenta con un conjunto de clientes, cada uno de las cuales posee un cierto número de vehículos asegurados en la compañía. Se desea guardar información tanto de los clientes como de los vehículos asegurados. Hay que tener en cuenta que un mismo cliente puede tener varios vehículos asegurados. Se desea disponer de la información sobre todas aquellas personas que sean o hayan sido clientes de la compañía. Cada automóvil está registrado con un número de accidentes (Código Accidente) de los que también se desea recabar información.
+
+* De los clientes interesa guardar el DNI, Nombre, Apellido, Dirección, Teléfono, Cuenta Bancaria, Fecha, Sexo y Año del Carnet.
+* De los vehículos interesa guardar Tipo Seguro, Marca, Modelo, Patente, Color.
+* De los accidentes además se desea guardar el lugar, fecha, hora y nro. de vehículos
+
+image:2023-09-03T04-03-17-374Z.png[] 

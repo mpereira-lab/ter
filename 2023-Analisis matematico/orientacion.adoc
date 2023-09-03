@@ -1,0 +1,195 @@
+:toc: left 
+:toclevels: 4
+:tot-title: EAM-Orientacion
+:imagesdir: ./images
+
+
+== Recorrido 1: Elementos de la teoría de conjuntos
+¿Por qué comenzar con este recorrido?
+
+El concepto de conjunto es fundamental en todas las ramas de la matemática. La teoría de conjuntos sienta las bases necesarias para lograr una comprensión significativa de los saberes matemáticos posteriores, dado que a lo largo de todo el cursado de la materia, se definirán objetos que pertenecen a determinado conjunto, se representarán de diferentes maneras y se operará con ellos.
+
+Por otra parte, la comprensión de los distintos conjuntos numéricos y en particular, el de los números reales, es fundamental para delimitar correctamente el estudio de, por ejemplo, todo lo referido a funciones, que son los contenidos que siguen en el programa curricular.
+
+Por lo tanto, si pensamos a la materia como la construcción de un edificio, la teoría de conjuntos sirve para crear cimientos firmes sobre la cual se irán formando los diferentes pisos a medida que avancemos con el cursado.
+
+dos conjuntos y su intersección
+¿Qué saberes se van a construir en este recorrido?
+
+En el primer recorrido de EAM, se presentan los conceptos fundamentales de la teoría de conjuntos, incluyendo la definición de conjunto y subconjunto, operaciones entre conjuntos y sus formas de representación. Al final de este recorrido, se presentan los conjuntos numéricos y, para el conjunto de los números reales, el concepto de intervalo, la propiedad de completitud y la representación a través de la recta real.
+Objetivos de aprendizaje
+
+=== Esperamos que en este recorrido logres:
+
+* Comprender los conceptos fundamentales de la teoría de conjuntos.
+* Realizar operaciones entre conjuntos.
+* Resolver problemas que utilizan los aportes de la teoría de conjuntos.
+* Dominar las diferentes representaciones de conjuntos, construyendo diagramas de Venn para resolver problemas y operaciones.
+* Comprender los distintos campos numéricos y sus propiedades, especialmente en lo que respecta a los números reales.
+* Entender los intervalos de números reales.
+
+=== Habilidades puestas en juego
+
+En este recorrido pondrás en juego las siguientes habilidades:
+
+* Resolución de problemas.
+* Comprensión de las preguntas formuladas.
+* Cálculo e interpretación de los resultados.
+* Dominio de conjuntos numéricos.
+* Dominio del conjunto de los números reales.
+* Desarrollo de la noción de infinito.
+* Conversiones entre diferentes representaciones.
+
+=== Semana 1
+
+==== Objetivos 	
+
+* Comprender las concepciones fundamentales de la teoría de conjuntos.
+* Operar entre dos o más conjuntos.
+* Pasar de una representación de conjunto a otra.
+* Resolver problemas con los aportes de la Teoría de Conjuntos.
+* Construir diagramas de Venn.
+
+==== Contenidos 	
+
+* Definición de conjunto y subconjunto
+* Formas de representación: extensión, comprensión y diagramas de Venn
+* Relaciones entre conjuntos: igualdad e inclusión
+* Conjuntos particulares: vacío y universal
+* Operaciones entre conjuntos: unión, intersección, diferencia y complemento
+
+==== Habilidades puestas en juego 	
+
+* Resolución de problemas.
+* Comprensión de las preguntas formuladas.
+* Cálculo e interpretación de los resultados.
+* Conversiones entre diferentes representaciones.
+
+==== ¿Qué actividades te preponemos realizar esta semana? 	
+
+* Resolver cada uno de los problemas que introducen los contenidos que luego se explican. Estos son: "El hotel de los conjuntos" y "El gimnasio de Pepe".
+* Leer el material teórico en donde se desarrollan los contenidos de la semana.
+* Ver los videos explicativos que colaboran en la comprensión de los contenidos.
+* Resolver el cuestionario con la ejercitación semanal.
+* Dejar las dudas y consultas que hayan surgido en el foro destinado para tal fin.
+* Participar en el foro de "Pensamiento matemático del Recorrido 1".
+
+=== Semana 2
+
+==== Objetivos 	
+
+* Conocer los conjuntos numéricos y sus propiedades, especialmente en lo que respecta a los números reales.
+* Comprender los intervalos de números reales.
+* Representar de diferentes maneras los subconjuntos de números reales.
+* Relacionar los contenidos de la semana 1 con los de la semana 2.
+
+==== Contenidos 	
+
+* Conjuntos numéricos (naturales, enteros, racionales, irracionales y reales). Relación de inclusión
+* Propiedad de completitud en los números reales. Recta real
+* Intervalos de números reales
+
+==== Habilidades puestas en juego 	
+
+* Resolución de problemas.
+* Comprensión de las preguntas formuladas. 
+* Cálculo e interpretación de los resultados. 
+* Conversiones entre diferentes representaciones.
+* Dominio de conjuntos numéricos. 
+* Dominio del conjunto de los números reales.
+* Desarrollo de la noción de infinito.
+
+==== ¿Qué actividades te preponemos realizar esta semana? 	
+
+* Resolver cada uno de los problemas que introducen los contenidos que luego se explican. Estos son: "El hotel de los conjuntos numéricos" y "El hotel de los números reales".
+* Leer el material teórico en donde se desarrollan los contenidos de la semana.
+* Ver los videos explicativos que colaboran en la comprensión de los contenidos.
+* Resolver el cuestionario con la ejercitación semanal.
+* Dejar las dudas y consultas que hayan surgido en el foro destinado para tal fin.
+* Participar en el foro de "Pensamiento matemático del Recorrido 1".
+
+== Recorrido 2
+
+El segundo recorrido de EAM, se centra en la conceptualización de la función a través de sus múltiples representaciones, mostrando bondades de cada una de ellas para la resolución de problemas, así como para el estudio de las funciones en general. Se presentan las funciones algebraicas y algunas trascendentes, haciendo hincapié en su representación gráfica, especialmente mediada a través de software específico.
+
+
+image:2023-08-28T11-45-47-120Z.png[] 
+
+=== ¿Por qué continuar con este recorrido?
+
+El concepto de función es fundamental en todas las ramas de la ciencia y, en particular, en estudios superiores vinculados al desarrollo de software. Como vimos, la teoría de conjuntos sienta las bases necesarias para poder definir transformaciones de unos conjuntos en otros, en particular, aquellas que cumplen las condiciones para ser funciones y, más precisamente, de reales en reales. 
+
+Estudiar una función será nuestro objetivo de este recorrido, objetivo que iremos retomando y profundizando en lo sucesivo. Veremos que la comprensión de una función es mediada a través de diferentes registros de representación en los que podemos acceder a ella y, por lo tanto, tendremos que aprender a elegir el o los registros más convenientes, según el caso. Por ser de más fácil acceso, estudiaremos algunos tipos de funciones, en particular, las polinómicas. 
+
+Recuperando la idea de la materia como la construcción de un edificio, el piso de las funciones (que se apoya sobre la teoría de conjuntos) será la recepción y el gran  hall de entrada para el desarrollo del pensamiento variacional, clave del análisis matemático que estudiaremos en las semanas siguientes. 
+
+image:2023-08-28T11-51-10-421Z.png[] 
+
+
+=== ¿Qué saberes se van a construir en este recorrido?
+
+El segundo recorrido de EAM, se  centra en la conceptualización de la función a través de sus múltiples representaciones, mostrando bondades de cada una de ellas para la resolución de problemas, así como para el estudio de las funciones en general. Sin embargo, para lograr un aprendizaje significativo del concepto de función, es necesario entender qué es una relación y qué elementos se necesitan para definirla.
+
+Además, se presentan las funciones algebraicas y algunas trascendentes, haciendo hincapié en su representación simbólica y gráfica, especialmente mediada a través de software específico (emulador de calculadora científica, GeoGebra, WolframAlpha, entre otros).
+
+=== Objetivos de aprendizaje
+
+Esperamos que en este recorrido logres:
+
+. Comprender qué es una relación y qué se necesita para definirla.
+. Comprender el concepto de función, estableciendo los vínculos necesarios con el concepto de relación.
+. Estudiar algunas funciones reales de variable real.
+. Resolver problemas que involucran el concepto de función.
+. Dominar las diferentes representaciones y elegir la/s más adecuada/s para resolver problemas y operaciones.
+
+
+=== Habilidades puestas en juego
+
+En este recorrido pondrás en juego las siguientes habilidades:
+
+. Resolución de problemas.
+. Comprensión de las preguntas formuladas.
+. Cálculo e interpretación de los resultados.
+. Dominio del concepto de función.
+. Desarrollo del pensamiento variacional.
+. Desarrollo de la noción de continuidad.
+. Caracterización de las funciones polinómicas.
+. Conversiones entre diferentes registros de representación
+
+
+=== Semana 3
+
+==== Objetivos 	
+
+. Relacionar los saberes de la teoría de conjuntos construidos en las semanas anteriores, con los de esta semana. 
+. Comprender los saberes previos hasta llegar al concepto de relación.
+. Entender las diferencias y similitudes entre una relación y una función.
+. Realizar conversiones entre las diferentes representaciones de las relaciones.
+. Diferenciar entre dominio, codominio e imagen de una función.
+
+==== Contenidos 	
+
+. Pares ordenados y producto cartesiano.
+. Relación: definición, representaciones, dominio e imagen.
+. Función: definición, representaciones, dominio, codominio e imagen.
+
+==== Habilidades puestas en juego 	
+
+. Resolución de problemas.
+. Comprensión de las preguntas formuladas.
+. Cálculo e interpretación de los resultados.
+. Dominio del concepto de función.
+. Conversiones entre diferentes representaciones.
+. Ubicación en un sistema de referencia.
+
+==== ¿Qué actividades te preponemos realizar esta semana? 	
+
+. Resolver cada uno de los problemas que introducen los contenidos que luego se explican. Estos son: problema 1: "Organizando las habitaciones del hotel", problema 2: "Ubicando huéspedes".
+. Leer el material teórico en donde se desarrollan los contenidos de la semana.
+. Ver los videos explicativos que colaboran en la comprensión de los contenidos.
+. Resolver el cuestionario con la ejercitación semanal.
+. Dejar las dudas y consultas que hayan surgido en el foro destinado para tal fin.
+. Participar en el foro de "Pensamiento matemático del Recorrido 2".
+
+
+

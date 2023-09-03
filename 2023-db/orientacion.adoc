@@ -1,0 +1,92 @@
+:toc: left 
+:toc-level: 4
+:toctitle: DB
+:imagesdir: ./images
+
+= DB
+
+== Semana 1
+=== Los contenidos de la semana son:
+
+* Introducción 
+* Base de datos 
+* ¿Qué es un dato? 
+* ¿Qué es información? 
+* ¿Qué es una base de datos? 
+* Sistema de información
+* Sistemas de gestión de base de datos 
+* Base de Datos y SGBD 
+* Aplicaciones de los Sistemas de Bases de Datos 
+* Conceptos clave de base de datos 
+* Niveles de abstracción
+
+=== ¿Qué esperamos que aprendas?
+
+* Definir qué es una base de datos. 
+* Entender para qué sirve una base de datos. 
+* Entender qué es un sistema de gestión de base de datos. 
+* Comprender conceptos clave de base de datos.
+
+=== ¿Qué actividades te proponemos realizar esta semana?
+	
+* [ ] Leer el material de lectura: Conceptos iniciales de Base de Datos
+* [ ] Realizar las prácticas formativas: Práctica formativa 3: Identificar datos en un relato. 
+
+== Semana 2
+
+=== Los contenidos de la semana son:
+
+* Niveles de abstracción
+* Modelos de datos
+** Modelos de datos conceptuales
+** Modelos de datos físicos
+** Modelos de datos lógicos
+* Ventajas y desventajas de los modelos de datos
+
+=== ¿Qué esperamos que aprendas?
+	
+
+. Explorar inicialmente el modelo entidad/relación.
+. Comprender el modelo conceptual.
+. Profundizar en los niveles de abstracción de modelado de datos.
+. Modelar diferentes esquemas y aprovechar su potencial.
+
+=== ¿Qué actividades te proponemos realizar esta semana?
+	
+Leer el material de lectura: Niveles de abstracción y modelado de datos.
+
+Realizar las prácticas formativas: Participá en el foro, analizando similitudes y diferencias a partir de diferentes modelos de datos.
+
+== Semana 3
+
+=== Los contenidos de la semana son:
+
+* Modelo entidad-relación. 
+* Elementos del modelo entidad-relación: entidad, relación, atributo, cardinalidad de una relación.
+* Relaciones.
+* Propiedades de la relación.
+* Grado de una relación.
+* Conectividad de una relación.
+* Condicionalidad de una relación.
+* Base de Datos y SGBD.
+* Normalización:
+** Primera forma normal.
+** Segunda forma normal.
+** Tercera forma normal.
+
+=== ¿Qué esperamos que aprendas?
+	
+* Profundizar en el modelo de entidad-relación. 
+* Entender las partes de un modelo de entidad-relación: entidad, relación y atributos. 
+* Comprender en qué consiste los diferentes tipos de relación: 1:1, 1:M y M:1.
+
+=== ¿Qué actividades te proponemos realizar esta semana?
+	
+* Leer el material de lectura:
+** Modelo entidad-relación.
+** Normalización.
+
+* Realizar las prácticas formativas:
+
+** A partir de los enunciados y supuestos diseñar el modelo entidad-relación (MER)
+** Aplicar las reglas de normalización y realizar el modelo relacional
