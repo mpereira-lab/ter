@@ -30,11 +30,11 @@ jobs:
         uses: actions/checkout@v3
       - name: Setup Pages
         uses: actions/configure-pages@v3
-      - name: Build with Jekyll
-        uses: actions/jekyll-build-pages@v1
+      - name: Get build container
+        id: adocbuild
+        uses: tonynv/asciidoctor-action@master
         with:
-          source: ./
-          destination: ./_site
+            program: "asciidoctor ./resumen.adoc"
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v2
 
