@@ -18,9 +18,5 @@ jobs:
           program: "asciidoctor ./resumen.adoc"
     - name: Print execution time
       run: echo "Time ${{ steps.adocbuild.outputs.time }}"
-    - name: Deploy docs to ghpages
-      uses: peaceiris/actions-gh-pages@v3
-      with:
-        deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
-        publish_branch: main
-        publish_dir: ./
+    - name: Print dir
+      run: ls
