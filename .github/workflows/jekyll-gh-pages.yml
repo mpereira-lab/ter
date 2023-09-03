@@ -37,7 +37,8 @@ jobs:
             program: "asciidoctor ./resumen.adoc"
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v2
-        path: "./"
+        with:        
+          path: "./"
 
   # Deployment job
   deploy:
