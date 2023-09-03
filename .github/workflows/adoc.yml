@@ -7,7 +7,7 @@ on:
 jobs:
   adoc_build:
     runs-on: ubuntu-latest
-    name: asciidoctor -D docs --backend=html5 -o index.html -a toc2 docs/index.adoc
+    name: asciidoctor
     steps:
     - name: Checkout code
       uses: actions/checkout@v2
@@ -15,7 +15,7 @@ jobs:
       id: adocbuild
       uses: tonynv/asciidoctor-action@master
       with:
-          program: "asciidoctor ./2023-db/resumen.adoc"
+          program: "asciidoctor ./resumen.adoc"
     - name: Print execution time
       run: echo "Time ${{ steps.adocbuild.outputs.time }}"
     - name: Deploy docs to ghpages
@@ -23,4 +23,4 @@ jobs:
       with:
         deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
         publish_branch: gh-pages
-        publish_dir: ./2023-db/
+        publish_dir: ./

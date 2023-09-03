@@ -1,0 +1,387 @@
+:toc: left
+:toclevels: 4
+:toc-title: DB
+:imagesdir: ./images
+
+== Semana 1
+
+=== ¿Qué es una base de datos?
+
+*una colección de datos interrelacionados, almacenados en conjunto sin redundancias perjudiciales o innecesarias, garantizando la consistencia, la integridad y la seguridad de los mismos; cuyo fin es la de servir a una o varias aplicaciones, de la mejor manera posible. Los datos se almacenan de modo que resulten independientes de los programas que los usan*
+
+
+=== ¿Qué es un dato?
+
+Es una representación simbólica.
+Por si sólo, no tiene significado. Por ejemplo 1911 ¿Es un año? ¿Es un código de una materia de facultad? ¿Es un teléfono de un radio-taxi?
+Los datos son valores almacenados que representan hechos o realidades del mundo real.
+
+=== ¿Qué es información?
+
+Son datos procesados e interpretables. Una información dice algo.
+Se refiere a los datos que han sido procesados y comunicados de tal manera que pueden ser entendidos e interpretados por el receptor. Información es el significado de los datos.
+
+=== ¿Qué es una base de datos?
+Definimos la base de datos como un conjunto de datos interrelacionados y almacenados sin redundancias innecesarias, los cuales sirven a las aplicaciones sin estar relacionados de una manera directa entre ellos.
+
+=== Se guarda información de dos tipos.
+
+* Los datos de usuarios (datos usados por las aplicaciones).
+* Los datos de sistema (datos que la base de datos utiliza para su gestión). Ejemplo: datos de los usuarios que tienen acceso a la base de datos.
+
+=== base de datos organizada
+
+* Ser versátil. Dependiendo de los usuarios o las aplicaciones, se puedan hacer diferentes cosas o tratar a los datos de formas distintas. 
+* Atender con la rapidez adecuada a cada aplicación o empresa.
+* Tener un índice de redundancia lo más bajo posible. 
+* Contar con una alta capacidad de acceso para ganar el mayor tiempo posible en la realización de consultas. 
+* Tener un alto índice de integridad. Al tener muchos usuarios usando una misma base de datos, no puede haber fallos en la inserción, errores por redundancia o lenta actualización. 
+* Contar con un nivel altísimo de seguridad y privacidad ya que los datos que se almacenan pueden ser altamente confidenciales o importantes. En este punto también entran los medios físicos de protección contra fuego, robo, etc. 
+* Estar actualizada y evitar convertirse en una base de datos anticuada e inservible. 
+* Contar con independencia física y lógica de los datos. Un cambio en la organización física de los datos no debe afectar a los programas (esta es la independencia física de los datos). Los cambios en la estructura lógica de los datos (agregar nuevos campos a una tabla) no deben afectar a las aplicaciones que utilicen esos datos (esta es la independencia lógica de los datos).
+
+=== ¿Qué entendemos por información?
+
+La información es el conocimiento derivado del análisis o tratamiento de los datos que se utiliza para tomar decisiones con vistas a un accionar concreto. 
+
+=== ¿Qué es un sistema de información?
+
+Un sistema de información es una colección de datos debidamente recopilados y estructurados que proporcionan información sobre la realidad. 
+
+=== Los problemas de utilización de planillas
+
+* Redundancia. Al no existir algún tipo de control sobre el ingreso más que el del usuario, es muy normal que existan registros duplicados y repeticiones. 
+* Error de ingreso. Al hacer un ingreso manual de datos, son frecuentes los errores de tipo de letras y números, errores ortográficos, entre otros. 
+* Estandarización. Es el tipo de error más común y se ejemplifica en el ingreso de fechas donde, a pesar de poder regir el formato de entrada, se ingresan otros formatos que, si bien pueden ser correctos, interfieren en la organización de la base de datos. Por ejemplo: 21-12-2021 o bien 21/02/2021, o 21/2/2021.
+* Seguridad. No hay control de uso y acceso por parte de los usuarios de los datos, más que el control al archivo físico en la computadora local o servidor.
+
+=== Sistemas de gestión de bases de datos
+
+Un gestor de base de datos (DataBase Management System) es un sistema que permite la creación, gestión y administración de bases de datos, así como la elección y manejo de las estructuras necesarias para el almacenamiento y la búsqueda de la información del modo más eficiente posible.
+
+=== características fundamentaldes de un DBMS.
+
+* Es un componente de software. 
+* Garantiza disponibilidad y accesibilidad. 
+* Permite el acceso concurrente a los datos. 
+* Asegura la integridad transaccional.
+* Protege los datos y los accesos. 
+* Optimiza la performance y el rendimiento.
+
+=== Transacción
+
+En las bases de datos, se denomina transacción a una única operación lógica.  
+
+Por ejemplo, es una sola transacción la acción de transferir fondos de una cuenta bancaria a otra, aún cuando involucra varios cambios en distintas tablas.
+
+=== ACID
+
+Una transacción se dice ACID porque
+
+* Atomicidad.  Esta propiedad determina que cada transacción es "todo o nada": si una parte de la transacción falla, todas las operaciones de la transacción se anulan y la base de datos no sufre cambios. Un sistema atómico tiene que garantizar la atomicidad en cualquier operación y situación, incluyendo fallas de alimentación eléctrica, errores y caídas del sistema. 
+* Consistencia. La propiedad de consistencia asegura que cualquier transacción llevará a la base de datos de un estado válido a otro estado válido. Cualquier dato que se escriba en la base de datos tiene que ser válido de acuerdo a las reglas definidas
+* Aislamiento ("Isolation" en inglés) . Esta propiedad asegura que la ejecución concurrente de las transacciones resulte en un estado del sistema que se obtendría si estas transacciones fueran ejecutadas una detrás de otra. Cada transacción debe ejecutarse en aislamiento total. Por ejemplo, si T1 y T2 se ejecutan concurrentemente, cada una deberá mantenerse independiente.
+* Durabilidad. La propiedad de durabilidad significa que una vez que se confirmó una transacción (commit), quedará persistida incluso ante eventos como pérdida de alimentación eléctrica, errores y caídas del sistema. Por ejemplo, en las bases de datos relacionales, una vez que se ejecuta un grupo de sentencias SQL, los resultados tienen que almacenarse inmediatamente (incluso si la base de datos se cae en el instante posterior).
+
+=== Los sistemas gestores de bases de datos
+
+abreviado SGBD (Database Management System o DBMS) es:  son conjunto de programas que permiten a los usuarios acceder y modificar los datos. El propósito de un sistema de base de datos es proporcionar a los usuarios una visión abstracta de los datos. Es decir, el sistema esconde, ciertos detalles desde cómo se almacenan y mantiene los datos.
+
+=== Niveles de abstracción
+
+* Nivel interno o físico: El nivel más bajo de abstracción *describe cómo se almacenan realmente los datos* y da cuenta en detalle de las estructuras de datos complejas. Por ejemplo Un registro cliente, cuenta o empleado se puede describir como un bloque de posiciones almacenadas con consecutivamente (palabras o bytes). El compilador del lenguaje esconde este nivel de detalle a los programadores.
+* Nivel conceptual o lógico: El este nivel de abstracción *describe qué datos se almacenan en la base de datos y qué relaciones existen entre esos datos*. La base de datos completa se describe así en términos de un número pequeño de estructuras relativamente simples. En el nivel lógico cada registro se describe mediante una definición de tipo y por la relación entre estos tipos de registros.  
+* Nivel externo o de vistas: El nivel más alto de abstracción describe solo parte de la base de datos completa. Muchos usuarios del sistema de base de datos no necesitan toda la información, sino que necesitan acceder solo a una parte de ella. Para que su interacción con el sistema se simplifique, se define la abstracción del nivel de vistas. En el nivel de vistas, los usuarios ven un conjunto de programas de aplicación que esconden los detalles de los tipos de datos. Además de esconder detalles del nivel lógico de la base de datos, las vistas también proporcionan un mecanismo de seguridad para evitar que los usuarios accedan a ciertas partes de la base de datos.  
+
+
+== Semana 2
+
+=== Nivel abstracción lógico
+
+En este nivel de abstracción, los/as administradores de bases de datos deciden que información guardar. Esta decisión consta de diferentes tareas.
+
+* Definición de los datos. Se describen el tipo de datos. Longitud de campo todos los elementos direccionables en la base.
+* Relaciones entre datos. Se definen las relaciones entre datos para enlazar tipos de registros relacionados para el procesamiento de archivos múltiples.
+
+=== Uso de los modelos
+
+Los modelos consisten en sistemas de diagramas o imágenes que permiten que más personas puedan participar en el diseño del sistema
+
+El modelado de datos es el proceso de creación de una representación visual que define los sistemas de recopilación y administración de información de cualquier organización.
+
+Ventajas: 
+
+. Reduce los errores en el desarrollo de software de bases de datos. 
+. Facilita la rapidez y eficacia en el diseño y creación de bases de datos.
+. Facilita la comunicación entre los ingenieros de datos y los departamentos de inteligencia empresarial.
+
+
+=== Modelos de datos conceptuales
+
+Un modelo conceptual de datos identifica las relaciones de más alto nivel entre las diferentes entidades. Las características del modelo conceptual de datos incluyen:
+
+. Incluye las entidades importantes y las relaciones entre ellas. 
+. No se especifica ningún atributo. 
+. No se especifica ninguna clave principal.
+
+Modelar significa simplificar la realidad del negocio pero sin perder significancia de sus datos. 
+
+image::2023-08-27T22-38-11-040Z.png[] 
+
+=== Modelos de datos físicos
+
+Un modelo de base de datos física muestra todas las estructuras de tabla, incluidos el nombre de columna, el tipo de datos de columna, las restricciones de columna, la clave principal, la clave externa y las relaciones entre las tablas. 
+
+Los pasos básicos para el diseño del modelo de datos físicos son los siguientes:
+
+* Convertir entidades en tablas. 
+* Convertir relaciones en claves externas. 
+* Convertir atributos en columnas. 
+* Modificar el modelo de datos físicos en función de las restricciones/requisitos físicos.
+
+image::2023-08-27T22-45-13-435Z.png[] 
+
+=== Modelos de datos lógicos
+
+Un modelo de datos lógicos describe los datos con el mayor detalle posible, independientemente de cómo se implementarán físicamente en la base de datos.
+
+Las características de un modelo de datos lógicos incluyen:
+
+. Se representan las entidades y sus relaciones.
+. Se especifican los atributos para cada entidad.
+. Se sitpua la clave principal para cada entidad y las claves externas (claves que identifican la relación entre diferentes entidades)
+. La normalización ocurre en este nivel.
+
+ A partir de estas caracteristicas, podemos definir y ordenar los pasos para diseñar un modelo de datos lógicos.
+
+. Especificar claves primarias para todas las entidades. 
+. Encontrar las relaciones entre diferentes entidades. 
+. Describir todos los atributos para cada entidad. 
+. Resolver las relaciones de muchos a muchos. 
+. Normalización.
+
+image::2023-08-27T22-47-58-250Z.png[] 
+
+== Semana 3
+
+=== Modelo Entidad-Relación (MER)
+
+Representa al mundo real en un conjuntos de objetos llamadas entidades y y la relacion entre las entidades.
+
+Se utiliza para el diseño de la base de datos el cual representa la especificación de un esquema de empresa
+
+Representa la estructura lógica general de la base de datos. 
+
+
+=== Integridad
+
+* Integridad de entidad: ningún atributo que participe de la clave principal puede tener valores nulos
+* Integridad referencial: si una entidad tiene propiedad que es clave extranjera, es decir es clave principal en otra entidad, cada valor de esa propiedad debe ser igual a algún valor de la clave principal de la segunda entidad.
+
+=== Propiedades de tablas
+
+. Para cada columna existe un conjunto de valores permitidos
+. Cada tabla puede tener registros del mismo tipo
+. Para registros distintos se usan tablas distintas
+. En cada tabla debe existir una clave formada por uno o varios campos
+. No puede haber campos iguales en los registros
+. Cada columna de una tabla representa una relación entre un conjunto de valores
+. La tabla es considerada una relación en sentido matemático
+
+=== Entidad
+
+Una entidad es un objeto que existe y es distinguible de otros objetos. Se expresa la distinción asociando con cada entidad al conjunto de atributos que describen el objeto.
+Es un objeto del que se recoge información de interés de cara a la base de datos.
+
+* Entidades fuertes son las que no dependen de otras entidades para existir. 
+* Entidades débiles siempre dependen de otra entidad, no tienen sentido por ellas mismas.
+
+Se los representa con un rectangulo
+
+image::2023-09-02T19-57-24-638Z.png[] 
+
+=== Relación
+
+Es un vínculo entre 2 entidades. 2 Entidades participantes de una relación, son entidades participantes. A cada entidad se le asigna un nombre para poder distinguirla de las demás y saber su función dentro de un modelo.
+
+Muestra la asociación entre entidades. Una entidad puede estar conectada a una o más relaciones pero nunca conectada  directamente a otra entidad. 
+
+
+==== Grados de relación
+
+Las propiedades de la relación son:
+
+* Grados: 
+** Grado 1: relaciona una entidad consigo misma. (Unario)
+** Grado 2: relaciona 2 entidades (Binario)
+** Grado n: relacionan mas de 2 entidades (Ternario cuando son 3)
+
+image::2023-09-02T19-59-35-546Z.png[] 
+
+
+== Atributos 
+
+Son propiedades de entidades y relaciones que toman un valor en una instancia particular. El dominio es el conjunto de valores validos que puede tomar una propiedad.
+
+ Ejemplo: Si la entidad es “Examen”, y una propiedad es “Nota” su dominio puede ser un número del 1 al 10
+
+=== Tipos de atributos
+
+* Identificador único - clave primaria: conjunto de atributos (1 o más) que sirven para identificar unívocamente a cada entidad del mismo tipo
+* Atributos derivables: a veces, resulta útil poder representar a determinados atributos, cuyas instancias están en función de otros atributos de la misma entidad
+ 
+ Ejemplo: atributo edad de una persona, puede ser calculable a partir de la fecha de nacimiento
+
+* Atributos compuestos: son aquellos atributos que tienen subatributos que con los cuales forman una jerarquía
+ 
+ Ejemplo: Domicilio posee: Calle, Altura, CP, Localidad y Provincia
+
+image::2023-09-02T20-31-58-762Z.png[] 
+
+=== MER: Cardinalidad/Conectividad de una relación
+
+Tambien se lo conoce como "Conectividad de una relación"
+
+*Por conectividad entendemos a la cantidad de instancias de un objeto que participan en la relación con otro objeto*
+
+* Uno a muchos (1 a N). 
+
+image:2023-09-02T20-36-23-744Z.png[] 
+
+* Uno a uno (1 a 1)
+
+image::2023-09-02T20-36-46-735Z.png[] 
+
+* Muchos a muchos (N a M)
+
+image::2023-09-02T20-37-02-990Z.png[] 
+
+=== Modalidad / condicionalidad
+
+* Obligatoria: Si para todo registro de A debe existir siempre al menos un registro de B
+* Optativa: Si para todo registro de A, pueden existir o no, uno o varios registros de B
+* La modalidad de las relaciones se debe analizar en ambos sentidos
+
+=== Diagrama entidad - relación
+
+image::2023-09-02T20-46-07-567Z.png[] 
+
+=== Relaciones
+
+
+=== Tuplas
+
+Se trata de cada una de las filas de la tabla. Es importante señalar que no se pueden tener tuplas duplicadas en una tabla. Las relaciones se representan gráficamente con rombos, dentro de ellas se coloca el nombre de la relación.
+
+Propiedades de la relación
+
+=== Normalización
+
+La normalización es un mecanismo que permite que un conjunto de tablas cumpla una serie de propiedades que eviten:
+
+* Redundancia de datos
+* Anomalías de actualización
+* Pérdidas de Integridad de datos
+
+El objetivo de la normalización es construir una BD que minimice la redundancia de información; para ello es necesario reagrupar los atributos de cada tabla del modelo.
+
+La redundancia puede generar anomalías de *inserción, borrado y modificación"
+
+Ejemplo: 
+
+image::2023-09-02T21-34-10-219Z.png[] 
+
+* Anomalías de Inserción: Si se agrega un nuevo empleado, se debe indicar toda la información, incluyendo repetir el nombre del departamento donde trabaja, aunque sea un departamento ya existente en la tabla. Se debe tener especial cuidado en describir al departamento de forma similar a lo que se hubiese hecho anteriormente. Se observa que la información almacenada es incorrecta, ya que el departamento con idDepto 2 no puede tener dos nombres diferentes.  Esta situación se produce al generar redundancia de información. Cada vez que se agrega un empleado a un departamento existente, debe ingresarse el nombre del departamento, lo cual es innecesario.
+
+* Anomalías de Borrado: si se elimina al empleado María, que trabaja en el departamento de Ventas. Al borrar esa tupla, en la misma operación se borra información del departamento donde trabaja, y como era la única empleada registrada para ese departamento, se pierde “Ventas” como departamento de la organización. 
+
+* Anomalías de Modificación: al suponer que debemos cambiar el nombre de departamento de "Electronica y computacion" por el nombre "Tecnología", la redundancia nos obliga a cambiar varias tuplas para cambiar todos los nombres donde el 
+departamento sea idDepto = 2. En el caso de algun inconveniente, la informacion del departamento puede quedar inconsistente o con falta de integridad, ya que en algunos registros puede quedar como "Electronica y computacion" y en otros como "Tecnología"
+
+==== Dependencia funcional
+
+La dependencia funcional se establece entre "atributos" de una "relación". Por lo tanto, dados 2 atributos a y b pertenecientes a una relación Q, se define dependencia funcional en Q si al valor de b esta relacionado a cada valor de a.
+
+==== Valor atómico
+
+Los valores de los atributos no son multi-valorados
+
+==== Dependencia de los atributos no clave con la Clave Primaria
+
+Cuando la clave primaria es compuesta, puede suceder que algunos de los atributos no clave, dependan de uno de los atributos de la clave primaria. En el que la clave primaria esta compuesta por un solo atributo, la dependencia es verdadera.
+
+
+=== Primera forma normal
+
+* Debe existir una clave principal (primaria).
+* Todos los valores de atributos deben ser atómicos. Es decir, no deben haber listas, conjuntos, matrices u otros tipos de datos complejos
+
+image::2023-09-02T22-52-10-073Z.png[] 
+
+* No deben existir grupos de valores repetidos.
+
+image::2023-09-02T22-52-51-991Z.png[] 
+
+=== Segunda forma normal
+
+* Debe estar en primera forma normal
+* No deben existir dependencias funcionales parciales. Esto significa que todos los valores de las columnas de una fila deben depender de la clave primaria de dicha fila, entendiendo por clave primaria los valores de todas las columnas que la formen, en caso de ser más de una.
+
+* Las tablas que están ajustadas a la primera forma normal, y además disponen de una clave primaria formada por una única columna con un valor indivisible, cumplen ya con la segunda forma normal. Ésta afecta exclusivamente a las tablas en las que la clave primaria está formada por los valores de dos o más columnas, debiendo asegurarse, en este caso, que todas las demás columnas son accesibles a través de la clave completa y nunca mediante una parte de esa clave. 
+
+Ejemplo:
+
+image::2023-09-02T23-05-24-786Z.png[] 
+
+La clave de esta tabla es id_orden+num_art
+
+Para acceder al artículo RAQUETA se accede a través de una parte de la clave primaria (campo num_art = 4011). Esto no está en segunda forma normal. Para llavarlo a segunda forma normal, se puede hacer 
+
+image::2023-09-02T23-07-46-275Z.png[] 
+
+=== Tercera forma normal
+
+* Está en 2FN
+* No deben existir dependencias transitivas entre las columnas de una tabla, lo cual significa que las columnas que no forman parte de la clave primaria deben depender sólo de la clave, nunca de otra columna no clave.
+
+Una dependencia transitiva ocurre cuando una columna no clave depende de otra columna no clave en lugar de depender directamente de la clave primaria
+
+Ejemplo:
+
+image::2023-09-02T23-11-31-101Z.png[] 
+
+El nombre del cliente y el estado no dependen de la clave primaria Id_orden, sino que dependen del atributo id_cliente
+
+Normalización:
+
+image::2023-09-02T23-15-09-531Z.png[] 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
