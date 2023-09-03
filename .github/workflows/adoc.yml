@@ -20,3 +20,9 @@ jobs:
       run: echo "Time ${{ steps.adocbuild.outputs.time }}"
     - name: Print dir
       run: ls
+    - name: Deploy docs to ghpages
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        deploy_key: ${{ secrets.GITHUB_TOKEN }}
+        publish_branch: main
+        publish_dir: ./
