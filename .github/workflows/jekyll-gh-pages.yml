@@ -37,6 +37,11 @@ jobs:
             program: "asciidoctor ./resumen.adoc"
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v2
+        inputs:
+          path:
+            description: "Path of the directory containing the static assets."
+            required: true
+            default: "./"
 
   # Deployment job
   deploy:
