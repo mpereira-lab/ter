@@ -159,9 +159,9 @@ c es una contradicción
 |===
 
 
-=== Semana 3
+== Semana 3
 
-==== Circuitos lógicos
+=== Circuitos lógicos
 
 * Interruptores en serie
 
@@ -195,14 +195,14 @@ En serie es tabla de verdad Y
 En paralelo es tabla de verdad O
 
 
-==== Cajas Negras y Puertas
+=== Cajas Negras y Puertas
 
 Las cajas negras son implementaciones de circuitos lógicos, donde su implementación no importa. La atención se centra entre las entradas y sus salidas
 
 image:2023-08-29T21-08-00-483Z.png[] 
 
 
-==== Expresión booleana correspondiente a un circuito
+=== Expresión booleana correspondiente a un circuito
 
 En lógica, variables tales como p, q y r representan enunciados y un enunciado puede toner uno de los dos valores de verdad: V (verdadero) o F (falso)
 
@@ -210,14 +210,14 @@ Cualquier variable, tal como un enunciado variable o una señal de entrada que p
 
 Una expresión compuesta de variables booleanas y conectores ~ ∧ v se denomina una expresión booleana
 
-==== Reconocedor 
+=== Reconocedor 
 
 es un circuito que genera un I pars exactamente una combinación particular de señales de entrada y salidas 0 pars las demás combinaciones. 
 
 image::2023-08-29T21-45-19-131Z.png[] 
 
 
-==== Puerta and de entrada multiple
+=== Puerta and de entrada multiple
 
  ((p ∧ q) ∧ (R ∧ S)) ∧ T se grafica 
 
@@ -235,7 +235,7 @@ Cada uno de los circuitos en las figures 2.4.4 y 2.4.5 es, por tanto. una implem
 
 image::2023-08-29T22-57-21-670Z.png[] 
 
-==== Diseño de un circuito para una tabla dada de entrada/salida
+=== Diseño de un circuito para una tabla dada de entrada/salida
 
 Diseñar un circuito lógico para la siguiente tabla de entrada
 
@@ -254,11 +254,11 @@ image::2023-08-29T23-16-55-882Z.png[]
 
 Observar que la expresión (2.4.5) es una disyunción de términos en los que ellos mismos son conjunciones en los que una de P o ~P, una de Q o ~Q y de una de R o ~R todas aparecen. Se dice que tales expresiones están en *forma normal disyuntiva* o en *forma de suma de productos*. 
 
-==== Equivalencias de circuitos logicos
+=== Equivalencias de circuitos logicos
 
 Dos circuitos lógicos son equivalentes entre si si sus tablas de verdades son idénticas
 
-==== Puertas NAND y NOR
+=== Puertas NAND y NOR
 
 Una puerta NAND es una sola puerta que actila como una puerta AND seguida de una puerta NOT.  Así, la señal de salida de la puerta NAND es 0 cuando y solo cuando, ambas senates de entrada son 1
 
@@ -267,4 +267,85 @@ image::2023-08-30T00-39-04-089Z.png[]
 Una puerta NOR actúa como una puerta OR seguida de una puerta NOT. La señal de salida pars una puerta NOR es 1 cuando y solo cuando, ambas entradas son 0.
 
 image::2023-08-30T00-40-32-868Z.png[] 
+
+
+== Semana 4
+
+=== Simplificación mediante álgebra de Boole
+
+Una expresión booleana simplificada emplea el menor número posible de puertas en la implementación de una determinada expresión.
+
+Ejemplo:
+
+Simplificar AB + A(B + C) + B(B + C)
+
+. Por ley distributiva: AB + AB + AC + BB + BC
+. Por ley de idempotencia: (AB + AB) = AB entonces AB + AC + BB + BC
+. Por ley de idempotencia: B.B = B entonces AB + AC + B + BC
+. Por ley de absorción B + BC = B entonces AB + AC + B
+. Por conmutacion de suma logica B + AB +  AC
+. Por ley de absorción B + AB = B entonces *B + AC*
+
+ Estos dos circuitos de puertas son equivalentes, es decir, para cualquier combinación de valores en las entradas A, B y C, obtenemos siempre la misma salida en ambos circuitos.
+
+image::2023-09-04T00-38-39-808Z.png[] 
+
+=== Formas estándar de expresiones booleanas
+
+Todas las expresiones booleanas, independientemente de su forma, pueden convertirse en cualquiera de las dos formas estándar: suma de productos o producto de sumas. La estandarización posibilita que la evaluación, simplificación e implementación de las expresiones booleanas sea mucho más sistemática y sencilla.
+
+=== Suma de productos
+
+Cuando dos o más productos se suman mediante la adición booleana, la expresión resultante se denomina suma de productos (SOP, Sum Of Products). Una suma de productos puede contener también términos de una única variable.
+
+=== Forma estándar de la suma de productos
+
+Es aquella en la que todas las variables de la función aparecen en cada uno de los términos de la expresión
+
+La expresión suma de productos estándar es importante en la construcción de tablas de verdad, y en el método de simplificación de los mapas de Karnaugh
+
+Cualquier expresión suma de productos no estándar (que denominaremos simplemente suma de productos) puede convertirse al formato estándar utilizando el álgebra de Boole.
+
+Cada término producto de una suma de productos que no contenga todas las variables de la función puede ampliase a su forma estándar de manera que incluya todas las variables del dominio y sus complementos. Como se muestra en los siguientes pasos, una suma de productos no estándar se convierte a su forma estándar utilizando el postulado básico de la suma, donde dice que la variable sumada a su complemento es igual a 1.
+
+image:2023-09-04T01-06-42-980Z.png[] 
+
+=== Productos de suma estandar
+
+Un producto de sumas estándar es aquel en el que todas las variables del dominio o sus complementos aparecen en cada uno de los términos de la expresión.
+
+Cualquier producto de sumas no estándar (que denominaremos simplemente producto de sumas) puede convertirse a su forma estándar mediante el álgebra de Boole. 
+
+Cada término suma de una expresión producto de sumas que no contenga todas las variables del dominio puede extenderse para obtener su formato estándar incluyendo todas las variables del dominio y sus complementos. Como se establece en los pasos siguientes, un producto de sumas no estándar se convierte a su formato estándar utilizando la regla booleana que establece que una variable multiplicada por su complemento es igual a 0. 
+
+image::2023-09-04T01-18-14-461Z.png[] 
+
+=== Expresiones booleanas y sus tablas de verdad
+
+Todas las expresiones booleanas pueden convertirse fácilmente en tablas de verdad utilizando los valores binarios de cada término de la expresión.
+
+Para una expresión cuyo dominio es de dos variables, existen cuatro combinaciones distintas de estas variables (22 = 4). Para una expresión cuyo dominio tiene tres variables, existen ocho (23 = 8) combinaciones posibles de dichas variables. Para una expresión con un dominio de cuatro variables, existen dieciséis combinaciones diferentes de dichas variables (24 = 16), etc.
+
+
+=== Conversión de suma de productos a tabla de verdad
+
+. Enumerar todas las posibles combinaciones de los valores de las variables de la expresión. 
+. Hay que pasar la suma de productos a su formato estándar, si no lo está ya. 
+. Para completar la tabla debemos tener en cuenta que cuando la variable no está complementada, el valor será 1, mientras que, si se encuentra complementada, es decir negada, entonces el valor que adopta es 0.
+. Por último, se escribe un 1 en la columna de salida (X) para cada valor binario que hace que la suma de productos estándar sea 1, y se escribe un 0 para los restantes valores.
+
+Ejemplo:
+
+image::2023-09-04T01-31-48-516Z.png[]
+
+=== Conversión de un producto de sumas a tabla de verdad
+
+. Enumerar todas las posibles combinaciones de valores binarios de las variables del mismo modo que se hace para una suma de productos. 
+. Pasar el producto de sumas a su formato estándar, si no lo está ya. 
+. Tener en cuenta que cuando la variable no está complementada, el valor será 0, mientras que, si se encuentra complementada, es decir negada, entonces el valor que adopta es 1.
+. Se escribe un 0 en la columna de salida (X) para cada valor binario que hace que la suma de productos estándar sea 0, y se escribe un 1 para los restantes valores binarios. 
+
+
+image::2023-09-04T01-35-51-835Z.png[] 
+
 

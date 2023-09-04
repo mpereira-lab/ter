@@ -61,6 +61,27 @@
 ** Participar con por lo menos una intervención en el foro.
 
 
+== Semana 4
 
+=== Los contenidos de la semana son:
+
+. Álgebra de Boole: utilización y elementos
+. Propiedades del Álgebra de Boole 
+. Simplificación
+. Ley de De Morgan
+. Mapas de Karnaugh
+
+=== ¿Qué esperamos que aprendas?
+	
+
+. Reconocer las características, elementos y aplicaciones posibles del álgebra de Boole.
+. Identificar las diferentes propiedades que aplican al álgebra de Boole.
+. Comprender la importancia de la simplificación de las funciones booleanas.
+. Utilizar el método de mapas de karnaugh.
+
+=== ¿Qué te proponemos realizar esta semana?                   
+
+* Leer el material de lectura: Mapas de Karnaugh
+* Realizar las prácticas formativas: Resolver el cuestionario.
 
 
