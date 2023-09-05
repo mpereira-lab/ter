@@ -122,6 +122,7 @@ t es una tautología
 c es una contradicción
 
 
+==== simbolos
 
 |===
 |  | Descripción                    |                                   |
@@ -132,7 +133,7 @@ c es una contradicción
 | 5| Ley de negación                | p V ~p ≡ t                        | p ∧ ~p ≡ c
 | 6| Ley doble negación             | ~ (~p) ≡ p                         |
 | 7| Leyes de idempotencia          | p ∧ p ≡ p                         | p V p ≡ p
-| 8| Ley universal acotada          | p V t ≡ t                         | p V c ≡ c
+| 8| Ley universal acotada          | p V t ≡ t                         | p ∧ c ≡ c
 | 9| Ley de morgan                  | ~(p ∧ q) ≡ ~p V ~q                | ~(p V q) ≡ ~p ∧ ~q
 |10| Ley de absorción               | p V (p ∧ q) ≡ p                   | p ∧ (p V q) ≡ p
 |11| Negaciones de t y c            | ~t ≡ c                            | ~c ≡ t
@@ -140,6 +141,8 @@ c es una contradicción
 |13| NOR (PEIRCE)                   | P ↓ Q ≡ ~ (P V Q)                 |
 
 |===
+
+==== con and/or/not
 
 |===
 |  | Descripción                    |                                           |
@@ -150,7 +153,7 @@ c es una contradicción
 | 5| Ley de negación                | p OR NOT p ≡ t                            | p AND NOT p ≡ c
 | 6| Ley doble negación             | NOT (NOT p) ≡ p                           |
 | 7| Leyes de idempotencia          | p AND p ≡ p                               | p OR p ≡ p
-| 8| Ley universal acotada          | p OR t ≡ t                                | p OR c ≡ c
+| 8| Ley universal acotada          | p OR t ≡ t                                | p AND c ≡ c
 | 9| Ley de morgan                  | NOT (p AND q) ≡ NOT p OR NOT q            | NOT (p OR q) ≡ NOT p AND NOT q
 |10| Ley de absorción               | p OR (p AND q) ≡ p                        | p AND (p OR q) ≡ p
 |11| Negaciones de t y c            | NOT t ≡ c                                 | NOT c ≡ t
@@ -158,6 +161,28 @@ c es una contradicción
 |13| NOR (PEIRCE)                   | P NOR Q ≡ ~ (P V Q)                 |
 |===
 
+==== con + . Ā 1 0
+
+Ā
+Ē
+Ẽ̄
+
+|===
+|  | Descripción                    |                                           |
+| 1| Leyes conmutativas             | A.E=E.A                                   | A+E=E+A
+| 2| Ley asociativa                 | (A.E).O=A.(E.O)                           | (A+E)+O=A+(E+O)
+| 3| Ley distributiva               | A.(E+O)=(A.E)+(A.O)                       | A+(E.O)=(A+E).(A+O)
+| 4| Ley de identidad               | A.1=A                                     | A+0=A
+| 5| Ley de negación                | A.Ā=0                                     | A+Ā≡1
+| 6| Ley doble negación             | Ẽ̄=E tambien \~(~E)=E                      |
+| 7| Leyes de idempotencia          | A.A=A                                     | A+A=A
+| 8| Ley universal acotada          | A+1=1                                     | A.0=0
+| 9| Ley de morgan                  | ~(A.E)=Ā+Ē                                | ~(A+E)=Ā.Ē
+|10| Ley de absorción               | A+(A.E) ≡ A                               | A.(A+E)=A
+|11| Negaciones de t y c            | ~1=0                                      | ~0=1
+|12| NAND (SHEFFER)                 | P NAND Q ≡ ~ (P ∧ Q)                      |
+|13| NOR (PEIRCE)                   | P NOR Q ≡ ~ (P V Q)                       |
+|===
 
 == Semana 3
 
@@ -347,5 +372,29 @@ image::2023-09-04T01-31-48-516Z.png[]
 
 
 image::2023-09-04T01-35-51-835Z.png[] 
+
+
+=== Mapas de Karnaugh
+
+El número de celdas de un mapa de Karnaugh es igual al número total de posibles combinaciones de las variables de entrada, al igual que el número de filas de una tabla de verdad. Para tres variables, el número de celdas necesarias es de 2^3 = 8. Para cuatro variables, el número de celdas es de 2^4 = 16.
+
+*El mapa de Karnaugh de tres variables es una matriz de ocho celdas.*
+
+image::2023-09-04T23-42-28-208Z.png[] 
+
+*Mapas de Karnaugh de cuatro variables*
+
+image::2023-09-04T23-43-03-880Z.png[] 
+
+
+=== Adyacencia de celdas
+
+Las celdas de un mapa de Karnaugh se disponen de manera que sólo cambia una única variable entre celdas adyacentes. La adyacencia se define por un cambio de una única variable. Las celdas que difieren en una única variable son adyacentes. Por ejemplo, en el mapa de tres variables, la celda 010 es adyacente a las celdas 000, 011 y 110. La celda 010 no es adyacente a la celda 001, ni a la celda 111, ni a la celda 100 ni a la celda 101.
+
+Físicamente, cada celda es adyacente a las celdas que están situadas inmediatas a ella por cualquiera de sus cuatro lados. Un celda no es adyacente a aquellas celdas que tocan diagonalmente alguna de sus esquinas. Además, las celdas de la fila superior son adyacentes a las de la fila inferior y las celdas de la columna izquierda son adyacentes a las situadas en la columna de la derecha. Esto se denomina adyacencia cíclica, ya que podemos pensar que el mapa de Karnaugh se dobla de forma que se toquen los extremos superior e inferior como si fuera un cilindro o los extremos de la derecha e izquierda para formar la misma figura. 
+
+El siguiente mapa de Karnaugh ilustra la adyacencia de celdas en un mapa de cuatro variables, aunque se aplican las mismas reglas de adyacencia a los mapas de Karnaugh con cualquier número de celdas.
+
+image:2023-09-04T23-46-02-455Z.png[] 
 
 
