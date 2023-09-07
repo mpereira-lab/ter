@@ -398,3 +398,71 @@ El siguiente mapa de Karnaugh ilustra la adyacencia de celdas en un mapa de cuat
 image:2023-09-04T23-46-02-455Z.png[] 
 
 
+=== Simplificación de una suma de productos mediante el mapa de Karnaugh
+
+* Construir tabla de 2 o 3 variables. Por la adyacencia, la secuencia de combinación de 2 variables es 00 01 11 10
+
+3 Variables
+
+|===
+|A B \ C| 0 | 1
+|0 0    |   |
+|0 1    |   |
+|1 1    |   |
+|1 0    |   |
+|===
+
+4 Variables
+
+|===
+|A B \ C D  | 0 0   | 0 1   |  1 0  |  1  1
+|0 0        |       |       |       |       
+|0 1        |       |       |       |       
+|1 1        |       |       |       |       
+|1 0        |       |       |       |       
+|===
+
+* Por cada término de la expresión suma de productos, se coloca un 1 en el mapa de Karnaugh en la celda correspondiente al valor del producto
+
+image:2023-09-06T11-43-16-518Z.png[] 
+
+* Agrupación de unos
+
+.. Un grupo tiene que contener 1, 2, 4, 8 ó 16 celdas
+.. Cada celda de un grupo tiene que ser adyacente a una o más celdas del mismo grupo
+.. Incluir siempre en cada grupo el mayor número posible de 1s de acuerdo a la regla número 1
+.. Cada 1 del mapa tiene que estar incluido en al menos un grupo. Los 1s que ya pertenezcan a un grupo pueden estar incluidos en otro, siempre que los grupos que se solapen contengan 1s no comunes.
+
+image:2023-09-06T11-45-44-609Z.png[] 
+
+* Cada grupo de celdas que contiene 1s da lugar a un término producto compuesto por todas las variables que aparecen en el grupo en sólo una forma (no complementada o complementada). Las variables que aparecen complementadas y sin complementar dentro del mismo grupo se eliminan. A éstas se les denomina variables contradictorias.
+
+image:2023-09-06T11-47-06-725Z.png[] 
+
+* Cuando se han obtenido todos los términos producto mínimos a partir del mapa de Karnaugh, se suman para obtener la expresión suma de productos mínima.
+
+image:2023-09-06T11-47-23-133Z.png[] 
+
+
+=== Simplificación mediante el mapa de Karnaugh de expresiones producto de sumas
+
+* LLevar todo a producto de suma estandar
+
+* Construir tabla de 2 o 3 variables igual que en suma de productos
+* Los valores negados valen 1, los valores no negados valen 0
+* Segun los valores de cada termino, colocarlos en la tabla de karnough, peor en vez de 1, colocar 0
+
+image::2023-09-06T23-20-01-939Z.png[] 
+
+* Deducir agrupas los ceros adyacentes. Se pueden agrupar 1,2,4,8,16 ceros
+* Por cada grupo de ceros deducir la variable. Esto se hace viendo en todo el grupo, cuales son las variables que cambian de estado. Si cambia de estado de un cero a otro, la variable se descarta. Si permanece con el mismo estado, la variable no se descarta y forma parte del termino, sumando las variables
+
+image::2023-09-06T23-23-45-436Z.png[] 
+
+Tambien se pueden tomar los 1 como suma de productos, y se obtiene la misma ecuación si se aplica la propiedad distributiva
+
+
+image::2023-09-06T23-24-38-529Z.png[] 
+
+
+
