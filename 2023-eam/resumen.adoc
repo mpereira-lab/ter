@@ -129,13 +129,13 @@ image::2023-08-26T19-29-55-141Z.png[]
 
 ==== Diferencia entre conjuntos
 
-Llamamos diferencia entre dos conjuntos A y B al conjunto formado por todos los elementos de A que no están en B . Denotamos a este conjunto con A−B. En símbolos, esto se escribe como: A−B={x∶x∈A y x∉B}
+Llamamos diferencia entre dos conjuntos A y B al conjunto formado por todos los elementos de A que no están en B . Denotamos a este conjunto con A-B. En símbolos, esto se escribe como: A-B={x∶x∈A y x∉B}
 
-En palabras, el conjunto A−B se forma con todos los elementos de A, a los cuales les “quitamos” los que a su vez pertenecen a B. De esta definición se observa que A−B es un subconjunto de A: A−B⊆A.
+En palabras, el conjunto A-B se forma con todos los elementos de A, a los cuales les “quitamos” los que a su vez pertenecen a B. De esta definición se observa que A-B es un subconjunto de A: A-B⊆A.
 
 ==== Complemento de un conjunto
 
-Dados dos conjuntos A y U tales que A⊆U, el conjunto U−A es llamado el complemento del conjunto A con respecto a U. En otras palabras, es el conjunto formado por todos los elementos del conjunto universal que no pertenecen a A. El complemento de A se denota como Ac.
+Dados dos conjuntos A y U tales que A⊆U, el conjunto U-A es llamado el complemento del conjunto A con respecto a U. En otras palabras, es el conjunto formado por todos los elementos del conjunto universal que no pertenecen a A. El complemento de A se denota como Ac.
 
 
 == Semana 2
@@ -154,7 +154,7 @@ Es conjunto ordenado, infinito y discreto, con primer número (1)
 
 Números naturales incluyendo al 0 y a los opuestos de los naturales es que definimos el conjunto de los números enteros
 
-Z={…,−6,−5,−4,−3,−2,0,1,2,3,4,5,6,…}
+Z={…,-6,-5,-4,-3,-2,0,1,2,3,4,5,6,…}
 
 Es conjunto ordenado, infinito y discreto, sin primer número
 
@@ -323,3 +323,192 @@ Función f que relaciona cada elemento de A con alguno de B y de tal manera que 
 image:2023-08-30T23-28-20-226Z.png[] 
 
 image:2023-08-30T23-52-11-303Z.png[]    
+
+== Semana 4
+
+=== Funciones reales de variable real
+
+Funciones cuyos elementos de “entrada” y de “salida” son números reales
+
+Notaciones
+
+ f:A→B se lee f es una función de A en B;
+
+ x↦f(x)
+
+ y=f(x) y es variable dependiente, x es variable independiente
+
+ image::2023-09-07T23-59-34-207Z.png[]
+
+ 
+=== Formas de representación del 
+ 
+* Regla de asignación f que usualmente viene dada por una fórmula o expresión en la ecuación  y=f(x)
+
+image::2023-09-08T22-00-08-970Z.png[] 
+
+* Tabla o registro tabular 
+
+image::2023-09-08T22-01-01-205Z.png[] 
+
+Se puede hacer con calculadora casio fx570 la (https://www.youtube.com/watch?v=HTwqkVUf0m4)
+
+* Gráfico de una función
+
+image::2023-09-08T22-42-25-920Z.png[] 
+
+** eje de abscisas al eje horizontal 
+** Eje de ordenadas  al vertical 
+** ambos se intersecan en el punto O de coordenadas (0,0) conocido como origen de coordenadas
+
+. a cada número real x le corresponde un único punto de la recta
+. a cada punto del plano le corresponde un único par de coordenadas (x,y)
+
+
+=== Gráfico de una función 
+
+Si f es una función con dominio es un subconjunto A de los números reales, entonces la gráfica de f es el conjunto de todos los puntos de la forma (x,f(x)), para x∈A : gráfico de f={(x,y):x∈A,y=f(x)} Es decir, el gráfico es la colección de puntos de coordenadas (x,f(x)), para todos los x del dominio.
+
+=== Funciones polinómicas
+
+Se dice que una función f es polinómica si la regla de asignación es de la forma
+
+image:2023-09-08T23-28-43-846Z.png[] 
+
+Si f es una función polinómica, entonces: 
+
+image::2023-09-08T23-30-23-371Z.png[] 
+
+Su gráfica depende, en buena medida, del grado del polinomio que define la expresión de la función. Por ejemplo, la función image:2023-09-08T23-31-17-342Z.png[] tiene por gráfica la que se ve a continuación.
+
+image::2023-09-08T23-32-28-392Z.png[] 
+
+==== Puntos “notables” del gráfico
+
+* Los puntos (-3,0);(-2,0);(1,0) corresponden a las raíces del polinomio x3+4x2+x-6 pues al ser evaluado en x=-3,x=-2 y en x=1, en todos los casos, el resultado es 0 . 
+
+Raíces: es un valor x tal que P(x) = 0
+
+Se pueden sacar raíces
+
+** Factorizando (no me acuerdo de nada)
+** Geogebra (https://www.youtube.com/watch?v=-uwDhkBm6CI)
+** Calculadora fx570 (https://www.youtube.com/watch?v=Iu-NRSiJAZ4)
+
+* El punto de coordenadas: (0,-6) es también un punto notable y recibe el nombre de ordenada al origen . 
+** La ordenada al origen, siempre que exista, es el punto cuya abscisa es x=0  y su ordenada es f(0). Es decir, el punto de coordenadas (0,f(0))
+
+==== Cómo construir gráficos
+
+Recordemos que el dominio de f(x)=x3+4x2+x-6 es R
+
+* Como las raíces de la función son x=-3,x=-2 y x=1 pues son las raíces del polinomio asociado, éstas dividen a la recta real del dominio en 4 secciones o intervalos:
+
+ (-∞,-3);(-3,-2);(-2,1);(1,∞)
+
+* Todo x interior a cada uno de esos intervalos, el signo de f(x) es único: o bien es positivo, o bien es negativo. Entonces, basta con tomar un candidato x  de cada intervalo, ver su signo, y concluir acerca del signo de f(x) en cada intervalo.
+
+image::2023-09-09T00-54-25-376Z.png[]
+
+* Sobre el eje x en los intervalos (-3,-2) y (1,+∞) (f(x)>0 para los x allí), 
+* Por debajo de dicho eje cuando x pertenece a alguno de los dos intervalos restantes (-∞,-3) o (-2,1)
+* También sabemos, porque calculamos las raíces de f que la gráfica pasa por lo puntos (-3,0),(-2,0) y (1,0)
+* Punto adicional es (0,-6)
+* Uniendo estos 4 puntos mediante una curva continua que esté por encima y por debajo del eje x en los intervalos indicados, se obtiene un bosquejo aproximado de la gráfica de  f
+
+image::2023-09-09T00-59-41-179Z.png[] 
+
+==== Analizando el gráfico
+
+* Del gráfico podemos obtener información acerca de la imagen de la función. Los posibles valores que toma y=f(x) para cualquier x del Dom(f)=R los vemos “proyectados” en el eje vertical o eje y
+* Vemos que siempre es posible encontrar uno o más x que den lugar a un valor de y. Esto es lo que se ve en la imagen que sigue a través de unas rectas punteadas en color rojo. Sombreado en rojo, se observa la imagen y
+
+ Sin embargo, en una función no podría ocurrir que un mismo valor de x diera lugar a dos imágenes y diferentes: recordemos que la definición de función exige que la imagen de un x del dominio a través de f exista y sea única.
+
+image::2023-09-09T01-09-28-865Z.png[]
+
+ Im(f)=R
+
+=== Función lineal
+
+* Es un caso particular de la función 
+
+ f(x)=ax+b
+
+ con a y b constantes reales y a!=0 es un polinomio de grado 1
+
+==== Ejemplos
+
+ y=2x-1,y=2,y=-x+1
+
+image::2023-09-09T01-35-25-372Z.png[]
+
+image::2023-09-09T01-36-14-631Z.png[] 
+
+==== Gráfico de función lineal
+
+La gráfica de una función lineal es siempre una recta
+
+Como una recta queda completamente determinada al trazar dos puntos que pertenezcan a ella, dada una función afín será suficiente con conocer la imagen de dos valores para obtener su gráfica
+
+* Se suele tomar x=0 como uno de esos valores, lo que produce el punto de coordenadas  P=(0,b)
+* Otro punto es la intersección de la recta con el eje  x , es decir, la raíz de la función Q=(-b/a,0) 
+ 
+ f(x)=0⇔ax+b=0⇔x=−ba
+
+*Conclusión: para representar gráficamente una función lineal, ubicamos los puntos P y Q, o cualesquiera otros dos de la forma  (x,f(x)), en un sistema de ejes cartesianos, y luego trazamos la recta que pasa por ellos.*
+
+
+=== Función cuadrática
+
+Son funciones polinómicas de grado 2
+
+image::2023-09-09T01-58-00-872Z.png[] 
+
+ a,b y c números reales, con a≠0. Una función de este tipo es llamada función cuadrática
+
+
+==== Ejemplos
+
+image::2023-09-09T02-00-33-194Z.png[] 
+
+==== Gráfico de la función cuadrática
+
+* Raíces: puntos de coordenadas (x1,0)y  (x2,0)
+
+image::2023-09-09T02-21-42-558Z.png[] 
+
+* Ordenada al origen: punto de coordenadas (0,c)
+
+* Eje de simetría: recta de ecuación dada por image:2023-09-09T02-23-09-830Z.png[]
+
+* Vértice: punto de coordenadas image:2023-09-09T02-24-57-842Z.png[]
+
+* Tipo de curvatura: 
+** Si a>0 el vértice es mínimo, se dice que es cóncava positiva y la imagen de la función es Im(f)=[Yv,+∞)
+** Si a<0 el vértice es máximo, se dice que es cóncava negativa y la imagen de la función es Im(f)=(−∞,Yv]
+
+Ejemplo:
+
+image::2023-09-09T02-08-09-265Z.png[] 
+
+Las raíces están dadas por:
+
+image::2023-09-09T02-08-33-301Z.png[] 
+
+image::2023-09-09T02-08-59-833Z.png[] 
+
+La ordenada al origen es  y=-8 lo que da lugar al punto de coordenadas (0,-8)
+
+El gráfico queda así
+
+image::2023-09-09T02-11-10-604Z.png[] 
+
+
+
+
+
+
+
+
+
