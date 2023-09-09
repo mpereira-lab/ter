@@ -437,6 +437,7 @@ image::2023-09-09T01-09-28-865Z.png[]
 
  con a y b constantes reales y a!=0 es un polinomio de grado 1
 
+
 ==== Ejemplos
 
  y=2x-1,y=2,y=-x+1
@@ -453,8 +454,16 @@ Como una recta queda completamente determinada al trazar dos puntos que pertenez
 
 * Se suele tomar x=0 como uno de esos valores, lo que produce el punto de coordenadas  P=(0,b)
 * Otro punto es la intersección de la recta con el eje  x , es decir, la raíz de la función Q=(-b/a,0) 
- 
- f(x)=0⇔ax+b=0⇔x=−ba
+* Si a>0 es función creciente / , a<0 es decreciente \ 
+
+ f(x)=0⇔ax+b=0⇔x=-b/a
+
+* Si 2 funciones tienen el mismo a, son paralelas 
+** Por el contrario, si son inversos, son perpendiculares
+
+ r1 = 3x+1, r2 = 3x + 124 => son paralelas
+
+ r1 = 2x+500, r2 = 1/3x + 1 => son perpendiculares
 
 *Conclusión: para representar gráficamente una función lineal, ubicamos los puntos P y Q, o cualesquiera otros dos de la forma  (x,f(x)), en un sistema de ejes cartesianos, y luego trazamos la recta que pasa por ellos.*
 
@@ -482,7 +491,8 @@ image::2023-09-09T02-21-42-558Z.png[]
 
 * Eje de simetría: recta de ecuación dada por image:2023-09-09T02-23-09-830Z.png[]
 
-* Vértice: punto de coordenadas image:2023-09-09T02-24-57-842Z.png[]
+* Vértice: punto de coordenadas image:2023-09-09T12-39-16-645Z.png[]
+
 
 * Tipo de curvatura: 
 ** Si a>0 el vértice es mínimo, se dice que es cóncava positiva y la imagen de la función es Im(f)=[Yv,+∞)
@@ -505,9 +515,29 @@ El gráfico queda así
 image::2023-09-09T02-11-10-604Z.png[] 
 
 
+=== Teorema fundamental del algebra
 
+Todo polinomnio se puede descomponer en pol mas pequeños
 
+Con cuadrática:
 
+ f(x) = ax2+bx+c => a (x-r1) (x-r2) donde r1 y r2 son las raíces
+
+=== Links geogebra 
+
+|===
+|Esscalas | https://www.youtube.com/watch?v=5incJdHWSag
+|Tabla    | https://www.youtube.com/watch?v=iYBpWzDgWts
+|Puntos notables | https://www.youtube.com/watch?v=-uwDhkBm6CI
+|===
+
+=== Links calculadora Casio fx 570 la
+
+|===
+| Tablas    | https://www.youtube.com/watch?v=HTwqkVUf0m4
+| Puntos notables | https://www.youtube.com/watch?v=Iu-NRSiJAZ4 
+
+|===
 
 
 

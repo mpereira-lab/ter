@@ -356,11 +356,37 @@ Normalización:
 
 image::2023-09-02T23-15-09-531Z.png[] 
 
+== Semana 4
 
+=== Álgebra relacional
 
+==== Tipos de operaciones
 
+. Operaciones binarias: son las que tienen dos relaciones como operandos. Son binarias todas las operaciones, excepto la selección y la proyección.
+. Operaciones unarias: son las que tienen una sola relación como operando. La selección y la proyección son unarias.
+. Operaciones conjuntistas: son las que se parecen a las de teoría de conjuntos. Se trata de la unión, la intersección, la diferencia y el producto cartesiano.
 
+* Selección: sirve para elegir algunas tuplas de una relación y eliminar el resto
 
+image::2023-09-09T21-23-34-468Z.png[] 
+
+* Proyección:  sirve para elegir algunos atributos de una relación y eliminar el resto
+
+image::2023-09-09T21-25-54-869Z.png[] 
+
+* Unión: partir de dos relaciones, obtiene una nueva relación formada por todas las tuplas que están en alguna de las relaciones de partida. La unión de dos relaciones T y S se indica T ∪ S. Elimina las tuplas repetidas|.
+
+* Intersección:  a partir de dos relaciones, obtiene una nueva relación formada por las tuplas que pertenecen a las dos relaciones de partida. La intersección de dos relaciones T y S se indica T ∩ S.
+
+* Diferencia: obtiene una nueva relación formada por todas las tuplas que están en la primera relación y, en cambio, no están en la segunda. La diferencia entre las relaciones T y S se indica como T - S.
+
+* Producto cartesiano: obtiene una nueva relación formada por todas las tuplas que resultan de concatenar tuplas de la primera relación con tuplas de la segunda. 
+
+image::2023-09-09T21-40-01-701Z.png[] 
+
+* Producto cartesiano natural: es una operación que, a partir de dos relaciones, obtiene una nueva relación formada por todas las tuplas que resultan de concatenar tuplas de la primera relación con tuplas de la segunda siempre y cuando tengan el mismo valor del atributo en común.
+
+image::2023-09-09T21-42-29-945Z.png[] 
 
 
 
