@@ -366,11 +366,14 @@ image::2023-09-02T23-15-09-531Z.png[]
 . Operaciones unarias: son las que tienen una sola relación como operando. La selección y la proyección son unarias.
 . Operaciones conjuntistas: son las que se parecen a las de teoría de conjuntos. Se trata de la unión, la intersección, la diferencia y el producto cartesiano.
 
+
+==== Operaciones
+
 * Selección: sirve para elegir algunas tuplas de una relación y eliminar el resto
 
 image::2023-09-09T21-23-34-468Z.png[] 
 
-* Proyección:  sirve para elegir algunos atributos de una relación y eliminar el resto
+* Proyección: sirve para elegir algunos atributos de una relación y eliminar el resto
 
 image::2023-09-09T21-25-54-869Z.png[] 
 
@@ -389,22 +392,86 @@ image::2023-09-09T21-40-01-701Z.png[]
 image::2023-09-09T21-42-29-945Z.png[] 
 
 
+=== SQL
+
+==== Tipos de comandos
+
+|===
 
 
+|DDL (Data Definition Language)     |   Definir, modificar y eliminar esquemas de relaciones.
+            
+                                        Crear índices, definir vistas y especificar restricciones de integridad.
+
+                                        Ejemplos: CREATE, ALTE, DROP.
+|DML (Data Manipulation Language)   |  Consulta, actualizar y eliminar los elemento creados con el DDL como tablas, índices.
+            
+                                        Basado en el algebra relacional
+            
+                                        Ejemplos: SELECT, INSERT,UPDATE, DELETE.
+|DCL (Data Control Language)        |   Definir permisos de acceso a la base de datos
+            
+                                        Ejemplo: GRANT, REVOKE.
+|===
 
 
+==== InnoDB (MySql)
 
+Es un mecanismo de almacenamiento de datos de código abierto para la base de datos MySQL, incluido como formato de tabla estándar en todas las distribuciones de MySQL a partir de las versiones 4.0. Su característica principal es que soporta transacciones de tipo ACID y bloqueo de registros e integridad referencial. InnoDB ofrece una fiabilidad y consistencia muy superior a MyISAM, la anterior tecnología de tablas de MySQL, si bien el mejor rendimiento de uno u otro formato dependerán de la aplicación específica.
 
+==== Comandos MySql
 
+* Create database nombre_db;
+* Drop database nombre_db;
+* create table Socio( 
+    CodSocio int, 
+    DNI varchar (10), 
+    Nombre varchar (60), 
+    Apellido varchar (60), 
+    Direccion varchar (30), 
+    Tel varchar (15), 
+    constraint pkpersona primary key (CodSocio) 
+    )engine=innodb; 
+* alter table nombre_tabla ...
+** ALTER TABLE nombre_tabla ADD FOREIGN(atributo) REFERENCES Table(Atributo); 
+** ALTER TABLE nombre_tabla ADD COLUMN [atributo] [tipo de datos];
+* Select [lista_atributos] from [tabla] where [predicado];
 
+==== Algebra relacional a SQL
 
+image::2023-09-09T22-56-13-403Z.png[] 
 
+==== Integridad de datos
 
+Son restricciones, controles y validaciones que diseñamos para proteger la información almacenada en la base de datos y que la misma quede libre de incoherencias según nuestro criterio y la lógica de negocio de los datos que se modelan.
 
+*Propiedades para asegurar la integridad de los datos* 
 
+* Tipos de dato, definiciones NULL y NOT NULL.
+* Valores por omisión para campos con definiciones DEFAULT
+* Propiedades IDENTITY 
+* Reglas de validación con la propiedad CHECK 
+* Desencadenadores (triggers)
+* Índices
+* Claves primarias/foráneas    
 
+==== integridad de atributo
 
+* Validación de las entradas en una determinada columna
 
+Se puede asegurar la integridad de dominio restringiendo el tipo (a través de tipos de dato), el formato (a través de las restricciones CHECK y de las reglas de validación) o el rango de valores posibles (restricciones CHECK, definiciones DEFAULT, definiciones NULL y NOT NULL).
+
+==== Clave primaria
+
+Un atributo o a una combinación de atributos que identifica de forma única a cada fila de una tabla
+
+Cada columna que forme parte de la clave primaria queda implícitamente definida como NOT NULL.
+
+==== Clave foránea
+
+Es aquella columna que existiendo como dependiente en una tabla, es a su vez clave primaria en otra tabla
+
+Una restricción foreign key no puede modificarse, debe eliminarse y volverse a crear.
 
 
 

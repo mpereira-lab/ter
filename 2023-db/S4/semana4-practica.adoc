@@ -1,0 +1,91 @@
+
+:imagesdir: ./images
+
+= Practica formativa semana 4
+
+Problema
+Tenemos el siguiente esquema relacional de base de datos:
+
+* CLIENTE (NCliente, Nombre, Dirección, Teléfono, CP)
+* PRODUCTO (CodProducto, Descripción, Precio)
+* VENTA (IdVenta, CodProducto, NCliente, Cantidad)
+
+La tabla de cliente almacena información sobre cada posible cliente de nuestra empresa.
+
+En la tabla de producto almacenamos información sobre cada producto de la empresa.
+
+La tabla de ventas relaciona a las dos anteriores utilizando el atributo CodProducto para indicar el producto que se venda, y el atributo NCliente para indicar el cliente al que vendimos el producto.
+
+==  1) Resolver utilizando álgebra relacional y explicar de manera coloquial el razonamiento.
+
+*a) Indicar el código y descripción de los productos cuyo precio superen los $ 1500*
+
+. A la relación PRODUCTO (P) le aplico una selección con la condición "precio mayor 1500" y proyecto los atributos codProducto y descripción
+
+ 𝚷 codProducto, descripcion ( 𝛔 precio > 1500 (P) )
+
+*b) Mostrar la descripción del producto de aquellos productos que vendieron más de 500 unidades*
+
+. A las relaciones PRODUCTO (P) y VENTA (V) les aplico un producto cartesiano natural a través del atributo común CodProducto (V.CodProducto y P.CodProducto)  y obtengo una nueva relación con atributos P.CodProducto, P.Descripción, P.Precio, V.IdVenta, V.CodProducto, V.NCliente, V.Cantidad
+. A la relación anterior aplico una selección con condición "P.Cantidad mayor a 500" y proyecto el atributo P.descripcion
+
+ 𝚷 descripcion ( 𝛔 cantidad > 500 (V ⋈ P) )
+
+*c) Mostrar el identificador de las ventas cuya cantidad supera a la cantidad vendida en la venta número 18*
+
+. A la relación Venta (V) proyecto el atributo V.IdVenta seleccionado la tupla con IdVenta = 18, creando una nueva relación R
+. Realizo un producto cartesiano entre relación obtenida en el punto anterior \(R) y la relación venta (V) obteniendo nueva relación con los atributos V.IdVenta, V.CodProducto, V.NCliente, V.cantidad y R.Cantidad obteniendo una nueva relación.
+. De la relación anterior selecciono las tuplas con la condición V.cantidad > R.cantidad y proyecto el atributo V.IdVenta 
+
+ R = 𝚷 cantidad ( 𝛔 idVenta = 18 V)
+ 𝚷 idVenta ( 𝛔 V.cantidad > R.cantidad (V x R) )
+
+*d) Mostrar los productos que se han vendido en la zona de código 1480*
+
+. Aplico producto cartesiano natural sobre las relaciones Venta (V) y Cliente \(C) a través del atributo NCliente (V.NCliente=C.NCliente) obteniendo una nueva relación
+. A la relación anterior le aplico una proyección sobre el el atributo V.CodProducto y selecciono las tuplas que cumplen con la condición C.CP=1480
+ 
+ 𝚷 CodProducto (𝛔 CP = 1480 (V ⋈ C) )
+
+*e) Mostrar los identificadores de venta en los que no participo el cliente Marta Olmos*
+
+. Aplico producto cartesiano natural sobre las relaciones Venta (V) y Cliente \(C) a través del atributo NCliente (V.NCliente=C.NCliente) obteniendo una nueva relación
+. A la relación obtenida aplico la proyección sobre los atributos V.IdVenta seleccionando las tuplas con la condición C.Nombre != Marta Olmos
+
+  𝚷 IdVenta (𝛔 Nombre != Marta Olmos (V ⋈ C) )
+
+
+*f) Mostrar la descripción de los productos cuyo precio sea de $ 2000*
+
+. De la relación PRODUCTO (P) proyecto el atributo P.descripcion y selecciono las tuplas con la condición "P.precio > 2000"
+
+  𝚷 descripcion (𝛔 precio > 2000 (P) )
+
+*g) Mostrar los nombres de los clientes junto a su teléfono*
+
+. De la relación CLIENTES (C) proyecto los atributos C.Nombre y C.Telefono
+
+  𝚷 nombre, telefono (C)
+
+*h) Mostrar la descripción y precio de los productos cuyo identificador de venta es menor a 65*
+
+. Hago producto cartesiano natural entre las relaciones PRODUCTOS (P) y VENTAS (V) con el atributo en común CodProducto (P.CodProducto = V.CodProducto) y obtengo una nueva relación
+. De la relación obtenida en punto anterior proyecto los atributos P.descripción y P.Precio seleccionando las tupas cuya condición sea "V.IdVenta < 65" 
+
+ 𝚷 descripcion, precio (𝛔 IdVenta < 65 (V ⋈ P) )
+
+==  2) Resolver utilizando SQL 
+
+*a) Mostrar la descripción de los productos cuyo precio sea de $ 2000.*
+
+ Select descripcion from productos where precio=2000
+
+*b) Mostrar los nombres de los clientes junto a su teléfono.*
+
+ Select nombre, telefono from clientes 
+
+*c) Mostrar la descripción y precio de los productos cuyo identificador de venta es menor a 65.*
+
+ Select descripcion, precio 
+  from productos p inner join ventas v on p.CodProducto = v.CodProducto
+  where idVenta<65

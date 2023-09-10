@@ -283,6 +283,37 @@ image::2023-08-31T00-40-35-983Z.png[]
 
 image::2023-08-31T00-41-03-418Z.png[] 
 
+== Semana 4
+
+=== Estructuras de repetición
+
+Son estructuras donde una o un conjunto de órdenes o sentencias deben cumplirse más de una vez.
+
+* Ciclo exacto: Tomando un rango de valores inicial - final, se repite el ciclo Para cada valor intermedio dentro de ese rango elegido
+
+* Ciclos condicionales:
+** Mientras se cumpla la condición hacer (MIENTRAS – HACER).
+** Hacer al menos una vez y repetir mientras se cumpla la condición (HACER – MIENTRAS).
+
+=== Estructura de repetición PARA
+
+image::2023-09-10T02-00-15-681Z.png[] 
+
+image::2023-09-10T02-00-57-932Z.png[] 
+
+
+
+=== Estructura de repetición (mientras - hacer)
+
+image::2023-09-10T02-03-22-255Z.png[] 
+
+image::2023-09-10T02-03-33-722Z.png[] 
+
+=== Estructura de repetición (hacer - mientras)
+
+image::2023-09-10T02-04-55-030Z.png[] 
+
+image::2023-09-10T02-05-05-217Z.png[] 
 
 
 
