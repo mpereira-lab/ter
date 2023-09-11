@@ -2,6 +2,7 @@
 :toc: left
 :toclevels: 4
 :imagesdir: ./images
+:stem: 
 
 == Semana 1
 
@@ -496,7 +497,7 @@ image::2023-09-09T02-21-42-558Z.png[]
 
 * Tipo de curvatura: 
 ** Si a>0 el vértice es mínimo, se dice que es cóncava positiva y la imagen de la función es Im(f)=[Yv,+∞)
-** Si a<0 el vértice es máximo, se dice que es cóncava negativa y la imagen de la función es Im(f)=(−∞,Yv]
+** Si a<0 el vértice es máximo, se dice que es cóncava negativa y la imagen de la función es Im(f)=(-∞,Yv]
 
 Ejemplo:
 
@@ -538,6 +539,358 @@ Con cuadrática:
 | Puntos notables | https://www.youtube.com/watch?v=Iu-NRSiJAZ4 
 
 |===
+
+== Semana 5
+
+=== Funciones racionales
+
+Tienen la forma
+
+image:2023-09-10T13-25-56-071Z.png[] 
+
+P(x) y Q(x) son funciones polinómicas, siendo Q(x) distinto del polinomio nulo. Estas funciones, al igual que las polinómicas, son funciones algebraicas.
+
+*Ejemplos*
+
+image:2023-09-10T13-27-22-358Z.png[] 
+
+No es una función racional 
+
+image:2023-09-10T13-27-49-247Z.png[] 
+
+*Algunas observaciones*
+
+* En este curso vamos a trabajar con funciones racionales donde P(x) y Q(x) no tengan factores en común, es decir, ya va a estar en forma irreducible la expresión fraccionaria.
+* A pesar de que las funciones racionales se construyen a partir de polinomios, sus gráficas tienen un aspecto diferentes al de las gráficas de funciones polinómicas.
+
+
+=== Dominio de las funciones racionales
+
+La función racional f(x) de nuestra definición es un cociente entre dos funciones polinómicas con dominio real. Sin embargo, la división por cero no está definida, entonces debemos asegurarnos de que el polinomio denominador no sea cero. En símbolos: Q(x)≠0
+
+
+[stem]
+++++
+Dom f=R-{x1,x2,...,xn}
+++++
+
+ siendo: x1,x2,...,xn las raíces del polinomio Q(x)
+
+* El dominio se escribe como una diferencia de conjuntos, lo cual implica que al conjunto de los números reales le sacamos el conjunto de los números reales que son raíces del polinomio denominador (Los valores de x que hacen cero un polinomio se llaman raíces del polinomio)
+
+Ejemplo 
+
+Determinar el dominio de las funciones
+
+[stem]
+++++
+
+f(x)=2/(5x), g(x)=(5x-2)/(-2x+6), h(x)=(x+14x)/(x^2+x-6), i(x)=7/(x^2+1)
+
+
+Dom\ f=R-{0}
+  
+Dom\ g=R-{3}
+
+Dom\ h=R-{-3,2}
+
+Dom\ i=R
+
+++++
+
+=== Función inversamente proporcional
+
+Dos variables (una independiente x y otra dependiente y) son inversamente proporcionales, si el producto de los valores respectivos de cada una de ellas es una constante k, siendo k∈R-{0}
+
+[stem]
+++++
+
+x.y=k
+
+y=k/x
+
+o\ bien\ f(x)=k/x
+
+++++
+
+=== Tabla y gráfica con un ejemplo
+
+[stem]
+++++
+g(x)=2x
+++++
+
+
+* Dominio: stem:[Dom\ g=R-{0}]
+
+* Raíces: stem:[g(x)=0 -> 2/x=0 -> 2=0.x -> 2=0 -> "¡Absurdo!" -> "No tiene"]
+
+* Ordenada al origen: es el valor que toma la función cuando x vale 0. Pero dijimos que ese valor no forma parte del dominio de la función. Por lo tanto, la función no tiene ordenada al origen y, en consecuencia, no interseca al eje y
+
+* Como la función no tiene raíces, entonces ella resulta siempre distinta de cero. Por lo tanto: stem:[Im\ g=R-{0}]
+
+*Tabla*
+
+|===
+| x     | stem:[f(x)=2/x]
+
+|-1000  | -0,002
+|-100   | -0,02
+|-10    | -0,2
+|-5     | -0,4
+|-0,25  | -8
+|-0,005 | -400
+|0,005  | 400
+|0,25   | 8
+|0,5    | 4
+|1      | 2
+|5      | 0,4
+|10     | 0,2
+|100    | 0,02
+|1000   | 0,002
+|===
+
+image::2023-09-10T15-40-49-122Z.png[] 
+
+Análisis
+
+* Valores de x positivos cada vez más grandes, la función toma valores positivos cada vez más pequeños -> "tiende" a cero por encima del eje x. 
+* Valores de x negativos cada vez más pequeños, la función toma valores negativos cada vez más pequeños -> "tiende" a cero por encima del eje x. 
+** -> A medida que los valores de x “tienden” a infinito, la función “tiende” a cero. 
+** -> La función tiene una asíntota horizontal  en y=0
+* Valores de x positivos cada vez más pequeños, la función toma valores positivos cada vez más grandes -> f(x) "tiende" a infinito
+* Valores de x negativos cada vez más grandes, la función toma valores negativos cada vez más grandes -> f(x) "tiende" a infinito 
+** -> A medida que los valores de x “tienden” a cero, la función “tiende” a infinito.
+** -> La función tiene una asíntota vertical  en x=0
+
+
+*Notas*
+
+stem:[h(x)=-7x]
+
+stem:[i(x)=7x]
+
+ Cuando la k es negativa, la hipérbola ocupa el segundo y cuarto cuadrante. Mientras que cuando es positiva, ocupa el primer y tercer cuadrante.
+
+=== Asíntotas verticales y horizontales
+
+* La recta x=a es una asíntota vertical de la función y=f(x) si y se aproxima a ±∞ cuando x se aproxima a a por la derecha o por la izquierda. 
+
+image::2023-09-10T21-39-24-580Z.png[] 
+
+* La recta y=b es una asíntota horizontal de la función y=f(x) si y se aproxima a b cuando x se tiende a ±∞
+
+image::2023-09-10T21-53-51-334Z.png[] 
+
+====
+*Observaciones*
+
+* a+ se lee "por la derecha de a", y a- se lee "por la izquierda de a"
+* La flecha (→) se lee "tiende a". Por ejemplo, x tiende al infinito positivo (x→∞)
+====
+=== Asíntotas en la función racional
+
+* Asíntota vertical:  La asíntota vertical está en el valor que no pertenece al dominio de la función. De todas maneras, debemos analizar que el o los valores que no pertenecen al dominio no anulen al numerador de la función.
+
+* Asíntota horizontal
+
+Tener en cuenta el grado del polinomio numerador P(x) y el grado del polinomio denominador Q(x)
+
+** Si el grado de P(x) es menor que el grado de Q(x) la asíntota horizontal es siempre y=0
+** Si  el grado de P(x) es igual que el grado de Q(x) la asíntota horizontal es stem:[y="coeficiente principal de P(x)"/"coeficiente principal de Q(x)"]
+** Si el grado de P(x) es mayor que el grado de Q(x) la función no tiene asíntota horizontal.
+
+
+=== Función homográfica
+
+* Si es el cociente entre dos polinomios de grado uno que no comparten raíces.
+
+*Qué analizar*
+
+* dominio
+* raíces (si posee)
+* ordenada al origen (si posee)
+* asíntotas verticales 
+* asíntotas horizontales
+* conjunto de positividad y negatividad
+* representación gráfica.
+* imagen
+
+*Ejemplo*
+
+stem:[f(x)=(5x+15)/(4x-8)]
+
+* *Dominio*
+ 
+ 4x-8=0
+ 4x=0+8
+ x=8/4
+ x=2
+==== 
+Dom f=R-{2}
+====
+
+* *Ordenada al origen*
+
+stem:[f(0)=(5.0+15)/(4.0-8)=15/(-8)=-1,875]
+
+====
+stem:[OI: -1,875]
+====
+
+* *Raíces*
+
+stem:[(5x+15)/(4x-8)=0] → para que la fracción de cero, el numerador debe dar cero.
+ 
+ 5x+15=0
+ 5x=-15
+==== 
+ x=-3
+====
+
+Por lo tanto, la gráfica pasa por el punto (-3;0) , es decir, interseca el eje x en el valor -3
+
+* *Asíntota vertical*
+
+Como x=2 no pertenece al dominio y no anula al numerador de la función, es una asíntota vertical.
+
+====
+stem:[AV: x=2]
+====
+
+* *Asíntota horizontal*
+
+Dado que el polinomio numerador y denominador tienen igual grado, dividimos los coeficientes principales como lo hemos definido antes. En este caso nos queda:
+
+====
+stem:[AH: y=5/4]
+====
+
+* *Conjuntos de positividad y negatividad*
+Teniendo en cuenta el dominio de la función Dom f=R-{2} y la raíz x=-3, establecemos los intervalos de análisis. Luego, elegimos un valor cualquiera de X que pertenezca a cada intervalo para evaluar la función en ese valor y establecer el signo.
+
+image::2023-09-11T00-21-46-581Z.png[] 
+
+Ahora, podemos determinar los conjuntos:
+
+====
+
+stem:[C+=(−∞;-3)U(2;+∞)]
+
+stem:[C- =(-3;2)]
+====
+
+Marquemos en el plano cartesiano lo que hemos halladoluego graficamos la función de forma aproximada:
+
+image::2023-09-11T00-26-02-865Z.png[] 
+
+Luego graficamos la función de forma aproximada
+
+image::2023-09-11T00-26-34-277Z.png[] 
+
+A partir del gráfico podemos determinar la imagen de la función: 
+
+====
+stem:[Im f=R-{5/4}]
+====
+
+=== Funciones irracionales
+
+Recordar:
+
+La operación radicación no se puede calcular en el conjunto de los números reales cuando el índice es par y el radicando es negativo. Por ejemplo stem:[sqrt(-4)]  no tiene solución en R
+
+Las funciones irracionales son aquellas que en su fórmula presentan un radical, es decir, son de la forma:
+
+====
+stem:[f(x)=root(n)(g(x))]
+====
+donde n es un número natural mayor que 1 y g(x) es una función polinómica o una función racional. (aquí solo trabajaremos con las primeras)
+
+*Dominio de una función irracional*
+
+* Si n impar todos los reales
+* Si n par -> R>0
+
+*Recordar que cuando se multiplica o divide por un número negativo, el sentido de la desigualdad se invierte.*
+
+Ejemplos:
+
+[stem]
+++++
+
+f(x) = root(2)(4x-3), g(x)=root(3)(x^2-5x+1), h(x)=root(4)(-frac{1}{5}x-2), i(x)=root(5)(x+8)
+
+++++
+
+* g(x) e i(x) tienen indice impar -> stem:[dom f = R]
+
+* Para g(x) el dominio debe satisfacer la siguiente ecuación
+
+ 4x-3>0
+ x≥34
+
+====
+stem:[Dom f=[34;+∞)]
+====
+
+* para h(x) se debe satisfacer la siguiente ecuación 
+
+[stem]
+++++
+
+-frac{1}{5}x-2>=0
+
+-frac{1}{5}x>=2
+
+x<=2*(-5)
+
+x<=-10
+
+Dom\ h=(-∞;-10]
+
+++++
+
+=== Ejemplo Tabla y gráfica función irracional
+
+stem:[f(x)=sqrt(4x-3)]
+
+stem:[Dom f=[3/4;+∞)]
+
+
+image::2023-09-11T01-35-19-673Z.png[] 
+
+
+image::2023-09-11T01-35-35-157Z.png[] 
+
+Dom f=[3/4;+∞)
+
+Im f=[0;+∞)
+
+Raíz: x=3/4
+
+No tiene ordenada al origen.
+
+Es creciente
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
 
 
 
