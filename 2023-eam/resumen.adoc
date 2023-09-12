@@ -540,7 +540,7 @@ Con cuadrática:
 
 |===
 
-== Semana 5
+== Semana 5: Funciones racionales
 
 === Funciones racionales
 
@@ -873,25 +873,207 @@ No tiene ordenada al origen.
 
 Es creciente
 
+== Semana 5: Funciones exponenciales y logarítmicas
+
+=== Interés compuesto
 
 
+* Interés compuesto: los intereses que se obtienen al final de cada período de inversión se añaden al capital inicial, es decir, se capitalizan, generando interés en el siguiente período de tiempo
 
 
+** stem:[C_{0}] es capital inicial
+** r es el interés
+** t es el tiempo transcurrido
+
+stem:[C(t)=C_{0}⋅(1+frac{r}{100})^t]
+
+* Interés simple:  la ganancia no se acumula hasta terminar el proceso
+
+=== Función exponencial
+
+Tiene la forma stem:[f(x)=a^x]
+
+con stem:[a>0\ y\ a!=1]
+
+* Si a=1, la función stem:[f(x)=1^x] resulta ser constante, ya que 1 elevado a cualquier número da como resultado 1
+* Si a=0, la función stem:[f(x)=0^x] no se podría calcular cuando x=0. Además, en todos los otros casos el resultado sería cero.
+* Si a<0, obtendríamos puntos aislados, ya que cuando el exponente sea par, el resultado va a ser positivo, pero cuando sea impar, el resultado va a ser negativo.
+
+Ejemplos:
+
+image::2023-09-11T22-14-10-326Z.png[] 
+
+*Tablas y gráficos*
+
+image::2023-09-11T22-15-20-157Z.png[] 
+
+Se produce una reflexión respecto del eje y, esto se debe a que las bases de ambas funciones son recíprocas  (stem:[a\ y\ 1/a])
+
+image::2023-09-11T22-15-35-129Z.png[] 
+
+==== Ejemplos
+stem:[a^x,\ para\ a=3,\ a=1/3,\ a=5,\ a=1/5]
+
+image::2023-09-11T22-23-31-040Z.png[]
+
+==== Observaciones
+
+* stem:[Dom f=RR]
+* stem:[Im f=(0;+∞)]
+* Ordenada al origen es 1. stem:[f(0)=1] 
+* Si a>1 la función es creciente 
+* Si 0<a<1 es decreciente.
+* Asíntota: es el eje x. La gráfica de f nunca interseca al eje x, aunque se acerca a él tanto como se quiera 
+** hacia la derecha cuando 0<a<1
+** hacia la izquierda cuando a>1
+
+==== Transformaciones
+
+===== Desplazamiento vertical
+
+La gráfica de stem:[g(x)=a^x+k] está desplazada verticalmente k unidades hacia arriba si k>0, o hacia abajo si k<0, siempre tomando de referencia la gráfica de la función stem:[f(x)=a^x]
+
+Ej: k=2
+
+image::2023-09-11T22-48-22-335Z.png[] 
+
+Ej: k=-3
+
+image::2023-09-11T22-55-49-799Z.png[] 
+
+===== Desplazamiento horizontal
+
+Si a x le restamos h, la gráfica se desplaza de forma horizontal hacia la derecha h unidades. Si le sumamos, se desplaza esa cantidad pero hacia la izquierda.
+
+ej: h=-3
+
+image::2023-09-11T22-58-10-115Z.png[] 
+
+ej: h=5
+
+image::2023-09-11T22-58-47-597Z.png[] 
+
+* Reflexión respecto del eje x
+
+===== Reflexión respecto del eje x
+
+El signo negativo lo que hace es reflejar la gráfica de f respecto del eje x. Funciona como una especie de espejo.
+
+image::2023-09-11T23-01-43-930Z.png[] 
 
 
+===== Expansión y contracción vertical
+
+stem:[g(x)=c⋅a^x]
+
+* Se expande verticalmente con factor c si c>1
+
+image::2023-09-11T23-05-22-974Z.png[] 
+
+* Se contrae verticalmente si 0 < c < 1
+
+image::2023-09-11T23-06-16-188Z.png[] 
+
+==== Asíntota horizontal
+
+stem:[g(x)=a^x+k] (con a>0 y a≠1)
+
+La asíntota horizontal es: y=k
+
+===== Ejemplos
+
+stem:[h(x)=3^x+2] es y=2
+
+image::2023-09-11T23-09-23-188Z.png[] 
+
+stem:[i(x) = (1/5)^x- 3] es y=-3
+
+image::2023-09-11T23-10-12-048Z.png[] 
 
 
+==== Función logarítmica
 
+stem:[log_a(b)=c↔a^c=b]
 
+*Definición*: stem:[f(x)=log_a(x)]
 
+* a positiva y distinta de 1
+* solamente podemos calcular el logaritmo de cantidades positivas, por lo cual el stem:[Dom f = (0;+∞)]
 
+===== Averiguar dominio
+
+stem:[f(x)=log_2(x-5)]
+
+ x-5>0
+
+====
+stem:[dom f=(5;+infty)] 
+====
  
+stem:[g(x)=log_3(1/2x+1)]
+
+stem:[1/2x+1>0]
+
+stem:[1/2x>-1]
+
+stem:[x>-2]
+
+====
+stem:[dom f=(-2;+infty)] 
+====
 
 
+===== Tablas y gráficos
+
+stem:[f(x)=log_2(x),     g(x)=log_frac{1}{2}(x)]
+
+image::2023-09-12T00-18-21-511Z.png[] 
+
+image:2023-09-12T00-18-51-733Z.png[] 
+
+image:2023-09-12T00-19-10-876Z.png[] 
+
+===== Observaciones
+
+* stem:[Dom f=(0;+∞)]
+* stem:[Im f=RR]
+* raíz: stem:[f(1)=0] 
+* Si a>1 la función crece, 
+* Si 0<a<1 la función decrece.
+* El eje y es una asíntota vertical
+
+===== Desplazamientos
+
+original:
+
+stem:[f(x)=log_2(x)]
+
+image::2023-09-12T00-28-13-225Z.png[] 
 
 
+* stem:[g(x)=log_2(x)+1] va a estar desplazada un lugar hacia arriba
 
+image:2023-09-12T00-29-10-631Z.png[] 
 
+* stem:[g(x)=log_2(x)-1] va a estar desplazada un lugar hacia abajo
+
+image::2023-09-12T00-30-01-853Z.png[] 
+
+* stem:[g(x)=log_2(x+1)] va a estar desplazada un lugar hacia izquierda (asíntota vertical en -1)
+
+image::2023-09-12T00-32-18-021Z.png[] 
+
+* stem:[g(x)=log_2(x-1)] va a estar desplazada un lugar hacia derecha (asíntota vertical en 1)
+
+image::2023-09-12T00-31-15-355Z.png[] 
+
+===== Asíntota
+
+La asíntota de la función stem:[g(x)=log_0,5(x-4)] es x=4, 
+
+La de la función stem:[h(x)=log_3(x+1)] es x=-1
+
+image::2023-09-12T00-36-15-997Z.png[] 
 
 
 
