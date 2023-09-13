@@ -540,7 +540,25 @@ Con cuadrática:
 
 |===
 
-== Semana 5: Funciones racionales
+== Semana 5
+
+=== Asíntotas
+
+* La recta x=a es una *asíntota vertical* de la función y=f(x) si y se aproxima a ±∞ cuando x se aproxima a a por la derecha o por la izquierda. 
+
+image::2023-09-10T21-39-24-580Z.png[] 
+
+* La recta y=b es una *asíntota horizontal* de la función y=f(x) si y se aproxima a b cuando x se tiende a ±∞
+
+image::2023-09-10T21-53-51-334Z.png[] 
+
+====
+*Observaciones*
+
+* a+ se lee "por la derecha de a", y a- se lee "por la izquierda de a"
+* La flecha (→) se lee "tiende a". Por ejemplo, x tiende al infinito positivo (x→∞)
+====
+
 
 === Funciones racionales
 
@@ -550,7 +568,11 @@ image:2023-09-10T13-25-56-071Z.png[]
 
 P(x) y Q(x) son funciones polinómicas, siendo Q(x) distinto del polinomio nulo. Estas funciones, al igual que las polinómicas, son funciones algebraicas.
 
-*Ejemplos*
+*Observaciones*
+* En este curso vamos a trabajar con funciones racionales donde P(x) y Q(x) no tengan factores en común, es decir, ya va a estar en forma irreducible la expresión fraccionaria.
+* A pesar de que las funciones racionales se construyen a partir de polinomios, sus gráficas tienen un aspecto diferentes al de las gráficas de funciones polinómicas.
+
+==== Ejemplos
 
 image:2023-09-10T13-27-22-358Z.png[] 
 
@@ -558,13 +580,9 @@ No es una función racional
 
 image:2023-09-10T13-27-49-247Z.png[] 
 
-*Algunas observaciones*
-
-* En este curso vamos a trabajar con funciones racionales donde P(x) y Q(x) no tengan factores en común, es decir, ya va a estar en forma irreducible la expresión fraccionaria.
-* A pesar de que las funciones racionales se construyen a partir de polinomios, sus gráficas tienen un aspecto diferentes al de las gráficas de funciones polinómicas.
 
 
-=== Dominio de las funciones racionales
+==== Dominio
 
 La función racional f(x) de nuestra definición es un cociente entre dos funciones polinómicas con dominio real. Sin embargo, la división por cero no está definida, entonces debemos asegurarnos de que el polinomio denominador no sea cero. En símbolos: Q(x)≠0
 
@@ -598,7 +616,7 @@ Dom\ i=R
 
 ++++
 
-=== Función inversamente proporcional
+==== Inversamente proporcional
 
 Dos variables (una independiente x y otra dependiente y) son inversamente proporcionales, si el producto de los valores respectivos de cada una de ellas es una constante k, siendo k∈R-{0}
 
@@ -613,7 +631,7 @@ o\ bien\ f(x)=k/x
 
 ++++
 
-=== Tabla y gráfica con un ejemplo
+==== Tabla
 
 [stem]
 ++++
@@ -650,49 +668,51 @@ g(x)=2x
 |1000   | 0,002
 |===
 
+==== Gráfico
+
 image::2023-09-10T15-40-49-122Z.png[] 
 
-Análisis
+==== Características
 
 * Valores de x positivos cada vez más grandes, la función toma valores positivos cada vez más pequeños -> "tiende" a cero por encima del eje x. 
+
+image::2023-09-13T11-39-10-932Z.png[] 
+
 * Valores de x negativos cada vez más pequeños, la función toma valores negativos cada vez más pequeños -> "tiende" a cero por encima del eje x. 
-** -> A medida que los valores de x “tienden” a infinito, la función “tiende” a cero. 
-** -> La función tiene una asíntota horizontal  en y=0
+
+image::2023-09-13T11-41-17-539Z.png[] 
+====
+-> A medida que los valores de x “tienden” a infinito, la función “tiende” a cero. 
+-> La función tiene una asíntota horizontal  en y=0
+====
+
 * Valores de x positivos cada vez más pequeños, la función toma valores positivos cada vez más grandes -> f(x) "tiende" a infinito
+
+image::2023-09-13T11-42-12-372Z.png[] 
+
 * Valores de x negativos cada vez más grandes, la función toma valores negativos cada vez más grandes -> f(x) "tiende" a infinito 
+
+image::2023-09-13T11-42-39-212Z.png[]
+
+====
 ** -> A medida que los valores de x “tienden” a cero, la función “tiende” a infinito.
 ** -> La función tiene una asíntota vertical  en x=0
-
-
-*Notas*
-
-stem:[h(x)=-7x]
-
-stem:[i(x)=7x]
-
- Cuando la k es negativa, la hipérbola ocupa el segundo y cuarto cuadrante. Mientras que cuando es positiva, ocupa el primer y tercer cuadrante.
-
-=== Asíntotas verticales y horizontales
-
-* La recta x=a es una asíntota vertical de la función y=f(x) si y se aproxima a ±∞ cuando x se aproxima a a por la derecha o por la izquierda. 
-
-image::2023-09-10T21-39-24-580Z.png[] 
-
-* La recta y=b es una asíntota horizontal de la función y=f(x) si y se aproxima a b cuando x se tiende a ±∞
-
-image::2023-09-10T21-53-51-334Z.png[] 
-
 ====
-*Observaciones*
 
-* a+ se lee "por la derecha de a", y a- se lee "por la izquierda de a"
-* La flecha (→) se lee "tiende a". Por ejemplo, x tiende al infinito positivo (x→∞)
-====
-=== Asíntotas en la función racional
+* Ocupación en el plano
+ ** k es positiva ocupa el primer y tercer cuadrante
+ ** k es negativa la hipérbola ocupa el segundo y cuarto cuadrante
+
+stem:[h(x)=-1/x]
+stem:[i(x)=1/x]
+
+image::2023-09-13T11-50-14-779Z.png[] 
+
+==== Asíntotas vertical
 
 * Asíntota vertical:  La asíntota vertical está en el valor que no pertenece al dominio de la función. De todas maneras, debemos analizar que el o los valores que no pertenecen al dominio no anulen al numerador de la función.
 
-* Asíntota horizontal
+==== Asíntota horizontal
 
 Tener en cuenta el grado del polinomio numerador P(x) y el grado del polinomio denominador Q(x)
 
@@ -705,7 +725,9 @@ Tener en cuenta el grado del polinomio numerador P(x) y el grado del polinomio d
 
 * Si es el cociente entre dos polinomios de grado uno que no comparten raíces.
 
-*Qué analizar*
+==== Características de análisis
+
+*Conviene analizar*
 
 * dominio
 * raíces (si posee)
@@ -716,7 +738,7 @@ Tener en cuenta el grado del polinomio numerador P(x) y el grado del polinomio d
 * representación gráfica.
 * imagen
 
-*Ejemplo*
+==== Ejemplo
 
 stem:[f(x)=(5x+15)/(4x-8)]
 
@@ -730,7 +752,7 @@ stem:[f(x)=(5x+15)/(4x-8)]
 Dom f=R-{2}
 ====
 
-* *Ordenada al origen*
+==== Ordenada al origen
 
 stem:[f(0)=(5.0+15)/(4.0-8)=15/(-8)=-1,875]
 
@@ -738,7 +760,7 @@ stem:[f(0)=(5.0+15)/(4.0-8)=15/(-8)=-1,875]
 stem:[OI: -1,875]
 ====
 
-* *Raíces*
+==== Raíces
 
 stem:[(5x+15)/(4x-8)=0] → para que la fracción de cero, el numerador debe dar cero.
  
@@ -750,7 +772,7 @@ stem:[(5x+15)/(4x-8)=0] → para que la fracción de cero, el numerador debe dar
 
 Por lo tanto, la gráfica pasa por el punto (-3;0) , es decir, interseca el eje x en el valor -3
 
-* *Asíntota vertical*
+==== Asíntota vertical
 
 Como x=2 no pertenece al dominio y no anula al numerador de la función, es una asíntota vertical.
 
@@ -758,7 +780,7 @@ Como x=2 no pertenece al dominio y no anula al numerador de la función, es una 
 stem:[AV: x=2]
 ====
 
-* *Asíntota horizontal*
+==== Asíntota horizontal
 
 Dado que el polinomio numerador y denominador tienen igual grado, dividimos los coeficientes principales como lo hemos definido antes. En este caso nos queda:
 
@@ -766,7 +788,8 @@ Dado que el polinomio numerador y denominador tienen igual grado, dividimos los 
 stem:[AH: y=5/4]
 ====
 
-* *Conjuntos de positividad y negatividad*
+==== Conjuntos de positividad y negatividad
+
 Teniendo en cuenta el dominio de la función Dom f=R-{2} y la raíz x=-3, establecemos los intervalos de análisis. Luego, elegimos un valor cualquiera de X que pertenezca a cada intervalo para evaluar la función en ese valor y establecer el signo.
 
 image::2023-09-11T00-21-46-581Z.png[] 
@@ -807,14 +830,14 @@ stem:[f(x)=root(n)(g(x))]
 ====
 donde n es un número natural mayor que 1 y g(x) es una función polinómica o una función racional. (aquí solo trabajaremos con las primeras)
 
-*Dominio de una función irracional*
+==== Dominio
 
 * Si n impar todos los reales
 * Si n par -> R>0
 
 *Recordar que cuando se multiplica o divide por un número negativo, el sentido de la desigualdad se invierte.*
 
-Ejemplos:
+==== Ejemplos
 
 [stem]
 ++++
@@ -851,7 +874,7 @@ Dom\ h=(-∞;-10]
 
 ++++
 
-=== Ejemplo Tabla y gráfica función irracional
+==== Tabla
 
 stem:[f(x)=sqrt(4x-3)]
 
@@ -860,6 +883,7 @@ stem:[Dom f=[3/4;+∞)]
 
 image::2023-09-11T01-35-19-673Z.png[] 
 
+==== Gráfico
 
 image::2023-09-11T01-35-35-157Z.png[] 
 
@@ -872,8 +896,6 @@ Raíz: x=3/4
 No tiene ordenada al origen.
 
 Es creciente
-
-== Semana 5: Funciones exponenciales y logarítmicas
 
 === Interés compuesto
 
@@ -888,6 +910,8 @@ Es creciente
 stem:[C(t)=C_{0}⋅(1+frac{r}{100})^t]
 
 * Interés simple:  la ganancia no se acumula hasta terminar el proceso
+
+=== Funciones exponenciales
 
 === Función exponencial
 
