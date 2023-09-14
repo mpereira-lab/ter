@@ -803,6 +803,8 @@ stem:[C+=(−∞;-3)U(2;+∞)]
 stem:[C- =(-3;2)]
 ====
 
+==== Gráfico
+
 Marquemos en el plano cartesiano lo que hemos halladoluego graficamos la función de forma aproximada:
 
 image::2023-09-11T00-26-02-865Z.png[] 
@@ -911,8 +913,6 @@ stem:[C(t)=C_{0}⋅(1+frac{r}{100})^t]
 
 * Interés simple:  la ganancia no se acumula hasta terminar el proceso
 
-=== Funciones exponenciales
-
 === Función exponencial
 
 Tiene la forma stem:[f(x)=a^x]
@@ -923,13 +923,15 @@ con stem:[a>0\ y\ a!=1]
 * Si a=0, la función stem:[f(x)=0^x] no se podría calcular cuando x=0. Además, en todos los otros casos el resultado sería cero.
 * Si a<0, obtendríamos puntos aislados, ya que cuando el exponente sea par, el resultado va a ser positivo, pero cuando sea impar, el resultado va a ser negativo.
 
-Ejemplos:
+*Ejemplos*
 
 image::2023-09-11T22-14-10-326Z.png[] 
 
-*Tablas y gráficos*
+==== Tabla
 
 image::2023-09-11T22-15-20-157Z.png[] 
+
+==== Gráficos
 
 Se produce una reflexión respecto del eje y, esto se debe a que las bases de ambas funciones son recíprocas  (stem:[a\ y\ 1/a])
 
@@ -940,7 +942,7 @@ stem:[a^x,\ para\ a=3,\ a=1/3,\ a=5,\ a=1/5]
 
 image::2023-09-11T22-23-31-040Z.png[]
 
-==== Observaciones
+==== Características
 
 * stem:[Dom f=RR]
 * stem:[Im f=(0;+∞)]
@@ -1015,7 +1017,7 @@ stem:[i(x) = (1/5)^x- 3] es y=-3
 image::2023-09-11T23-10-12-048Z.png[] 
 
 
-==== Función logarítmica
+=== Función logarítmica
 
 stem:[log_a(b)=c↔a^c=b]
 
@@ -1024,7 +1026,7 @@ stem:[log_a(b)=c↔a^c=b]
 * a positiva y distinta de 1
 * solamente podemos calcular el logaritmo de cantidades positivas, por lo cual el stem:[Dom f = (0;+∞)]
 
-===== Averiguar dominio
+==== Dominio
 
 stem:[f(x)=log_2(x-5)]
 
@@ -1047,17 +1049,19 @@ stem:[dom f=(-2;+infty)]
 ====
 
 
-===== Tablas y gráficos
+==== Tabla 
 
 stem:[f(x)=log_2(x),     g(x)=log_frac{1}{2}(x)]
 
 image::2023-09-12T00-18-21-511Z.png[] 
 
+==== Gráficos
+
 image:2023-09-12T00-18-51-733Z.png[] 
 
 image:2023-09-12T00-19-10-876Z.png[] 
 
-===== Observaciones
+==== Características
 
 * stem:[Dom f=(0;+∞)]
 * stem:[Im f=RR]
@@ -1066,7 +1070,7 @@ image:2023-09-12T00-19-10-876Z.png[]
 * Si 0<a<1 la función decrece.
 * El eje y es una asíntota vertical
 
-===== Desplazamientos
+==== Desplazamientos
 
 original:
 
@@ -1091,9 +1095,9 @@ image::2023-09-12T00-32-18-021Z.png[]
 
 image::2023-09-12T00-31-15-355Z.png[] 
 
-===== Asíntota
+==== Asíntota (Vertical)
 
-La asíntota de la función stem:[g(x)=log_0,5(x-4)] es x=4, 
+La asíntota de la función stem:[g(x)=log_(0,5)(x-4)] es x=4, 
 
 La de la función stem:[h(x)=log_3(x+1)] es x=-1
 
