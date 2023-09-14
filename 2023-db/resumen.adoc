@@ -219,13 +219,13 @@ Las propiedades de la relación son:
 image::2023-09-02T19-59-35-546Z.png[] 
 
 
-== Atributos 
+=== Atributos 
 
 Son propiedades de entidades y relaciones que toman un valor en una instancia particular. El dominio es el conjunto de valores validos que puede tomar una propiedad.
 
  Ejemplo: Si la entidad es “Examen”, y una propiedad es “Nota” su dominio puede ser un número del 1 al 10
 
-=== Tipos de atributos
+==== Tipos de atributos
 
 * Identificador único - clave primaria: conjunto de atributos (1 o más) que sirven para identificar unívocamente a cada entidad del mismo tipo
 * Atributos derivables: a veces, resulta útil poder representar a determinados atributos, cuyas instancias están en función de otros atributos de la misma entidad
@@ -473,8 +473,174 @@ Es aquella columna que existiendo como dependiente en una tabla, es a su vez cla
 
 Una restricción foreign key no puede modificarse, debe eliminarse y volverse a crear.
 
+== Semana 5
+
+=== Instalación mySql
+
+* Bajarse mySql de www.mysql.com
+
+* Ingresar a MySQL Community Server y luego cliquear en:
+
+image::2023-09-14T10-48-24-407Z.png[] 
+
+* Seleccionamos el archivo que queremos descargar:
+
+image::2023-09-14T10-48-47-870Z.png[] 
+
+* Descargamos el archivo:
+
+image::2023-09-14T10-49-07-858Z.png[] 
+
+* Version 
+
+image::2023-09-14T10-49-34-163Z.png[] 
+
+=== Instalar XAMPP
+
+* Buscar y descargar XAMPP
+
+* Uso
+
+image::2023-09-14T10-50-38-164Z.png[] 
+
+Ojo que si se instala el server mySql, este queda funcionando y cuando se quiere activar por este panel de control da error porque ya esta levantado
+
+* De las dos opciones indicadas en la imagen vamos a elegir acceder al “Shell”
+
+image::2023-09-14T11-39-57-929Z.png[] 
+
+* Después del clic en el Shell, el entorno es el siguiente:
+
+image::2023-09-14T11-40-53-409Z.png[] 
+
+* Para trabajar con MySQL debemos posicionarnos en ese directorio, para ello, debemos escribir la siguiente sintaxis:
+ 
+ mysql -u root -p
+
+====
+* Mysql => indica el directorio
+* u => quiere decir usuario
+* Root =>  es el usuario administrador, el que tiene todos los permisos 
+* -p => quiere decir password, luego del enter se debe ingresar la contraseña que se colocó cuando se instaló la herramienta. En caso de no tener contraseña se vuelve a dar enter para posicionarnos en el directorio de mysql
+====
+
+* La consola debería quedar como se muestra en la imagen.
+
+image::2023-09-14T11-43-09-761Z.png[] 
+
+=== Sentencias DDL
+
+*Crear base de dadtos"
+
+* create database Biblioteca;
+* use biblioteca;
+
+*Crear tabla*
+
+ create table Socio(CodSocio int, 
+    DNI varchar (10), 
+    Nombre varchar (60), 
+    Apellido varchar (60), 
+    Direccion varchar (50), 
+    Tel varchar (15), 
+    constraint pk_socio primary key (CodSocio)
+ );
+
+*Tabla con clave foránea (foreign key)*
+
+ create table ejemplar (
+    idEjem int auto_increment,
+    codLibro int,
+    NEjemplar int,
+    Deteriorado boolean,
+    Prestado boolean,
+    constraint pk_ejemplar primary key (idEjem),
+    constraint fk_ejemplar foreign key (CodLibro) references Libro (CodLibro)
+ );
+
+*pk compuesta*
+
+ create table LibroAutor (
+    CodLibro int,
+    CodAutor int,
+    constraint pk_LibroAutor primary key (CodLibro, CodAutor)
+ );
+
+=== Sentencias DML
+
+==== consultas
+
+====
+*select* lista_atributos *from* tabla *where* predicado
+====
+
+* Cuadro se muestran las cláusulas básicas para manipular los datos almacenados:
+
+[cols="15%,30%,55%"]
+|===
+|Operador       | Definición                                                        | Sentencia
+| DISTINCT      | Elimina tuplas repetidas en el resultado.	                        | SELECT DISTINCT oficio FROM empleado;
+
+                                                                                      Muestra una sola vez cada uno de los oficios de los empleados.
+|BETWEEN         |Cuando el dominio del predicado pertenece a un rango de valores.  | SELECT codigo_c, nombre +
+                                                                                        FROM empleadO + 
+                                                                                        WHERE salario BETWEEN 10000 AND 1600;
+
+                                                                                        Muestra el código y el nombre de los empleados con salario entre 10000 y 16000 pesos inclusive.
+
+|Cambio de nombre
+| Cuando se desea cambiar el nombre de las tablas en los productos
+ cartesianos se empleas AS o se deja un espacio entre el nombre de
+                  la tabla y su alias.
+| SELECT * +
+   FROM alumno A, materia M +
+   WHERE A.legajo = M.legajo;
+
+ Renombra a la tabla alumno con A y a la tabla materia con M.
+|ORDER BY       | Permite ordenar el resultado de la consulta.                      | SELECT * +
+                                                                                         FROM empleado +
+                                                                                          WHERE salario = 15000 + 
+                                                                                           ORDER BY nombre;
+
+                                                                                      Muestra los datos de los empleados que cumplen la condición ordenadas de manera ascendente por su nombre. Para ordenarlos de manera descendente se debe agregar DESC. Se puede indicar más de una criterio de ordenación, estos van separados por coma.
+
+|LIKE           
+| Cuando necesitamos buscar tuplas que "contengan" determinada información, 
+ sin necesidad de coincidir exactamente. Utiliza un comodín => %
+| SELECT * +
+  FROM empleado +
+   WHERE nombre +
+    LIKE "M%";
+
+Muestra los datos de los empleados cuyo nombre comienza con M.
+
+Formatos:
+
+"Ma%" => comienza con Ma +
+"%Ma%" => contiene Ma +
+"%Ma" => termina con Ma +
 
 
+|===
+
+
+==== Funciones de agregación
+
+image::2023-09-14T21-33-39-382Z.png[] 
+
+==== Funciones de agrupación 
+
+image::2023-09-14T21-34-05-902Z.png[] 
+
+==== Valores nulos
+
+image::2023-09-14T21-38-15-039Z.png[] 
+
+==== CRUD
+
+Create, Read, Update, Delete
+
+image::2023-09-14T21-38-40-775Z.png[] 
 
 
 
