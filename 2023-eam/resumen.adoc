@@ -1739,17 +1739,6 @@ stem:[lim_(x→∞)2^x=∞]
 image::2023-09-17T17-46-47-317Z.png[] 
 
 
-
-
-
-
-
-
-
-
-
-
-
 === *Resumen propiedades*
 
 [cols="5%,30%,45%,20%"]
@@ -1796,5 +1785,9 @@ image::2023-09-17T17-46-47-317Z.png[]
 | El límite de una raíz es la raíz del límite
 | stem:[lim_(x→a)root(n)f(x) = root(n)(lim_(x→a)f(x))]
 | n es un entero positivo. Si n es par, suponemos que stem:[lim_(x→a) f(x)>0]
+| 11
+| Límite infinito que tiende a cero
+| stem:[lim_(x→∞)1/x^k=0\ \ \ \ y\ \ \ \ lim_(x→-∞)1/x^k=0]
+| 
 
 |===
