@@ -1,8 +1,10 @@
 :toc-title: Índice
 :toc: left
-:toclevels: 4
+:toclevels: 5
 :imagesdir: ./images
 :stem: 
+
+= Elementos de análisis matemático
 
 == Semana 1
 
@@ -798,7 +800,7 @@ Ahora, podemos determinar los conjuntos:
 
 ====
 
-stem:[C+=(−∞;-3)U(2;+∞)]
+stem:[C+=(-∞;-3)U(2;+∞)]
 
 stem:[C- =(-3;2)]
 ====
@@ -1102,6 +1104,491 @@ La asíntota de la función stem:[g(x)=log_(0,5)(x-4)] es x=4,
 La de la función stem:[h(x)=log_3(x+1)] es x=-1
 
 image::2023-09-12T00-36-15-997Z.png[] 
+
+== Semana 6
+
+=== Límite de una función
+
+==== Entendiendo límite con ejemplo
+
+Analizar f definida por stem:[f(x)=x^2-x+2] para valores de x cercanos (pero no iguales) a 2
+
+===== Tabla
+
+*Acercamos a x = 2 con valores mas chicos que 2*
+
+Cuando nos acercamos al valor 2 de x, la función f se acerca cada vez más al valor 4
+
+|===
+|x    |f(x)
+
+|1    |2
+|1,5  |2,75
+|1,8  |3,44
+|1,9  |3,71
+|1,95 |3,8525
+|1,99 |3,9701
+|1,995|3,985025
+|1,999|3,997001
+|===
+
+*Acercamos a x = 2 con valores mas grandes que 2*
+
+Cuando nos acercamos al valor 2 de x, la función f se acerca cada vez más al valor 4
+
+|===
+|x    |f(x)
+
+|3    |8
+|2,5  |5,75
+|2,2  |4,64
+|2,1  |4,31
+|2,05 |4,1525
+|2,01 |4,0301
+|2,005|4,015025
+|2,001|4,003001
+|===
+
+===== Gráfico
+
+x un poco mas lejos de 2
+
+image:2023-09-16T14-18-56-705Z.png[] 
+
+x un poco mas cerca de 2 
+
+image:2023-09-16T14-19-18-713Z.png[] 
+
+*Animación: https://www.geogebra.org/m/mnmppzxa*
+
+===== Conclusión
+
+Cuando x se aproxima a 2 por valores más grandes o más chicos, la función f(x) se acerca a 4
+
+De las tablas y la gráfica de f vemos que cuando x se aproxima a 2 (por ambos lados de 2), f(x) se aproxima a 4. De hecho, parece que podemos hacer que los valores de f(x) estén tan cerca de 4 como queramos, tomando x suficientemente cercano a 2. Esto lo expresamos diciendo que “el límite de la función stem:[lim_(x->2) (x^2-x+2)=4]] cuando x tiende a 2 es igual a 4
+
+Notación:
+
+====
+stem:[lim_(x->2) (x^2-x+2)=4]
+====
+
+* Cuando consideramos valores un poquito más grandes al de x , decimos que x tiende a ese valor por derecha.
+* Cuando consideramos valores un poquito más chicos al de x, decimos que x tiende a ese valor por izquierda.
+
+==== Definición
+
+
+Los valores de f(x) tienden a estar más y más cerca del número L cuando x se acerca cada vez más al número a por ambos lados(izquierda y derecha), pero x≠a
+
+====
+stem:[lim_(x->a) = f(x) = L]
+====
+
+Se lee el límite de f(x), cuando x tiende a *a*, es igual a L
+
+Otra notación
+
+====
+stem:[f(x)->L\ "cuando"\ x->a]
+====
+
+*Notese “pero x≠a” en la definición de límite. Esto significa que al encontrar el límite de f(x) cuando x se aproxima a a, no se considera x=a. De hecho, f(x) no necesita estar definida en a. Lo único que importa es cómo se define f cerca de a*
+
+En los siguientes ejemplos
+
+stem:[lim_(a->L)] 
+
+pero con diferentes resultados de f(a)
+
+|===
+
+|*Ejemplo 1:* |*Ejemplo 2:* |*Ejemplo 3:*
+
+|f(a)->L  y f(a)=L 
+|f(a)->L pero f(a)!=L (notese que f(a) está en el punto rojo) 
+|f(a)->L pero f(a) no está definida
+
+|image:2023-09-16T15-24-13-491Z.png[] 
+|image:2023-09-16T15-27-20-611Z.png[] 
+|image:2023-09-16T15-27-49-570Z.png[] 
+
+|===
+
+==== Ejemplo 1 (lim no definido)
+
+stem:[f(x)=(x-1)/(x^2-1)] cuando x tiende a 1
+
+Nótese no está definida cuando x=1 pero no tiene importancia porque la definición de stem:[lim_(x->a) f(x)] dice que consideramos valores de x que son cercanos a *a* pero no iguales a *a*
+
+===== Tabla
+
+|===
+| image:2023-09-16T15-58-42-859Z.png[] | image:2023-09-16T15-59-08-875Z.png[]
+|===
+
+se infiere que stem:[lim_(x->1)((x-1)/(x^2-1))]=0,5
+
+===== Gráfico
+
+image::2023-09-16T16-02-04-066Z.png[] 
+
+Aparece un punto vacío porque la función en ese lugar presenta una discontinuidad.
+
+==== Ejemplo 2 (lim definido)
+
+Dada stem:[g(x) = x^2+1] calcular stem:[lim_(x→-2) g(x)]
+
+===== Tabla
+
+image::2023-09-16T16-06-56-536Z.png[] 
+
+*Cuando x toma valores: 
+** mayores que -2 la función se acerca al valor 5
+** valores menores que -2 la función se acerca al valor 5
+
+Entonces, decimos que:
+
+====
+stem:[lim_(x->-2)(x^2+1)=5]
+====
+
+===== Gráfico
+
+image::2023-09-16T16-13-14-997Z.png[] 
+
+==== Ejemplo 3 (limites diferentes)
+
+A partir de la gráfica de h(x), que está definida por partes, estimar límite cuando x tiende a -1
+
+image::2023-09-16T16-16-07-381Z.png[] 
+
+|===
+| nos acercamos al valor -1 de x por la izquierda, es decir, por valores que son menores, la función se acerca al 1 | nos acercamos por la derecha al -1, es decir, por valores que son mayores, la función se acerca al 3.
+
+| image:2023-09-16T16-16-44-617Z.png[] 
+| image:2023-09-16T16-18-32-034Z.png[]
+|===
+
+Por lo tanto, cuando x tiende a -1, la función no se acerca a un solo valor. Debido a esto, decimos que el límite de h(x) cuando x tiende a -1 no existe, ya que si el límite existe es único. En símbolos:
+
+====
+stem:[lim_(x->-1) h(x)=]∄
+====
+
+Notar que el límite no existe a pesar de que la función está definida para x=-1 f(-1)=1
+
+==== Límites laterales
+
+Dada la gráfica de la función f(x)
+
+image::2023-09-16T16-35-17-608Z.png[] 
+
+
+|===
+|Límite izquierdo | Límite derecho 
+|Cuando x tiende a 0 por la izquierda, por valores que son menores que 0, la función se acerca al 0
+|Cuando x tiende a 0 por la derecha  , por valores que son mayores que 0, la función se acerca al 2
+|stem:[L_i=lim_(x->0^-)f(x)=0]
+|stem:[L_i=lim_(x->0^+)f(x)=2]
+|image:2023-09-16T16-38-20-987Z.png[] 
+|image:2023-09-16T16-41-20-096Z.png[]
+|stem:[lim_(x->a^-)f(x)=L1]
+|stem:[lim_(x->a^+)f(x)=L2] 
+|===
+
+====
+*Para que exista límite, L1=L2. En este ejemplo, no existe límite porque L1 stem:[!=]L2*
+====
+
+===== Ejemplo
+
+Calcular el stem:[lim_(x→-2)f(x)]
+
+image::2023-09-16T16-47-54-225Z.png[] 
+
+Estimar primero los límites laterales y ver qué sucede con ellos
+
+|===
+|stem:[L_i=lim_(x->-2) f(x)=-4] |stem:[L_d=lim_(x->-2) f(x)=-4]
+|===
+
+como stem:[L_i=L_d=-4] entonces el stem:[lim_(x->-2) f(x)=-4]
+
+image:2023-09-16T16-52-04-938Z.png[] 
+
+==== Propiedades
+
+===== *Prop 1* stem:[lim_(x->a) c = c]
+
+Si f(x) = c entonces:
+
+El límite de una constante, es la propia constante
+
+====
+stem:[lim_(x->a) c = c]
+====
+
+====== Deducción con ejemplo
+
+El stem:[lim_(x→2) 3 = 3] 
+
+Tomemos la función constante f(x)=3 y analicemos por tablas qué sucede cuando nos acercamos al valor 2 de x por ambos lados:
+
+image:2023-09-16T21-37-11-133Z.png[] 
+
+Puede observarse que a medida que nos acercamos al 2 de x, la función tiende al 3
+
+Esto se puede apreciar también gráficamente:
+
+image::2023-09-16T21-38-14-109Z.png[] 
+
+Entonces stem:[lim_(x→2) f(x)=lim_(x→2) 3 = 3]
+
+===== *Prop 2*: stem:[lim_(x→a) x = a]
+
+Si f(x) = x
+
+Esta función recibe el nombre de "función identidad"
+
+El límite de la función coincide con el valor al cual tiende la x
+
+====
+stem:[lim_(x→a) x = a]
+====
+
+====== Deducción con ejemplo
+
+El stem:[lim_(x→12) x = 12]
+
+Tomemos la función f(x)=x y analicemos por tablas qué sucede cuando nos acercamos al valor 12 de x por ambos lados:
+
+image::2023-09-17T00-18-37-320Z.png[] 
+
+Puede observarse que a medida que nos acercamos al 12 de x , la función tiende también al 12
+
+Esto se puede apreciar gráficamente:
+
+image::2023-09-17T00-21-43-588Z.png[] 
+
+Entonces: stem:[lim_(x→12) f(x)=lim_(x→12) x = 12]
+
+===== *Prop 3*: stem:[lim_(x→a)x^n=a^n]
+
+Si stem:[f(x)=x^n]
+
+Para cualquier entero positivo n se cumple que
+
+stem:[lim_(x→a)x^n=a^n]
+
+Ejemplo: stem:[lim_(t→4)t^2=4^2=16]
+
+===== *Prop 4*: stem:[lim_(x→a)root(n)x = root(n)x] 
+
+stem:[lim_(x→a)root(n)x = root(n)x]
+
+Si n es par, suponemos que a≥0
+
+===== *Prop 5*: stem:[lim_(x→a)\[f(x)+-g(x)\]]
+
+El límite de una suma (o diferencia), es la suma (o diferencia) de los límites
+
+stem:[lim_(x→a)\[f(x)+-g(x)\]] = stem:[lim_(x→a)\[f(x)\] +- lim_(x→a)\[g(x)\]]
+
+====== Deducción con ejemplo
+
+stem:[lim_(x→-6)(x+8)] = 
+
+-> por propiedad 5 stem:[lim_(x→-6)(x)] + stem:[lim_(x→-6)8]
+
+-> por propiedad 2 stem:[lim_(x→-6)(x)] = -6
+
+-> por propiedad 1 stem:[lim_(x→-6)8] = 8
+
+-> stem:[lim_(x→-6)(x)] + stem:[lim_(x→-6)8] = -6 + 8
+
+-> stem:[lim_(x→-6)(x+8)] = 2
+
+Lo que está dentro del paréntesis es una función de primer grado. Si la graficamos y analizamos lo que sucede estando próximos al valor -6 de x, vemos que la función tiende al 2, lo cual indica que la propiedad 5 funciona.
+
+image:2023-09-17T01-02-57-031Z.png[] 
+
+*Otro ejemplo*
+
+stem:[lim_(x→9)(sqrt x-2) = lim_(x→9)sqrt x - lim_(x→9)2] por propiedad 5
+
+-> stem:[lim_(x→9)sqrt x = sqrt 9 = 3] por propiedad 4
+
+-> stem:[lim_(x→9)2 = 2] por propiedad 1
+
+-> stem:[lim_(x→9)(sqrt x-2)] = 1
+
+
+===== *Prop 6*: stem:[lim_(x→a)\[f(x) * g(x)\]]
+
+El límite de un producto, es el producto de los límites
+
+stem:[lim_(x→a)\[f(x)*g(x)\]] = stem:[lim_(x→a)\[f(x)\] * lim_(x→a)\[g(x)\]]
+
+*Ejemplo*
+
+Determinar stem:[lim_(x→3)\[(x+4)⋅(x^2-7)\]] 
+
+-> stem:[lim_(x→3)(x+4) * lim_(x→3)(x^2-7)] por propiedad 6
+
+-> stem:[\[lim_(x→3)x+lim_(x→3)4\] * \[lim_(x→3)x^2 - lim_(x→3)7\]] por propiedad 5
+
+-> stem:[(3+4) * (3^2 - 7)] por propiedades 2, 1, 3 y 1
+
+-> stem:[lim_(x→3)\[(x+4)⋅(x^2-7)\] = 7] 
+
+===== *Prop 7*: stem:[lim_(x→a)\[c⋅f(x)\]]
+
+El límite de una constante por una función, es la constante por el límite de la función.
+
+stem:[lim_(x→a)\[c*f(x)\] = c * \[lim_(x→a)f(x)\]]
+
+Esta propiedad es un caso particular de la anterior
+
+====
+stem:[lim_(x→a)\[c*f(x)\] = lim_(x→a)c * lim_(x→a)f(x)]  por la propiedad 6
+
+stem:[lim_(x→a)\[c*f(x)\] = c * lim_(x→a)f(x)]  por la propiedad 1
+====
+
+*Ejemplo*
+
+determinar el stem:[lim_(x→1)-8x]
+
+[stem]
+++++
+
+"por prop 7" lim_(x→1)-8x = -8 * lim_(x→1)x  
+
+"por prop 2" = -8 * 1
+
+lim_(x→1)-8x = -8
+++++
+
+===== *Prop 8*: stem:[lim_(x→a)f(x)/g(x)]
+
+El límite de un cociente, es el cociente de los límites (siempre que el límite del denominador no sea cero).
+
+stem:[lim_(x→a)f(x)/g(x)] = stem:[frac{lim_(x→a)f(x)}{lim_(x→a)g(x)}" si "lim_(x→a)g(x)!=0 ]
+
+*Ejemplo* 
+
+image::2023-09-17T02-02-28-843Z.png[] 
+
+===== *Prop 9*: stem:[lim_(x→a)f(x)^n]
+
+El límite de una potencia es la potencia del límite.
+
+stem:[lim_(x→a)f(x)^n = \[lim_(x→a)f(x)\]^n] donde n es un entero positivo
+
+===== *Prop 10*: stem:[lim_(x→a)root(n)f(x)]
+
+El límite de una raíz es la raíz del límite
+
+stem:[lim_(x→a)root(n)f(x) = root(n)(lim_(x→a)f(x))] donde n es un entero positivo. Si n es par, suponemos que stem:[lim_(x→a) f(x)>0]
+
+*Ejemplo*
+
+image::2023-09-17T02-12-59-197Z.png[] 
+
+===== *Resumen propiedades*
+
+[cols="5%,30%,45%,20%"]
+|===
+|Numero | Propiedad | Expresión | Notas
+
+| 1
+| Limite de una constante
+| stem:[lim_(x->a) c = c]
+|
+| 2
+| Limite de función identidad
+| stem:[lim_(x→a) x = a]
+|
+| 3
+| Limite de potencia de función identidad
+| stem:[lim_(x→a) x = a]
+|
+| 4
+| Limite de raíz de función identidad
+| stem:[lim_(x→a)root(n)x = root(n)x]
+| Si n es par, suponemos que a≥0
+| 5
+| El límite de suma (o diferencia), es la suma (o diferencia) de los límites
+| stem:[lim_(x→a)\[f(x)+-g(x)\]] = stem:[lim_(x→a)\[f(x)\] +- lim_(x→a)\[g(x)\]]
+|
+| 6
+| El límite de un producto, es el producto de los límites
+| stem:[lim_(x→a)\[f(x)*g(x)\]] = stem:[lim_(x→a)\[f(x)\] * lim_(x→a)\[g(x)\]]
+|
+| 7
+| El límite de una constante por una función es la constante por el límite de la función
+| stem:[lim_(x→a)\[c*f(x)\] = c * \[lim_(x→a)f(x)\]]
+| es un caso particular de la anterior
+| 8
+| El límite de un cociente, es el cociente de los límites
+| stem:[lim_(x→a)f(x)/g(x)] = stem:[frac{lim_(x→a)f(x)}{lim_(x→a)g(x)}" si "lim_(x→a)g(x)!=0 ]
+| El límite del denominador no debe ser cero
+| 9
+| El límite de una potencia es la potencia del límite
+| stem:[lim_(x→a)f(x)^n = \[lim_(x→a)f(x)\]^n]
+| n es un entero positivo
+| 10
+| El límite de una raíz es la raíz del límite
+| stem:[lim_(x→a)root(n)f(x) = root(n)(lim_(x→a)f(x))]
+| n es un entero positivo. Si n es par, suponemos que stem:[lim_(x→a) f(x)>0]
+
+|===
+
+==== Sustitución directa
+
+Si f es una función polinómica o una función racional y a está en el dominio de f, entonces:
+
+stem:[lim_(x→a)f(x)=f(a)]
+
+===== Ejemplo 1
+
+stem:[lim_(x→3)(2x3-10x-8)]
+
+La función f(x)=2x3-10x-8 es polinómica, por lo que podemos hallar el límite por sustitución directa:
+
+stem:[lim_(x→3)(2x^3-10x-8)=2*3^3-10*3-8=16]
+
+====
+stem:[lim_(x→3)(2x^3-10x-8)=16]
+====
+
+===== Ejemplo 2
+
+stem:[lim_(x→-1)frac{x^2+5x}{x^4+2}] es racional y x=-1 está en su dominio, porque el denominador no es cero para x=-1. Entonces, podemos hallar el límite por sustitución directa:
+
+stem:[lim_(x→-1)frac{x^2+5x}{x^4+2} = frac{(-1)^2+5⋅(-1)}{(-1)^4+2} = -4/3]
+
+====
+stem:[lim_(x→-1)frac{x^2+5x}{x^4+2} = -4/3]
+====
+
+==== Ejemplo 3
+
+stem:[lim_(x→4) sqrt (x^3+36)]
+
+ primero debemos aplicar la propiedad de la raíz vista anteriormente
+
+stem:[lim_(x→4) sqrt (x^3+36) = sqrt (lim_(x→4) x^3+36)]
+
+vemos que tenemos que calcular el límite de una función polinómica, la cual es stem:[f(x)=x^3+36]. Aplicando sustitución nos queda: stem:[sqrt (4^3+36) = sqrt(100) = 10]
+
+====
+stem:[lim_(x→4) sqrt (x^3+36) = 10]
+====
+
+image::2023-09-17T03-34-38-162Z.png[] 
+
 
 
 
