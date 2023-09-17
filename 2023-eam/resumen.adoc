@@ -1496,7 +1496,261 @@ stem:[lim_(x→a)root(n)f(x) = root(n)(lim_(x→a)f(x))] donde n es un entero po
 
 image::2023-09-17T02-12-59-197Z.png[] 
 
-===== *Resumen propiedades*
+
+
+==== Sustitución directa
+
+Si f es una función polinómica o una función racional y a está en el dominio de f, entonces:
+
+stem:[lim_(x→a)f(x)=f(a)]
+
+===== Ejemplo 1
+
+stem:[lim_(x→3)(2x3-10x-8)]
+
+La función f(x)=2x3-10x-8 es polinómica, por lo que podemos hallar el límite por sustitución directa:
+
+stem:[lim_(x→3)(2x^3-10x-8)=2*3^3-10*3-8=16]
+
+====
+stem:[lim_(x→3)(2x^3-10x-8)=16]
+====
+
+===== Ejemplo 2
+
+stem:[lim_(x→-1)frac{x^2+5x}{x^4+2}] es racional y x=-1 está en su dominio, porque el denominador no es cero para x=-1. Entonces, podemos hallar el límite por sustitución directa:
+
+stem:[lim_(x→-1)frac{x^2+5x}{x^4+2} = frac{(-1)^2+5⋅(-1)}{(-1)^4+2} = -4/3]
+
+====
+stem:[lim_(x→-1)frac{x^2+5x}{x^4+2} = -4/3]
+====
+
+==== Ejemplo 3
+
+stem:[lim_(x→4) sqrt (x^3+36)]
+
+ primero debemos aplicar la propiedad de la raíz vista anteriormente
+
+stem:[lim_(x→4) sqrt (x^3+36) = sqrt (lim_(x→4) x^3+36)]
+
+vemos que tenemos que calcular el límite de una función polinómica, la cual es stem:[f(x)=x^3+36]. Aplicando sustitución nos queda: stem:[sqrt (4^3+36) = sqrt(100) = 10]
+
+====
+stem:[lim_(x→4) sqrt (x^3+36) = 10]
+====
+
+image::2023-09-17T03-34-38-162Z.png[] 
+
+=== Límites en el infinito
+
+==== Definición 
+
+* Límite en el infinito positivo: sea f una función definida en algún intervalo stem:[(a,∞)]. Entonces: 
+
+[stem]
+++++
+lim_(x→∞)f(x)=L
+++++
+
+* Límite en el infinito negativo: sea f una función definida en algún intervalo stem:[(−∞,a)]. Entonces:
+
+[stem]
+++++
+lim_(x→∞)f(x)=L
+++++
+
+==== Asíntota horizontal
+
+La recta y=L se denomina asíntota horizontal de la curva y=f(x) si
+
+[stem]
+++++
+lim_(x→∞)f(x)=L
+
+lim_(x→∞)f(x)=L
+++++
+
+==== Explicación con ejemplo
+
+Qué pasa con la función stem:[f(x)=frac{8x+1}{4x-8}] 
+
+|===
+
+| x  tiende al infinito positivo | x tiende al infinito negativo
+| x toma valores positivos cada vez más grandes 
+| x toma valores negativos cada vez más pequeños
+| image:2023-09-17T14-16-52-759Z.png[]
+| image:2023-09-17T14-17-30-832Z.png[]
+| stem:[lim_(x→∞)f(x)=2]
+| stem:[lim_(x→-∞)f(x)=2]
+|===
+
+===== Gráfico
+
+image::2023-09-17T15-06-34-214Z.png[] 
+
+==== Ejemplo 2
+
+====
+Nota: como graficar en Geogebra el limite https://www.youtube.com/watch?v=_tPYTGANcLY
+====
+
+Determinar los siguientes límites:
+
+[stem]
+++++
+
+"(a)" lim_(x→∞)1/x
+
+"(b)" lim_(x→-∞)1/x
+
+++++
+
+[cols="a,a"]
+|===
+|stem:["(a)" lim_(x→∞)1/x] | stem:["(b)" lim_(x→-∞)1/x]
+|
+
+!===
+! x         ! fx
+! 10        ! 0,1
+! 100       ! 0,01
+! 1.000     ! 0,001
+! 10.000    ! 0,0001
+! 100.000   ! 0,00001
+! 1.000.000 ! 0,000001
+!===
+| 
+!===
+! x          ! fx
+! -10        ! -0,1
+! -100       ! -0,01
+! -1.000     ! -0,001
+! -10.000    ! -0,0001
+! -100.000   ! -0,00001
+! -1.000.000 ! -0,000001
+!===
+
+|===
+
+Se deduce que la recta y=0 es una asíntota horizontal de la curva stem:[f(x)=1/x]
+
+image:2023-09-17T16-10-29-030Z.png[] 
+
+
+==== Propiedad stem:[lim_(x→−∞)frac{1}{x^k}]=0
+
+Las propiedades de límites anteriores se cumplen para límites en el infinito. Ademas se agrega una nueva regla 
+====
+[stem]
+++++
+
+lim_(x→∞)1/x^k=0
+      
+y 
+
+lim_(x→-∞)1/x^k=0
+++++
+====
+
+===== Ejemplo
+
+Determinar el stem:[lim_(x→∞)frac{3x^2-x-2}{5x^2+4x+1}]
+
+image::2023-09-17T16-40-07-580Z.png[] 
+
+=== Límites infinitos
+
+Sea f una función definida por ambos lados de a, excepto posiblemente en la misma a. Entonces:
+
+====
+stem:[lim_(x→a)f(x)=∞]: los valores de f(x) serán tan grandes como queramos, tomando x suficientemente cerca de stem:[a], pero no igual a stem:[a]
+====
+
+*Ejemplo:*
+
+stem:[f(x) = 1/x^2]
+
+Tabla
+
+image::2023-09-17T16-50-22-494Z.png[] 
+
+Gráfico
+
+image::2023-09-17T16-57-04-886Z.png[] 
+
+====
+stem:[lim_(x→a)f(x)=-∞]: los valores de f(x) serán negativos tan grandes como queramos (en valor absoluto), tomando x suficientemente cerca de stem:[a], pero no igual a stem:[a]
+====
+
+*Ejemplo:* 
+
+stem:[f(x) = -1/x^2]
+
+Tabla
+
+image::2023-09-17T17-02-34-814Z.png[] 
+
+Gráfico
+
+image::2023-09-17T16-50-56-901Z.png[] 
+
+==== Límites laterales infinitos
+
+stem:[lim_(x→a^-)f(x)=∞] y stem:[lim_(x→a^+)f(x)=∞]
+
+stem:[lim_(x→a^-)f(x)=-∞] y stem:[lim_(x→a^+)f(x)=-∞]
+
+====
+
+Nota: 
+
+* stem:[x→a^-] significa que se consideran solo los valores de x que son menores que stem:[a]
+* stem:[x→a^+] significa que se consideran solo los valores de x que son mayores que stem:[a]
+
+====
+
+*Ejemplo gráfico*
+
+image::2023-09-17T17-19-36-570Z.png[] 
+
+==== Asíntota vertical
+
+La recta stem:[x=a] se llama asíntota vertical de la curva stem:[y=f(x)] si al menos una de las siguientes afirmaciones son verdaderas
+
+====
+
+stem:[lim_(x→a)f(x)=∞"    "lim_(x→a^-)f(x)=∞"     "lim_(x→a^+)f(x)=∞]   
+
+stem:[lim_(x→a)f(x)=-∞"    "lim_(x→a^-)f(x)=-∞"     "lim_(x→a^+)f(x)=-∞]   
+
+====
+
+
+=== Limites infinitos con x infinito
+
+Existen funciones que, por ejemplo, tienden al infinito cuando la variable independiente toma valores cada vez más grandes. Un ejemplo de este tipo de funciones es stem:[f(x)=2^x]
+
+Ejemplo:
+
+stem:[lim_(x→∞)2^x=∞]
+
+image::2023-09-17T17-46-47-317Z.png[] 
+
+
+
+
+
+
+
+
+
+
+
+
+
+=== *Resumen propiedades*
 
 [cols="5%,30%,45%,20%"]
 |===
@@ -1544,51 +1798,3 @@ image::2023-09-17T02-12-59-197Z.png[]
 | n es un entero positivo. Si n es par, suponemos que stem:[lim_(x→a) f(x)>0]
 
 |===
-
-==== Sustitución directa
-
-Si f es una función polinómica o una función racional y a está en el dominio de f, entonces:
-
-stem:[lim_(x→a)f(x)=f(a)]
-
-===== Ejemplo 1
-
-stem:[lim_(x→3)(2x3-10x-8)]
-
-La función f(x)=2x3-10x-8 es polinómica, por lo que podemos hallar el límite por sustitución directa:
-
-stem:[lim_(x→3)(2x^3-10x-8)=2*3^3-10*3-8=16]
-
-====
-stem:[lim_(x→3)(2x^3-10x-8)=16]
-====
-
-===== Ejemplo 2
-
-stem:[lim_(x→-1)frac{x^2+5x}{x^4+2}] es racional y x=-1 está en su dominio, porque el denominador no es cero para x=-1. Entonces, podemos hallar el límite por sustitución directa:
-
-stem:[lim_(x→-1)frac{x^2+5x}{x^4+2} = frac{(-1)^2+5⋅(-1)}{(-1)^4+2} = -4/3]
-
-====
-stem:[lim_(x→-1)frac{x^2+5x}{x^4+2} = -4/3]
-====
-
-==== Ejemplo 3
-
-stem:[lim_(x→4) sqrt (x^3+36)]
-
- primero debemos aplicar la propiedad de la raíz vista anteriormente
-
-stem:[lim_(x→4) sqrt (x^3+36) = sqrt (lim_(x→4) x^3+36)]
-
-vemos que tenemos que calcular el límite de una función polinómica, la cual es stem:[f(x)=x^3+36]. Aplicando sustitución nos queda: stem:[sqrt (4^3+36) = sqrt(100) = 10]
-
-====
-stem:[lim_(x→4) sqrt (x^3+36) = 10]
-====
-
-image::2023-09-17T03-34-38-162Z.png[] 
-
-
-
-
