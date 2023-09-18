@@ -3,6 +3,8 @@
 :toc-title: DB
 :imagesdir: ./images
 
+= DB
+
 == Semana 1
 
 === ¿Qué es una base de datos?

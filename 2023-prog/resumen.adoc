@@ -3,17 +3,17 @@
 :imagesdir: ./images
 :toc-title: Programación
 
-= Resumen
+= PROG
 
 == Semana 1
 
 === ALgoritmo: 
 ** Definición: secuencia de instrucciones ordenadas, definidas y finitas para realizar una tarea
-** Definicion: conjunto finito de reglas que suministra una secuencia ordenada de acciones basicas con el proposito de resolver un tipo especifico de problemas
+** Definición: conjunto finito de reglas que suministra una secuencia ordenada de acciones basicas con el proposito de resolver un tipo especifico de problemas
 
 ** Característica 1: nos permiten obtener resultados sin saber lo que estamos haciendo
-** Caracteristica 2: Nos permiten comunicar tareas complejas sin explicar el porque
-** Caracteristica 3: solucion para automatizar tareas
+** Característica 2: Nos permiten comunicar tareas complejas sin explicar el porque
+** Característica 3: solución para automatizar tareas
 
 * Programacion
 ** Definicion : arte de convertir las cosas que hacemos en secuencia de instrucciones que el computador puede realizar (en un algoritmo de computador)

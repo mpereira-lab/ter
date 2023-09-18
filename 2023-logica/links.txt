@@ -5,3 +5,6 @@ mapas de karnough
 	https://www.boolean-algebra.com/kmap/
 	http://www.32x8.com/index.html
 		usar kmap with dont cares
+
+	https://www.inventable.eu/simulador-compuertas-logicas/	
+		aun sin probar

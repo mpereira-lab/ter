@@ -4,7 +4,7 @@
 :imagesdir: ./images
 :stem: 
 
-= Elementos de análisis matemático
+= EAM
 
 == Semana 1
 

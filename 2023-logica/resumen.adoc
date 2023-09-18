@@ -4,6 +4,8 @@
 :toc-title: Lógica computacional
 :imagesdir: ./images
 
+= LÓGICA
+
 == Semana 1
 
 === Argumento 
