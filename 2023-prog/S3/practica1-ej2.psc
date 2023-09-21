@@ -6,26 +6,14 @@ Algoritmo sin_titulo
 	leer nro2
 	Escribir "Ingrese el tercer numero:"
 	leer nro3
-	Si nro1<>nro2  Entonces
-		Si nro2<>nro3 Entonces
-			si nro1>nro2 Entonces
-				si nro1>nro3 Entonces
-					Escribir "El mayor es ", nro1
-				SiNo
-					Escribir "El mayor es ", nro3
-				FinSi
-			SiNo
-				Si nro2>nro3 Entonces
-					Escribir "El mayor es ", nro2
-				SiNo
-					Escribir "El mayor es ", nro3
-				FinSi
-			FinSi
+	Si nro1>=nro2 y nro1>=nro3 Entonces
+		Escribir "El mayor es ", nro1
+	Sino
+		si nro2>=nro1 y nro2>=nro3 Entonces
+			Escribir "El mayor es ", nro2
 		SiNo
-			Escribir "Los numeros no pueden ser iguales"
+			Escribir "El maypr es ", nro3
 		FinSi
-	SiNo
-			Escribir "Los numeros no pueden ser iguales"
 	FinSi
 		
 FinAlgoritmo

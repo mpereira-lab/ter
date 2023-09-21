@@ -1,42 +1,42 @@
 Algoritmo sin_titulo
-	Definir  importeUnitario, iva, descuento, importe Como Real
-	Definir medioPago Como Entero
-	Definir cantidadImpresoras Como Entero
+	definir yarda, pie, cm, pulgada, transformar, ml Como Real
+	definir menu Como entero
+	definir medidaOriginal Como Caracter
 	
-	importeUnitario = 50500
-	iva = 10.50
-	importe = importeUnitario + (importeUnitario * iva / 100)
+	yarda = 914.4
+	pie = 304.8
+	cm = 10
+	pulgada = 25.4
 	
-	Escribir "1-Efectivo"
-	Escribir "2-Tarjeta de credito"
-	Escribir "3-MercadoPago"
-	Leer medioPago
+	escribir "1-Yarda"
+	escribir "2-Pies"
+	escribir "3-Centímetros" 
+	escribir "4-Pulgadas"
+	escribir "Ingrese unidad de medida a transformar a milimetros (1-4):"
+	leer menu
 	
-	descuento = 0
-	
-	Segun medioPago Hacer
-		1:
-			descuento = 10
-		2:
-			descuento = 5
-		3:
-			descuento = 15
+	escribir "Ingrese cantidad a transformar: "
+	leer transformar
+	ml = 0
+	segun menu hacer
+		1: 
+			ml = transformar * yarda
+			medidaOriginal = "yardas"
+		2: 
+			ml = transformar * pie
+			medidaOriginal = "pies"
+		3: 
+			ml = transformar * cm
+			medidaOriginal = "centimetros"
+		4: 
+			ml = transformar * pulgada
+			medidaOriginal = "pulgadas"
 	FinSegun
 	
-	si descuento == 0 Entonces
-		Escribir "Medio de pago no es correcto", medioPago
-	SiNo
-		Escribir "Ingrese cantidad de impresoras"
-		Leer cantidadImpresoras
-		Escribir "Cantidad de impresoras ", cantidadImpresoras
-		Escribir "Precio impresora (con iva) ", importe
-		Escribir "Total sin descuento ", cantidadImpresoras*importe
-		Escribir "Forma de pago ", medioPago
-		Escribir "Descuento ", descuento, "%"
-		Escribir "Total a pagar ", (cantidadImpresoras * importe) - (cantidadImpresoras * importe) * descuento / 100
+	si menu >=1 y menu<=4 Entonces
+		escribir transformar, " ", medidaOriginal, " equivalen a ", ml
+	sino
+		Escribir "opcion incorrecta ", menu
 	FinSi
-	
-	
-	
 	
 FinAlgoritmo

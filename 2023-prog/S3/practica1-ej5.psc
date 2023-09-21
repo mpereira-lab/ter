@@ -6,18 +6,22 @@ Algoritmo sin_titulo
 	
 	Si importe>500 Entonces
 		descuento = 5
+	SiNo
+		Si importe>1000 Entonces
+			descuento = 11
+		SiNo
+			Si importe>7000 Entonces
+				descuento = 18
+			SiNo
+				Si importe>15000 Entonces
+					descuento = 25
+				FinSi
+			FinSi
+		FinSi
 	FinSi
-	Si importe>1000 Entonces
-		descuento = 11
-	FinSi
-	Si importe>7000 Entonces
-		descuento = 18
-	FinSi
-	Si importe>15000 Entonces
-		descuento = 25
-	FinSi
+	
 	importeFinal = importe - (importe * descuento /100)
 	
 	Escribir "El importe final es ", importeFinal
-
+	
 FinAlgoritmo

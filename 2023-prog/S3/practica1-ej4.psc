@@ -6,8 +6,9 @@ Algoritmo sin_titulo
 	Leer precioInicial
 	Escribir  "Ingrese cantidad de kg de uvas"
 	Leer kgTotal
-	Escribir  "Ingrese tipo de uva (Ao B)"
+	Escribir  "Ingrese tipo de uva (A o B)"
 	Leer tipo
+	tipo = Mayusculas(tipo)
 	Escribir "Ingrese tamaño de uva (1 o 2)"
 	Leer tamanio
 	Si tipo == "A" Entonces
