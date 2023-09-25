@@ -315,5 +315,186 @@ image::2023-09-10T02-04-55-030Z.png[]
 
 image::2023-09-10T02-05-05-217Z.png[] 
 
+== Semana 5
+
+*Contadores y acumuladores*
+
+=== Contador
+
+* Siempre tienen un valor inicial.
+* Su valor nuevo es el resultado del valor anterior más una constante (en nuestro ejemplo: 1).
+* pueden tener cambios de forma ascendente, o disminuir desde un valor inicial.
+
+Ejemplo:
+
+image::2023-09-24T23-51-47-127Z.png[] 
+
+=== Acumulador
+
+* es una versión ampliada de un contador y tiene las mismas características que un contador excepto el valor de incremento que es un valor variable
+* en el acumulador no siempre se añade un valor positivo
+
+
+Ejemplo:
+
+image::2023-09-24T23-57-05-103Z.png[] 
+
+=== Seguimiento y depuración de algoritmos
+
+La codificación es la operación de escribir la solución del problema (de acuerdo a la lógica del diagrama de flujo o pseudocódigo), en una serie de instrucciones detalladas en un código reconocible por la computadora, la serie de instrucciones detalladas se le conoce como programa fuente, el cual se escribe en un lenguaje de programación o lenguaje alto nivel.
+
+
+==== Prueba y depuración
+
+Resulta conveniente observar los siguientes principios al realizar una depuración, ya que de este trabajo depende el éxito de nuestra solución.
+
+
+a) Tratar de iniciar la prueba de un programa con una mentalidad saboteadora, casi disfrutando la tarea de encontrar algún error.
+
+b) Sospechar de todos los resultados que le arroje la solución, con lo cual deberá verificar todos.
+
+c) Considerar todas las situaciones posibles normales y aún algunas de las anormales.
+
+==== Verificación de algoritmos, ¿Que és?
+
+Nos referimos a la comprobación del correcto funcionamiento del pseudocódigo planteado. 
+
+Es posible que al realizar la verificación del programa o partes del programa descubramos defectos que nos obliguen a volver a la parte de desarrollo. Las verificaciones, aunque tienen momentos principales, también es habitual que se extiendan a lo largo de las fases de desarrollo, programación y mejora.
+
+==== Tipos de errores
+
+* Errores de compilación: Se producen normalmente por un uso incorrecto de las reglas del lenguaje de programación y suelen ser errores de sintaxis. Si existe un error de sintaxis, la computadora no puede comprender la instrucción, no se obtendrá el programa objeto y el compilador imprimirá una lista de todos los errores encontrados durante la compilación.
+* Errores de ejecución: Estos errores se producen por instrucciones que la computadora puede comprender pero no ejecutar. Ejemplos típicos son: división entre cero y raíces cuadradas de números negativos. En estos casos se detiene la ejecución del programa y se imprime un mensaje de error.
+* Errores lógicos: Se producen en la lógica del programa y la fuente del error suele ser el diseño del algoritmo. Estos errores son los más difíciles de detectar, ya que el programa puede funcionar y no producir errores de compilación ni de ejecución, y sólo puede advertirse el error por la obtención de resultados incorrectos o no deseados. En este caso se debe volver a la fase de diseño del algoritmo, modificar el algoritmo, cambiar el programa fuente y compilar y ejecutar una vez más.
+
+=== Documentación
+Es la guía o comunicación escrita en sus variadas formas, ya sean en enunciados, procedimientos, dibujos o diagramas. A menudo un programa escrito por una persona, es usado por muchas otras. 
+
+
+Por ello la documentación sirve para ayudar a comprender o usar un programa o para facilitar futuras modificaciones por parte de los programadores (mantenimiento). Debe presentarse en tres formas con respecto al programa, en forma externa, dentro del programa de manera interna y al usuario final. 
+
+* usuario final: 
+** Descripción del problema
+** Nombre del autor
+** Diagrama de flujo y/o pseudocódigo
+** Lista de variables y constantes
+** Codificación del programa
+* Documentación externa: Incluye los aspectos técnicos del programa. 
+* Documentación interna: Constituyen los comentarios o mensajes que agregan al código, para hacer más claro el entendimiento del proceso. A la documentación para el usuario se le conoce como manual del usuario. En este manual no existe información de tipo técnico, sino la descripción del funcionamiento del programa.
+
+En resumen, si en su momento dijimos que aprender a desarrollar algoritmos eficientes es aprender a programar, diremos ahora que aprender a verificar algoritmos es aprender a verificar programas. 
+
+=== Prueba de escritorio para validar algoritmos.
+
+Es una herramienta útil para comprender cómo funciona una estructura, ya que nos permite ver y validar cómo funciona un algoritmo que diseñamos y buscar posibles errores.
+Son simulaciones del comportamiento de un algoritmo que permiten determinar la validez del mismo.
+
+Consisten en: generar una tabla con tantas columnas como variables tenga nuestro algoritmo y 
+seguir las sentencias o instrucciones de nuestro algoritmo completando los valores correspondientes a medida que se van modificando.
+
+Con esto podemos detectar:
+
+* errores en tiempo de ejecución, 
+* errores de lógica, 
+* o bien para mejorar el algoritmo pensado.
+
+Para poder llevar a cabo las pruebas de escritorio, haremos previamente casos de prueba o lotes de prueba, estas son posibles situaciones de datos de entrada que tendrá que resolver nuestro programa y conocer con qué valor o resultado debe finalizar. 
+
+Por ejemplo, si tuviésemos que desarrollar un algoritmo en el cual se le pida al usuario ingresar 2 números enteros y obtener el resultado de dividir el primer número ingresado por el segundo,
+
+Un posible lote de prueba sería:
+
+----
+numeroIngresado1: 20
+numeroIngresado2: 5
+Resultado esperado: 4
+----
+
+Otro posible lote de prueba sería:
+
+----
+numeroIngresado1: 10
+numeroIngresado2: 4 
+Resultado esperado: 2.5
+----
+
+Siempre es recomendable considerar distintos escenarios como para testear nuestro algoritmo y ver cómo se comporta.
+
+Una vez que tenemos los lotes de prueba, empezaremos a realizar la prueba de escritorio y para ello dijimos que vamos a colocar en una tabla las variables que tenga nuestro algoritmo.
+
+==== Ejemplo de prueba de escritorio
+
+Nuestro algoritmo es el siguiente:
+
+image::2023-09-25T00-30-14-264Z.png[] 
+
+La tabla para la prueba de escritorio quedaría:
+
+image:2023-09-25T00-30-21-887Z.png[] 
+
+Y seguimos las instrucciones exactamente como nos indica nuestro algoritmo y vamos completando una nueva fila por cada sentencia que se va ejecutando.
+
+
+Recordemos nuestro primer lote de prueba:
+----
+numeroIngresado1: 20
+numeroIngresado2: 5
+Resultado esperado: 4
+----
+
+* La primer sentencia del algoritmos es: escribir “Ingresar el primer numero" quedando nuestra tabla:
+
+image::2023-09-25T00-31-34-883Z.png[] 
+
+* La siguiente sentencia es leer desde el teclado un número que ingrese el usuario y se almacenará en la variable numeroIngresado1 quedando nuestra tabla:
+
+image::2023-09-25T00-31-48-413Z.png[] 
+
+* Luego, el algoritmo solicita un segundo número y se ingresará en la variable numeroIngresado2 quedando la tabla de la siguiente manera:
+
+image::2023-09-25T00-32-13-889Z.png[] 
+
+* Luego, la variable resultado recibe el resultado de realizar la división de numeroIngresado1 con numeroIngresado2, con lo cual recibe el valor 4.
+
+image:2023-09-25T00-32-37-655Z.png[] 
+
+Y por último, se muestran por pantalla los valores de las variables:
+
+image:2023-09-25T00-32-54-773Z.png[] 
+
+Se recomienda hacer lotes de prueba con 1 o más casos extremos. Entendemos por casos extremos situaciones que casi nunca podrían suceder pero debemos asegurarnos que nuestro algoritmo las controle.
+
+En nuestro algoritmo, un caso extremo sería el siguiente.
+
+Lote de prueba  - caso extremo:
+
+----
+numeroIngresado1: 20
+numeroIngresado2: 0
+----
+
+Ese lote de prueba generará un error en tiempo de ejecución ya que no se puede dividir por cero.
+
+image::2023-09-25T00-33-34-918Z.png[] 
+
+Lo que debemos hacer en caso de detectar errores, 
+
+* es modificar nuestro algoritmo para solucionar el inconveniente y luego,
+* realizar una nueva prueba de escritorio.
+
+El algoritmo contemplando división por cero queda:
+
+image::2023-09-25T00-34-10-552Z.png[] 
+
+
+
+== Semana 6
+
+=== Máximos y mínimos
+
+* El máximo es el mayor valor dentro de un grupo de números. Es decir, teniendo un conjunto C, y un elemento x que pertenece a él (x ∈ C), x es el elemento máximo de C si cualquier otro elemento de dicho conjunto es menor o igual a x.
+* El mínimo es el menor valor dentro de un grupo de números. Es decir, teniendo un conjunto C y un elemento x que pertenece a él (x ∈ C), x es el elemento mínimo de C si cualquier otro elemento de dicho conjunto es mayor o igual a x.
+
+
 
 

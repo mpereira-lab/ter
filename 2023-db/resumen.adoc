@@ -645,4 +645,260 @@ Create, Read, Update, Delete
 image::2023-09-14T21-38-40-775Z.png[] 
 
 
+== Semana 6
+
+=== Consultas sobre varias tablas
+
+==== Consultas con varias tablas: Junta natural explicada con ejemplos
+
+===== Paso 1 -  Comencemos con el análisis
+
+1) Ejecutamos las siguientes instrucciones:
+
+Select * From socio;
+
+Select * From prestamo;
+
+El resultado es el siguiente: 
+
+|===
+| CodSocio | DNI      | Nombre         | Apellido | Direccion           | Tel      
+
+|    20145 | 11452452 | Maria Josefuna | Luro     | Av Nazca 21478 CABA | 47857855 
+|    20154 | 19785452 | Marcos         | Nevarez  | Trelles 1234 CABA   | 47852154 
+|    21474 | 22145986 | Karina         | Quirno   | Bolivia 52345 CABA  | 47851414 
+|    21489 | 20145874 | Juliana        | Laprida  | Bacacay 10789 Haedo | 49061236 
+|===
+
+|===
+| NPrestamo | CodSocio | FPrestamo  | FDevolucion | FTope      
+
+|         1 |    20154 | 2023-03-29 | 2023-04-08  | 2023-04-08 
+|         2 |    20154 | 2023-04-01 | 2023-04-08  | 2023-04-10 
+|         3 |    21489 | 2023-04-01 | 2023-04-08  | 2023-04-10 
+|         4 |    20154 | 2023-04-02 | 2023-04-11  | 2023-04-11 
+|===
+
+Como podemos ver la tabla socio tiene 5 filas y la tabla préstamo 3 filas, si hacemos el producto cartesiano el resultado tendrá 5*3 = 15 filas.
+
+
+2) Ahora ejecutamos la siguiente instrucción:
+
+Select * From socio, prestamo;
+
+En pantalla veremos:
+
+image::2023-09-24T21-41-46-361Z.png[] 
+
+La gráfica muestra las 6 columnas de socio y a continuación las 5 columnas de préstamo.
+
+Vemos que la primera fila de socio se relacionó con todas las filas de préstamo, y así sucesivamente hasta la fila cinco de socio.
+
+Con un círculo está marcado la columna de relación, el primer círculo es la PK de socio y el segundo círculo la FK de préstamo.
+
+
+===== Paso 2 - ¿Son válidas las filas?
+
+Observar detenidamente la siguiente imagen:
+
+image::2023-09-24T21-43-37-106Z.png[] 
+
+====
+
+Observar con atención la primera fila de socio.
+
+María Josefina Luro tiene el código de socio 20145 y cuando analizamos con el código de socio que figura en la tabla préstamo vemos que ninguno coincide, ya que son 20154, 21474 y 20154, esto significa que María Josefina no llevó libros prestados.
+
+====
+
+Otro ejemplo
+
+Ahora analicemos la segunda fila de socio que es Marcos Nevarez.
+
+image::2023-09-24T21-44-56-272Z.png[] 
+
+Marcos Nevarez tiene el código de socio 20154 y cuando analizamos con el código de socio que figura en la tabla préstamo  hay dos coincidencias, esto quiere decir que Marcos realizo dos prestamos
+
+Podemos seguir con el resto de los socios, y resulta que Karina Quirno que tiene el código de socio 21474 solicitó un préstamo, que Juliana Laprida con código de socio 21489 no llevó libros y que Viviana Martinez con código de socio 21523 tampoco llevó libros.
+
+Vemos entonces que hay filas que presentan errores ya que no coinciden los dominios de las columnas en común.
+
+===== Paso 3 - ¿Cómo salvamos los errores?
+
+Para tener resultados correctos los dominios de las columnas que están involucradas en la relación deben ser iguales, entonces la sintaxis correcta es la siguiente:
+
+image:2023-09-24T21-46-36-441Z.png[] 
+
+====
+Vemos que la coma entre socio y préstamo indica el producto cartesiano y la condición de igualdad de atributos está en el where, esta notación simula el algebra relacional.
+====
+
+
+Contamos con otro formato, el que usaremos durante el curso, donde la coma se reemplaza por la sentencia “inner join” y la igualdad de los atributos se coloca a continuación.
+
+image:2023-09-24T21-47-17-723Z.png[] 
+
+La palabra clave inner join selecciona todas las filas de ambas tablas siempre que haya una coincidencia entre las columnas, la columna se indica después de la palabra reservada on, en este caso es el codsocio.
+
+===== Paso 4 - ¿Cómo evitar el error de “ambiguo”?
+
+Volvamos a la imagen del capítulo anterior:
+
+image::2023-09-24T21-48-51-635Z.png[] 
+
+----
+¿Observaste que en la sintaxis de la consulta hay una notación diferente? ¿Notaste que el nombre del atributo lleva delante el nombre de la tabla?
+----
+
+Como el nombre de la columna es el mismo en la tabla socio y en la tabla  préstamo, se debe indicar la procedencia y es por eso que se antepone separado por un punto el nombre de la tabla; si no se coloca el nombre, no se ejecuta y produce un error indicando que el nombre es ambiguo (no sabe a qué tabla ir).
+
+Veamos qué resultado arrojó esa sentencia:
+
+image::2023-09-24T22-15-24-210Z.png[] 
+
+Ahora vemos que el codsocio de la tabla socio coincide con el codsocio de la tabla préstamo para cada fila del resultado de la consulta.
+
+----
+Ya aprendimos como utilizar dos tablas en una consulta ¿pero es el resultado que pide la consigna inicial? La respuesta es  no.
+----
+
+===== Paso 5 - Resultado final
+
+Observemos la siguiente imagen:
+
+image:2023-09-24T22-16-22-868Z.png[] 
+
+----
+La consigna pide nombre y apellido del socio que tiene el préstamo N° 6.
+----
+
+Debemos considerar el filtro de búsqueda. Para ello usamos el where y debemos proyectar solo las columnas que nos piden.
+
+Ahora sí el resultado que muestra  la consulta es el correcto. Y así lo podemos ver en la pantalla.
+
+image::2023-09-24T22-16-58-912Z.png[] 
+
+==== Ejemplo de consulta
+
+Mostrar los códigos de los libros de cada préstamo .
+
+Tablas involucradas ---->>  detallePre y Ejemplar
+
+Atributo en común ----->> idejem
+
+Condiciones ---->> ninguna
+
+image::2023-09-24T22-17-45-314Z.png[] 
+
+----
+Importante. Si utilizamos más de una tabla, estas deben tener un atributo en común y para que los datos sean consistentes las columnas en común se deben igualar.
+----
+
+==== Uso de más de dos tablas
+
+Veamos ahora qué sucede si la consulta tiene más de dos tablas, para ello consideremos la última consulta con alguna modificación.
+
+La consulta propuesta en el anterior capítulo decía Mostrar los códigos de los libros de cada préstamo; la modificamos de la siguiente manera: Mostrar los títulos de los libros de cada préstamo ordenados por préstamo.
+
+Tablas involucradas --->>  detallePre, Ejemplar y Libro ¿Por qué estas y no otras? Porque detallePre  además del número de préstamo muestra cual es el ejemplar del libro que se presta, en ejemplar está el código del libro que le corresponde al ejemplar prestado  y en  libro esta el título que es el dato que debemos mostrar.
+Atributo en común --->> entre detallePre y Ejemplar es idEjem y entre Ejemplar y Libro  es codLibro. ¿Cómo sabemos esto? Por el MER.
+
+Condiciones -->> ninguna
+
+*Sintaxis de la consulta*
+
+image::2023-09-24T22-19-26-546Z.png[] 
+
+Cuando en la consulta se tienen más de dos tablas en juego, el procedimiento de resolución es el siguiente: el gestor toma las dos primeras realiza el producto cartesiano y el resultado lo considera como un único elemento, luego lo vincula con la tabla siguiente procediendo nuevamente con el producto cartesiano y así sucesivamente hasta agotar las tablas.
+
+----
+Nota. Si querés observar cómo trabaja el gestor, ejecutá la instrucción anterior y en lugar de proyectar los atributos solicitados colocá el * (asterisco) y verás que están todos los atributos de las tablas intervinientes.
+----
+
+=== Subconsultas
+
+Una subconsulta es una instrucción select - from - where que está anidada dentro de otra consulta
+
+La subconsulta se ejecuta una vez antes de ejecutarse la consulta principal.
+
+Los resultados de la subconsulta son utilizados en la consulta principal.
+
+Si estamos seguros de que la subconsulta devuelve un único valor, es posible utilizar los operadores de comparación habituales =, < >, <=, <, >=, >
+
+Para subconsultas que devuelven múltiples valores se pueden utilizar los operadores: In / not in
+
+Los operadores de comparación habituales junto a los cuantificadores *any, some y all*. El predicado de comparación cuantificado con any o some se evalúa a cierto si lo es para alguna fila de la expresión de tabla. El predicado de comparación cuantificado con all se evalúa a cierto si lo es para todas  las filas de la expresión de tabla.
+La ubicación de la subconsulta en la consulta principal puede ser en el select, en el from  o en el where.
+
+==== Caso 1: subconsultas en el "select"
+
+Cuando la subconsulta está en el select debe arrojar un único valor, es decir, el resultado tiene una fila y una columna.
+
+Supongamos que queremos saber el nombre / apellido y cuántos préstamos solicitó el socio con código 21489. Las tablas que intervienen son socio, para mostrar el nombre, y préstamo, para contar la cantidad de veces que aparece en esa entidad.
+
+Seguramente la consulta que pensamos es:
+
+image::2023-09-24T22-26-29-915Z.png[] 
+
+Con subconsulta:
+
+Transformemos la consulta agregando una subconsulta en el select, esto es posible ya que el nombre y apellido es único para el código de socio 21489, pero para mostrarlo deben estar ambos en una sola columna, ya que como dijimos antes debe tener una sola fila y una sola columna.
+
+Veamos cómo queda:
+
+image::2023-09-24T22-27-01-328Z.png[] 
+
+====  Caso 2: Subconsulta en el "from"
+
+Cuando la subconsulta está en el from se utiliza como si fuese una tabla, es decir las columnas que proyecta la consulta se consideran como los atributos de una tabla ficticia a la que le asignamos un nombre, por lo tanto, puede tener múltiples columnas y filas.
+
+Supongamos que queremos conocer los autores de los libros de la editorial McGraw-Hill y de la editorial MP Ediciones. Las tablas que intervienen son libro, porque tiene la editorial, libroautor para conocer el código de autor y a través de la tabla autor saber quiénes son.
+
+Seguramente la consulta que pensamos es:
+
+image::2023-09-24T22-28-57-028Z.png[] 
+
+
+Con subconsulta:
+
+Transformemos la consulta colocando una subconsulta en el from.
+
+La propuesta es armar una consulta que proyecte los códigos de libro de las editoriales en cuestión y utilizarla como tabla en el from.
+
+Veamos cómo es:
+
+image::2023-09-24T22-29-20-271Z.png[] 
+
+==== Caso 3: Subconsulta en el where
+
+Cuando la subconsulta está en el  where  puede devolver uno o varios valores, es decir, tiene una o varias filas, pero solamente una columna. Dependiendo de los valores se utilizarán unos operandos u otro.
+
+
+Veamos un ejemplo
+
+Tomemos la consulta del caso 2  (subconsulta en el from) “conocer los autores de los libros de la editorial McGraw-Hill y de la editorial MP Ediciones”.
+
+image::2023-09-24T22-30-46-049Z.png[] 
+
+===== Errores frecuentes a nivel del where
+
+La subconsulta en el “where” indica que estamos buscando para un atributo determinado un valor o varios valores, los cuales son el resultado de una subconsulta.
+
+Si buscamos un valor quiere decir que o es igual, o es mayor, o es menor o las posibles combinaciones.
+
+Si buscamos varios valores quiere decir que puede tomar más de un valor del conjunto de dominios arrojados por la subconsulta; los operadores a utilizar son in, not in,  any, some, y all.
+
+Pero si es tan simple, ¿dónde está el error?
+
+
+El error se presenta en los siguientes casos:
+
+La subconsulta tiene más de una columna.
+La subconsulta devuelve varias filas y el operador utilizado es un igual, mayor,  menor  o las combinaciones.
+Estos errores ocurren porque las consultas y subconsultas se razonan en función de los dominios almacenados en lugar de razonarlas en función del requerimiento y la regla de negocios. Se piensa que los datos posibles son solamente los existentes y se olvida que las tablas son flexibles.
+
+
+
+
+
 
