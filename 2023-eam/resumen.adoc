@@ -1791,3 +1791,74 @@ image::2023-09-17T17-46-47-317Z.png[]
 | 
 
 |===
+
+== Semana 6
+
+=== Tasa
+
+Es una medida que representa la cantidad de cambio en una variable en relación con otra
+
+*Ejemplo1: Tasa de crecimiento* 
+
+Supongamos que una población de bacterias aumenta de 100 a 200 individuos en un período de 2 horas. La tasa de crecimiento sería: 
+
+stem:["Tasa de crecimiento" = frac { Cambio de población } { Tiempo } ] o sea stem:["Tasa de crecimiento" = frac { 200 - 100 } { 2 } = 50 ] bacterias por hora
+
+image::2023-09-26T23-22-45-793Z.png[] 
+
+*Ejemplo2: Tasa de interés* 
+
+Si tienes una inversión de $1,000 y ganas $50 de interés en un año, la tasa de interés sería:
+
+stem:[text{Tasa de interés} = frac{text{Interés}}{text{Inversión inicial}} = frac {50}{1000} = 0.05 text{ o 5% anual} ]
+
+
+
+*Ejemplo3: Tasa de velocidad*
+
+Si un automóvil se desplaza 200 kilómetros en 2 horas, su velocidad promedio sería:
+
+stem:[text{ Tasa de velocidad } = frac { text { Distancia } } { text { Tiempo } } = frac {200 km}{ text {2 horas} } = text {100 km/h} ]
+
+*Ejemplo4: Tasa de cambio* 
+
+Supongamos que la tasa de cambio entre el dólar estadounidense (USD) y el euro (EUR) es de 1.2. Esto significa que por cada 1 dólar, obtienes 1.2 euros.
+
+*Ejemplo 5: Tasa de éxito*: En un experimento, se lanzan 30 veces una moneda y se obtienen 22 caras. La tasa de éxito sería:
+
+stem:[ text{Tasa de éxito} = frac{text{Número de éxitos}}{text{Número de intentos}} = frac{22}{30} = 0.7333 text{ o 73.33%}] 
+
+Esto significa que la tasa de éxito en el experimento de lanzar la moneda es del 73.33%.
+
+=== Pendiente de una recta
+
+Es una medida que describe la "inclinación" de la recta en un plano cartesiano. Indica cuánto cambia la coordenada stem:[y] por unidad de cambio en la coordenada stem:[x].
+
+La fórmula general para calcular la pendiente (denotada como "m") entre dos puntos en una recta es la siguiente:
+
+stem:[frac{Delta y}{Delta x}] donde
+
+stem:[Delta y] es la diferencia entre las coordenadas stem:[y] de los dos puntos en la recta.
+
+stem:[Delta x]  es la diferencia entre las coordenadas stem:[x] de los dos puntos en la recta.
+
+=== Recta secante
+
+Es una línea recta que corta o intersecta a otra línea o curva en dos o más puntos distintos
+
+image::2023-09-27T00-23-31-824Z.png[] 
+
+=== Recta tangente
+
+Una recta tangente toca la curva en un solo punto y es perpendicular a ella en ese punto
+
+image:2023-09-27T00-24-55-406Z.png[] 
+
+
+=== Derivada
+
+Sea stem:[y=f(x)] y stem:[x] un punto interior de su dominio, se define la derivada de la función stem:[y] en el punto stem:[x] como el límite, siempre que exista, del cociente de los incrementos stem:[Delta y] y stem:[Delta x] cuando stem:[Delta x]  tiende a 0. 
+
+====
+stem:[f(x)=lim_(Delta x->0) frac {Delta y}{Delta x}=lim_(Delta x->0)frac{f(x+Δx)-f(x)}{Δx}]
+====
