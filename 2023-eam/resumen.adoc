@@ -1860,5 +1860,11 @@ image:2023-09-27T00-24-55-406Z.png[]
 Sea stem:[y=f(x)] y stem:[x] un punto interior de su dominio, se define la derivada de la función stem:[y] en el punto stem:[x] como el límite, siempre que exista, del cociente de los incrementos stem:[Delta y] y stem:[Delta x] cuando stem:[Delta x]  tiende a 0. 
 
 ====
-stem:[f(x)=lim_(Delta x->0) frac {Delta y}{Delta x}=lim_(Delta x->0)frac{f(x+Δx)-f(x)}{Δx}]
+stem:[f'(x)=lim_(Delta x->0) frac {Delta y}{Delta x}=lim_(Delta x->0)frac{f(x+Δx)-f(x)}{Δx}]
 ====
+
+=== Derivada de función lineal
+
+Su derivada en cualquier punto es constante
+
+
