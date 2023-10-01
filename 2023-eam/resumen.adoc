@@ -1789,7 +1789,13 @@ image::2023-09-17T17-46-47-317Z.png[]
 | Límite infinito que tiende a cero
 | stem:[lim_(x→∞)1/x^k=0\ \ \ \ y\ \ \ \ lim_(x→-∞)1/x^k=0]
 | 
-
+| 12 
+| Límites de funciones racionales
+| 
+* Si son de igual grado, es el cociente de los coeficientes principales +
+* Si el denominador es mas grande, es cociente de coeficientes principales y abajo queda la x elevado a n donde n = exponente del denominador - exponente del numerador +
+* Si el numerador es mas grande, es cociente de coeficientes principales y arriba queda la x elevado a n donde n = exponente del numerador - exponente del denominador +
+| 
 |===
 
 == Semana 6
