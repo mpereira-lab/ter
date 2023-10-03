@@ -1553,7 +1553,7 @@ image::2023-09-17T03-34-38-162Z.png[]
 lim_(x→∞)f(x)=L
 ++++
 
-* Límite en el infinito negativo: sea f una función definida en algún intervalo stem:[(−∞,a)]. Entonces:
+* Límite en el infinito negativo: sea f una función definida en algún intervalo stem:[(-∞,a)]. Entonces:
 
 [stem]
 ++++
@@ -1639,7 +1639,7 @@ Se deduce que la recta y=0 es una asíntota horizontal de la curva stem:[f(x)=1/
 image:2023-09-17T16-10-29-030Z.png[] 
 
 
-==== Propiedad stem:[lim_(x→−∞)frac{1}{x^k}]=0
+==== Propiedad stem:[lim_(x→-∞)frac{1}{x^k}]=0
 
 Las propiedades de límites anteriores se cumplen para límites en el infinito. Ademas se agrega una nueva regla 
 ====
@@ -1800,7 +1800,8 @@ image::2023-09-17T17-46-47-317Z.png[]
 
 == Semana 6
 
-=== Tasa
+=== Conceptos: 
+==== Tasa
 
 Es una medida que representa la cantidad de cambio en una variable en relación con otra
 
@@ -1836,7 +1837,7 @@ stem:[ text{Tasa de éxito} = frac{text{Número de éxitos}}{text{Número de int
 
 Esto significa que la tasa de éxito en el experimento de lanzar la moneda es del 73.33%.
 
-=== Pendiente de una recta
+==== Pendiente de una recta
 
 Es una medida que describe la "inclinación" de la recta en un plano cartesiano. Indica cuánto cambia la coordenada stem:[y] por unidad de cambio en la coordenada stem:[x].
 
@@ -1848,13 +1849,13 @@ stem:[Delta y] es la diferencia entre las coordenadas stem:[y] de los dos puntos
 
 stem:[Delta x]  es la diferencia entre las coordenadas stem:[x] de los dos puntos en la recta.
 
-=== Recta secante
+==== Recta secante
 
 Es una línea recta que corta o intersecta a otra línea o curva en dos o más puntos distintos
 
 image::2023-09-27T00-23-31-824Z.png[] 
 
-=== Recta tangente
+==== Recta tangente
 
 Una recta tangente toca la curva en un solo punto y es perpendicular a ella en ese punto
 
@@ -1869,8 +1870,70 @@ Sea stem:[y=f(x)] y stem:[x] un punto interior de su dominio, se define la deriv
 stem:[f'(x)=lim_(Delta x->0) frac {Delta y}{Delta x}=lim_(Delta x->0)frac{f(x+Δx)-f(x)}{Δx}]
 ====
 
-=== Derivada de función lineal
+=== Deducción derivada por definición de límite de stem:[x^2]
 
-Su derivada en cualquier punto es constante
+stem:[f(x)=x^2]
+
+[stem]
+++++
+f(x) = lim_(Δx→0) frac{ f(x+Δx) f(x) } {Δx}
+
+f(x) = lim_(Δx→0) frac{ (x+Δx)^2-x^2 } {Δx}
+
+f(x) = lim_(Δx→0) frac{ x^2+2xΔx+Δx^2-x^2 } {Δx}
+
+f(x) = lim_(Δx→0) frac{ 2xΔx+Δx2Δx } {Δx}
+
+f(x) = lim_(Δx→0) frac{ Δx(2x+Δx)}  {Δx}
+
+f(x) = lim_(Δx→0) (2x+Δx)  
+
+f(x) = lim_(Δx→0) 2x + lim_(Δx→0) Δx
+
+lim_(Δx→0) 2x text{ por propiedad 2 } = 2x
+
+lim_(Δx→0) Δx text{ por propiedad 2 } = 0
+
+f'(x) = 2x 
+++++
+ 
+=== Derivadas de funciones elementales
+
+|===
+|Función elemental                              | Su derivada 
+| stem:[f(x)=k]                                 | stem:[f'(x)=0]
+| stem:[f(x)=x]                                 | stem:[f'(x)=1]
+| stem:[f(x)=x^n,n∈ZZ,n≠0,n≠1]                  | stem:[f'(x)=nx^(n-1)]
+| stem:[f(x)=1/x]                               | stem:[f'(x)=-1/x^2]
+| stem:[f(x)=e^x]                               | stem:[f'(x)=e^x]
+| stem:[f(x)=a^x]                               | stem:[f'(x)=a^x ln(a)]
+| stem:[f(x)=ln(x)]                             | stem:[f'(x)=1/x]
+| stem:[f(x)=log_a(x)]                          | stem:[f'(x)=frac{1}{x ln(a)}]
+| stem:[f(x)=sin(x)]                            | stem:[f'(x)=cos(x)]
+| stem:[f(x)=cos(x)]                            | stem:[f'(x)=-sin(x)]
+|===
+
+=== Reglas elementales de derivación
+
+|===
+| Derivada de una suma/resta de funciones               | stem:[(f(x)±g(x))'=f'(x)±g'(x)]
+| Derivada del producto de funciones                    | stem:[(f(x)⋅g(x))'=f'(x)⋅g(x)+f(x)⋅g'(x)]
+| Derivada del cociente de funciones                    | stem:[(frac{f(x)}{g(x)})^'=frac { f'(x)⋅g(x)-f(x)⋅g'(x) } { g(x)^2 } text{siempre que} g(x)≠0]
+| Derivada del producto de una función por una constante| stem:[(kf(x))'=kf'(x) text { siendo k una constante real } ]
+|===
+
+
+=== Aproximación lineal
+
+Es una aproximación de una función cualquiera usando una transformación o función lineal. Más precisamente, dada una función f de variable real que admite derivada, podemos aproximar a f localmente y en un entorno de stem:[x=x_0] del siguiente modo:
+[stem]
+++++
+f(x)≈f(x_0)+f'(x_0)(x-x_0)
+++++
+
+La expresión de la derecha corresponde a una función lineal y es, de hecho, la expresión que adopta la recta tangente a la gráfica de f en stem:[x=x_0]. Su pendiente corresponde con la derivada de la función f en el punto stem:[x_0]
+
+
+
 
 
