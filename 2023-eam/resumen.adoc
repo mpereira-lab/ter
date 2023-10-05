@@ -1800,12 +1800,7 @@ image::2023-09-17T17-46-47-317Z.png[]
 
 == Semana 6
 
-=== Conceptos
-
-==== Monomio
-
-que tiene un solo término: ejemplo-> stem:[f(x)=cx^n]
-
+=== Conceptos: 
 ==== Tasa
 
 Es una medida que representa la cantidad de cambio en una variable en relación con otra
@@ -1823,6 +1818,8 @@ image::2023-09-26T23-22-45-793Z.png[]
 Si tienes una inversión de $1,000 y ganas $50 de interés en un año, la tasa de interés sería:
 
 stem:[text{Tasa de interés} = frac{text{Interés}}{text{Inversión inicial}} = frac {50}{1000} = 0.05 text{ o 5% anual} ]
+
+
 
 *Ejemplo3: Tasa de velocidad*
 
@@ -1905,7 +1902,7 @@ f'(x) = 2x
 |===
 |Función elemental                              | Su derivada 
 | stem:[f(x)=k]                                 | stem:[f'(x)=0]
-| stem:[f(x)=x],stem:[f(x)=cx]                  | stem:[f'(x)=1], stem:[f'(x)=c], video hasta 4:45: https://youtu.be/Lar1i_YrJvg
+| stem:[f(x)=x]                                 | stem:[f'(x)=1]
 | stem:[f(x)=x^n,n∈ZZ,n≠0,n≠1]                  | stem:[f'(x)=nx^(n-1)]
 | stem:[f(x)=1/x]                               | stem:[f'(x)=-1/x^2]
 | stem:[f(x)=e^x]                               | stem:[f'(x)=e^x]
@@ -1928,12 +1925,10 @@ f'(x) = 2x
 
 === Aproximación lineal
 
-
-
 Es una aproximación de una función cualquiera usando una transformación o función lineal. Más precisamente, dada una función f de variable real que admite derivada, podemos aproximar a f localmente y en un entorno de stem:[x=x_0] del siguiente modo:
 [stem]
 ++++
-L(x)≈f(x_0)+f'(x_0)(x-x_0)
+f(x)≈f(x_0)+f'(x_0)(x-x_0)
 ++++
 
 La expresión de la derecha corresponde a una función lineal y es, de hecho, la expresión que adopta la recta tangente a la gráfica de f en stem:[x=x_0]. Su pendiente corresponde con la derivada de la función f en el punto stem:[x_0]
@@ -1967,12 +1962,6 @@ Convenientemente, podríamos elegir stem:[x_0=27] pues cumple con esas dos condi
 
 * Buscamos la recta tangente a stem:[f " en " x_0=27]
 
-==== Videos
-
-https://youtu.be/69mAIUOXQcA
-
-https://youtu.be/ZmMQFgyOmXU
-
 ====
 [stem]
 ++++
@@ -1992,4 +1981,59 @@ text{ recta tangente: } y=f(27)+f'(27)(x−27)=3+1/27(x−-7)
 * Concluimos, entonces, que la aproximación lineal de stem:[root(3) 25] es stem:[79/27≈2.925925926] y es un valor que está razonablemente cerca del valor que puede dar una calculadora 2.924017738
 
 image::2023-10-03T11-55-13-954Z.png[] 
+
+=== Relación de la derivada con el crecimiento de una función
+
+==== Función creciente/decreciente
+* Una función creciente es aquella cuyas imágenes aumentan si las preimágenes aumentan:  si para stem:[x_2>x_1, f(x_2)≥f(x_1)]
+* Una función decreciente es aquella cuyas imágenes disminuyen si las preimágenes aumentan:  si para stem:[x_2>x_1, f(x_2)<=f(x_1)]
+
+|===
+| Función creciente                       | Función decreciente
+| image:2023-10-03T23-37-38-957Z.png[]    | image:2023-10-03T23-37-58-823Z.png[]
+|===
+
+
+==== Signo de derivada para saber si es creciente o decreciente
+
+En general, las funciones serán crecientes o decrecientes en ciertas regiones de su dominio, y nos interesará caracterizar ese crecimiento.
+
+El signo de la derivada de una función en un punto, esto es, el signo de la pendiente de la recta tangente a la curva stem:[y=f(x)] en un punto stem:[x_0], caracteriza el crecimiento de la función f(x) en una vecindad de stem:[x_0]. Es decir:
+
+* Si stem:[f'(x_0)>0] , la curva y=f(x) resulta creciente en una vecindad de stem:[x_0]
+* Si stem:[f'(x_0)<0] , la curva y=f(x) resulta decreciente en una vecindad de stem:[x_0]
+
+|===
+| image:2023-10-03T23-44-01-509Z.png[]  | image:2023-10-03T23-44-14-651Z.png[]
+| Función con máximo local en stem:[x_0]| Función con mínimo local en stem:[x_0]
+| a izquierda de stem:[x_0] la función es creciente y, a derecha, decreciente
+| a izquierda de stem:[x_0] la función es decreciente y, a derecha, creciente
+
+|===
+
+==== Teorema de Fermat
+
+Sea stem:[f] una función continua y stem:[c] un punto de extremo local de stem:[f]. Entonces, si stem:[f] es derivable en stem:[c], una condición necesaria para que stem:[c] sea extremo local, es stem:[f'(c)=0].
+
+==== Análisis gráfico de función con derivada
+
+Sea stem:[f(x)=3x^3-3x]
+
+stem:[f'(x)=(3x^3-3x)'=9x^2-3]
+
+* Aquellos x en donde f'(x) se anule, son candidatos a ser extremos de f (máximos y/o mínimos)
+* Las regiones del dominio en las que f'(x) resulte positiva, serán regiones de crecimiento de f, y de decrecimiento para regiones en las que f'(x) resulte negativa.
+
+Buscamos x tales que stem:[f'(x)=9x^2-3=0]
+
+image::2023-10-03T23-57-31-880Z.png[] 
+
+Ya tenemos las regiones en las que crece f: (−∞,−0.5773);(0.5773,+∞); y en las que decrece: (−0.5773,0.5773). Además, sabemos que en stem:[x=root(2)3/3≈0.5773] hay un máximo local y en stem:[x=−root(2)3/3≈−0.5773] hay un mínimo local. Solo con esta información, ya es posible esbozar un gráfico tentativo de f. Más aún, complementando esto con la información adicional que puedan darnos algunos puntos claves de f tenemos lo necesario para esbozar un gráfico tentativo.
+
+image::2023-10-04T00-01-50-575Z.png[] 
+
+El gráfico puede verse a continuación. Con etiquetas se identifican los extremos hallados. Junto con la forma, pueden apreciarse las regiones de crecimiento y decrecimiento halladas y que quedan determinadas por los extremos.
+
+image::2023-10-04T00-02-23-486Z.png[] 
+
 
