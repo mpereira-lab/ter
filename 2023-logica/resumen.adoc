@@ -3,6 +3,7 @@
 :toclevels: 4
 :toc-title: Lógica computacional
 :imagesdir: ./images
+:stem: 
 
 = LÓGICA
 
@@ -466,5 +467,224 @@ Tambien se pueden tomar los 1 como suma de productos, y se obtiene la misma ecua
 
 image::2023-09-06T23-24-38-529Z.png[] 
 
+== Semana 7 Sistemas de Numeración
 
+=== Sistema decimal
+
+La notación decimal se basa en el hecho de que cualquier número entero positivo puede ser escrito de manera única como una suma de productos de la forma stem:[d.10^n] donde cada n es un entero no negativo y cada d es uno de los dígitos decimales de 0, 1, 2, 3, 4, 5, 6, 7, 8, o 9.
+
+La notación decimal (o de base 10) expresa un número como una cadena de dígitos en la que cada dígito indica la posición de la potencia de 10 por la que se multiplica.
+
+Ejemplo: 
+
+stem:[5049 = 5 . 10^3  + 0 . 10^2 + 4 . 10^1 + 9 . 10^0 ]
+
+image::2023-10-04T22-52-59-655Z.png[]
+
+La raíz latina deci significa “diez”.
+
+=== Sistema binario: Notaciones
+
+* 2b10 = significa 2 en base 10 (sistema decimal)
+* 1b2 = significa 1 en base 2 (sistema binario)
+* 2^4 = significa 2 elevado a la 4 ó 2 potencia de 4
+* BSS() = binario sin signo (esto significa que de momento, sólo veremos número NO NEGATIVOS)
+
+=== Representación binaria
+
+La raíz latina bi significa “dos”.
+
+
+Cualquier número entero se puede representar como una suma única de productos de la forma d.2^n donde cada n es un entero y cada d es uno de los dígitos binarios (o bits) 0 o 1. Por ejemplo,  
+
+image:2023-10-04T23-46-07-660Z.png[] 
+
+En notación binaria, como en notación decimal, se escriben sólo los dígitos binarios y no las potencias de la base. En notación binaria, entonces
+
+
+image:2023-10-04T23-46-31-354Z.png[] 
+
+donde los subíndices indican la base, ya sea 10 o 2, en el que está escrito el número. Los lugares en notación binaria corresponden con las distintas potencias de 2. La posición más a la derecha es el lugar de los unos (o lugar 2^0), a la izquierda está el lugar de los dos (o lugar 2^1), a la izquierda está el lugar de los cuatro (o lugar 2^2) y así sucesivamente, como se muestra a continuación.
+
+image:2023-10-04T23-47-10-886Z.png[] 
+
+Al igual que en la notación decimal, se puede agregar o quitar ceros a la izquierda al gusto. Por ejemplo,
+
+image:2023-10-04T23-47-44-094Z.png[] 
+
+=== Conversion de un binario a decimal    
+
+image:2023-10-05T00-54-04-977Z.png[] 
+
+=== Conversión de un decimal a binario
+
+1. Si x > 0 calcular la división entera: x/2,
+
+2. Tomar el resto de la división anterior como un bit (pues es un valor en el conjunto {0,1})
+
+3. Si el cociente es mayor a cero, volver al paso 1 con el cociente como dividendo.
+
+4. Se construye la cadena tomando solo los restos: en el orden que fueron obtenidos se ubican de derecha a izquierda (menos significativo a más significativo).
+
+Suponer por ejemplo que se necesita representar el número 26 en el sistema binario:
+
+1. Se divide el valor 26 por 2 obteniendo resto 0 y cociente 13
+
+2. El resto 0 es el bit menos significativo
+
+3. El nuevo valor de x es 13. Se calcula x=2 obteniendo resto 1 y cociente 6.
+
+4. El resto 1 es el segundo bit de la cadena
+
+5. El nuevo valor de x es 6. Se calcula 6=2 obteniendo resto 0 y cociente 3.
+
+6. El resto 0 es el tercer bit de la cadena
+
+7. El nuevo valor de x es 3. Se calcula 3=2 obteniendo resto 1 y cociente 1.
+
+8. El resto 1 es el cuarto bit de la cadena
+
+9. El nuevo valor de x es 1. Se calcula 1=2 obteniendo resto 1 y cociente 0.
+
+10. El resto 1 es el quinto bit de la cadena
+
+11. Se construye la cadena tomando solo los restos, en el orden que fueron obtenidos, de derecha a izquierda: 11010
+
+El proceso anterior se aprecia gráficamente de la siguiente manera: 
+
+image:2023-10-05T00-56-05-544Z.png[] 
+
+=== Rango del sistema
+
+Considerar por ejemplo un sistema binario restringido a 3 bits y que sólo contemple los números Naturales, lo llamamos Sin Signo y lo denotamos BSS(3).
+
+Para analizar su rango se debe determinar el valor mínimo y máximo representables. Para el primer caso se interpreta la primer cadena: 000:
+
+stem:[(000) = 0.2^2+0.2^1+0.2^0 = 0]
+
+Para el segundo caso se interpreta la última cadena: 111
+
+stem:[(111) = 1.2^2+1.2^1+1.2^0 = 7]
+
+Es decir que el rango de BSS(3) son todos los números naturales comprendidos entre 0 y 7, y se representa de la siguiente manera: [0;7]. El conjunto de valores representables tiene 8 elementos.
+
+Además, con 3 bits se pueden construir 8 cadenas de números representables, es decir, 2^3 = 8. 
+
+Generalizando
+
+====
+En un sistema BSS(n) se tiene 2^n cadenas y un rango [0; 2n - 1]
+====
+
+Una lista de potencias de 2 es útil para hacer conversiones de binario a decimal y de decimal a binario
+
+image::2023-10-05T01-01-31-647Z.png[] 
+
+=== Suma en notación binaria
+
+Sume 1101b2 y 111b2 usando notación binaria.
+
+Ya que 2b10 = 10b2 y 1b10 = 1b2, la traducción de 1b10 + 1b10 = 2b10 en notación binaria es 
+
+image::2023-10-05T01-03-17-295Z.png[] 
+
+De lo que se deduce que la suma de dos 1 juntos, da como resultado llevar un 1 cuando se usa la notación binaria. Sumar tres 1 juntos, también da como resultado en llevar un 1 ya que 3b10 = 11b2 (“uno uno base dos”)
+
+image::2023-10-05T01-03-57-797Z.png[] 
+
+Así, la suma se puede realizar de la siguiente manera:
+
+image::2023-10-05T01-04-14-545Z.png[] 
+
+=== Resta en notación binaria
+
+Reste 10112 de 110002 usando notación binaria 
+
+En la resta decimal el hecho de que 10b10 - 1b10 = 9b10 se usa para prestar a través de varias columnas. Por ejemplo, considere lo siguiente: 
+
+image::2023-10-05T01-04-56-592Z.png[] 
+
+En la resta binaria, también puede ser necesario pedir prestado a través de más de una columna. Pero cuando usted pide prestado un 1b2 de 10b2, lo que queda es 1b2. 
+
+image::2023-10-05T01-05-14-207Z.png[] 
+
+Así, la resta se puede realizar de la siguiente manera:
+
+image::2023-10-05T01-11-20-178Z.png[] 
+
+
+=== Convirtiendo de notación hexadecimal a decimal
+
+stem:[I(A3F_16) = 10 . 16^2 + 3 . 16^1 + 15 . 16^0 = 2623_10]
+
+=== De hexadecimal a binario
+
+Siguiendo la lógica del sistema binario, para representar valores mediante cadenas se deben realizar sucesivas divisiones por la base, que en este caso es 16, hasta obtener un cociente igual a 0 tomando cada resto como bits de la cadena. 
+
+
+Ejemplo: Se necesita representar el número 26 en hexadecimal:
+
+1. Se divide el valor 26 por 16 hasta encontrar un cociente 0
+
+2. Se construye la cadena tomando solo los restos, empezando por el último
+
+image::2023-10-05T01-32-43-951Z.png[] 
+
+Uno de los restos es 10, entonces debemos traducirlo a la letra correspondiente aplicando la tabla de interpretación de hexadecimal. El valor 10 es equivalente a la letra A, quedando entonces 1A. Esto quiere decir que el valor 26 en decimal se corresponde con la cadena 1A en hexadecimal.
+
+
+=== Rango del sistema
+
+De la misma manera que en el sistema binario debemos calcular el mínimo número representable interpretando la cadena más chica y la más grande. Siendo el rango todos los números comprendidos entre ambos. Supongamos el sistema hexadecimal de 2 dígitos:
+
+El mínimo valor representable es el resultado de interpretar la cadena 00, es decir:
+
+stem:[0x16^1+0x16^0 = 0]
+
+El máximo valor representable es el resultado de interpretar la cadena FF
+
+stem:[15x16^1+15x16^0 = 255]
+
+Por lo tanto el rango de este sistema es:  [0; 255]
+
+=== Convirtiendo de binario a hexadecimal
+
+La cadena binaria se segmenta formando cuartetos de bits comenzando por el bit menos significativo (b0)
+
+1001011010100101 -> 1001 0110 1010 0101
+
+Dado que cada cuarteto es alguna de las combinaciones de 4 bits del sistema BSS(4) y por lo tanto el rango que cubren es [0;15]
+
+Considerando que dichos valores del rango se pueden representar por un solo caracter hexadecimal, entonces se aplica la siguiente tabla para convertir, uno a uno, los cuartetos de la cadena. 
+
+|===
+| Binario   | Hexa
+
+| 0000      | 0
+| 0001      | 1
+| 0010      | 2
+| 0011      | 3
+| 0100      | 4
+| 0101      | 5
+| 0110      | 6
+| 0111      | 7
+| 1000      | 8
+| 1001      | 9
+| 1010      | A
+| 1011      | B
+| 1100      | C
+| 1101      | D
+| 1110      | E
+| 1111      | F
+|===
+
+
+En el ejemplo mencionado:  
+
+|===
+|1001|0110|1010|0101
+| 9  | 6  | A  | 5
+|===
+
+Por lo tanto, las cadenas 96A5 y 1001 0110 1010 0101 representan el mismo valor. Notar que no hizo falta obtener ese valor, dado que no se aplicó el proceso de interpretación. 
 

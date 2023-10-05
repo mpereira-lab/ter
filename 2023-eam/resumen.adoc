@@ -1800,7 +1800,12 @@ image::2023-09-17T17-46-47-317Z.png[]
 
 == Semana 6
 
-=== Conceptos: 
+=== Conceptos
+
+==== Monomio
+
+que tiene un solo término: ejemplo-> stem:[f(x)=cx^n]
+
 ==== Tasa
 
 Es una medida que representa la cantidad de cambio en una variable en relación con otra
@@ -1818,8 +1823,6 @@ image::2023-09-26T23-22-45-793Z.png[]
 Si tienes una inversión de $1,000 y ganas $50 de interés en un año, la tasa de interés sería:
 
 stem:[text{Tasa de interés} = frac{text{Interés}}{text{Inversión inicial}} = frac {50}{1000} = 0.05 text{ o 5% anual} ]
-
-
 
 *Ejemplo3: Tasa de velocidad*
 
@@ -1902,7 +1905,7 @@ f'(x) = 2x
 |===
 |Función elemental                              | Su derivada 
 | stem:[f(x)=k]                                 | stem:[f'(x)=0]
-| stem:[f(x)=x]                                 | stem:[f'(x)=1]
+| stem:[f(x)=x],stem:[f(x)=cx]                  | stem:[f'(x)=1], stem:[f'(x)=c], video hasta 4:45: https://youtu.be/Lar1i_YrJvg
 | stem:[f(x)=x^n,n∈ZZ,n≠0,n≠1]                  | stem:[f'(x)=nx^(n-1)]
 | stem:[f(x)=1/x]                               | stem:[f'(x)=-1/x^2]
 | stem:[f(x)=e^x]                               | stem:[f'(x)=e^x]
@@ -1925,15 +1928,68 @@ f'(x) = 2x
 
 === Aproximación lineal
 
+
+
 Es una aproximación de una función cualquiera usando una transformación o función lineal. Más precisamente, dada una función f de variable real que admite derivada, podemos aproximar a f localmente y en un entorno de stem:[x=x_0] del siguiente modo:
 [stem]
 ++++
-f(x)≈f(x_0)+f'(x_0)(x-x_0)
+L(x)≈f(x_0)+f'(x_0)(x-x_0)
 ++++
 
 La expresión de la derecha corresponde a una función lineal y es, de hecho, la expresión que adopta la recta tangente a la gráfica de f en stem:[x=x_0]. Su pendiente corresponde con la derivada de la función f en el punto stem:[x_0]
 
+Gráficamente:
 
+image::2023-10-03T11-39-47-236Z.png[] 
 
+==== Ejemplo
 
+La recta tangente, entonces, puede darnos buenas aproximaciones locales  de una función no lineal. Imaginemos que queremos hallar una aproximación lineal, razonable, de stem:[root(3) 25]
+
+Para encontrar la aproximación lineal de stem:[root(3) 25], podemos hacer lo siguiente:
+
+* Consideremos la función stem:[f(x) = root(3) x= x^(1/3)]
+
+* Busquemos su derivada: 
+
+====
+[stem]
+++++
+f'(x) = 1/3 x^(-2/3)
+++++
+====
+
+* Como sabemos, la recta tangente a f en algún stem:[x_0] conveniente nos dará una aproximación local de stem:[f]. Para seguir, necesitamos stem:[x_0]. ¿Cuál elegir? 
+** Debe ser un stem:[x_0] que esté lo suficientemente cerca de 25 pues queremos hacer la aproximación de stem:[f(25)=root(3)25]
+** Además, debería ser tal que pudiéramos computar stem:[f(x_0)] sin error, ya que es algo que necesitamos para obtener la ecuación de la recta tangente. 
+
+Convenientemente, podríamos elegir stem:[x_0=27] pues cumple con esas dos condiciones (¡podría ser otro!)
+
+* Buscamos la recta tangente a stem:[f " en " x_0=27]
+
+==== Videos
+
+https://youtu.be/69mAIUOXQcA
+
+https://youtu.be/ZmMQFgyOmXU
+
+====
+[stem]
+++++
+text{ recta tangente: } y=f(27)+f'(27)(x−27)=3+1/27(x−-7)
+++++
+====
+
+* Finalmente, aproximamos stem:[f(25)=root(3)25] usando la recta tangente en stem:[x=25]:
+
+====
+[stem]
+++++
+(25)≈3+1/27(25-27)=3-2/27=79/27
+++++ 
+==== 
+
+* Concluimos, entonces, que la aproximación lineal de stem:[root(3) 25] es stem:[79/27≈2.925925926] y es un valor que está razonablemente cerca del valor que puede dar una calculadora 2.924017738
+
+image::2023-10-03T11-55-13-954Z.png[] 
 
