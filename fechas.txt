@@ -4,3 +4,9 @@ parciales
 	prog jueves 3/10
 	db viernes 6/10
 	mate lunes 9/10
+
+parcial 2
+	db viernes 10/11 (semana 13)
+	eam lunes 13/11 (Semana 14)
+	logica martes 14/11 (semana 14)
+	prog jueves 16/11 (semana 14)

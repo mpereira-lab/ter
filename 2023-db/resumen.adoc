@@ -258,6 +258,8 @@ image::2023-09-02T20-36-46-735Z.png[]
 
 image::2023-09-02T20-37-02-990Z.png[] 
 
+video: https://www.youtube.com/watch?v=KrEFCpPZ8dE
+
 === Modalidad / condicionalidad
 
 * Obligatoria: Si para todo registro de A debe existir siempre al menos un registro de B
@@ -529,6 +531,9 @@ image::2023-09-14T11-40-53-409Z.png[]
 * La consola debería quedar como se muestra en la imagen.
 
 image::2023-09-14T11-43-09-761Z.png[] 
+=== Como ejecutar un .sql
+
+mysql -u root -p < archivo_sentencias.sql
 
 === Sentencias DDL
 

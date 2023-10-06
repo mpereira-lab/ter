@@ -1,0 +1,40 @@
+:imagesdir: ./images 
+
+=== Semana 7 - Practica 3
+
+==== 1) Si se debe considerar una condición que se encuentre entre dos dominios ¿Cómo armaría la consulta?, ¿Hay algún operador específico de MySQL para usar? Explicar.
+El operador between xx and xx . Ejemplo: para saber si un importe de un articulo está entre 1000 y 2000
+
+=====
+
+Select descripcion, importe from articulos where importe between 1000 and 2000
+
+=====
+
+==== 2) ¿En qué casos usarías los operadores de agrupación?
+
+Los uso en caso de tener que averiguar algún promedio, suma, mínimos, máximos (etc) de registros que tienen características en común. 
+
+==== 3) ¿Cuándo es correcto utilizar el operador IN y cuando no? Explique el porque
+
+image::2023-10-06T11-49-56-477Z.png[]
+
+image::2023-10-06T11-51-16-039Z.png[] 
+
+* En el caso 3.1 se puede utilizar in, pero es mas correcto utilizar el operador = ya que la consulta retorna un solo valor.
+* En el caso 3.2 se debe utilizar in si o si ya que el resultado de la subconsulta contiene mas de una fila y el operador = arrojaría error
+
+==== 4) ¿Qué diferencia hay entre una PK y una FK?
+
+Una pk es la primary key (clave primaria) de una tabla. Identifica de forma única la tupla de una tabla. Una fk es la foreign key (clave extranjera) y es una referencia a una PK de otra tabla.
+
+==== 5) ¿Qué diferencia hay entre integridad de entidad e integridad referencial?
+
+* La integridad de entidad se refiere a la regla que garantiza que cada fila en una tabla de una base de datos tenga una identificación única o clave primaria. Esto significa que no puede haber duplicados en la columna o conjunto de columnas designadas como clave primaria.
+
+* La integridad referencial se refiere a la consistencia de las relaciones entre tablas en una base de datos relacional. Se asegura de que las relaciones entre las tablas sean válidas y que no haya datos huérfanos (registros relacionados sin una referencia válida) o datos incoherentes.
+
+
+
+
+
