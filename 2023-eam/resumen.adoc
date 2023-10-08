@@ -403,7 +403,7 @@ Se pueden sacar raíces
 
 ==== Cómo construir gráficos
 
-Recordemos que el dominio de f(x)=x3+4x2+x-6 es R
+Recordemos que el dominio de stem:[f(x)=x^3+4x^2+x-6 " es " RR]
 
 * Como las raíces de la función son x=-3,x=-2 y x=1 pues son las raíces del polinomio asociado, éstas dividen a la recta real del dominio en 4 secciones o intervalos:
 
