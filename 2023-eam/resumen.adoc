@@ -1560,7 +1560,7 @@ lim_(x→∞)f(x)=L
 
 [stem]
 ++++
-lim_(x→∞)f(x)=L
+lim_(x→-∞)f(x)=L
 ++++
 
 ==== Asíntota horizontal
