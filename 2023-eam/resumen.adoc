@@ -457,7 +457,8 @@ Como una recta queda completamente determinada al trazar dos puntos que pertenez
 
 * Se suele tomar x=0 como uno de esos valores, lo que produce el punto de coordenadas  P=(0,b)
 * Otro punto es la intersección de la recta con el eje  x , es decir, la raíz de la función Q=(-b/a,0) 
-* Si a>0 es función creciente / , a<0 es decreciente \ 
+* Si a>0 es función creciente 
+* Si a<0 es decreciente
 
  f(x)=0⇔ax+b=0⇔x=-b/a
 
@@ -498,8 +499,8 @@ image::2023-09-09T02-21-42-558Z.png[]
 
 
 * Tipo de curvatura: 
-** Si a>0 el vértice es mínimo, se dice que es cóncava positiva y la imagen de la función es Im(f)=[Yv,+∞)
-** Si a<0 el vértice es máximo, se dice que es cóncava negativa y la imagen de la función es Im(f)=(-∞,Yv]
+** Si a>0 el vértice es mínimo, se dice que es cóncava positiva y la imagen de la función es stem:[Im(f)=\[Y_v,+∞)]
+** Si a<0 el vértice es máximo, se dice que es cóncava negativa y la imagen de la función es stem:[Im(f)=(-∞,Y_v\]]
 
 Ejemplo:
 
@@ -530,7 +531,7 @@ Con cuadrática:
 
 |===
 |Esscalas | https://www.youtube.com/watch?v=5incJdHWSag
-|Tabla    | https://www.youtube.com/watch?v=iYBpWzDgWts
+|Tabla (ya no es asi)   | https://www.youtube.com/watch?v=iYBpWzDgWts 
 |Puntos notables | https://www.youtube.com/watch?v=-uwDhkBm6CI
 |===
 
@@ -571,6 +572,7 @@ image:2023-09-10T13-25-56-071Z.png[]
 P(x) y Q(x) son funciones polinómicas, siendo Q(x) distinto del polinomio nulo. Estas funciones, al igual que las polinómicas, son funciones algebraicas.
 
 *Observaciones*
+
 * En este curso vamos a trabajar con funciones racionales donde P(x) y Q(x) no tengan factores en común, es decir, ya va a estar en forma irreducible la expresión fraccionaria.
 * A pesar de que las funciones racionales se construyen a partir de polinomios, sus gráficas tienen un aspecto diferentes al de las gráficas de funciones polinómicas.
 
@@ -633,7 +635,7 @@ o\ bien\ f(x)=k/x
 
 ++++
 
-==== Tabla
+===== Tabla
 
 [stem]
 ++++
@@ -670,11 +672,11 @@ g(x)=2x
 |1000   | 0,002
 |===
 
-==== Gráfico
+===== Gráfico
 
 image::2023-09-10T15-40-49-122Z.png[] 
 
-==== Características
+===== Características
 
 * Valores de x positivos cada vez más grandes, la función toma valores positivos cada vez más pequeños -> "tiende" a cero por encima del eje x. 
 
@@ -852,13 +854,14 @@ f(x) = root(2)(4x-3), g(x)=root(3)(x^2-5x+1), h(x)=root(4)(-frac{1}{5}x-2), i(x)
 
 * g(x) e i(x) tienen indice impar -> stem:[dom f = R]
 
-* Para g(x) el dominio debe satisfacer la siguiente ecuación
+* Para f(x) el dominio debe satisfacer la siguiente ecuación
 
- 4x-3>0
- x≥34
+stem:[4x-3≥0]
+
+stem:[x≥3/4]
 
 ====
-stem:[Dom f=[34;+∞)]
+stem:[Dom f=[3/4;+∞)]
 ====
 
 * para h(x) se debe satisfacer la siguiente ecuación 
