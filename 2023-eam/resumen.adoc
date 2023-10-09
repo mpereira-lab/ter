@@ -1801,7 +1801,7 @@ image::2023-09-17T17-46-47-317Z.png[]
 | 
 |===
 
-== Semana 6
+== Semana 7
 
 === Conceptos
 
