@@ -1529,7 +1529,7 @@ stem:[lim_(x→-1)frac{x^2+5x}{x^4+2} = frac{(-1)^2+5⋅(-1)}{(-1)^4+2} = -4/3]
 stem:[lim_(x→-1)frac{x^2+5x}{x^4+2} = -4/3]
 ====
 
-==== Ejemplo 3
+===== Ejemplo 3
 
 stem:[lim_(x→4) sqrt (x^3+36)]
 
@@ -1758,7 +1758,7 @@ image::2023-09-17T17-46-47-317Z.png[]
 |
 | 3
 | Limite de potencia de función identidad
-| stem:[lim_(x→a) x = a]
+| stem:[lim_(x→a) x^n = a^n]
 |
 | 4
 | Limite de raíz de función identidad
