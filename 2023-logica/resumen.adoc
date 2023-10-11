@@ -598,6 +598,8 @@ image::2023-10-05T01-04-14-545Z.png[]
 
 === Resta en notación binaria
 
+aca lo entendí: https://youtu.be/d1TwfFDfrmg?t=319
+
 Reste 10112 de 110002 usando notación binaria 
 
 En la resta decimal el hecho de que 10b10 - 1b10 = 9b10 se usa para prestar a través de varias columnas. Por ejemplo, considere lo siguiente: 
@@ -687,4 +689,33 @@ En el ejemplo mencionado:
 |===
 
 Por lo tanto, las cadenas 96A5 y 1001 0110 1010 0101 representan el mismo valor. Notar que no hizo falta obtener ese valor, dado que no se aplicó el proceso de interpretación. 
+
+== Semana 8 Enteros Negativos en SM, CA1 y CA2
+
+=== Signo Magnitud
+
+Por convención se suele usar el primer bit de una cadena (aquel del extremo izquierdo) como indicador y se lo denomina bit de signo. Si el bit de signo es un 1 se trata de un número negativo, y en caso contrario es positivo. Los bits restantes de la cadena reciben el nombre de magnitud y su valor se determina con el mecanismo de interpretación del sistema binario sin signo (BSS).
+
+Este sistema recibe el nombre Signo-Magnitud (SM).Cuando se restringe la cantidad de bits a n, se lo denota SM(n), donde el primer bit es el signo, y la magnitud es de n - 1 bits.
+
+Ejemplo:  1010 = -2
+
+==== Rango
+
+stem:[\[-(2n-1 - 1); 2n-1 - 1\]]
+
+no hay stem:[2^n] números distintos como en BSS(n)
+
+Ejemplo: n = 3, el rango del sistema SM es stem:[\[-(2^(3-1) - 1), 2^(3-1) \]] = [-3, 3] y en dicho intervalo hay 7 números: {-3; -2; -1; 0; 1; 2; 3}. En binario sin signo, con 3 bits se tenían 8 números. El numero que falta es 0 porque tiene doble representación: 000 y 100
+
+===== Desventajas
+
+. desaprovechar una cadena
+. doble representación complica la aritmética (y los circuitos que la implementan) al tener que considerar dos cadenas que representan el mismo valor.  
+
+===== Rango equilibrado
+
+Esto significa que, partiendo desde el 0, se tienen n cantidad de números positivos y negativos
+
+
 
