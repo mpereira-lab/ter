@@ -1,4 +1,4 @@
-
+:stylesheet: daro-dark.css
 :toc: left
 :toclevels: 4
 :toc-title: Lógica computacional
@@ -842,4 +842,329 @@ Si tengo 1 adelante, y tengo que saber cual es la magnitud (val absoluto) hago e
 
 La aritmética en CA2, por definición de complemento a la base, cumple con la propiedad de ser mecánicamente idéntica a la aritmética del sistema BSS. Es decir que tanto la suma como la resta se resuelven con los mismos circuitos de
 suma (Full adder y restador). Suponer la siguiente operación de suma:     
+
+== Semana 9 
+
+=== Circuito semi-sumador
+
+[stem]
+++++
+
+1_2 + 1_2 = 10_2 \
+1_2 + 0_2 = 1_2 = 01_2 \
+0_2 + 1_2 = 1_2 = 01_2 \
+0_2 + 0_2 = 0_2 = 00_2 
+
+++++
+
+* Tiene 2 salidas: 
+** una para el dígito binario de la izquierda (lleva) 
+** uno para el dígito binario de la derecha (suma)
+
+image:2023-10-16T14-52-09-301Z.png[] 
+
+* suma: stem:[(P vv Q) ^^ ~(P ^^ Q)]
+* lleva: stem:[P ^^ Q]
+
+
+=== Sumador completo
+
+Al considerar como construir un circuito que sume 2 números enteros binarios, nos encontramos con que en un punto se necesitan sumar 3 dígitos, 2 de la suma inicial y uno que es el que llevamos de la columna anterior. Por ejemplo :
+
+image::2023-10-16T16-56-54-947Z.png[] 
+
+en la segunda columna tenemos que sumar 3 dígitos binarios. Para ello hay que construir un circuito que calcule suma de 3 dígitos binarios, y esto es el *sumador completo*
+
+[stem]
+++++
+
+" "P \
+  +Q \
+  +R \
+-- \
+CS 
+
+++++
+
+C=CARRY
+S=SUMA
+
+
+=== Sumador completo en base a un semi-sumador
+
+Tener em cuenta: sumador completo tiene 3 entradas(2 dígitos + carry). Semi sumador tiene 2
+
+Pasos de semi sumador para construir un sumador completo
+
+==== Construcción
+
+1) Sumar P y Q utilizando un semi sumador para obtener un número binario de dos dígitos
+
+====
+[stem]
+++++
+
+" "P \
++Q \
+-- \
+C_1S_1
+
+++++
+====
+
+2) Sumar R a la suma stem:[C_1S_1" de "P y Q]
+
+====
+[stem]
+++++
+
+C_1S_1 \
++R \
+--
+
+++++
+====
+
+2a) Sumar R a stem:[S_1] utilizando un semisumador para obtener el número de dos dígitos stem:[C_2S]
+
+====
+[stem]
+++++
+
+" "S_1 \
++R \
+-- \
+C_2S
+++++
+====
+
+ S es el dígito del extremo derecho de la suma total de P, Q y R.
+
+2b) Determinar el dígito del extremo izquierdo, C
+
+* Es imposible que tanto C1 como C2 sean 1. Si stem:[C_1=1] entonces P y Q son 1, así stem:[S_1=0]. Por lo tanto la suma stem:[S_1] y R da un número binario stem:[C_2S] donde stem:[C_2=0]
+* C será un 1 en el caso de que 
+** la suma de P y Q da como resultado llevar un 1 
+** o en el caso de que la suma de S1 y R da como resultado llevar 1
+** resumiendo los puntos anteriores C =1 si y sólo si, C1 = 1 o C2 = 1
+
+==== Tabla y circuito
+
+image:2023-10-16T19-47-17-314Z.png[] 
+
+==== Circuito en paralelo
+
+Dos sumadores completos y un semisumador se pueden utilizar juntos para construir un circuito que va a sumar dos números binarios de tres dígitos PQR y STU para obtener la suma W X Y Z. Esto se muestra en la figura que se encuentra debajo. Tal circuito se llama un sumador en paralelo. Los sumadores en paralelo pueden construirse para sumar números binarios de cualquier longitud finita.
+
+
+image::2023-10-16T20-09-49-443Z.png[] 
+
+ACLARACION: Si bien los circuitos tienen la denominación de "semisumador", cuando tienen tres entradas, son "sumadores completos".  En esta imagen del circuito, se los llama de esa manera a fin de dar a entender que "sumador completo" es el circuito compuesto por varios semisumadores. 
+
+
+== Semana 10 
+
+=== AND OR y XOR como habilitador, sumador de señal e inversores
+
+https://www.youtube.com/watch?v=NL4wfVMozKA
+
+==== OR
+
+[width=20%]
+|===
+| A | B | Z
+| 0 | 0 | 0
+| 0 | 1 | 1
+| 1 | 0 | 1
+| 1 | 1 | 1
+|===
+
+Se puede pensar OR como una compuerta que deja pasar info/comunicación de A o B en *DIFERENTE* TIEMPO
+
+Se puede utilizar para juntar distintos canales de comunicación.
+
+OR PUEDE *UNIR* COMUNICACIONES
+
+*Circuito*
+
+image::2023-10-16T21-46-07-417Z.png[]
+
+
+==== AND
+
+[width=20%]
+|===
+| A | B | Z
+| 0 | 0 | 0
+| 0 | 1 | 0
+| 1 | 0 | 0
+| 1 | 1 | 1
+|===
+
+Se puede pensar como un habilitador. Con B = control. Cuando B=1 deja pasar lo que tiene A. Cuando B=0, la salida es siempre 0(no deja pasar lo que esta en A)
+
+AND PUEDE DEJAR *PASAR/NO PASAR*
+
+*Circuito*
+
+image::2023-10-16T21-49-34-956Z.png[] 
+
+==== XOR
+
+[width=20%]
+|===
+| A | B | Z
+| 0 | 0 | 0
+| 0 | 1 | 1
+| 1 | 0 | 1
+| 1 | 1 | 0
+|===
+
+Se puede pensar como un inversor controlado
+
+* Cuando B=0 Z=A (deja pasar A)
+* Cuando B=1 Z=stem:[overline A]
+
+XOR ES CNOT O NOT CONTROLADA
+
+*Circuito*
+
+image::2023-10-16T21-55-00-394Z.png[]
+
+=== Componentes
+
+¿ Para que sirven ?
+
+Los multiplexores y demultiplexores permiten seleccionar y direccionar señales de entrada a través de una única línea de salida o entrada, respectivamente. 
+
+Los codificadores y decodificadores se utilizan para comprimir y descomprimir la información.
+
+
+=== Multiplexor (MUX)
+
+Es un circuito que tiene múltiples entradas y una única salida.
+
+Selecciona una de las entradas para enviarla a la salida en función de un conjunto de entradas de selección
+
+Actúa como un selector de entrada
+
+El número de entradas y entradas de selección determinan cuál de éstas entradas se seleccionará y se enviará a la salida.
+
+image::2023-10-16T20-21-50-633Z.png[] 
+
+=== Demultiplexor (DEMUX)
+
+Es un circuito que tiene una sola entrada y múltiples salidas. 
+
+Selecciona una de las salidas para recibir la entrada en función de un conjunto de entradas de selección
+
+Actúa como un selector de salida.
+
+El número de salidas y las entradas de selección determinan cuál de las salidas recibirá la entrada
+
+image::2023-10-16T20-25-32-229Z.png[] 
+
+
+=== Codificador
+
+Es un circuito que tiene múltiples entradas y una sola salida
+
+Codifica las entradas en una forma más compacta.
+
+El número de bits de la salida es menor que el número de bits de las entradas.
+
+Los codificadores se utilizan en la compresión de datos y en la reducción del tamaño de los datos.
+
+image::2023-10-16T20-29-31-974Z.png[] 
+
+
+==== Dibujo
+
+==== Tabla de verdad 
+
+==== Diagrama de compuertas
+
+
+
+=== Decodificador
+
+Es un circuito que tiene una sola entrada y múltiples salidas
+
+Decodifica la entrada en una forma más extensa. 
+
+El número de bits de las salidas es mayor que el número de bits de la entrada. 
+
+Los decodificadores se utilizan en la expansión de datos y en la recuperación de información.
+
+image::2023-10-16T21-02-31-053Z.png[] 
+
+VIDEO: https://www.youtube.com/watch?v=Jvxlq55QUCc
+
+Si tiene n entradas, tiene stem:[2^n] salidas. 
+
+* Con 2 entradas, tiene 4 salidas. 
+* Con 3 entradas, tiene 8 salidas.
+
+==== Dibujo
+
+Ejemplo con 2 entradas y 4 salidas
+
+image::2023-10-16T23-02-35-229Z.png[]
+
+==== Tabla de verdad 
+
+Ejemplo con 2 entradas y 4 salidas
+
+[cols="10%,10%,10%,10%,10%,10%,50%"]
+|===
+| A | B | W | X | Y | Z |
+
+| 0 | 0 |*1*| 0 | 0 | 0 | Si elijo 0 0, quiero que se habilite w
+| 0 | 1 | 0 |*1*| 0 | 0 | Si elijo 0 1, quiero que se habilite x
+| 1 | 0 | 0 | 0 |*1*| 0 | Si elijo 1 0, quiero que se habilite y
+| 1 | 1 | 0 | 0 | 0 |*1*| Si elijo 1 1, quiero que se habilite z
+|===
+
+==== Diagrama de compuertas
+
+Primero buscamos la expresión del álgebra de Boole
+
+|===
+| A | B | W | W=                            | X | X=                            | Y | Y=                            | Z | Z = 
+                 
+| 0 | 0 |*1*| stem:[overline A. overline B] | 0 |                               | 0 |                               | 0 | 
+| 0 | 1 | 0 |                               |*1*| stem:[overline A.          B] | 0 |                               | 0 | 
+| 1 | 0 | 0 |                               | 0 |                               |*1*| stem:[A. overline B]          | 0 | 
+| 1 | 1 | 0 |                               | 0 |                               | 0 |                               |*1*| stem:[A.B]
+|===
+
+image::2023-10-16T23-24-29-248Z.png[] 
+
+image::2023-10-17T00-00-11-192Z.png[] 
+
+==== Habilitacion (AND)
+
+Poniendo una compuerta AND de habilitación, podemos controlar que la salida se prenda o se apague con una nueva entrada H
+
+|===
+| A | B | H | W | W=                            | X | X=                            | Y | Y=                            | Z | Z = 
+| 0 | 0 | 1 |*1*| stem:[overline A. overline B] | 0 |                               | 0 |                               | 0 | 
+| 0 | 1 | 1 | 0 |                               |*1*| stem:[overline A.          B] | 0 |                               | 0 | 
+| 1 | 0 | 1 | 0 |                               | 0 |                               |*1*| stem:[A. overline B]          | 0 | 
+| 1 | 1 | 1 | 0 |                               | 0 |                               | 0 |                               |*1*| stem:[A.B]
+| 0 | 0 | 0 | 0 |                               | 0 |                               | 0 |                               | 0 | 
+| 0 | 1 | 0 | 0 |                               | 0 |                               | 0 |                               | 0 | 
+| 1 | 0 | 0 | 0 |                               | 0 |                               | 0 |                               | 0 | 
+| 1 | 1 | 0 | 0 |                               | 0 |                               | 0 |                               | 0 |
+
+|===
+
+image::2023-10-17T00-02-14-742Z.png[]
+
+
+
+
+
+
+
 
