@@ -1064,28 +1064,6 @@ El número de salidas y las entradas de selección determinan cuál de las salid
 
 image::2023-10-16T20-25-32-229Z.png[] 
 
-
-=== Codificador
-
-Es un circuito que tiene múltiples entradas y una sola salida
-
-Codifica las entradas en una forma más compacta.
-
-El número de bits de la salida es menor que el número de bits de las entradas.
-
-Los codificadores se utilizan en la compresión de datos y en la reducción del tamaño de los datos.
-
-image::2023-10-16T20-29-31-974Z.png[] 
-
-
-==== Dibujo
-
-==== Tabla de verdad 
-
-==== Diagrama de compuertas
-
-
-
 === Decodificador
 
 Es un circuito que tiene una sola entrada y múltiples salidas
@@ -1161,8 +1139,85 @@ Poniendo una compuerta AND de habilitación, podemos controlar que la salida se 
 
 image::2023-10-17T00-02-14-742Z.png[]
 
+=== Codificador
+
+Es un circuito que tiene múltiples entradas y una sola salida
+
+Codifica las entradas en una forma más compacta.
+
+El número de bits de la salida es menor que el número de bits de las entradas.
+
+Los codificadores se utilizan en la compresión de datos y en la reducción del tamaño de los datos.
+
+image::2023-10-16T20-29-31-974Z.png[] 
 
 
+==== Dibujo
+
+Ejemplo con 4 entradas, 2 salidas
+
+El ejemplo muestra como con 4 entradas puedo representar el número decimal del 0 al 3
+
+image::2023-10-17T11-02-02-053Z.png[] 
+
+==== Tabla de verdad 
+
+[cols="5%,5%,5%,5%,5%,5%,75%", width="70%"]
+|===
+| A | B | C | D | Y | Z | 
+| 1 |   |   |   | 0 | 0 | Si está encendido A quiero que represente el 0
+|   | 1 |   |   | 0 | 1 | Si está encendido A quiero que represente el 1
+|   |   | 1 |   | 1 | 0 | Si está encendido A quiero que represente el 2
+|   |   |   | 1 | 1 | 1 | Si está encendido A quiero que represente el 3
+|===
+
+Se debe tener en cuenta la prioridad. Esto es, ¿ que pasa si en las entradas hay mas de un 1 ? podría ser que para la primera entrada A=1 y B=1. Tengo que priorizar. Esto es, darle importancia al bit que yo quiera. En este caso puedo priorizar el bit de menor valor A: todos los bits de mayor valor no tendrían importancia y se tomarían como 0.
+
+==== Diagrama de compuertas
+
+Primero buscamos la expresión del álgebra de Boole
+
+En esta tabla se tiene en cuenta:
+
+. La columna inactiva, es para eliminar la doble salida de cero. Esto es cuando A=0, B=0, C=0 y D=0 la salida es 0. Pero en nosotros queremos que la salida sea 0 cuando A=1. Esto trae el problema que 2 valores de entrada pueden codificar el mismo valor de salida. Para ello, se agrega InActiva y se hace AND con esta columna, para dejar pasar o no el valor de salida
+. Como hay menos ceros que unos, realizar la multplicación de sumas en vez de la suma de productos que es mas común. Se toman las columnas donde los valores dan como resultado cero,  se suman los ceros sin negar, y los 1 negados (ver tabla)
+
+[cols="5%,5%,5%,5%,5%,30%,5%,25%,10%", width="75%"]
+|===
+| D | C | B | A | Y | Y=                                | Z | Z=                                        | InActiva | InActiva=
+| 0 | 0 | 0 | 0 | 0 | stem:[D+C+B+A]                    | 0 | stem:[D+C+B+A]                            | 0        | D+C+B+A        
+| 0 | 0 | 0 | 1 | 0 | stem:[D+C+B+overline A]           | 0 | stem:[D+C+B+overline A]                   | 1        |
+| 0 | 0 | 1 | 0 | 0 | stem:[D+C+overline B+A]           | 1 |                                           | 1        |
+| 0 | 0 | 1 | 1 | 0 | stem:[D+C+overline B+overline A]  | 1 |                                           | 1        |
+| 0 | 1 | 0 | 0 | 1 |                                   | 0 | stem:[D+overline C+B+A]                   | 1        |
+| 0 | 1 | 0 | 1 | 1 |                                   | 0 | stem:[D+overline C+B+overline A]          | 1        |
+| 0 | 1 | 1 | 0 | 1 |                                   | 0 | stem:[D+overline C+overline B+A]          | 1        |
+| 0 | 1 | 1 | 1 | 1 |                                   | 0 | stem:[D+overline C+overline B+overline A] | 1        |
+| 1 | 0 | 0 | 0 | 1 |                                   | 1 |                                           | 1        |
+| 1 | 0 | 0 | 1 | 1 |                                   | 1 |                                           | 1        |
+| 1 | 0 | 1 | 0 | 1 |                                   | 1 |                                           | 1        |
+| 1 | 0 | 1 | 1 | 1 |                                   | 1 |                                           | 1        |
+| 1 | 1 | 0 | 0 | 1 |                                   | 1 |                                           | 1        |
+| 1 | 1 | 0 | 1 | 1 |                                   | 1 |                                           | 1        |
+| 1 | 1 | 1 | 0 | 1 |                                   | 1 |                                           | 1        |
+| 1 | 1 | 1 | 1 | 1 |                                   | 1 |                                           | 1        |
+|===
+
+stem:[Y = (D+C+B+A).(D+C+B+overline A).(D+C+overline B+A).(D+C+overline B+overline A)]
+
+*Simplificación*:
+
+image::2023-10-18T00-13-06-507Z.png[] 
+
+stem:[Z = (D+C+B+A).(D+C+B+overline A).(D+overline C+B+A).(D+overline C+B+overline A).(D+overline C+overline B+A).(D+overline C+overline B+overline A)]
+
+*Simplificación*:
+
+image::2023-10-18T00-14-30-657Z.png[] 
+
+*Compuertas*
+
+image::2023-10-18T00-17-52-887Z.png[] 
 
 
 
