@@ -1136,7 +1136,7 @@ El ejemplo muestra como con 4 entradas puedo representar el número decimal del 
 
 image::2023-10-17T11-02-02-053Z.png[] 
 
-==== Tabla de verdad 
+==== Dibujo
 
 [cols="5%,5%,5%,5%,5%,5%,75%", width="70%"]
 |===
@@ -1286,3 +1286,42 @@ El número de salidas y las entradas de selección determinan cuál de las salid
 image::2023-10-16T20-25-32-229Z.png[] 
 
 
+==== Dibujo
+
+En este ejemplo se tienen que demultiplexar 1 entradas en 4 salidas. Para demultiplexar 1 entrada en 4 salidas se necesitan 2 entradas de control. 
+
+stem:[2^"con"="sal"]
+
+* con=cantidad de entradas de control
+* sal=cantidad de salidas donde demultiplexar
+
+image::2023-10-18T23-34-05-734Z.png[] 
+
+Ejemplo donde la salida es A
+
+image::2023-10-18T23-36-00-215Z.png[] 
+
+
+
+==== Tabla de verdad 
+
+[cols=7, width="50%"]
+|===
+^| Entrada 2+^| Entradas de control    4+^| Salidas de información 
+^| Z         ^| stem:[C_0] ^| stem:[C_1] ^| A ^| B ^| C ^| D  
+^| 0         ^| 0          ^| 0          ^| 0 ^|   ^|   ^|    
+^| 1         ^| 0          ^| 0          ^| 1 ^|   ^|   ^|    
+^| 0         ^| 0          ^| 1          ^|   ^| 0 ^|   ^|    
+^| 1         ^| 0          ^| 1          ^|   ^| 1 ^|   ^|    
+^| 0         ^| 1          ^| 0          ^|   ^|   ^| 0 ^|    
+^| 1         ^| 1          ^| 0          ^|   ^|   ^| 1 ^|    
+^| 0         ^| 1          ^| 1          ^|   ^|   ^|   ^| 0  
+^| 1         ^| 1          ^| 1          ^|   ^|   ^|   ^| 1  
+|===
+
+==== Diagrama de compuertas
+
+ver como los controles son un decodificador en https://youtu.be/_wWXKgEwiUc?t=121
+
+
+image::2023-10-18T23-42-51-038Z.png[] 
