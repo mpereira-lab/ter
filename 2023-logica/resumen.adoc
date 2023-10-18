@@ -1039,31 +1039,6 @@ Los multiplexores y demultiplexores permiten seleccionar y direccionar señales 
 
 Los codificadores y decodificadores se utilizan para comprimir y descomprimir la información.
 
-
-=== Multiplexor (MUX)
-
-Es un circuito que tiene múltiples entradas y una única salida.
-
-Selecciona una de las entradas para enviarla a la salida en función de un conjunto de entradas de selección
-
-Actúa como un selector de entrada
-
-El número de entradas y entradas de selección determinan cuál de éstas entradas se seleccionará y se enviará a la salida.
-
-image::2023-10-16T20-21-50-633Z.png[] 
-
-=== Demultiplexor (DEMUX)
-
-Es un circuito que tiene una sola entrada y múltiples salidas. 
-
-Selecciona una de las salidas para recibir la entrada en función de un conjunto de entradas de selección
-
-Actúa como un selector de salida.
-
-El número de salidas y las entradas de selección determinan cuál de las salidas recibirá la entrada
-
-image::2023-10-16T20-25-32-229Z.png[] 
-
 === Decodificador
 
 Es un circuito que tiene una sola entrada y múltiples salidas
@@ -1151,6 +1126,7 @@ Los codificadores se utilizan en la compresión de datos y en la reducción del 
 
 image::2023-10-16T20-29-31-974Z.png[] 
 
+Video https://www.youtube.com/watch?v=zSi7sky2ayU
 
 ==== Dibujo
 
@@ -1182,25 +1158,25 @@ En esta tabla se tiene en cuenta:
 . La columna inactiva, es para eliminar la doble salida de cero. Esto es cuando A=0, B=0, C=0 y D=0 la salida es 0. Pero en nosotros queremos que la salida sea 0 cuando A=1. Esto trae el problema que 2 valores de entrada pueden codificar el mismo valor de salida. Para ello, se agrega InActiva y se hace AND con esta columna, para dejar pasar o no el valor de salida
 . Como hay menos ceros que unos, realizar la multplicación de sumas en vez de la suma de productos que es mas común. Se toman las columnas donde los valores dan como resultado cero,  se suman los ceros sin negar, y los 1 negados (ver tabla)
 
-[cols="5%,5%,5%,5%,5%,30%,5%,25%,10%", width="75%"]
+[cols="5%,5%,5%,5%,10%,20%,10%,20%,10%,10%", width="75%"]
 |===
-| D | C | B | A | Y | Y=                                | Z | Z=                                        | InActiva | InActiva=
-| 0 | 0 | 0 | 0 | 0 | stem:[D+C+B+A]                    | 0 | stem:[D+C+B+A]                            | 0        | D+C+B+A        
-| 0 | 0 | 0 | 1 | 0 | stem:[D+C+B+overline A]           | 0 | stem:[D+C+B+overline A]                   | 1        |
-| 0 | 0 | 1 | 0 | 0 | stem:[D+C+overline B+A]           | 1 |                                           | 1        |
-| 0 | 0 | 1 | 1 | 0 | stem:[D+C+overline B+overline A]  | 1 |                                           | 1        |
-| 0 | 1 | 0 | 0 | 1 |                                   | 0 | stem:[D+overline C+B+A]                   | 1        |
-| 0 | 1 | 0 | 1 | 1 |                                   | 0 | stem:[D+overline C+B+overline A]          | 1        |
-| 0 | 1 | 1 | 0 | 1 |                                   | 0 | stem:[D+overline C+overline B+A]          | 1        |
-| 0 | 1 | 1 | 1 | 1 |                                   | 0 | stem:[D+overline C+overline B+overline A] | 1        |
-| 1 | 0 | 0 | 0 | 1 |                                   | 1 |                                           | 1        |
-| 1 | 0 | 0 | 1 | 1 |                                   | 1 |                                           | 1        |
-| 1 | 0 | 1 | 0 | 1 |                                   | 1 |                                           | 1        |
-| 1 | 0 | 1 | 1 | 1 |                                   | 1 |                                           | 1        |
-| 1 | 1 | 0 | 0 | 1 |                                   | 1 |                                           | 1        |
-| 1 | 1 | 0 | 1 | 1 |                                   | 1 |                                           | 1        |
-| 1 | 1 | 1 | 0 | 1 |                                   | 1 |                                           | 1        |
-| 1 | 1 | 1 | 1 | 1 |                                   | 1 |                                           | 1        |
+| D | C | B | A ^| Y | Y=                                ^| Z | Z=                                        | InActiva | InActiva=
+| 0 | 0 | 0 | 0 ^| 0 | stem:[D+C+B+A]                    ^| 0 | stem:[D+C+B+A]                            | 0        | D+C+B+A        
+| 0 | 0 | 0 | 1 ^| 0 | stem:[D+C+B+overline A]           ^| 0 | stem:[D+C+B+overline A]                   | 1        |
+| 0 | 0 | 1 | 0 ^| 0 | stem:[D+C+overline B+A]           ^| 1 |                                           | 1        |
+| 0 | 0 | 1 | 1 ^| 0 | stem:[D+C+overline B+overline A]  ^| 1 |                                           | 1        |
+| 0 | 1 | 0 | 0 ^| 1 |                                   ^| 0 | stem:[D+overline C+B+A]                   | 1        |
+| 0 | 1 | 0 | 1 ^| 1 |                                   ^| 0 | stem:[D+overline C+B+overline A]          | 1        |
+| 0 | 1 | 1 | 0 ^| 1 |                                   ^| 0 | stem:[D+overline C+overline B+A]          | 1        |
+| 0 | 1 | 1 | 1 ^| 1 |                                   ^| 0 | stem:[D+overline C+overline B+overline A] | 1        |
+| 1 | 0 | 0 | 0 ^| 1 |                                   ^| 1 |                                           | 1        |
+| 1 | 0 | 0 | 1 ^| 1 |                                   ^| 1 |                                           | 1        |
+| 1 | 0 | 1 | 0 ^| 1 |                                   ^| 1 |                                           | 1        |
+| 1 | 0 | 1 | 1 ^| 1 |                                   ^| 1 |                                           | 1        |
+| 1 | 1 | 0 | 0 ^| 1 |                                   ^| 1 |                                           | 1        |
+| 1 | 1 | 0 | 1 ^| 1 |                                   ^| 1 |                                           | 1        |
+| 1 | 1 | 1 | 0 ^| 1 |                                   ^| 1 |                                           | 1        |
+| 1 | 1 | 1 | 1 ^| 1 |                                   ^| 1 |                                           | 1        |
 |===
 
 stem:[Y = (D+C+B+A).(D+C+B+overline A).(D+C+overline B+A).(D+C+overline B+overline A)]
@@ -1220,6 +1196,93 @@ image::2023-10-18T00-14-30-657Z.png[]
 image::2023-10-18T00-17-52-887Z.png[] 
 
 
+=== Multiplexor (MUX)
 
+Es un circuito que tiene múltiples entradas y una única salida.
+
+Selecciona una de las entradas para enviarla a la salida en función de un conjunto de entradas de selección
+
+Actúa como un selector de entrada
+
+El número de entradas y entradas de selección determinan cuál de éstas entradas se seleccionará y se enviará a la salida.
+
+image::2023-10-16T20-21-50-633Z.png[] 
+
+Video1: https://www.youtube.com/watch?v=edDbm-2t1kY
+Video2: https://www.youtube.com/watch?v=AMP4muh_Jqk
+
+
+==== Dibujo
+
+En este ejemplo se tienen que multiplexar 4 entradas y 1 salida. Para multiplexar 4 entradas se necesitan 2 entradas de control. 
+
+stem:[2^"con"="in"]
+
+* con=cantidad de entradas de control
+* in=cantidad de entradas a multiplexar
+
+image::2023-10-18T22-47-41-727Z.png[] 
+
+Ejemplo donde pasa B
+
+image::2023-10-18T22-52-19-656Z.png[] 
+
+==== Tabla de verdad 
+
+
+Tabla simplificada
+
+[width="20%"]
+|===
+^| stem:[C_0] ^| stem:[C_1] ^| Z
+^| 0          ^| 0          ^| A
+^| 0          ^| 1          ^| B
+^| 1          ^| 0          ^| C
+^| 1          ^| 1          ^| D
+|===
+
+Tabla mas completa
+(La tabla completa es de stem:[2^6=64] filas. Ver video1 para verla completa)
+
+[cols=7, width="50%"]
+|===
+4+^| Entradas de información 2+^| Entradas de control ^| Salida
+^| A ^| B ^| C ^| D ^| stem:[C_0] ^| stem:[C_1] ^| Z
+^| 0 ^|   ^|   ^|   ^| 0          ^| 0          ^| 0
+^| 1 ^|   ^|   ^|   ^| 0          ^| 0          ^| 1
+^|   ^| 0 ^|   ^|   ^| 0          ^| 1          ^| 0
+^|   ^| 1 ^|   ^|   ^| 0          ^| 1          ^| 1
+^|   ^|   ^| 0 ^|   ^| 1          ^| 0          ^| 0
+^|   ^|   ^| 1 ^|   ^| 1          ^| 0          ^| 1
+^|   ^|   ^|   ^| 0 ^| 1          ^| 1          ^| 0
+^|   ^|   ^|   ^| 1 ^| 1          ^| 1          ^| 1
+|===
+
+==== Diagrama de compuertas
+
+ver como los controles son un decodificador en https://youtu.be/AMP4muh_Jqk?t=160
+
+El resultado es este dibujo:
+
+image::2023-10-18T23-23-23-053Z.png[] 
+
+Este es el diagrama de compuertas
+
+image::2023-10-18T23-25-49-872Z.png[] 
+
+
+
+
+=== Demultiplexor (DEMUX)
+
+Es un circuito que tiene una sola entrada y múltiples salidas. 
+
+Selecciona una de las salidas para recibir la entrada en función de un conjunto de entradas de selección
+
+Actúa como un selector de salida.
+
+El número de salidas y las entradas de selección determinan cuál de las salidas recibirá la entrada
+
+image::2023-10-16T20-25-32-229Z.png[] 
 
 
