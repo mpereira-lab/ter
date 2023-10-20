@@ -1,7 +1,9 @@
+:stylesheet: daro-dark.css
 :toc: left
 :toclevels: 4
 :toc-title: DB
 :imagesdir: ./images
+:stem: 
 
 = DB
 
@@ -901,6 +903,119 @@ El error se presenta en los siguientes casos:
 La subconsulta tiene más de una columna.
 La subconsulta devuelve varias filas y el operador utilizado es un igual, mayor,  menor  o las combinaciones.
 Estos errores ocurren porque las consultas y subconsultas se razonan en función de los dominios almacenados en lugar de razonarlas en función del requerimiento y la regla de negocios. Se piensa que los datos posibles son solamente los existentes y se olvida que las tablas son flexibles.
+
+== Semana 9 Joins
+
+=== Inner Join
+
+Inner consiste en combinar cada fila de una tabla con cada fila de la otra tabla, seleccionado aquellas filas que cumplan una determinada condición.
+
+image::2023-10-20T11-23-05-607Z.png[] 
+
+image::2023-10-20T11-24-57-135Z.png[] 
+
+=== Left outer Join
+
+Esta combinación externa nos permite armar el resultado con las tuplas coincidentes entre ambas tablas (la intersección) y las tuplas de la tabla colocada a la izquierda de join que no tienen relación con la tabla de la derecha.
+
+image::2023-10-20T11-25-31-359Z.png[] 
+
+image::2023-10-20T11-25-17-143Z.png[] 
+
+====
+Tabla A   left outer join   Tabla B   on    A.atributo_Comun = B.Atributo_Comun
+====
+
+
+=== Left outer join with exclusion
+
+Las filas de A que no se relacionen con B.
+
+En teoría de conjunto esto es A - B (A menos B)
+
+image::2023-10-20T11-28-34-591Z.png[] 
+
+Para obtener este resultado, le agregamos a la sentencia del left outer join una condición, esa condición es que proyecte las filas en las cuales el código del mecánico de la tabla  mecdiag  sea null. Con esta condición quitamos del resultado las filas de la intersección.
+
+image::2023-10-20T11-30-16-127Z.png[] 
+
+====
+Tabla A  left outer join Tabla B on A.atributo_Comun = B.Atributo_Comun Where B.atributo_Comun  is null
+====
+
+=== Right outer join
+ 
+ Nos permite armar el resultado con las tuplas coincidentes entre ambas tablas (la intersección) y las tuplas de la tabla colocada a la  derecha de join, que no tienen relación con la tabla de la izquierda. 
+
+image::2023-10-20T11-35-39-495Z.png[] 
+
+image::2023-10-20T11-36-28-303Z.png[] 
+
+====
+Tabla A   right outer join   Tabla B    on   A.atributo_Comun = B.Atributo_Comun
+====
+
+=== Right outer join with exclusion
+
+es similar que la left outer join with exclusion, con la diferencia que la condición hace referencia a la columna en común de la tabla de la izquierda. Esa columna debe ser null
+
+
+image::2023-10-20T11-38-24-862Z.png[] 
+
+image::2023-10-20T11-39-12-381Z.png[] 
+
+====
+Tabla A   right outer join   Tabla B   on    A.atributo_Comun = B.Atributo_Comun Where  A.atributo_Comun   is null
+====
+
+==== Ejemplo 1
+
+La consulta proyecta los datos de los mecánicos que diagnostican que no participaron en el diagnostico de las fichas ingresadas al taller mecánico.
+
+image::2023-10-20T11-45-39-855Z.png[] 
+
+El mismo resultado lo podemos obtener con subconsulta en la condición.
+
+image::2023-10-20T11-46-00-366Z.png[] 
+
+==== Ejemplo 2
+
+image::2023-10-20T11-48-57-640Z.png[] 
+
+Clientes que tienen más de un vehículo
+
+Solución 1
+
+image::2023-10-20T11-50-16-135Z.png[] 
+
+Solución 2
+
+image::2023-10-20T11-50-34-518Z.png[] 
+   
+Solución 3
+
+image::2023-10-20T11-50-47-422Z.png[] 
+
+
+
+=== Unión
+
+se usa para combinar más de un resultado de consulta select en una sola consulta que contiene filas de todas las consultas de selección; o puede tratarse de dos tablas con la misma estructura.
+
+La cantidad de columnas y tipos de datos en las sentencias select debe ser la misma es decir tener la misma estructura, las columnas del mismo tipo de datos y en el mismo orden.
+
+El resultado de la unión elimina las filas que son iguales.
+
+image::2023-10-20T11-42-42-656Z.png[] 
+
+image::2023-10-20T11-43-24-334Z.png[] 
+
+
+
+
+
+
+
 
 
 
