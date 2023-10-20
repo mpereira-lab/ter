@@ -1,7 +1,9 @@
+:stylesheet: daro-dark.css
 :toc: left
 :toclevels: 4
 :imagesdir: ./images
 :toc-title: Programación
+:stem: 
 
 = PROG
 
@@ -495,6 +497,66 @@ image::2023-09-25T00-34-10-552Z.png[]
 * El máximo es el mayor valor dentro de un grupo de números. Es decir, teniendo un conjunto C, y un elemento x que pertenece a él (x ∈ C), x es el elemento máximo de C si cualquier otro elemento de dicho conjunto es menor o igual a x.
 * El mínimo es el menor valor dentro de un grupo de números. Es decir, teniendo un conjunto C y un elemento x que pertenece a él (x ∈ C), x es el elemento mínimo de C si cualquier otro elemento de dicho conjunto es mayor o igual a x.
 
+== Semana 9 Arreglos
+
+=== Definición: 
+
+* Es un conjunto de variables del mismo tipo que pueden ser referenciadas a través de un mismo nombre. 
+* Estas variables se almacenan en posiciones contiguas de memoria. 
+* La forma de identificar a un elemento determinado es a través de un índice en dónde la dirección más baja corresponde al primer elemento y la más alta al último, es decir que el índice especifica la posición relativa de la celda dentro del arreglo.
+* Un arreglo es una colección finita, homogénea y ordenada de elementos. 
+** Finita: todo arreglo tiene un límite
+** Homogénea: todos los elementos del arreglo deben ser del mismo tipo. 
+** Ordenada: existe una relación de orden; se puede determinar cuál es el primer elemento, el segundo, el tercero y el n-ésimo elemento. 
+*Un arreglo puede tener una o varias dimensiones. 
+** Los arreglos unidimensionales también se denominan vectores 
+** los bidimensionales, matrices.
+
+=== Vector
+
+Es un conjunto de “contenedores” o variables llamadas celdas. Toda esta estructura tendrá un nombre que la identifique. Esto significa que cada una de las variables se llama igual. Su nombre es el mismo que el del vector, pero se diferencian mediante una segunda identificación, en este caso numérica, llamada índice.
+
+image::2023-10-19T22-16-59-638Z.png[] 
+
+=== Características
+
+* todos los elementos del array son del mismo tipo
+* tienen una estructura secuencial, cada elemento se ubica en una posición a la que se accede por un índice
+* el índice de la primera posición es siempre 0
+* el índice se incrementa de uno en uno
+* su tamaño es estático, no se puede agrandar ni reducir.
+
+image::2023-10-19T22-19-18-349Z.png[] 
+
+=== Ejemplo
+
+
+ temperaturas[ 0 ] = 28.6 
+ temperaturas[ 1 ] = 26.1 
+ temperaturas[ 2 ] = 25.7 
+ temperaturas[ 3 ] = 26.3 
+ temperaturas[ 4 ] = 27.8 
+ temperaturas[ 5 ] = 28.9 
+ temperaturas[ 6 ] = 25.4
+
+image::2023-10-19T22-22-49-285Z.png[] 
+
+=== Pseint
+
+ Definir articulos como Entero
+ Dimension articulos[200]
+
+o
+
+ Definir cantidad_articulos como Entero
+ Definir articulos como Entero
+ Dimension articulos[cantidad_articulos]
+
+=== Notas
+
+El lenguaje NO realiza comprobación de contornos en los arreglos; es decir, no verifica que el índice con el que accedemos a los elementos de un arreglo tenga un valor comprendido entre cero (0) y la cantidad máxima de elementos del arreglo menos 1 (por ejemplo TOPE-1).
+
+En el caso de que sobrepase el final durante una operación de asignación, entonces se asignarán valores a otra variable o a un trozo del código o lo que se encuentre en memoria en ese momento en ese lugar que no lo habíamos reservado para nuestro arreglo. Esto es, si se dimensiona un arreglo de tamaño TOPE, permite referenciar el arreglo por encima de TOPE sin emitir ningún mensaje de error en tiempo de compilación, aunque probablemente se provoque el fallo del programa en tiempo de ejecución.
 
 
 
