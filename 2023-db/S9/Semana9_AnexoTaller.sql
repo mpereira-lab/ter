@@ -9,5 +9,6 @@ Esta sentencia lo que hace es agregar a la tabla <<presup>>
 
 ========================================================== */
 
+use taller
 
 alter table presup add (aceptado boolean default 0);
