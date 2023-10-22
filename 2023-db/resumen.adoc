@@ -1073,6 +1073,7 @@ image::2023-10-20T11-43-24-334Z.png[]
  SELECT DATEDIFF(Curdate(),'2025-09-21'); /* == Cuantos días faltan == */
 ====
 
+
 === Ejemplo 1
 
 Maximos (o mínimos)
@@ -1095,13 +1096,39 @@ image::2023-10-20T23-59-59-441Z.png[]
 
 image::2023-10-21T00-00-25-144Z.png[] 
 
+=== Ejemplo 2
 
+Mostrar por presupuesto el costo de mano de obra de cada reparación. Puede ocurrir que un presupuesto requiera de un arreglo que no utilice repuestos
 
+Modelo de datos par ejemplos
 
+image::2023-10-22T16-50-36-065Z.png[] 
 
+* Cálculo de costo de repuestos por presupuesto
 
+image::2023-10-22T18-18-14-726Z.png[] 
 
+* Cálculo del monto de cada presupuesto
 
+image::2023-10-22T18-18-38-138Z.png[] 
 
+* Cálculo del costo de mano de obra por presupuesto
+
+image::2023-10-22T18-20-02-709Z.png[] 
+
+* Al usar left outer join   la columna “Costo_Rep” puede ser  null,   entonces colocamos la función  if.
+
+image::2023-10-22T18-20-51-293Z.png[] 
+
+Mi query
+
+====
+ select p.NPresup, p.Monto as total, p.monto - if(monto_repuesto is null, 0, monto_repuesto), monto_repuesto as  monto_mano_obra
+    from presup p left outer join (
+        select pr.NPresup, sum((pr.cant * r.precio)) as monto_repuesto
+            from presurep pr inner join repuesto r on pr.codRep=r.codRep
+            group by pr.NPresup
+    ) t on p.NPresup=t.NPresup
+====
 
 
