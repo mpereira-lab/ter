@@ -558,5 +558,60 @@ El lenguaje NO realiza comprobación de contornos en los arreglos; es decir, no 
 
 En el caso de que sobrepase el final durante una operación de asignación, entonces se asignarán valores a otra variable o a un trozo del código o lo que se encuentre en memoria en ese momento en ese lugar que no lo habíamos reservado para nuestro arreglo. Esto es, si se dimensiona un arreglo de tamaño TOPE, permite referenciar el arreglo por encima de TOPE sin emitir ningún mensaje de error en tiempo de compilación, aunque probablemente se provoque el fallo del programa en tiempo de ejecución.
 
+== Semana 10
+
+=== Ordenamiento por máximos sucesivos
+
+La idea de este método es hacer una primera recorrida por el arreglo buscando el mayor elemento y dejándolo en la primera posición; como siguiente paso recorrer el arreglo desde la segunda posición buscando el mayor y colocándolo en la segunda posición y así sucesivamente.
+
+image:2023-10-22T20-29-06-846Z.png[] 
+
+=== Arreglos bidimensionales
+
+image:2023-10-22T20-55-01-869Z.png[] 
+
+Definir TOPE_F como Entero
+
+TOPE_F = 6 //constante para la cantidad de alumnos
+
+Definir TOPE_C como Real
+
+TOPE_C = 3 //constante para la cantidad de materias
+
+
+//Definimos la variable
+
+Definir alumnosPorMateria como Entero
+
+//Dimensionamos la variable
+
+Dimension alumnosPorMateria[TOPE_F , TOPE_C]
+
+== Inicialización de matrices
+
+image:2023-10-22T20-56-39-778Z.png[] 
+
+== Carga parcial, o bien aleatoria, de los elementos de una matriz
+
+image::2023-10-22T21-01-17-816Z.png[] 
+
+== Recorrido por filas
+
+image:2023-10-22T21-02-01-056Z.png[] 
+
+== Recorrido por columnas
+
+image:2023-10-22T21-02-12-534Z.png[] 
+
+Lo que difiere con el ejemplo anterior es que invertimos los ciclos, es decir, ahora el ciclo externo es el de las columnas y el interno el de las filas, pero los índices, al hacer referencia a la matriz, son siempre iguales, primero las filas y luego las columnas.
+
+== Posicionamiento indirecto utilizando vectores y matrices
+
+image::2023-10-22T21-06-24-023Z.png[] 
+
+image::2023-10-22T21-06-38-309Z.png[] 
+
+image::2023-10-22T21-07-14-911Z.png[] 
+
 
 

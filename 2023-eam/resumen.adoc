@@ -3,6 +3,7 @@
 :toclevels: 5
 :imagesdir: ./images
 :stem: 
+:stylesheet: daro-dark.css
 
 = EAM
 
@@ -2050,4 +2051,167 @@ El gráfico puede verse a continuación. Con etiquetas se identifican los extrem
 
 image::2023-10-04T00-02-23-486Z.png[] 
 
+== Semana 9 Vectores
 
+Un vector puede estar escrito como:
+
+* renglón 
+
+stem:[(x_1,x_2,x_3,...,x_n)]
+
+* o columna
+
+stem:[((x_1),(x_2),(x_3),(.),(.),(.),(x_n))]
+
+donde stem:[x_1,x_2,x_3,...,x_n in RR]
+
+Los subíndices indican el orden correspondiente a la componente de un vector. Por ejemplo, stem:[vec v =(-2,3,5,13)]
+ 
+Las componentes de los vectores son números (en este curso trabajaremos solamente con reales). Indicaremos con stem:[RR^n] al conjunto de todos los vectores que tengan n componentes reales.
+
+====
+Ejemplo vector columna perteneciente a stem:[RR^4] ya que tiene 4 componentes
+
+stem:[vec a ((-2), (3), (0), (-1))]
+====
+
+=== Usos y la importancia del orden
+
+Suponga que el jefe de compras de una fábrica debe ordenar cantidades diferentes de acero, aluminio, aceite y papel.
+
+Él puede mantener el control de las unidades a ordenar en un solo vector. El vector stem:[((10), (30), (15), (60))] indica que ordenará 10 unidades de acero, 30 unidades de aluminio, 15 de aceite y 60 de papel.
+
+Es evidente que los vectores stem:[((10), (30), (15), (60))] y stem:[((30), (15), (60), (10))] tienen significados muy distintos para el comprador.
+
+=== Igualdad
+
+Los vectores son conjuntos ordenados de números, en consecuencia, dos vectores de stem:[RR^n] son iguales si las componentes correspondientes son iguales. Entonces stem:[((10), (30), (15), (60)) != ((30), (15), (60), (10))]
+
+=== Vector nulo
+
+O vector cero
+
+Por ejemplo, en stem:[RR^2] el vector cero es (0,0)  o bien, ((0), (0))
+
+=== Vector opuesto
+
+Dado un vector stem:[vec v] se define como vector opuesto stem:[-vec v], al vector cuyas componentes son los valores opuestos a las componentes de stem:[vec v] 
+
+Ejemplo: stem:[vec u =(1,-5,0,-2) "entonces" -vec u=(-1,5,0,2)]
+
+=== Representación en el plano
+
+El plano tiene dos coordenadas, tendremos que trabajar con vectores en stem:[RR^2], es decir, con pares ordenados de la forma stem:[vec v=(x,y)] o bien, stem:[vec v =((x), (y))]
+
+En GeoGebra Escribimos en la parte de entrada: a=(3,4) y se representa el vector en cuestión.
+
+==== Dibujo
+
+stem:[vec s=(3,4), vec t=(-2,7), vec u =(-3,-4)]
+
+image::2023-10-23T01-45-46-618Z.png[] 
+
+==== Definición 
+
+Un vector stem:[vec v in RR^2] se puede representar gráficamente mediante un segmento de recta orientado en el plano.
+
+Si bien aquí los vectores parten desde el origen de coordenadas, en realidad, podrían estar en cualquier lugar del plano, son objetos libres. Podrás comprobar que si en el GeoGebra mantenés presionado un vector, lo podés mover y colocar en cualquier parte.
+
+image::2023-10-23T01-47-10-081Z.png[] 
+
+Este segmento se dice orientado porque va desde un punto cualquiera tomado como punto inicial o de aplicación stem:[A=(a_1,a_2)] hasta un punto final o terminal stem:[B=(b_1,b_2)], con la condición de que stem:[x=b_1-a_1 " e " y=b_2-a_2]. Esto se escribe stem:[vec v=vec {AB}].
+
+En este ejemplo: 
+* el punto de aplicación del vector stem:[vec s " es " A=(1,2)] 
+* el punto terminal es stem:[B=(4,6)]
+====
+[stem]
+++++
+x = 4 - 1 = 3
+y = 6 - 2 = 4
+++++
+====
+
+Las componentes de nuestro vector eran: stem:[vec s =(3,4)] 
+
+image:2023-10-23T01-54-27-636Z.png[] 
+
+==== Punto de aplicación
+
+*Posición canónica*: es cuando se elije el origen de coordenadas stem:[O=(0,0)]. 
+
+Sin embargo, el punto de aplicación A del vector es arbitrario
+
+Por ejemplo, en la siguiente figura se muestra el vector stem:[vec a =(6,-1)] aplicando en el punto stem:[A=(2,1)] (representado en color rojo) y también aplicado en el origen de coordenadas (en color azul).
+
+image:2023-10-23T01-59-12-160Z.png[] 
+
+Entonces, la representación stem:[vec {OP}] es la representación canónica de stem:[vec a]. Ambos vectores son iguales.
+
+....
+Observación: a menos que se especifique un punto de aplicación, siempre tomaremos como gráfica del vector su representación canónica.
+....
+
+==== Características
+
+* Sentido: lo determina hacia donde apunta la flecha del vector. Dado dos puntos cualesquiera  A y B, podemos construir dos vectores: 
+
+|===
+| stem:[vec{AB}], cuyo punto de aplicación es A y el punto terminal es B | stem:[vec{BA}], cuyo punto de aplicación es B y el punto terminal es A
+| image:2023-10-23T02-21-00-339Z.png[] | image:2023-10-23T02-21-29-721Z.png[] 
+|===
+
+* Dirección: es el ángulo que forma el vector con el semieje positivo x
+
+image::2023-10-23T02-25-59-019Z.png[]
+
+Por lo tanto, la dirección de stem:[vec s] es el ángulo stem:[53,13°] y de stem:[vec t] es stem:[105,95°]
+
+* Módulo: dado un vector stem:[vec v=(x,y)" en "RR^2], se denomina módulo del vector stem:[vec v] y se simboliza | stem:[vec v] |, a la longitud del segmento orientado.
+
+Cálculo
+
+|stem:[vec v]| = stem:[root(2){x^2+y^2}]
+
+
+==== Vector unitario
+
+Se denomina vector unitario a cualquier vector cuyo módulo es igual a uno. 
+
+Por ejemplo, stem:[vec u=(frac{4}{5},frac{-3}{5})] es unitario, ya que: stem:[|vec u| = root(2){(4/5)^2+(-3/2)^2} = root(2){16/25+9/25} = root(2)(25/25) = 1] 
+
+Vectores unitarios importantes en stem:[RR^2]
+
+stem:[vec i =(1,0) " y " vec j = (0,1)]
+
+image::2023-10-23T02-50-43-258Z.png[] 
+
+La importancia de estos vectores radica en que todo vector en el plano stem:[RR^2] puede ser expresado en términos de stem:[vec i" y " vec j] del siguiente modo: 
+
+====
+[stem]
+++++
+vec v = (x,y) = x vec i + y vec j 
+++++
+====
+
+
+Ejemplos: Si queremos expresar los vectores stem:[vec a=(2,-3) " y " vec b =(0,4) " en términos de " vec i " y " vec j], tenemos: 
+
+stem:[vec a = vec (2i) - vec (3j)" y " b = 0i + 4j = 4j]
+
+image::2023-10-23T02-59-00-102Z.png[] 
+
+=== Representación en el espacio
+
+geogebra: https://www.geogebra.org/3d
+
+Para que geogebra grafique:
+
+* un punto se debe poner en mayuscula: A=(-1,4,2) 
+* el plano correspondiente a un solo punto, se debe poner en minúscula. Ejemplo x=-1, y=4 y z=2
+* un vector se debe poner en minúscula: a=(-1,4,2)
+* escribir vector de aplicación no canónica:
+** A=(3,-2,1)
+** B=(2,4,-7)
+** vector(A,B)
