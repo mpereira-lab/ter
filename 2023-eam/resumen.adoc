@@ -2215,3 +2215,104 @@ Para que geogebra grafique:
 ** A=(3,-2,1)
 ** B=(2,4,-7)
 ** vector(A,B)
+** también sirve para vectores de 2 dimensiones
+
+Sistema cartesiano de coordenadas: consta de un punto fijo u origen de coordenadas stem:[O], y tres rectas o ejes coordenados stem:[x, y, z] que pasan por stem:[O]  y son perpendiculares entre sí. Quedan determinados tres planos coordenados: stem:[xy, yz, xz]; y el espacio queda dividido en ocho octantes. Al representar los tres vectores en GeoGebra, visualizamos lo siguiente:
+
+image:2023-10-23T11-40-25-527Z.png[] 
+
+Denotamos un punto en el espacio por la terna ordenada stem:[P=(x,y,z)], donde los números reales stem:[x, y, z] se llaman coordenadas cartesianas del punto P. Se designa con stem:[RR^3]  al conjunto de todas las ternas ordenadas de números reales, que se corresponden con todos los puntos del espacio.
+
+==== GeoGrebra
+
+Ingresar stem:[Q=(2,4,5)]. Como Q es mayúscula, se interpreta como punto
+
+image::2023-10-23T11-44-52-518Z.png[] 
+
+Para comprender mejor ingresar stem:[x=2, y=4, z=5]
+
+x=2 (y=4, x=5 no son iguales con planos cortando el eje idem x)
+
+image::2023-10-23T11-52-46-094Z.png[] 
+
+==== Módulo
+
+stem:[|vec v|=root(2) {x^2+y^2+z^2}]
+
+==== Vectores unitarios
+
+También se los denomina versores
+
+stem:[vec i=(1,0,0), vec j=(0,1,0), vec k=(0,0,1)]
+
+image:2023-10-23T12-05-49-358Z.png[] 
+
+stem:[vec v=(x,y,z)=x vec i +y vec j +z vec k]
+
+
+Por ejemplo, si queremos expresar el vector stem:[vec v=(4,-3,12)] con los versores, tenemos: stem:[vec v=4 vec i - 3 vec j + 12 vec k]
+
+=== Operaciones Algebraicas
+
+Con vectores de stem:[RR^n " sean " vec r=(a_1,a_2,a_3,...,a_n) " y " vec s=(b_1,b_2,b_3,...,b_n)] entonces
+
+==== Adición 
+
+stem:[vec r + vec s=(a_1+b_1,a_2+b_2,a_3+b_3,...,a_n+b_n)]
+
+==== Sustracción 
+
+stem:[vec r - vec s=(a_1-b_1,a_2-b_2,a_3-b_3,...,a_n-b_n)]
+
+==== Multiplicación por un escalar
+
+stem:[c vec r=(c.a_1,c.a_2,c.a_3,...,c.a_n)]
+
+==== Producto escalar
+
+Es el número real que se obtiene sumando los productos de las componentes correspondientes.
+
+stem:[vec r . vec s=a_1.b_1+a_2.b_2+a_3.b_3+...+a_n.b_n]
+
+=== Propiedades de operaciones
+
+==== Adición de vectores
+
+* stem:[vec r +vec s =vec s + vec r]
+
+* stem:[vec r +(vec s +vec t)=(vec r +vec s)+vec t]
+
+* stem:[vec r +vec 0 = vec r" siendo " vec 0 " el vector nulo."]
+
+* stem:[vec r +(vec {-r})=vec 0" siendo " vec {-r} text{ el vector opuesto a } vec r]
+
+* stem:[|c vec u|=|c||vec u|text{" siendo c un número real y "} vec u text{" un vector unitario"}]
+
+==== Multiplicación por un escalar
+
+* stem:[c (vec r +vec s)=c vec r +c vec s], siendo c un número real
+* stem:[(c+d) vec r =c vec r +d vec r], siendo c y d números reales.
+* stem:[1 vec r =vec r]
+* stem:[0 vec r =0] 
+* stem:[c vec 0 =vec 0]
+
+==== Producto escalar
+
+* stem:[vec r vec s = vec s vec r]
+* stem:[(c vec r) vec s=c(vec r vec s)=vec r (c vec s)]
+* stem:[(vec r +vec s)vec t=vec r vec t +vec s vec t]
+* stem:[|vec r|^2=vec r vec r]
+
+Demostración de última propiedad: 
+
+Sea stem:[vec r =(x_1,x_2)]. Entonces: stem:[vec r vec r =(x_1,x_2)(x_1,x_2)=(x_1)^2+(x_2)^2=|vec r|^2]
+
+
+
+
+
+
+
+
+
+
