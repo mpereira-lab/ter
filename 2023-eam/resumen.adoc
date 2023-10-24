@@ -2307,9 +2307,88 @@ Demostración de última propiedad:
 
 Sea stem:[vec r =(x_1,x_2)]. Entonces: stem:[vec r vec r =(x_1,x_2)(x_1,x_2)=(x_1)^2+(x_2)^2=|vec r|^2]
 
+=== Gráficos de operaciones en stem:[RR^2]
+
+==== Suma
+
+Vamos a calcular la siguiente suma de forma gráfica: stem:[vec s +vec t]
+
+. Abrimos el GeoGebra (hacé clic aquí).
+. Colocamos como entrada a los dos vectores.
+. Luego, seleccionamos el vector stem:[vec t] y hacemos que su punto de aplicación coincida con el punto terminal del vector stem:[vec s]
+. Esto también podría ser al revés. Nos fijamos donde queda el punto terminal del vector que movimos. Escribimos en "entrada" lo siguiente: s+t
+. Ese vector que nos aparece graficado es el vector suma.
+
+Podrás observar que en la vista algebraica nos aparecen las componentes del vector suma. Podés comprobar que coinciden si resolvemos la adición de manera algebraica.
+
+image::2023-10-24T22-22-34-425Z.png[] 
+
+==== Sustracción
+
+. Abrimos el GeoGebra.
+. Colocamos como entrada a los dos vectores.
+. Luego, el punto de aplicación del vector resta va a ser el punto terminal del primer vector y, el punto terminal, va a ser el punto terminal del segundo vector. Acá sí es importante este orden. En nuestro caso, el punto de aplicación es (3,5) y el punto terminal es (1,-4)
+. Escribimos como entrada el siguiente comando: vector(<punto inicial>, <punto terminal>). En nuestro caso es: vector((3,5),(1,−4))
+. Ese vector que nos aparece graficado es el vector diferencia.
+
+image::2023-10-24T22-28-11-167Z.png[] 
+
+==== Multiplicación entre un escalar y un vector
+
+Supónganse que queremos interpretar la multiplicación entre los escalares 2 y -3  por el vector stem:[vec s]
+
+. Abrimos el Geogebra
+. Colocamos como entrada uno de los vectores, por ejemplo, stem:[vec s]
+. Luego, ponemos en entrada: 2*s
+. Observarás que se grafica otro vector cuyo módulo es el doble del vector stem:[vec s]
+. Si probamos con -3*s, veremos que el módulo del vector se triplicó, pero además se cambió el sentido, esto se debe a que el escalar es negativo.
+
+image::2023-10-24T22-33-27-663Z.png[] 
+
+*Dato Adicional:* 
+
+Si bien no se puede hacer una interpretación gráfica del producto escalar, ya que su resultado es un número real, se puede resolver utilizando el GeoGebra. Simplemente debemos introducir los dos vectores y luego colocar en entrada lo siguiente: s∗t. El número real que les aparezca en la vista algebraica es el resultado de tal operación.
+
+image::2023-10-24T22-36-18-798Z.png[] 
+
+=== Vectores en términos de i, j y k
+
+==== En stem:[RR^2]
+
+Habíamos dicho que los versores en stem:[RR^2] son: stem:[vec i=(1,0), vec j=(0,1)]
+
+Veamos este ejemplo:
+
+Si tenemos el vector stem:[vec a=(2,6)], podemos hacer lo siguiente:
+
+* stem:[vec a=(2,6)=(2,0)+(0,6)], esto es por adición de vectores.
+* stem:[vec a=(2,6)=2(1,0)+6(0,1)], esto es por multiplicación de un escalar y un vector.
+* stem:[vec a=(2,6)=2 vec i +6 vec j], ya que stem:[vec i=(1,0) " y " vec j =(0,1)]
 
 
+De forma general, podemos hacer:
 
+* stem:[vec a=(x,y)=(x,0)+(0,y)], esto es por adición de vectores.
+* stem:[vec a=(x,y)=x(1,0)+y(0,1)], esto es por multiplicación de un escalar y un vector.
+* stem:[vec v=(x,y)=x vec i +y vec j], ya que stem:[vec i =(1,0) "  y " vec j =(0,1)]
+
+==== En stem:[RR^3]
+
+Habíamos dicho que los versores en stem:[RR^3] son: stem:[vec i=(1,0,0), vec j=(0,1,0), vec k=(0,0,1)]
+
+Veamos este ejemplo:
+
+Si tenemos el vector stem:[vec a=(2,6, 4)], podemos hacer lo siguiente:
+
+* stem:[vec a=(2,6,4)=(2,0,0) + (0,6,0) + (0,0,4)], esto es por adición de vectores.
+* stem:[vec a=(2,6,4)=2(1,0,0)+6(0,1,0)+4(0,0,1)], esto es por multiplicación de un escalar y un vector.
+* stem:[vec a=(2,6,4)=2 vec i +6 vec j+4 vec k], ya que stem:[vec i=(1,0,0) " y " vec j =(0,1,0) " y " vec k=(0,0,1)]
+
+De forma general, podemos hacer:
+
+* stem:[vec a=(x,y,z)=(x,0,0) + (0,y,0) + (0,0,z)], esto es por adición de vectores.
+* stem:[vec a=(x,y,z)=x(1,0,0)+y(0,1,0)+z(0,0,1)], esto es por multiplicación de un escalar y un vector.
+* stem:[vec v=(x,y,z)=x vec i +y vec j+z vec k], ya que stem:[vec i=(1,0,0) " y " vec j =(0,1,0) " y " vec k=(0,0,1)]
 
 
 
