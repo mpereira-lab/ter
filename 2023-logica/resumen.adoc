@@ -1325,3 +1325,179 @@ ver como los controles son un decodificador en https://youtu.be/_wWXKgEwiUc?t=12
 
 
 image::2023-10-18T23-42-51-038Z.png[] 
+
+== Semana 11 FLIP-FLOP
+
+Un flip-flop es un circuito secuencial básico en electrónica digital que se utiliza como unidad básica de almacenamiento de información en sistemas digitales.
+
+Funcionan como interruptores electrónicos que pueden cambiar su estado de salida en función de una señal de entrada, y mantienen su estado de salida anterior en ausencia de una señal de entrada.
+
+En otras palabras, un flip-flop es un circuito secuencial que tiene como objetivo memorizar un dato binario. 
+
+Pueden ser sincrónicas o asincrónicas
+
+Esquema general
+
+2 entradas
+
+1 clock
+
+2 salidas
+
+image::2023-10-25T22-45-23-613Z.png[] 
+
+=== Clock
+
+Se usan en flip flop sincronicos. Son los que disparan el flipflop y lo hacen por flancos o por nieveles. Lo mas común es que sean disparados por flancos porque ocupan menos tiempo en generarse
+
+=== Niveles de clock
+
+*Alto y bajo*
+
+Alto: cuando es 1
+
+Bajo: cuando es cero
+
+image::2023-10-25T22-42-08-590Z.png[] 
+
+*Flanco descendente*
+
+Cuando pasa de 1 a 0
+
+image::2023-10-25T22-42-55-294Z.png[] 
+
+Dibujo en flipflop
+
+image::2023-10-25T22-48-26-406Z.png[] 
+
+*Flanco ascendente*
+
+Cuando pasa de 0 a 1
+
+image::2023-10-25T22-43-50-086Z.png[] 
+
+Dibujo en flipflop
+
+image::2023-10-25T22-49-11-518Z.png[] 
+
+
+=== Preset y clear
+
+image::2023-10-25T22-50-26-539Z.png[] 
+
+Son 2 entradas adicionales. 
+
+Preset pone 1 a las salidas
+
+Clear pone 0 a las salidas
+
+=== Flip-flop SR
+
+El flip-flop SR (set-reset) es un circuito que tiene 
+
+* dos entradas:
+** una entrada S (set) 
+** una entrada R (reset) 
+* dos salidas
+** una salida Q 
+** una salida Q complementaria.
+* Tiene un clock (cuando es sincrónico)
+
+image::2023-10-25T22-53-28-541Z.png[] 
+
+==== Tabla de verdad
+
+image::2023-10-25T23-49-21-371Z.png[] 
+
+*Tabla reducida*
+
+image::2023-10-25T23-00-47-053Z.png[] 
+
+Q* es Q del futuro
+
+Cuando ambas entradas son 0 se mantiene el estado anterior del ff (memoria)
+
+Cuando s=1 y r=0, se tiene r (set)
+
+Cuando s=0 y r=1, se tiene r (reset)
+
+Cuando s=1 y r=1 el valor de Q  es indeterminado
+
+==== Circuito lógico
+
+image::2023-10-25T23-50-39-180Z.png[] 
+
+=== Flip-flop D
+
+Se usa para los 
+
+* registros (guardar informacion temporalmente, memoria chiquita)
+* buses (comunucacion)
+
+Tiene:
+
+* 1 entrada D
+* 1 entrada de clock
+
+image::2023-10-25T23-13-44-764Z.png[] 
+
+==== Bus de datos
+
+image::2023-10-25T23-19-07-620Z.png[] 
+
+En el bus de datos se pone info (1 o 0) que pueden ver todos los dispositivos (D1,D2,D3,D4)
+
+Pero cada dispositivo tiene un flip flop D  que es accionado por un pulso de clock en forma independiente.
+
+Cuando quiero guardar en Q  del dispositivo 1, lo que hay en ese momento en el bus de datos, acciono el clock *solamente* del dispositivo 1
+
+
+==== Tabla de verdad
+
+image::2023-10-25T23-15-49-249Z.png[] 
+
+=== T
+
+Se usan para contadores
+
+Tiene:
+
+* 1 entrada T
+* 1 entrada de clock
+* salidas stem:[Q" y "overline Q]
+
+
+image::2023-10-25T23-25-33-844Z.png[] 
+
+==== Tabla de verdad
+
+image::2023-10-25T23-26-38-007Z.png[] 
+
+=== JK 
+
+Incluyen la funcionalidad del SR, D y T
+
+image::2023-10-25T23-33-01-212Z.png[] 
+
+
+==== Tabla de verdad
+image:2023-10-25T23-30-00-101Z.png[] 
+
+
+=== Registros
+
+Los registros son circuitos digitales que se utilizan para almacenar temporalmente datos en sistemas electrónicos. Los registros se utilizan en una amplia gama de aplicaciones en sistemas digitales, como la memoria temporal en procesadores, la transmisión de datos en comunicaciones digitales, la generación de señales de temporización y la implementación de lógica secuencial.
+
+==== Clasificación
+
+Los registros se clasifican según su estructura de entrada y salida, y se dividen en cuatro tipos: 
+
+
+* SIPO (serial-in-parallel-out): este tipo de registro tiene una entrada en serie y varias salidas en paralelo. Los datos se cargan uno a uno en el registro a través de la entrada en serie y luego se pueden leer simultáneamente en las salidas en paralelo.
+* SISO (serial-in-serial-out): este tipo de registro tiene una entrada en serie y una salida en serie. Los datos se cargan uno a uno en el registro a través de la entrada en serie y luego se leen uno a uno a través de la salida en serie.
+* PISO PISO (parallel-in-serial-out): este tipo de registro tiene varias entradas en paralelo y una salida en serie. Los datos se cargan simultáneamente en el registro a través de las entradas en paralelo y luego se leen uno a uno a través de la salida en serie.
+* PIPO (parallel-in-parallel-out): este tipo de registro tiene varias entradas en paralelo y varias salidas en paralelo. Los datos se cargan simultáneamente en el registro a través de las entradas en paralelo y luego se pueden leer simultáneamente en las salidas en paralelo.
+
+image::2023-10-25T23-44-06-602Z.png[] 
+
+
