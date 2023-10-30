@@ -1328,7 +1328,7 @@ image::2023-10-18T23-42-51-038Z.png[]
 
 == Semana 11 FLIP-FLOP
 
-Un flip-flop es un circuito secuencial básico en electrónica digital que se utiliza como unidad básica de almacenamiento de información en sistemas digitales.
+Es un *circuito secuencial* básico en electrónica digital que se utiliza como unidad básica de almacenamiento de información en sistemas digitales.
 
 Funcionan como interruptores electrónicos que pueden cambiar su estado de salida en función de una señal de entrada, y mantienen su estado de salida anterior en ausencia de una señal de entrada.
 
@@ -1348,9 +1348,23 @@ image::2023-10-25T22-45-23-613Z.png[]
 
 === Clock
 
+video: https://www.youtube.com/watch?v=HcmLKeAYTnw
+
 Se usan en flip flop sincronicos. Son los que disparan el flipflop y lo hacen por flancos o por nieveles. Lo mas común es que sean disparados por flancos porque ocupan menos tiempo en generarse
 
-=== Niveles de clock
+Es un patron de secuencialidad (del microprocesador)
+
+En la pc existe un componente llamado cristal que tiene la propiedad (junto con un circuito) de generar pulsos secuencialmente. Esos pulsos son el patrón secuencial.
+
+image::2023-10-27T11-41-05-648Z.png[] 
+
+Es el patrón que marca la velocidad con que los pasos secuenciales del procesador se realizan
+
+Este patrón de secuencialidad se repite meientras el procesador esté encendido. Los tiempos en 1 son los mismos que los tiempos en 0
+
+Al microprocesador le sirve este patron 101010101 para sincronizar su funcionamiento secuencial. No sólo el de él, sino el de todos sus dispositivos asociados (ram, rom, placa video, controlador de disco, etc)
+
+==== Niveles de clock
 
 *Alto y bajo*
 
@@ -1380,6 +1394,92 @@ Dibujo en flipflop
 
 image::2023-10-25T22-49-11-518Z.png[] 
 
+==== Amplitud
+
+Es el valor de tensión que se da para medir cuando es 1 o 0 el bit del clock
+
+==== Período
+
+T 
+
+Cuanto tarda en completar un ciclo, en una unidad de tiempo. En nuesto caso es cuantos segundos tarda.
+
+Puede ser que un ciclo se complete en 1 segundo. Puede ser que se complete en 0,1 seg (10 ciclos en 1 segundo)....
+
+Si tomamos el siguiente grafico vemos que el período de un ciclo es 0.5 seg
+
+image::2023-10-29T14-48-34-982Z.png[] 
+
+==== Frecuencia
+
+General: la cantidad de veces que se repiten ciertos valores en un tiempo. Ejemplo: uso el auto 2 veces por semana. Frecuencia = 2 por semana. Mas matemáticamente: 2/semana
+
+En el micro: es la cantidad de ciclos de clock (que se repiten) en 1 segundo
+
+Tiene que ver con cuanto dura (en tiempo) el 1 o 0. 
+
+image::2023-10-29T12-45-31-525Z.png[] 
+
+El clock en verde funciona el doble de rápido que el clock en azul. 
+
+La frecuencia del clock 2 es mayor que la frecuencia del clock 1. Es 2 veces mayor
+
+image::2023-10-29T12-48-02-767Z.png[]
+
+*Aplicaciones*
+
+* Si se aumenta la frecuencia 
+** pro: el microprocesador hace mas rápido los pasos, esto es "procesa mas rápido"
+** contra: consumo de energía mayor
+** Si le bajamos la velocidad, ahorra energía (batería)
+
+*Límites* 
+
+* Los circuitos secuenciales siempre están diseñados para funcionar hasta cierta frecuencia. Ese límite es por como está construido.
+* Cuando mayor es la frecuencia, mayor es el calor. El micro está diseñado para soportar/disipar cierta cantidad de calor. Si se excede el calor soportado, el micro se quema
+
+==== Hz
+
+Unidad de medida de la frecuencia
+
+Frecuencia [hz] = 1/T[S]. Esto es 1 dividido un período que transcurra en segundos
+
+Si el patron se repite 1 vez por segundo, entonces es 1 hz. 
+
+Si se repite 10 veces por segundo,es decir dura 0.1 seg, es 10 hz. 
+
+Si se repite 50 veces por segundo, es decir dira 0.02 seg, es 50 hz
+
+image::2023-10-29T13-43-49-437Z.png[] 
+
+Si se repite 10 veces en un segundo, entonces T=0,1 seg (T dura 0,1 segundos)-> 1/0,1 seg = 10/seg = 10 hz
+
+==== Relacion periodo/Frecuencia
+
+T = 1 / f
+
+Ejemplo: 
+
+Supongamos que tienes una señal de onda senoidal que se repite cada 0.02 segundos. En este caso, el periodo de la señal sería de 0.02 segundos.
+
+Si sabemos que el periodo es de 0.02 segundos, podemos calcular la frecuencia de la señal:
+
+f = 1 / 0.02 seg = 50 Hz
+ 
+==== Evolución de procesadores
+
+image::2023-10-29T13-54-41-959Z.png[] 
+
+Tiempo de propagacion: es el tiempo que tarda la salida de (en este caso de la not) en cambiar de estado, desde que ponemos un valor en la entrada. Durante ese tiempo se mantiene la salida con el mismo valor... es decir, duranta el tiempo de propagacion, la salida es la misma
+
+image::2023-10-29T15-26-57-448Z.png[] 
+
+
+
+
+==== Cómo se genera un clock con una Not
+
+image::2023-10-29T15-23-37-253Z.png[] 
 
 === Preset y clear
 
@@ -1488,16 +1588,128 @@ image:2023-10-25T23-30-00-101Z.png[]
 
 Los registros son circuitos digitales que se utilizan para almacenar temporalmente datos en sistemas electrónicos. Los registros se utilizan en una amplia gama de aplicaciones en sistemas digitales, como la memoria temporal en procesadores, la transmisión de datos en comunicaciones digitales, la generación de señales de temporización y la implementación de lógica secuencial.
 
+
+Los registros SIPO, SISO, PISO y PIPO son componentes electrónicos que se utilizan para almacenar y desplazar datos en sistemas digitales y cada uno tiene una función específica para la entrada y salida de los datos en diferentes formatos.
+
 ==== Clasificación
+
+image::2023-10-29T21-46-37-135Z.png[] 
+
+Los registros tienen entradas y salidas de bits. El COMO entran o salen los bits, es lo que clasifica a los registros
+
+* Existen 2 formas que entren o salgan. 
+** Entran o salen en serie 
+** Entran o salen en paralelo
+
+*En serie*
+
+Los bits entran o salen 1 a 1 por la misma línea (cable)
+
+image::2023-10-29T21-49-36-942Z.png[] 
+
+* SI: serial input (entrada)
+* SO: serial output (salida)
+
+*En paralelo*
+
+Los bits entran o salen de a varios, 1 por cada línea (cable)
+
+image::2023-10-29T21-56-10-576Z.png[]
+
+En esta figura se transmiten 2 bits en paralelo
+
+* PI: parallel input (entrada)
+* PO: parallel output (salida)
 
 Los registros se clasifican según su estructura de entrada y salida, y se dividen en cuatro tipos: 
 
-
 * SIPO (serial-in-parallel-out): este tipo de registro tiene una entrada en serie y varias salidas en paralelo. Los datos se cargan uno a uno en el registro a través de la entrada en serie y luego se pueden leer simultáneamente en las salidas en paralelo.
 * SISO (serial-in-serial-out): este tipo de registro tiene una entrada en serie y una salida en serie. Los datos se cargan uno a uno en el registro a través de la entrada en serie y luego se leen uno a uno a través de la salida en serie.
-* PISO PISO (parallel-in-serial-out): este tipo de registro tiene varias entradas en paralelo y una salida en serie. Los datos se cargan simultáneamente en el registro a través de las entradas en paralelo y luego se leen uno a uno a través de la salida en serie.
+* PISO (parallel-in-serial-out): este tipo de registro tiene varias entradas en paralelo y una salida en serie. Los datos se cargan simultáneamente en el registro a través de las entradas en paralelo y luego se leen uno a uno a través de la salida en serie.
 * PIPO (parallel-in-parallel-out): este tipo de registro tiene varias entradas en paralelo y varias salidas en paralelo. Los datos se cargan simultáneamente en el registro a través de las entradas en paralelo y luego se pueden leer simultáneamente en las salidas en paralelo.
 
 image::2023-10-25T23-44-06-602Z.png[] 
+
+==== Ejemplo PISO SIPO
+
+Registros PISO y SIPO sirven para transmitir en una linea serie un conjunto de bits
+
+Ejemplo de transmision de 8 bits en serie
+
+Salvo bus de datos y de direcciones casi toda comunicacion en pc es serial
+
+image::2023-10-29T23-55-42-533Z.png[] 
+
+===== Aplicaciones en pc
+
+* SATA: s=serial
+* PCI Express: tiene muchas lineas de comunicacion seriales en forma paralela
+** pci 1x=1 linea serial
+** pci 2x=2 lineas seriales en paralelo
+** pci 4x=4 lineas seriales en paralelo
+** pic 8x=8 lineas seriales en paralelo
+** pic 16x=16 lineas seriales en paralelo
+
+==== PIPO
+
+video: https://youtu.be/X2RhLaIeeNs?t=643
+
+Ej bus 8 bits
+
+image::2023-10-30T00-51-30-152Z.png[] 
+
+Se construye con ff tipo D
+
+===== Aplicaciones
+
+con un comparador: 
+
+image::2023-10-30T01-00-46-344Z.png[] 
+
+Contador: https://youtu.be/X2RhLaIeeNs?t=804
+
+==== SISO
+
+image::2023-10-30T01-18-14-179Z.png[] 
+
+https://youtu.be/X2RhLaIeeNs?t=1160
+
+una de las utilidades es demorar los datos. Hacer de buffer
+
+image:2023-10-30T01-28-54-698Z.png[] 
+
+Adapta la diferencia de velocidad
+
+https://youtu.be/X2RhLaIeeNs?t=1370
+
+image:2023-10-30T01-35-14-007Z.png[] 
+
+
+==== SISO Y SIPO
+
+https://youtu.be/X2RhLaIeeNs?t=1479
+
+image:2023-10-30T01-36-21-895Z.png[] 
+
+==== PISO
+
+https://youtu.be/X2RhLaIeeNs?t=1513
+
+PISO
+
+image::2023-10-30T01-41-50-262Z.png[] 
+
+
+==== PIPO
+
+https://youtu.be/X2RhLaIeeNs?t=1668
+
+image::2023-10-30T01-43-42-544Z.png[] 
+
+sirve tambien como buffer para limitar la velocidad entre 2 dispositivos
+
+y para colgarme de un bus
+
+
 
 
