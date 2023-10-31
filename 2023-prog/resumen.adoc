@@ -614,4 +614,36 @@ image::2023-10-22T21-06-38-309Z.png[]
 image::2023-10-22T21-07-14-911Z.png[] 
 
 
+== Semana 11 Modularización
+
+
+La programación modular utiliza abstracción de procedimientos.  
+
+Abstraer significa reducir algunos aspectos irrelevantes, concepto o proceso para enfocarse en los aspectos más importantes y generales. 
+
+A los sub-problemas que son sub-programas se les suele llamar módulos, de ahí viene el nombre de programación modular.
+
+La programación modular consiste en definir módulos, una especie de cajas negras que tienen una forma de comunicarse (interfaz) claramente definida. 
+
+Usando abstracción de procedimientos el/la programador/a puede separar el qué hace el módulo del cómo lo hace. 
+
+=== Modulos
+
+Si desarrollamos sub-programas/módulos, obtendremos una solución que nos brinda algunas ventajas: 
+
+* La posibilidad de volver a utilizarlos cada vez que se necesite.
+* Hacer pruebas para que funcione una sola vez y luego confiar en ella.
+* Concentrarse en los subproblemas aún no resueltos.
+* En los casos en que se repite el código varias veces en el programa, si detectamos un error en la ejecución (una vez desarrollado el mismo), corremos con la desventaja de no tener que buscar en todo el código las múltiples repeticiones y corregirlo en cada una de éstas.
+* una mayor facilidad de lectura del mismo
+* pueden ponerse en una biblioteca y usarse en diferentes programas sin necesidad de escribir el código desde cero. Esto mejora la velocidad de desarrollo y reduce los errores de programación. 
+* Permite al/la programador/a descomponer un gran problema en unidades pequeñas y manejables que se pueden probar y depurar fácilmente. Esto también ayuda a mantener el código limpio y fácil de entender
+* es útil para crear programas extensibles. Esto significa que un programa puede ser ampliado con módulos nuevos sin tener que reescribir todo el código y hace que sea mucho más fácil añadir nuevas características a programas existentes.
+
+==== 
+
+
+
+
+
 
