@@ -1132,3 +1132,118 @@ Mi query
 ====
 
 
+== Semana 11: Stores
+
+Es un subalgoritmo que forma parte del algoritmo principal, el cual permite resolver una tarea específica.
+
+Son como conjuntos de instrucciones escritas en el lenguaje SQL. Su objetivo es realizar una tarea determinada, desde operaciones sencillas hasta tareas muy complejas. 
+
+=== Características
+
+* Están dentro de la Base de datos.
+* Son pequeños programas.
+* Mejora la seguridad.
+* Implementan funcionalidad.
+
+=== Ventajas
+
+* el código se pre-compila
+* se reduce el tráfico entre cliente y servidor 
+* permite reutilización de código.
+
+=== Desventaja
+
+Lenguaje propietario del sgbd
+
+=== Variables de usuario
+
+Si ese usuario necesita almacenar un valor porque lo tiene que utilizar después, puede crear una variable, esa variable recibe el nombre de variable de usuario. 
+
+Se le debe asignar un nombre para que el sistema gestor puede identificarla entre sus posiciones de memoria. El nombre tiene que ser significativo, hace referencia a lo que contiene, y es recomendable que tenga como máximo 8 caracteres. 
+
+Además del nombre para que sea reconocido como variable de usuario se le antepone el símbolo arroba (@).
+
+Los nombres de las variables son case insensitive, es decir, da igual si están escritas en mayúsculas o minúsculas: 
+
+Se puede acceder a esas variables en cualquier momento mientras no se cierre la conexión
+
+image::2023-10-31T11-37-23-274Z.png[] 
+
+
+=== delimitador 
+
+Es el símbolo que se coloca al final de la instrucción para que el sistema gestor se entere que la sintaxis esta lista para ser ejecutada, SQL usa por defecto el punto y coma como delimitador.
+
+cambiar el delimitador: se usa la palabra reservada delimiter
+
+image::2023-10-31T11-43-14-360Z.png[] 
+
+=== Procedure/Function
+
+==== Sentencias y procedimientos
+
+* Las sentencias que podemos usar dentro de los procedimientos son: insert , update, select, drop, create.
+* Las sentencias que no podemos usar dentro de los procedimientos son: create procedure, alter procedure, drop procedure, create function, drop function, créate trigger, drop trigger.
+
+==== Procedure 
+
+image::2023-10-31T11-46-20-745Z.png[] 
+
+==== Function
+
+image::2023-10-31T11-46-44-336Z.png[] 
+
+
+==== Variables
+
+A diferencia de las variables de usuario estas se deben  declarar  y su valor se mantiene mientras se ejecuta el procedimiento; una vez que finaliza pierde su valor y no es reconocida por el sistema gestor.
+
+image::2023-10-31T11-48-52-328Z.png[] 
+
+=== Estructuras de control
+
+==== IF
+
+image::2023-10-31T11-51-16-496Z.png[] 
+
+==== While
+
+image::2023-10-31T11-52-18-009Z.png[] 
+
+* Entrá al ciclo.
+* Ejecutá línea a línea las sentencias.
+* Cuando llegás al end while regresá a evaluar la expresión y comienza todo nuevamente.
+* ¿Cuándo sale? Cuando la expresión no se cumple.
+
+Este ciclo permite repetir líneas de código.
+
+==== Etiqueta : LOOP
+
+image::2023-10-31T11-54-21-977Z.png[] 
+
+Etiqueta es una cadena de caracteres cualquiera. Para el caso de este bucle, su código se ejecutará hasta que se encuentre la sentencia  LEAVE ETIQUETA cuyo objetivo es similar a la función que cumple  break en algunos lenguajes de programación.
+
+Observar que el código del bucle se ejecuta por lo menos una vez porque el if se coloca después si la condición se cumple ingresa al bloque if, se encuentra leave etiqueta y sale por el end loop.
+
+== Parámetros
+
+Un parámetro representa un valor que el procedimiento espera que se pase al llamarlo. La declaración del procedimiento define sus parámetros. Cuando se define un procedimiento o una función, se especifica una lista de parámetros entre paréntesis inmediatamente después del nombre del procedimiento. 
+
+En el store procedure se puede usar parámetros de entrada, parámetros de salida y parámetros de entrada / salida. Reciben el nombre de in, out, inout. 
+
+*Los parámetros de entrada (in) son valores que toman esas variables y que no se conservarán una vez termine de ejecutarse el procedimiento. Es opcional colocar la palabra (in) ya que si no se especifica y el procedimiento presenta parámetros el sistema gestor lo considera de entrada.
+* Los parámetros de salida (out) son valores que se establecen dentro del procedimiento y pueden ser accedidos más adelante.
+* Los parámetros de entrada / salida (inout) es una combinación de las dos anteriores. La variable puede recibir valores de entrada y puede ser accedida más adelante.
+
+=== IN (Entrada)
+
+[source, mysql]
+----
+include::./s11.in.sql[]
+----
+
+=== INOUT(Entrada - Salida)
+
+
+
+
