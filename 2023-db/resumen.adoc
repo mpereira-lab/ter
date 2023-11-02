@@ -1257,6 +1257,58 @@ include::./s11.out.sql[]
 include::./s11.inout.sql[]
 ----
 
+=== Cursores
 
+Nos permiten almacenar el resultado de la consulta para examinarla.
+
+Los cursores tienen las siguientes características:
+
+* “Asensitive”: el servidor puede o no hacer una copia de su tabla resultado.
+* “Read-only”: no puede modificarse el resultado
+* “Nonscrollable”: se accede a las filas de a una y solo hacia adelante
+
+
+==== Uso de cursor
+
+image:2023-11-01T23-59-34-656Z.png[] 
+
+image:2023-11-01T23-59-48-933Z.png[] 
+
+Para la lectura usamos la instrucción fetch. La consulta que tiene el cursor proyecta una o varias columnas y la lectura la realiza por filas, por eso, el fetch lee las columnas de la fila y debe almacenarlas en variables para que después las usemos en el procedimiento
+
+Si el select es select codsocio, nombre, apellido from socio la lectura cuenta con 3 variables, una para cada columna. Obviamente estas variables están declaradas en el procedimiento y deben ser del mismo tipo de datos que el atributo proyectado.
+
+image::2023-11-02T00-00-50-410Z.png[]
+
+==== Ejemplo
+
+image:2023-11-02T00-04-05-941Z.png[] 
+
+==== Fin de lectura y cierre
+
+Cuando se acaban las filas ocurre la condición de No Data  ¿Condición?
+
+Se llaman “condiciones” a situaciones que ocurren durante la ejecución de una rutina. Estas situaciones pueden tener diferentes causas. Por ejemplo, el fin de datos del cursor.
+
+Para poder tratar las condiciones se define un elemento llamado “ Handler”. El handler se invocará cuando ocurra la condición y debe estar declarado en el procedimiento después de la declaración del cursor.
+
+image::2023-11-02T00-10-56-170Z.png[] 
+
+* Para un handler  continue, continúa la rutina actual tras la ejecución del comando del handler.
+* Para un handler exit , termina la ejecución del comando compuesto Begin … End actual.
+* La condition_value que nos interesa es not found. 
+
+En la creación de los procedimientos con uso de cursores se emplea el handler continue. 
+
+¿Cómo saber si ocurre la condición?
+En la declaración del handler le asignamos a una variable previamente declarada un valor, entonces, dentro del código con un  ciclo while o ciclo loop evaluamos a la variable y si tiene ese último valor asignado quiere decir que se produjo la condición declarada. Esta variable tiene el tipo de dato booleano la declaramos por defecto en falso y cuando se produce la condición pasamos su valor al otro estado posible que es el verdadero.
+
+Por último, nos queda “cerramos” 
+
+image:2023-11-02T00-12-53-501Z.png[] 
+
+Luego, libera el result-set sobre las filas en las que está posicionado el cursor.
+
+Por último, deja las estructuras de datos internas listas para usarse de nuevo, pero no se pueden hacer fetch hasta que se abra nuevamente el cursor.
 
 
