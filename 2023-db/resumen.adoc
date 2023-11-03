@@ -1312,3 +1312,69 @@ Luego, libera el result-set sobre las filas en las que está posicionado el curs
 Por último, deja las estructuras de datos internas listas para usarse de nuevo, pero no se pueden hacer fetch hasta que se abra nuevamente el cursor.
 
 
+== Semana 12
+
+=== Triggers
+
+Un disparador o Trigger es un procedimiento almacenado invocado automáticamente por el sistema gestor como reacción a cambios específicos en la Base de Datos.
+
+Su definición es responsabilidad del DBA ( profesional responsable de los aspectos técnicos, tecnológicos, científicos, y legales de las bases de datos).
+
+Cuando trabajamos con trigger debemos tener en cuenta el evento, la condición , la acción y el momento.
+
+* El evento es un cambio en la base de datos que “activa” al disparador.
+* La condición es una query que se ejecuta al activarse el disparador.
+* La acción es un procedimiento que se invoca cuando el disparador se “activa” y se cumple su “condición”
+* El momento es cuando se ejecuta la acción, si es “antes”  o “después” del evento.
+
+==== Creación
+
+image:2023-11-03T11-49-33-894Z.png[] 
+
+* Nombre: Identifica al disparador, no puede existir dos nombres iguales para el mismo esquema, es decir, para la misma base de datos.
+* Momento: Indica cuándo se activa, puede ser “before” , se produce antes de realizar la operación que activa el disparador o after. Se produce después de realizar la operación.
+* Evento: Indica ante qué operación se activa ( Insert, Update, Delete.)
+* Tabla: La tabla involucrada debe ser permanente , es decir, pertenecer a la base de datos. No puede ser temporal, ni una vista.
+* Cuerpo: Es la acción a realizar cuando se activa. Son sentencias SQL, como las de los Stored Procedures.
+
+Dentro del cuerpo se puede poner begin...end y definir un disparador que ejecute sentencias múltiples. También pueden utilizarse otras sintaxis permitidas en rutinas almacenadas, tales como condicionales y bucles.
+
+==== Eliminación
+
+Drop trigger nombre
+
+==== New y Old
+
+====
+Insert trigger:
+
+* NEW refiere al valor que ingresa a la tabla.
+====
+
+====
+Update trigger:
+
+* OLD refiere al valor anterior a la acción.
+* NEW refiere al valor posterior.
+====
+
+
+====
+Delete trigger:
+
+* No hay NEW, sólo existe el OLD.
+====
+
+Una columna precedida por old es de sólo lectura. Es posible hacer referencia a ella, pero no modificarla.
+
+Una columna precedida por new puede ser referenciada si se tiene el privilegio select sobre ella.
+
+En un disparador before, también es posible cambiar su valor con “Set   new.nombre_col = valor” si se tiene el privilegio de update sobre ella. Esto significa que un disparador puede usarse para modificar los valores antes que se inserten en un nuevo registro o se empleen para actualizar uno existente.
+
+En un disparador before el valor de new para una columna auto_increment es 0, no el número secuencial que se generará en forma automática cuando el registro sea realmente insertado.
+
+
+
+
+
+
