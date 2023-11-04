@@ -587,25 +587,25 @@ Definir alumnosPorMateria como Entero
 
 Dimension alumnosPorMateria[TOPE_F , TOPE_C]
 
-== Inicialización de matrices
+=== Inicialización de matrices
 
 image:2023-10-22T20-56-39-778Z.png[] 
 
-== Carga parcial, o bien aleatoria, de los elementos de una matriz
+=== Carga parcial, o bien aleatoria, de los elementos de una matriz
 
 image::2023-10-22T21-01-17-816Z.png[] 
 
-== Recorrido por filas
+=== Recorrido por filas
 
 image:2023-10-22T21-02-01-056Z.png[] 
 
-== Recorrido por columnas
+=== Recorrido por columnas
 
 image:2023-10-22T21-02-12-534Z.png[] 
 
 Lo que difiere con el ejemplo anterior es que invertimos los ciclos, es decir, ahora el ciclo externo es el de las columnas y el interno el de las filas, pero los índices, al hacer referencia a la matriz, son siempre iguales, primero las filas y luego las columnas.
 
-== Posicionamiento indirecto utilizando vectores y matrices
+=== Posicionamiento indirecto utilizando vectores y matrices
 
 image::2023-10-22T21-06-24-023Z.png[] 
 
@@ -615,6 +615,9 @@ image::2023-10-22T21-07-14-911Z.png[]
 
 
 == Semana 11 Modularización
+
+== Semana 12 Modularización
+
 
 
 La programación modular utiliza abstracción de procedimientos.  
@@ -640,7 +643,7 @@ Si desarrollamos sub-programas/módulos, obtendremos una solución que nos brind
 * Permite al/la programador/a descomponer un gran problema en unidades pequeñas y manejables que se pueden probar y depurar fácilmente. Esto también ayuda a mantener el código limpio y fácil de entender
 * es útil para crear programas extensibles. Esto significa que un programa puede ser ampliado con módulos nuevos sin tener que reescribir todo el código y hace que sea mucho más fácil añadir nuevas características a programas existentes.
 
-==== 
+
 
 
 

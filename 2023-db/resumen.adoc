@@ -1332,8 +1332,8 @@ Cuando trabajamos con trigger debemos tener en cuenta el evento, la condición ,
 image:2023-11-03T11-49-33-894Z.png[] 
 
 * Nombre: Identifica al disparador, no puede existir dos nombres iguales para el mismo esquema, es decir, para la misma base de datos.
-* Momento: Indica cuándo se activa, puede ser “before” , se produce antes de realizar la operación que activa el disparador o after. Se produce después de realizar la operación.
-* Evento: Indica ante qué operación se activa ( Insert, Update, Delete.)
+* Momento: "before" o "after".
+* Evento: Indica ante qué operación se activa -> Insert, Update, Delete
 * Tabla: La tabla involucrada debe ser permanente , es decir, pertenecer a la base de datos. No puede ser temporal, ni una vista.
 * Cuerpo: Es la acción a realizar cuando se activa. Son sentencias SQL, como las de los Stored Procedures.
 
@@ -1373,8 +1373,85 @@ En un disparador before, también es posible cambiar su valor con “Set   new.n
 
 En un disparador before el valor de new para una columna auto_increment es 0, no el número secuencial que se generará en forma automática cuando el registro sea realmente insertado.
 
+==== Ejemplo 1
+
+image:2023-11-03T22-40-45-276Z.png[] 
+
+==== Ejemplo 2
 
 
+=== Transacciones
 
+==== ULT
+
+*¿ Qué significa ULT ?*
+
+Se denominan unidad lógica de trabajo (ULT) a una secuencia de operaciones que modifican los datos pasándolos de un estado coherente a otro.
+
+Es una secuencia de actualizaciones sobre las tablas que debe realizarse completa o no realizarse en absoluto, pero nunca a medias, porque si así fuera los datos podrían quedar lógicamente incoherentes.
+
+*¿Cuál es su funcionalidad?*
+
+La decisión de cuales sentencias de actualización deben incluirse en una ULT depende de la lógica de las aplicaciones, por lo que son éstas las que deben decírselo al sistema gestor, a cambio, éste se responsabiliza de que las sentencias incluidas en una ULT se ejecuten todas o ninguna.
+
+En principio el sistema gestor considera que todas las sentencias de actualización ejecutadas dentro de un programa forman una ULT.
+
+Puede ocurrir que varios programas se ejecuten concurrentemente, esto significa que en un momento dado puede haber varias ULT, es decir, varias secuencias de actualizaciones en progreso a la vez.
+
+==== Reglas generales
+
+Por regla general en sistemas gestores relacionales modernos disponemos de tres tipos de transacciones según la forma de iniciarlas:
+
+* De confirmación automática : el gestor de datos inicia una transacción automáticamente por cada operación que actualice datos. De este modo mantiene siempre la consistencia de la base de datos, aunque puede generar bloqueos.
+* Implícitas: cuando el gestor de datos comienza una transacción automáticamente cada vez que se produce una actualización de datos, pero el que dicha transacción se confirme o se deshaga, lo debe indicar el programador.
+* Explícitas: son las que iniciamos nosotros "a mano" mediante instrucciones SQL. Somos nosotros, los programadores, los que indicamos qué operaciones van a abarcar.
+
+Una transacción explícita se define de manera general con una instrucción que marca su inicio, y dos posibles instrucciones que marcan su final en función de si debe tener éxito o debe fracasar en bloque
+
+==== MySql
+
+* Start Transaction o Begin: marca el inicio de una transacción. Se suele usar más a menudo BEGIN porque es más corto.
+* Rollback: fuerza que se deshaga la transacción en caso de haber un problema o querer abandonarla. Cierra la transacción.
+* Commit: confirma el conjunto de operaciones convirtiendo los datos en definitivos. Marca el éxito de la operación de bloque y cierra la transacción.
+
+==== Ejemplo
+
+image::2023-11-03T23-06-32-513Z.png[]
+
+=== Vistas
+
+* Las vistas (“views”) en SQL son un mecanismo que permite generar un resultado a partir de un pedido almacenado, y ejecutar nuevos pedidos sobre este resultado como si fuera una tabla normal.
+* Proporcionan un poderoso mecanismo de seguridad, ocultando partes de la base de datos a ciertos usuarios. El usuario no sabrá que existen aquellos atributos que se han omitido al definir una vista.
+* Permiten que los usuarios accedan a los datos en el formato que ellos desean o necesitan, de modo que los mismos datos pueden ser vistos con formatos distintos por distintos usuarios.
+* Una vista es una relación virtual que se produce cuando un usuario la consulta. Al usuario le parece que la vista es una relación que existe y la puede manipular como si se tratara de una relación base, pero la vista no está almacenada físicamente.
+
+==== Declaracion
+
+image::2023-11-03T23-19-42-859Z.png[] 
+
+* Nombre: es el nombre que damos a la vista.
+* [lista_columna]: son los nombres de columnas que va a contener la vista. Si no se ponen, se asumen los nombres de columna devueltos por la consulta.
+* AS: consulta determina las columnas y las tablas que aparecerán en la vista.
+* [OR REPLACE]: crea de nuevo la vista si ya existía.
+* [WITH CHECK OPTION]: Es la opción de comprobación para una vista. Si se especifica, SQL comprueba automáticamente cada operación insert y update  sobre la vista para asegurarse que las filas resultantes satisfagan el criterio de búsqueda de la definición de la vista. Si la fila insertada o modificada no satisface la condición de creación de la vista, la sentencia insert o update  falla y no se realiza la operación.
+* [WITH READ ONLY]: Especifica que sólo se puede hacer select de las filas de la vista.
+* [CONSTRAINT nombre_restriccion]: especifica el nombre de la restricción with check option o with read only. Es opcional.
+* Se puede crear una vista de forma que todas las operaciones insert , update y delete  que se hagan sobre ella satisfagan la condición por la que se creó.
+
+Las vistas son consideradas como tablas virtuales.
+
+
+==== Vistas modificables
+
+Dentro del estándar de SQL, existen 4 reglas para que una “vista sea modificable” , es decir si se modifica la vista en cuestión, se modifica la relación/tabla desde donde nace la vista.
+
+* Hacer un select  de una tabla.
+* Si un atributo no está en la vista, debe soportar valores Null.
+* Si la vista está sobre la relación/tabla T, las subconsultas no pueden referirse a T, pero si a otras relaciones/tablas.
+* En una vista, no se puede usar group by.
+
+==== Ejemplo
+
+image::2023-11-03T23-27-00-906Z.png[] 
 
 
