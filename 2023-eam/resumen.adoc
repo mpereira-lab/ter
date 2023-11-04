@@ -2051,7 +2051,7 @@ El gráfico puede verse a continuación. Con etiquetas se identifican los extrem
 
 image::2023-10-04T00-02-23-486Z.png[] 
 
-== Semana 9 Vectores
+== Semana 10 Vectores
 
 Un vector puede estar escrito como:
 
