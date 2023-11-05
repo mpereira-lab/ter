@@ -2390,4 +2390,294 @@ De forma general, podemos hacer:
 * stem:[vec a=(x,y,z)=x(1,0,0)+y(0,1,0)+z(0,0,1)], esto es por multiplicación de un escalar y un vector.
 * stem:[vec v=(x,y,z)=x vec i +y vec j+z vec k], ya que stem:[vec i=(1,0,0) " y " vec j =(0,1,0) " y " vec k=(0,0,1)]
 
+== Semana 11 Matrices
+
+calculadora: https://es.symbolab.com/solver/matrix-calculator
+video de como ingresar matrices y hacer calculos: https://www.youtube.com/watch?v=0I0vmBZ8CIY
+
+Dado un conjunto stem:[X], se denomina matriz de stem:[n] filas y stem:[m] columnas a un conjunto de  stem:[n x m] elementos de stem:[X], dispuestos en un arreglo rectangular de stem:[n] filas y stem:[m] columnas.
+
+Las características de los elementos del conjunto stem:[X] dependerán, en cada caso, de la naturaleza del problema que se esté estudiando. Así,  stem:[X] puede ser un conjunto de funciones, de palabras de un alfabeto, de números, entre otras posibilidades.
+
+En este curso, los elementos del conjunto stem:[X] serán siempre números reales y denotaremos el conjunto de todas las matrices de orden  stem:[n x m] (n filas y  m columnas) por stem:[M n × m]. En general, para representar una matriz  stem:[A] de orden stem:[n x m] se escribe:
+
+[stem]
+++++
+A = ((a_11, a_12, cdots, a_(1n)), (a_21, a_22, cdots, a_(2n)), (vdots, vdots, ddots, vdots), (a_(n1), a_(n2), cdots, a_(nm)))
+++++
+
+También se escribe stem:[A=(a_ij)(i=1,cdots, n " y " j=1,cdots, m)] para indicar que stem:[A] es la matriz de orden  stem:[n x m] que tiene elementos stem:[a_ij]
+
+Las matrices se denotan con letras mayúsculas y sus elementos con la misma letra minúscula acompañada de dos subíndices que indican su posición en la matriz; el primer subíndice indica la fila y el segundo la columna. Es decir, el elemento  stem:[a_ij] es aquel que se encuentra en la fila i y la columna j de la matriz stem:[A]
+
+Ejemplo
+
+[stem]
+++++
+M = ((8, -1, 0),(5, 0.5, 3))
+++++
+
+el orden de M es  2x3 ( 2 filas y 3 columnas) y sus elementos son:
+[stem]
+++++
+
+m_11=8 \
+m_12=-1 \
+m_13=0 \
+m_21=5 \
+m_22=0.5 \
+m_23=3
+++++
+
+=== Igualdad de matrices
+
+Dos matrices stem:[A=(a_(ij)) " y  " B=(b_(ij))] de orden stem:[n x m] son iguales si  stem:[a_(ij)=b_(ij)] para todo stem:[i=1,cdots, n " y " j=1,cdots,m]. Es decir, dos matrices son iguales si los elementos que ocupan la misma posición en ambas matrices coinciden.
+
+=== Tipos 
+
+==== Matriz cuadrada
+
+Tiene igual número n de filas que de columnas (n=m)
+
+image::2023-11-05T15-47-39-637Z.png[] 
+
+Denotaremos el conjunto de todas las matrices cuadradas de orden n por stem:[M_n]. Así, en el ejemplo anterior, stem:[A∈M_3]. 
+
+
+===== Diagonal principal
+
+De una matriz cuadrada son aquellos que están situados en la diagonal que va desde la esquina superior izquierda hasta la inferior derecha.
+
+En otras palabras, la diagonal principal de una matriz stem:[A=(a_(ij))] está compuesta por los elementos  stem:[a_11,a_22,…,a_(nn)]
+
+===== Traza
+
+Es la suma de todos los elementos de su diagonal
+
+Traza(A)=stem:[a_11+cdots+a_(n n)=underset(i=1)(overset(n)(sum))a_(i i)]
+
+==== Matriz nula
+
+Todos sus elementos son iguales a cero.
+
+stem:[O=((0,0), (0,0), (0,0))]
+
+==== Matriz diagonal
+
+stem:[A=(a_(ij))], es diagonal si stem:[a_(ij)=0], para  i≠j. Es decir, si todos los elementos situados fuera de la diagonal principal son cero.
+
+ejemplo:
+
+stem:[D=((0,0,0), (0,5,0),(0, 0, -3))]
+
+==== Matriz identidad
+
+Es una matriz diagonal cuyos elementos de la diagonal son todos iguales a 1
+
+[stem]
+++++
+I=((1,0), (0, 1))]
+++++
+
+==== Matriz triangular
+
+Es una matriz cuadrada en la que todos los elementos situados por debajo (o por encima) de la diagonal principal son iguales a cero.
+
+[stem]
+++++
+I=((2,-1,1/3), (0, 6, 4), (0,0,1))
+++++
+
+También se conoce como matriz escalonada. En algunos casos se hace la distinción entre las matrices triangulares superiores o inferiores en dependencia de los elementos nulos de la matriz
+
+
+==== matriz traspuesta
+
+Es la que permuta los elementos de la posición stem:[i j], con los de la stem:[j i]. Es decir, si la matriz A es es de n x m y sus elementos son stem:[a_(ij)], es decir,  stem:[A=(a_(ij))]
+, los de su traspuesta, que se nota por stem:[A^T] serán los stem:[a_(ji)]; es decir, stem:[A^T=(a_(ji))] y tendrá dimensión  m x n
+
+[stem]
+++++
+A=((2,-1,1/3),(0,6,4))_(2x3)
+++++
+
+su traspuesta será
+
+[stem]
+++++
+A^T=((2,0),(-1,6),(1/3,4))_(3x2)
+++++
+
+=== Operaciones
+
+==== Suma de matrices
+
+Sean stem:[A,B ∈ M_(nxm)]. La matriz  stem:[C=(c_(ij))∈M_(nxm)] es la suma de las matrices stem:[A=(a_(ij)) " y " B=(b_(ij))], y se denota C=A+B, si sus elementos cumplen:
+[stem]
+++++
+c_(ij)=a_(ij)+b_(ij)
+++++
+
+Ejemplo:
+
+image::2023-11-05T17-15-54-511Z.png[] 
+
+===== Propiedades 
+
+* Conmutativa: A+B=B+A
+* Asociativa: A+(B+C)=(A+B)+C
+* Elemento neutro (la matriz nula): existe O∈Mn×m tal que A+O=O+A=A
+* Elemento inverso (la matriz opuesta): existe (−A)∈Mn×m tal que A+(−A)=(−A)+A=O
+
+
+==== Producto de una matriz por un número
+
+Se denomina producto de una matriz stem:[A=(a_(ij))∈Mnxm] por un número λ a una matriz  stem:[B=(b_(ij))∈Mnxm] cuyos elementos son de la forma: stem:[b_(ij)=λa_(ij)] para todo i=1,2,…,n y j=1,2,…,m
+
+
+Ejemplo:
+
+image::2023-11-05T17-28-16-279Z.png[] 
+
+===== Propiedades
+
+* Distributiva mixta del producto respecto a la suma de matrices: λ(A+B)=λA+λB
+* Distributiva mixta del producto respecto a la suma de números reales: (λ+δ)A=λA+δA
+* Asociativa mixta: (λ⋅δ)A=λ(δA)
+
+
+==== Producto de matrices
+
+Se denomina matriz producto de la matriz stem:[A=(a_(ij))∈M nxm] por la matriz stem:[B=(b_(jk)) ∈ M_(mxp)] a una matriz  stem:[C=(c_(ik)) ∈ M_(nxp)] cuyos elementos son de la forma:
+
+[stem]
+++++
+c_(ik)=a_(i1)b_(1k)+a_(i2)b_(2k)+cdots+a_(im)b_(mk)= underset(i=1)(overset(m)(sum(i)))=a_(ij)b_(ik)
+++++
+
+Condición: la cantidad de columnas (m) de la primer matriz debe ser igual a la cantidad de filas (m) de la segunda matriz
+Resultado: da una matriz de cantidad de filas de la primera matriz x cantidad de columnas de la segunda matriz
+
+
+Ejemplo:
+
+image::2023-11-05T18-25-29-366Z.png[] 
+
+===== Propiedades 
+
+Para matrices cualesquiera A,B,C:A∈Mn×m,B∈Mm×k,C∈Mk×p
+
+* Asociativa: A⋅(B⋅C)=(A⋅B)⋅C
+* Elemento neutro (matriz identidad): existe I tal que  A⋅I=I⋅A=A
+* Distributiva (mixta): A⋅(B+C)=A⋅B+A⋅C
+
+
+=== Determinante
+
+Orden 1
+
+image::2023-11-05T19-01-47-986Z.png[] 
+
+Orden 2
+
+image::2023-11-05T19-02-13-626Z.png[] 
+
+Orden 3
+
+image::2023-11-05T19-02-27-706Z.png[] 
+
+==== Determinante de matrices triangulares
+
+Es el producto de los elementos de la diagonal principal
+
+image::2023-11-05T19-11-44-731Z.png[] 
+
+==== Determinante de matrices identidad
+
+Teniendo en cuenta que la matriz identidad es triangular, se deduce que: stem:[det(I)=1]
+
+==== Propiedades 
+
+* El determinante de una matriz es igual al determinante de su matriz transpuesta.
+* El determinante de un producto de matrices cuadradas es igual al producto de sus determinantes.
+* Si una matriz tiene una fila (o columna) nula, entonces su determinante es cero.
+* Si se intercambian dos filas (o dos columnas) de una matriz, su determinante cambia de signo.
+* Si se multiplican todos los elementos de una fila (o de una columna) por un número λ , entonces el determinante se multiplica por λ
+* Si se suma a una fila (o a una columna) un múltiplo de otra fila (o columna), entonces el determinante no cambia.
+
+
+==== Aplicaciones 
+
+* la resolución de sistemas de ecuaciones lineales mediante la regla de Cramer,
+* el cálculo de la matriz inversa de una matriz cuadrada,
+* la resolución de problemas de geometría analítica, como el cálculo de áreas y volúmenes,
+* la resolución de problemas en la física, como la determinación de la estabilidad de un sistema físico, entre otros. 
+
+* En gráficos 3D y procesamiento de imágenes, el determinante se utiliza para calcular vectores normales, que son importantes en la iluminación y en la detección de colisiones. 
+* En criptografía, los determinantes se utilizan en la encriptación y desencriptación de mensajes. 
+* En inteligencia artificial y aprendizaje automático, los determinantes se utilizan para resolver sistemas de ecuaciones lineales y encontrar soluciones óptimas en algoritmos de optimización. 
+* En programación de juegos, los determinantes se utilizan en la detección de colisiones entre objetos. 
+* En análisis de datos, los determinantes se utilizan para determinar si una matriz es singular y para encontrar los autovectores, que son importantes en el problema de la reducción de dimensión.
+
+=== Matriz no singular
+
+Son aquellas que tienen determinante distinto de cero
+
+=== Matriz inversa
+
+stem:[A^(-1) A = A A^(-1) = I]
+ 
+==== Cálculo
+
+* Método 1
+
+stem:[A^(-1)=1/|A|adj A]
+
+Adj A escapa a este curso
+
+* Método 2: eliminación gaussiana
+
+*operaciones elementales*
+
+. Multiplicar una fila por un número distinto de 0
+. Sumar (o restar) a una fila, el múltiplo de otra fila
+. Permutar dos filas, es decir, intercambiar el orden de dos filas
+
+image::2023-11-05T19-54-05-365Z.png[] 
+
+image::2023-11-05T19-54-20-660Z.png[] 
+
+==== Propiedades
+
+* La matriz inversa de una matriz que admite inversa (inversible) es única.
+* Si A y B son matrices inversibles del mismo orden, entonces AxB también es invertible y stem:[(AxB)^(-1)=B^(-1)xA^(-1)]
+* Si A es una matriz inversible, entonces su transpuesta también es inversible y stem:[(A^T)^(-1)=(A^(-1))^T]
+* Si A es una matriz inversible y λ es un número no nulo, entonces la matriz λA también es inversible y stem:[(λA)^(-1)=1/λA^(-1)]
+* det(A⁻¹) = 1 / det(A) o  det(A) = 1/det(A⁻¹)
+
+==== Aplicaciones
+
+image::2023-11-05T20-27-00-229Z.png[]
+
+=== Ecuaciones matriciales
+
+La forma general de una ecuación matricial es A⋅X=B, donde A es una matriz conocida de tamaño n×m, X es la matriz de variables desconocidas de tamaño m×1, y B es una matriz conocida de tamaño n×1. La ecuación matricial se puede reescribir como un conjunto de ecuaciones lineales, donde cada fila de A⋅X se corresponde con una fila de B, y da lugar a un sistema de n ecuaciones con m
+incógnitas.
+
+Consideraremos aquí únicamente los casos en que tal solución exista y sea única. Para que ello ocurra, requeriremos dos condiciones para la matriz A:
+
+* que sea cuadrada, de orden n
+* que sea inversible.
+
+image::2023-11-05T21-09-56-975Z.png[] 
+
+==== Ejemplo
+
+image::2023-11-05T21-10-38-615Z.png[] 
+
+
+
+
+
+
 
