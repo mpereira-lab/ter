@@ -2675,6 +2675,97 @@ image::2023-11-05T21-09-56-975Z.png[]
 
 image::2023-11-05T21-10-38-615Z.png[] 
 
+== Semana 12 Sistemas ecuaciones lineales 2x2
+
+Un sistema de ecuaciones es un conjunto de ecuaciones con las mismas incógnitas. Resolver un sistema significa hallar todas las soluciones del sistema, es decir, todos los valores posibles para las incógnitas que hacen verdadera cada una de las ecuaciones.
+
+Existen diferentes métodos que permiten resolver este tipo de sistemas de ecuaciones. En esta sección veremos los siguientes:
+* Método de sustitución
+* Método de igualación
+* Regla de Cramer o método de determinantes.
+
+=== Método de sustitución
+
+. Despejar, en cualquiera de las dos ecuaciones, una de las dos incógnitas.
+. Sustituir, en la otra ecuación, esa incógnita por la expresión hallada en el paso anterior. Obtendremos así una ecuación lineal con una sola incógnita, la cual debemos resolver. Aquí encontraremos el valor de una de las incógnitas, pero aún falta la otra.
+. Calcular el valor de la otra incógnita reemplazando el resultado anterior en la expresión hallada en el paso 1.
+. Armar la solución.
+. Verificar si la solución obtenida es correcta.
+
+==== Ejemplo
+
+image::2023-11-07T11-40-41-538Z.png[] 
+
+=== Método de igualación
+
+. Despejar una de las dos incógnitas (la misma) en ambas ecuaciones.
+. Igualar las expresiones obtenidas en el paso 1, generando una ecuación lineal con una sola incógnita, la cual debemos resolver. Aquí encontraremos el valor de una de las incógnitas, pero aún falta la otra.
+. Calcular el valor de la otra incógnita reemplazando el resultado anterior en cualquiera de las expresiones obtenidas en el paso 1.
+. Armar la solución.
+. Verificar si la solución obtenida es correcta.
+
+==== Ejemplo
+
+image::2023-11-07T11-58-19-667Z.png[] 
+
+image::2023-11-07T11-58-40-417Z.png[] 
+
+=== Regla de Cramer o método de determiantes
+
+image::2023-11-08T10-57-55-518Z.png[] 
+
+image::2023-11-08T10-58-31-340Z.png[] 
+
+image::2023-11-08T10-59-35-468Z.png[]
+
+=== Un sistema sin solución
+
+image::2023-11-08T11-02-12-726Z.png[] 
+
+image::2023-11-08T11-02-29-513Z.png[] 
+
+===  Un sistema con infinitas soluciones
+
+image::2023-11-08T11-15-16-031Z.png[] 
+
+image::2023-11-08T11-20-04-604Z.png[] 
+
+=== Clasificación de los sistemas
+
+Dado un sistema de dos ecuaciones lineales con dos incógnitas, ocurre exactamente una de las siguientes opciones:
+
+
+* Tiene una solución única.
+* Tiene infinitas soluciones.
+* No tiene solución.
+
+=== Resolución de problemas con sistemas de ecuaciones
+
+Existen muchas situaciones, tanto de la vida cotidiana como de otras ciencias, que se pueden resolver mediante la utilización de sistemas de ecuaciones.
+
+A continuación, se detallan algunas consideraciones para facilitar esta tarea:
+
+. Identificar cada una de las incógnitas, es decir, lo que se quiere hallar pero se desconoce. Estas por lo general se pueden determinar fácilmente mediante una cuidadosa lectura de la pregunta del problema. Introducir notación para las incógnitas, llamándolas x e y o con alguna otra letra.
+. Utilizar los datos que aporta el problema para plantear las dos ecuaciones. Luego, armar el sistema.
+. Resolver el sistema planteado utilizando cualquiera de los métodos enseñados e interpretar los valores hallados, sin perder de vista qué representan cada una de las incógnitas.
+. Verificar el resultado en el sistema original.
+. Dar la respuesta al problema.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
