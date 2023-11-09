@@ -2718,6 +2718,8 @@ image::2023-11-08T10-58-31-340Z.png[]
 
 image::2023-11-08T10-59-35-468Z.png[]
 
+Si el determinante principal es cero, el sistema puede tener infinitas soluciones o no tener solución
+
 === Un sistema sin solución
 
 image::2023-11-08T11-02-12-726Z.png[] 
@@ -2751,15 +2753,93 @@ A continuación, se detallan algunas consideraciones para facilitar esta tarea:
 . Verificar el resultado en el sistema original.
 . Dar la respuesta al problema.
 
+=== Representación gráfica
 
+* Una ecuación lineal con dos incógnitas representa un recta en el plano cartesiano. Como en este tipo de sistemas tenemos dos ecuaciones, vamos a ver graficadas dos rectas.
+* El punto de intersección entre las dos rectas (si es que existe), está relacionado con la solución al sistema de ecuaciones en cuestión.
 
+Ejemplos
 
+==== Sistema con una solución
 
+[stem]
+++++
 
+{(3x,-7y,=,-15), (7x,+5y,=,-35):}
 
+triangle = 64
 
+triangle_x=-320
 
+triangle_y=0
 
+x = triangle_x/triangle = -320/64 = -5
+
+y = triangle_y/triangle = 0/64 = 0 
+
+++++
+
+image::2023-11-09T21-40-53-973Z.png[] 
+
+sus rectas son secantes
+
+==== Sistema infinitas soluciones
+
+[stem]
+++++
+
+{(2x,-9y,=,16), (x,-27y,=,3):}
+
+triangle = 0
+
+triangle_x=0
+
+triangle_y=0
+
+++++
+
+cuando todos los determinantes son 0, hay infinitas soluciones
+
+image::2023-11-09T21-59-25-403Z.png[] 
+
+ambas ecuaciones representan a la misma recta
+
+==== Sistema sin solucion
+
+[stem]
+++++
+
+{(10x,+2y,=,26),(5x,+y,=,-10):}
+
+triangle = 0
+
+triangle_x = 46
+
+triangle_y = -230
+
+++++
+
+cuando el determinante principal es cero, y alguno (o ambos) determinantes de coeficientes es distinto de cero, el sistema no tiene solucion
+
+image::2023-11-09T22-00-38-948Z.png[] 
+
+las rectas son paralelas
+
+con el metodo de igualacion o de sustitucion llegamos a un absurdo (ej: 0=3)
+
+=== Conclusión
+
+|===
+| |Compatible determinado	| Compatible indeterminado	| Incompatible
+|Tipo de solución	
+| La solución es única, existe un solo par de números que verifican el sistema.	 
+| El sistema tiene infinitas soluciones, existen infinitos pares de números que lo verifican.	
+| El sistema no tiene solución, es decir, no existe ningún par de valores que lo verifique.
+|Método gráfico
+| Las rectas son secantes. El punto (x,y) de corte es la solución al sistema.
+| Las rectas son coincidentes.	
+| Las rectas son paralelas.
+|===
 
 
 
