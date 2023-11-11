@@ -2841,6 +2841,341 @@ con el metodo de igualacion o de sustitucion llegamos a un absurdo (ej: 0=3)
 | Las rectas son paralelas.
 |===
 
+== Semana 13 Sistemas ecuaciones nxn
+
+Se llama sistema de m ecuaciones lineales con n incógnitas, a un conjunto de m ecuaciones lineales en las mismas n incógnitas. En forma general, tenemos:
+
+[stem]
+++++
+{(a_(11)x_1,+a_(12)x_2,+cdots,+a_(1n)x_n,=b_1), (a_(21)x_1,+a_(22)x_2,+cdots,+a_(2n)x_n,=b_2), (vdots,vdots,vdots,vdots,vdots), (a_(m1)x_1,+a_(m2)x_2,+cdots,+a_(mn)x_n,=b_m):}
+++++
+
+Llamaremos solución del sistema a cada asignación de valores de las incógnitas stem:[{x_1=k_1,x_2=k_2,...,x_n=k_n}] que sea solución común a todas las ecuaciones del sistema, es decir, que verifique todas las igualdades simultáneamente. Se llama solución general del sistema, al conjunto de todas las soluciones del sistema. Resolver un sistema es hallar su solución general.
+
+Cuando el sistema tiene hasta cuatro incógnitas, se suelen emplear las siguientes letras: x, y, z, w, en lugar de x1, x2, x3, x4
+
+===  Forma matricial de un SEL
+
+Cualquier sistema de ecuaciones lineales (SEL) se puede expresar de forma matricial. 
+
+En forma general, el SEL
+
+image::2023-11-11T18-52-12-271Z.png[] 
+
+se puede escribir como:
+
+image::2023-11-11T18-57-16-838Z.png[] 
+
+Observación: se puede comprobar que la expresión AX=B es equivalente al sistema expresado, puesto que al efectuar el producto entre A y X  e igualarlo a B, se tienen las ecuaciones de dicho sistema.
+
+De forma matricial nos queda AX=B donde 
+
+image::2023-11-11T18-59-00-904Z.png[] 
+
+De esta manera, resolver el sistema de ecuaciones lineales se transforma en resolver la ecuación matricial AX=B que, como se vio, el "despeje" queda: stem:[X=A^(-11).B]. Entonces, al resolver el producto entre la matriz inversa de los coeficientes y la matriz de los términos independientes, obtendremos la matriz de las incógnitas X y por ende, la solución al sistema de ecuaciones lineales. Podés resolverlo y verás que la solución es: 
+
+image::2023-11-11T19-02-55-109Z.png[] 
+
+=== Matriz ampliada del sistema
+
+Llamamos matriz ampliada del sistema, a la matriz que se forma cuando añadimos a la matriz de los coeficientes, el vector de los términos independientes:
+
+image::2023-11-11T19-03-45-806Z.png[] 
+
+=== Clasificación de los SEL
+
+. Según la solución
+
+Atendiendo a la existencia o no de soluciones de un sistema y al número de estas, se da la siguiente clasificación.
+
+Un sistema de ecuaciones lineales se dice que es un sistema incompatible si no tiene solución. Por el contrario, se dice que es un sistema compatible si tiene alguna solución.
+
+Como ya vimos en la semana anterior, en este último caso solo caben dos posibilidades:
+
+* Que el sistema tenga una única solución, y en este caso se dice que es un sistema compatible determinado,
+* Que tenga infinitas soluciones, llamándose sistema compatible indeterminado.
+
+En consecuencia, la solución general de un sistema compatible determinado consistirá en la única solución posible del sistema. Mientras que la solución general de un sistema compatible indeterminado, vendrá  expresada en función de uno o más parámetros. En este último caso, para cada asignación de valores que le demos a los parámetros obtendremos una solución concreta del sistema.
+
+[start=2]
+. Según la naturaleza de los términos independientes
+
+Un sistema se puede clasificar a partir de observar las características del vector de los términos independientes B
+. 
+
+Si B es el vector nulo de orden m×1, diremos que el sistema es homogéneo. En caso de que al menos un elemento de B sea no nulo, el sistema será no homogéneo.
+
+Simbólicamente:
+
+image::2023-11-11T19-11-29-414Z.png[] 
+
+[start=3]
+. Según el número de ecuaciones y de incógnitas
+
+Otra forma de clasificar los sistemas es a partir del número de ecuaciones (m) y el número de incógnitas (n) que lo conforman. Si estos números son iguales, diremos que el SEL es normal (m=n). En cambio, si son diferentes, el  sistema se considera general (m≠n)
+
+=== SEL triangulares
+
+image::2023-11-11T20-30-09-636Z.png[] 
+
+Este sistema se dice que está en forma triangular o escalonado, porque la incógnita x no aparece en la segunda ecuación, y las incógnitas x e y no aparecen en la tercera ecuación.
+
+Es fácil resolver un sistema que está en forma triangular si se usa sustitución, como veremos a continuación:
+
+De la ecuación 3, obtenemos el valor de z haciendo:
+
+image::2023-11-11T20-32-12-597Z.png[] 
+
+Sustituimos el valor de z en la ecuación 2 y despejamos y:
+
+image::2023-11-11T20-32-32-621Z.png[] 
+
+Finalmente, en la ecuación 1 reemplazamos los valores de y y z y despejamos la incógnita x :
+
+image::2023-11-11T20-34-17-950Z.png[] 
+
+Por lo tanto, la solución es la terna (6,3,7)
+
+=== Regla de Cramer
+
+Considere el sistema de n ecuaciones lineales con n incógnitas:
+
+image::2023-11-11T20-35-20-877Z.png[] 
+
+que puede escribirse en la forma:
+
+image::2023-11-11T20-35-39-013Z.png[] 
+
+Si |A|≠0,  el sistema tiene una solución única. A partir de la matriz A se definen n nuevas matrices:
+
+image::2023-11-11T20-36-10-070Z.png[] 
+
+Es decir, stem:[A_i] es la matriz obtenida al reemplazar la columna i de A por B
+
+*Regla de Cramer*
+
+Sea A una matriz de n×n y suponga que |A|≠0. Entonces, la solución única al sistema AX=B está dada por:
+
+image::2023-11-11T20-37-27-597Z.png[] 
+
+
+=== Conceptos
+
+*Operaciones elementales entre renglones*
+
+Dada una matriz, se pueden realizar las siguientes operaciones elementales entre renglones:
+
+* Sumar un múltiplo de un renglón a otro.
+* Multiplicar un renglón por una constante diferente de cero.
+* Intercambiar dos renglones.
+
+*Matriz escalonada por renglones*
+
+Vamos a exigirle además que cada primer número sea 1. Esto no es necesario, pero si facilitará el trabajo a la hora de resolver sistemas de ecuaciones lineales.
+
+Una matriz de tamaño m×n se llama escalonada por renglones si cumple con las siguientes condiciones:
+
+* El primer número diferente de cero de cada renglón (leyendo de izquierda a derecha) es 1. Este se llama pivote (o entrada inicial).
+* El pivote de cada renglón está a la derecha del privote del renglón situado inmediatamente arriba de él.
+* Todos los renglones formados enteramente de ceros están en la parte inferior de la matriz.
+
+Una matriz es escalonada reducida si es escalonada y también satisface la siguiente condición:
+
+* Todo número arriba y debajo de cada privote es 0
+
+Por ejemplo, la matriz A está escalonada por renglones, no así la matriz B. Por su parte, la matriz C está escalonada reducida:
+
+image::2023-11-11T21-08-04-510Z.png[] 
+
+
+*Rango de una matriz*
+
+Dada una matriz A de cualquier tamaño, el rango de la misma está dado por el número de filas o renglones no completamente nulos una vez que la matriz esté en la forma escalonada. Este número se indica con rg(A)
+
+Por ejemplo, si tomamos las matrices anteriores, rg(A)=3 y rg(C)=3. Para determinar el rango de la matriz B, primero se debe llevarla a su forma escalonada.
+
+Usando Symbolab, se puede calcular el rango de cualquier matriz colocando el comando "rango", seguido de la matriz dada.
+
+=== Teorema de Rouché-Frobenius
+
+Sea stem:[AX=B] la representación matricial de un sistema de ecuaciones lineales y sea stem:[A^*=(A|B)] la matriz ampliada del sistema. Entonces, el sistema es compatible si y solo si stem:[rg(A)=rg(A^*)]. En este caso el sistema 
+
+* es compatible determinado si stem:[rg(A)] coicnide con el número de incógnitas
+* y es compatible indeterminado si stem:[rg(A)] es menor que el número de incógnitas
+
+==== Ejemplo
+
+image::2023-11-11T21-24-15-381Z.png[] 
+
+La matriz ampliada del sistema nos queda:
+
+image::2023-11-11T21-24-31-661Z.png[] 
+
+Mediante las operaciones entre renglones, vamos a llevarla a la forma escalonada (con entradas principales iguales a uno). Para ello, seguiremos algunos consejos:
+
+Primero debemos hacer que en la esquina superior izquierda tengamos un 1. Para lo cual, vamos a multiplicar al renglón 1 por stem:[1/2]
+
+image::2023-11-11T21-25-48-270Z.png[] 
+
+También podríamos haber intercambiado el segundo (o tercer) renglón por el primero. Luego, hacemos que los números debajo de este sean ceros, sumando múltiplos apropiados del primer renglón a los renglones debajo de él:
+
+image::2023-11-11T21-26-54-134Z.png[] 
+
+A continuación, debemos obtener un 1 inicial en el segundo renglón, y luego ceros debajo de él:
+
+image::2023-11-11T21-27-21-710Z.png[] 
+
+En cada etapa hay que asegurarse de que toda entrada inicial esté a la derecha de la entrada inicial en el renglón arriba de él. Si es necesario, se reacomodan los renglones. Se debe continuar este proceso hasta llegar a una matriz en forma escalonada por renglones:
+
+image::2023-11-11T21-28-19-246Z.png[] 
+
+Hemos llegado a la matriz escalonada. Se puede observar que el stem:[rg(A)=rg(A^*)=3]. Por ello, el sistema es compatible. Además, como el número de incógnitas coincide con los rangos, el sistema es determinado, tal como lo vimos anteriormente. Observen que tomando la matriz aumentada escalonada, podemos reescribir el sistema de la siguiente manera:
+
+image::2023-11-11T21-29-11-350Z.png[] 
+
+El cual nos queda con forma triangular y se puede resolver con sustitución como ya explicamos antes. Esta es la idea de base del método que explicaremos luego.
+
+*Sistemas compatibles indeterminados e incompatibles*
+
+Si en el caso anterior, la matriz escalonada nos hubiera quedado de la siguiente manera:
+
+image::2023-11-11T21-29-55-582Z.png[] 
+
+El stem:[rg(A)=2 y rg(A^*)=3], por lo que stem:[rg(A)!=rg(A^*)] y en consecuencia, el sistema es incompatible.
+
+En cambio, si la matriz escalonada resultaba ser:
+
+image::2023-11-11T21-31-04-157Z.png[] 
+
+El stem:[rg(A)=rg(A^*)=2], pero es menor que el número de incógnitas. Por lo que, según el teorema, el sistema sería compatible indeterminado.
+
+==== Forma escalonada utilizando Symbolab
+
+Para obtener la matriz escalonada en Symbolab debemos usar el comando "matrice escalonada", seguido de la matriz en cuestión:
+
+image::2023-11-11T21-33-41-022Z.png[] 
+
+Como podrás observar, Symbolab no coloca las entradas principales con 1. Esto lo solucionamos fácilmente multiplicando cada renglón por el inverso multiplicativo del primer número que aparece en él:
+
+image::2023-11-11T21-34-06-837Z.png[] 
+
+Haciendo esto, llegamos a la matriz escalonada que obtuvimos anteriormente:
+
+image::2023-11-11T21-34-20-601Z.png[] 
+
+Recordá que no es necesario que los primeros números de cada renglón sean un uno para tener la matriz escalonada, solo lo hacemos para facilitar el trabajo posterior. De no hacerlo, deberán hacer un poco más de "despejes" al momento de sustituir de forma escalonada, pero se llega igualmente a la solución. En los videos que proponemos para esta semana se resuelve así.
+
+=== Eliminación gaussiana
+
+
+(llevar la matriz aumentada a escalonada)
+
+Para resolver un sistema de ecuaciones lineales por este método, seguiremos los siguientes pasos:
+
+* Escribimos la matriz aumentada del sistema.
+* Mediante las operaciones elementales de renglones (o el uso del Symbolab), se transforma la matriz aumentada en la forma escalonada por renglones.
+* Escribimos el nuevo sistema de ecuaciones que corresponde a la forma escalonada por renglones de la matriz aumentada y resolvemos por medio de sustitución.
+
+Ejemplo: vamos a resolver el siguiente sistema de ecuaciones lineales usando eliminación gaussiana.
+
+image::2023-11-11T22-01-33-094Z.png[] 
+
+Primero escribimos la matriz aumentada del sistema y luego usamos operaciones elementales de renglones para llevarla en forma escalonada. Nosotros emplearemos Symbolab.
+
+image::2023-11-11T22-02-03-413Z.png[] 
+
+Aquí ya está en forma escalonada y podríamos armar el sistema. Pero vamos a hacer que las entradas principales sean iguales a uno. Para ello, multiplicamos cada renglón por el inverso multiplicativo del primer número del renglón:
+
+image::2023-11-11T22-02-22-997Z.png[] 
+
+Observemos que stem:[rg(A)=rg(A^*)=3]  y el número de incógnitas es 3, por lo que según el teorema de Rouché-Frobenius, el sistema es compatible determinado.
+
+Ahora tenemos una matriz equivalente en forma escalonada por renglones, y el correspondiente sistema de ecuaciones es:
+
+image::2023-11-11T22-03-12-374Z.png[] 
+
+Usamos sustitución escalonada para resolver el sistema.
+
+En la segunda ecuación, cambiamos z  por −2 y despejamos y:
+
+image::2023-11-11T22-03-34-525Z.png[] 
+
+==== Eliminación de Gauss-Jordan
+
+(llevar la matriz aumentada a escalonada reducida)
+
+Si ponemos la matriz aumentada de un sistema lineal en forma escalonada reducida por renglones, entonces no necesitamos sustitución para resolver el sistema. Para poner una matriz en forma escalonada por renglones reducida, usamos los pasos siguientes:
+
+* Utilizar operaciones elementales de renglón para poner la matriz en forma escalonada por renglones.
+* Obtener ceros arriba de cada entrada inicial al sumar múltiplos del renglón que contenga esa entrada a los renglones arriba de él. Empezar con la útima entrada inicial y trabajar hacia arriba.
+ 
+El uso de la forma escalonada por renglones reducida para resolver un sistema se llama eliminación de Gauss-Jordan.
+
+En el ejemplo anterior, usamos eliminación de Gauss en la matriz aumentada de este sistema, para llegar a una matriz equivalente en forma escalonada por renglones. Continuamos usando operaciones elementales de renglones en la última matriz para llegar a una matriz equivalente en forma escalonada reducida por renglones.
+
+Si utilizamos el Symbolab, aquí podemos obtener directamente la matriz escalonada reducida. Para ello, se debe colocar el comando "Gauss-Jordan", seguido de la matriz en cuestión, como se muestra a continuación:
+
+image::2023-11-11T22-13-23-086Z.png[] 
+
+
+image::2023-11-11T22-13-42-789Z.png[] 
+
+
+=== Ejemplos
+
+*Un sistema donde no hay solución*
+
+Vamos a resolver el siguiente sistema mediante eliminación gaussiana:
+
+image::2023-11-11T22-15-56-533Z.png[] 
+
+Armamos la matriz ampliada:
+
+image::2023-11-11T22-16-08-053Z.png[] 
+
+
+La llevamos a la forma escalonada por renglones:
+
+image::2023-11-11T22-16-17-821Z.png[] 
+
+Como el stem:[rg(A)≠rg(A^*)], el sistema es incompatible.
+
+Esta última matriz está en forma escalonada por renglones, de modo que podemos detener el proceso de eliminación de Gauss. Ahora, si convertimos el último renglón en forma de ecuación, obtenemos 0x+0y+0z=18, o bien 0=18, lo cual es falso. No importa qué valores escojamos para x, y o z, la última ecuación nunca será un enunciado verdadero. Esto significa que el sistema no tiene solución.
+
+*Un sistema con infinitas soluciones*
+
+Vamos a resolver el siguiente sistema utilizando el método Gauss-Jordan:
+
+image::2023-11-11T22-17-14-366Z.png[] 
+
+Armamos la matriz ampliada:
+
+
+image::2023-11-11T22-17-23-381Z.png[] 
+
+La llevamos a la forma escalonada reducida por renglones:
+
+image::2023-11-11T22-17-36-952Z.png[] 
+
+Como stem:[rg(A)=rg(A^*)=2], pero es menor que el número de incógnitas, el sistema es compatible indeterminado, es decir, tiene infinitas soluciones.
+
+El tercer renglón corresponde a la ecuación 0=0. Esta ecuación es siempre verdadera, no importa cuáles valores se usen para x, y o z. Como la ecuación no agrega información nueva acerca de las incógnitas, podemos eliminarla del sistema. En consecuencia, la última matriz corresponde al sistema:
+
+image::2023-11-11T22-18-31-694Z.png[] 
+
+A continuación, despejamos las incógnitas iniciales x e y en términos de la incógnita no inicial z.
+
+image::2023-11-11T22-18-51-997Z.png[] 
+
+Para obtener la solución completa, con t representamos cualquier número real y expresamos x, y y z en términos de t
+
+image::2023-11-11T22-19-38-789Z.png[] 
+
+También podemos escribir la solución como la terna ordenada (7t-5,3t+1,t), donde t es cualquier número real. Para obtener soluciones particulares, le damos valores al parámetro t. Por ejemplo, si t=5, una de las infinitas soluciones es (30,16,5)
+
+
+
+
 
 
 
