@@ -2122,6 +2122,7 @@ image::2023-10-23T01-47-10-081Z.png[]
 Este segmento se dice orientado porque va desde un punto cualquiera tomado como punto inicial o de aplicación stem:[A=(a_1,a_2)] hasta un punto final o terminal stem:[B=(b_1,b_2)], con la condición de que stem:[x=b_1-a_1 " e " y=b_2-a_2]. Esto se escribe stem:[vec v=vec {AB}].
 
 En este ejemplo: 
+
 * el punto de aplicación del vector stem:[vec s " es " A=(1,2)] 
 * el punto terminal es stem:[B=(4,6)]
 ====
@@ -2328,7 +2329,7 @@ image::2023-10-24T22-22-34-425Z.png[]
 . Abrimos el GeoGebra.
 . Colocamos como entrada a los dos vectores.
 . Luego, el punto de aplicación del vector resta va a ser el punto terminal del primer vector y, el punto terminal, va a ser el punto terminal del segundo vector. Acá sí es importante este orden. En nuestro caso, el punto de aplicación es (3,5) y el punto terminal es (1,-4)
-. Escribimos como entrada el siguiente comando: vector(<punto inicial>, <punto terminal>). En nuestro caso es: vector((3,5),(1,−4))
+. Escribimos como entrada el siguiente comando: vector(<punto inicial>, <punto terminal>). En nuestro caso es: vector( (3,5),(1,−4) )
 . Ese vector que nos aparece graficado es el vector diferencia.
 
 image::2023-10-24T22-28-11-167Z.png[] 
@@ -2622,6 +2623,8 @@ Teniendo en cuenta que la matriz identidad es triangular, se deduce que: stem:[d
 === Matriz no singular
 
 Son aquellas que tienen determinante distinto de cero
+
+O sea, una matriz es singular cuando su determinante es cero
 
 === Matriz inversa
 
