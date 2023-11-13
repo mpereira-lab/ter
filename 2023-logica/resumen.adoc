@@ -698,11 +698,11 @@ Por convención se suele usar el primer bit de una cadena (aquel del extremo izq
 
 Este sistema recibe el nombre Signo-Magnitud (SM).Cuando se restringe la cantidad de bits a n, se lo denota SM(n), donde el primer bit es el signo, y la magnitud es de n - 1 bits.
 
-Ejemplo:  1010 = -2
+Ejemplo: 1010 = -2
 
 ==== Rango
 
-stem:[\[-(2n-1 - 1); 2n-1 - 1\]]
+stem:[\[-(2^(n-1) - 1); 2^(n-1) - 1\]]
 
 en binario: [1111, 0111]
 
@@ -829,14 +829,14 @@ Si tengo 1 adelante, y tengo que saber cual es la magnitud (val absoluto) hago e
 
 ==== Interpretación
 
- * Se debe determinar si la cadena comienza con 0 (bn-1 = 0) o con 1 (bn-1 = 1). 
- ** Si bn-1 = 0, entonces se trata de un valor positivo, y en ese caso simplemente se interpreta como en un sistema binario sin signo (n). 
- ** En caso contrario, si bn-1 = 1, se sabe que representa un valor negativo, en cuyo caso se aplica la operación complemento() a la cadena, luego se interpretar el resultado en BSS(n) y finalmente se le agrega el signo negativo.
+ * Se debe determinar si la cadena comienza con 0 stem:[(b_(n-1) = 0) " o con 1 " (b_(n-1) = 1)]
+ ** Si stem:[b_(n-1) = 0], entonces se trata de un valor positivo, y en ese caso simplemente se interpreta como en un sistema binario sin signo (n). 
+ ** En caso contrario, si stem:[b_(n-1) = 1], se sabe que representa un valor negativo, en cuyo caso se aplica la operación complemento() a la cadena, luego se interpretar el resultado en BSS(n) y finalmente se le agrega el signo negativo.
 
 
 ==== Rango
 
-[-2n-1; 2n-1 - 1]
+stem:[\[-2^(n-1); 2^(n-1) - 1\]]
 
 ==== Aritmetica
 
