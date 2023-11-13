@@ -2605,6 +2605,8 @@ Teniendo en cuenta que la matriz identidad es triangular, se deduce que: stem:[d
 * Si se intercambian dos filas (o dos columnas) de una matriz, su determinante cambia de signo.
 * Si se multiplican todos los elementos de una fila (o de una columna) por un número λ , entonces el determinante se multiplica por λ
 * Si se suma a una fila (o a una columna) un múltiplo de otra fila (o columna), entonces el determinante no cambia.
+* stem:[|A^(-1)| = 1/(|A|)]
+
 
 
 ==== Aplicaciones 
