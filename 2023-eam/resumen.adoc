@@ -344,7 +344,7 @@ Notaciones
 
  y=f(x) y es variable dependiente, x es variable independiente
 
- image::2023-09-07T23-59-34-207Z.png[]
+image::2023-09-07T23-59-34-207Z.png[]
 
  
 === Formas de representación del 
@@ -380,6 +380,8 @@ Si f es una función con dominio es un subconjunto A de los números reales, ent
 Se dice que una función f es polinómica si la regla de asignación es de la forma
 
 image:2023-09-08T23-28-43-846Z.png[] 
+
+Donde n es un entero no negativo.
 
 Si f es una función polinómica, entonces: 
 
@@ -437,7 +439,7 @@ image::2023-09-09T01-09-28-865Z.png[]
 
 === Función lineal
 
-* Es un caso particular de la función 
+* Es un caso particular de la función polinómica.
 
  f(x)=ax+b
 
@@ -1982,7 +1984,7 @@ https://youtu.be/ZmMQFgyOmXU
 ====
 [stem]
 ++++
-text{ recta tangente: } y=f(27)+f'(27)(x−27)=3+1/27(x−-7)
+text{ recta tangente: } y=f(27)+f'(27)(x- 27)=3+1/27(x-7)
 ++++
 ====
 
