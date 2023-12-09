@@ -644,7 +644,7 @@ o\ bien\ f(x)=k/x
 
 [stem]
 ++++
-g(x)=2x
+g(x)=2/x
 ++++
 
 
@@ -687,7 +687,7 @@ image::2023-09-10T15-40-49-122Z.png[]
 
 image::2023-09-13T11-39-10-932Z.png[] 
 
-* Valores de x negativos cada vez más pequeños, la función toma valores negativos cada vez más pequeños -> "tiende" a cero por encima del eje x. 
+* Valores de x negativos cada vez más pequeños, la función toma valores negativos cada vez más pequeños -> "tiende" a cero por debajo del eje x. 
 
 image::2023-09-13T11-41-17-539Z.png[] 
 ====
