@@ -1119,6 +1119,7 @@ image::2023-12-09T21-44-32-810Z.png[]
 
 image::2023-12-09T21-44-52-638Z.png[] 
 
+image::2023-12-09T22-36-21-149Z.png[] 
 
 == Semana 6
 
@@ -1654,7 +1655,7 @@ Se deduce que la recta y=0 es una asíntota horizontal de la curva stem:[f(x)=1/
 image:2023-09-17T16-10-29-030Z.png[] 
 
 
-==== Propiedad stem:[lim_(x→-∞)frac{1}{x^k}]=0
+==== Propiedad stem:[lim_(x→+-∞)frac{1}{x^k}]=0
 
 Las propiedades de límites anteriores se cumplen para límites en el infinito. Ademas se agrega una nueva regla 
 ====
@@ -3191,6 +3192,17 @@ También podemos escribir la solución como la terna ordenada (7t-5,3t+1,t), don
 
 
 
+
+
+== Geogebra comandos
+
+* root (f(x)): raices del polinomio
+* asymptote(f(x)): asintotas
+* Extremum(f(x)): extremos de la funcion
+
+== Comandos en symbolab
+
+* modulo de vector: magnitud
 
 
 
