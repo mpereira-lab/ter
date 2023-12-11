@@ -3203,6 +3203,8 @@ También podemos escribir la solución como la terna ordenada (7t-5,3t+1,t), don
 == Comandos en symbolab
 
 * modulo de vector: magnitud
+* matriz escalonada (eliminacion gaussiana): matrice escalonada
+* matriz escalonada (eliminacion gauss-jordan): gauss jordan
 
 
 
