@@ -77,7 +77,7 @@ Es una frase que es verdadera o falsa, pero no ambas
 |f|f|f
 |===
 
-* Disyunción: "p y q" es verdadero cuando p es V o q es V o ambas son V. Es falsa cuando ambas son F
+* Disyunción: "p o q" es verdadero cuando p es V o q es V o ambas son V. Es falsa cuando ambas son F
 
 |===
 |p|q|p v q
@@ -97,21 +97,24 @@ Dos formas de enunciado son logicamente equivalentes si y solo si tienen los mis
 
 === Negaciones de Y y O: Leyes de De Morgan
 
-La negación de un enunciado "y" es lógicamente equivalente al enunciado "o" en el que cada componente es negado. 
+* La negación de un enunciado "y" es lógicamente equivalente al enunciado "o" en el que cada componente es negado. 
  ~ (p ^ q) es ~p v ~q
-La negación de un enunciado o es lógicamente equivalente al enunciado y en el que cada componente es negado. 
+* La negación de un enunciado o es lógicamente equivalente al enunciado y en el que cada componente es negado. 
  ~ (p v q) es ~p ^ ~q
 
 Nota: "ni p ni q" significa to mismo que "~p y ~q"
 
 ===  Desigualdades y Leyes de De Morgan
 
--1 < x <=4
+-1 < x < = 4
 
-se puede descomponer en -1<x Y x<=4
+se puede descomponer en -1<x Y x &#x2264; 4
 
-Su negacion es -1</x (-1 no es menor que x) Y x<=/4 x no es menor o igual que 4
-Se puede interpretar como -1>x O x>=4
+
+Su negacion es -1 &#x226E; x (-1 no es menor que x) Y x &#x2270; 4 x no es menor o igual que 4
+
+
+Se puede interpretar como -1≥x O x>4
 
 === Tautologías y contradicciones
 

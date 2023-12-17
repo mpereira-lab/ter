@@ -1,4 +1,4 @@
-funcion sumar(n1, n2)
+	funcion sumar(n1, n2)
 	definir res Como Entero
 	res = n1 + n2
 FinFuncion
