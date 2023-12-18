@@ -801,6 +801,11 @@ Ejemplo:  0101
 
 La suma del numero y su complemento dan 11111111
 
+==== Rango
+
+En Complemento a 1, el rango de representación es el mismo que en Signo Magnitud
+
+stem:[\[-(2^(n-1) - 1); 2^(n-1) - 1\]]
 
 
 === Complemento a 2
